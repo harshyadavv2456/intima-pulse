@@ -1,0 +1,1222 @@
+{
+ "updated": "2026-10-01T11:30:00+05:30",
+ "reviewed_on": "2026-10-01",
+ "reviewed_by": "initial build (daily evening run keeps this current)",
+ "comps_last_checked": "2026-10-01",
+ "comps_next_due": "2026-10-04",
+ "fx_note": "Working rate ~₹88 per US$ (Entrackr priced Allo's ₹16 cr as $1.83M, Mar 2025). Estimate; INR figures converted from USD are approximate.",
+ "disclaimer": "Reference for founder Harsh only. Not financial, legal or tax advice. Every figure is labelled: SOURCED (a cited page that was opened and read on the checked date), THIRD-PARTY ESTIMATE (aggregator numbers, unverified), or ESTIMATE (our own judgement, editable). Nothing here is a promise that money is available.",
+ "manual_inputs": {
+  "entity_status": "proprietorship",
+  "dpiit_recognised": false,
+  "revenue_inr": 0,
+  "paying_clinics": 0,
+  "d30_retention_doctor_referred_pct": null,
+  "doctor_referred_users_tracked": 0,
+  "note": "Update these by hand when they change (daily evening run). Everything else on the page is computed live from the other data files."
+ },
+ "headline": {
+  "valuation_lines": [
+   {
+    "scenario": "Today (proprietorship, ₹0 revenue, no traction)",
+    "text": "No priced equity round is possible. Paper pre-money ≈ ₹1.5–3 cr. Realistic cash ≈ ₹0–10 L (friends/family/credits).",
+    "label": "ESTIMATE"
+   },
+   {
+    "scenario": "After Pvt Ltd + DPIIT",
+    "text": "Pre-money ≈ ₹2–4 cr; realistic angel/note ≈ ₹15–40 L → roughly 4–17% dilution (computed from the ranges).",
+    "label": "ESTIMATE"
+   },
+   {
+    "scenario": "After Dec-2026 Nagpur PMF test passes",
+    "text": "Pre-money ≈ ₹6–12 cr; realistic round ≈ ₹50 L–1.5 cr → roughly 4–20% dilution (computed). Only if measured day-30 retention and ≥3 active/paying clinics exist.",
+    "label": "ESTIMATE"
+   }
+  ],
+  "verdict": "Viable as a SMALL, capital-light, doctor-led business; not yet an investable venture. The next 90 days decide it: incorporate, then prove day-30 retention of doctor-referred users. Do not quote any valuation above ₹5 cr to an investor before that data exists."
+ },
+ "snapshots": [],
+ "changes": [
+  {
+   "date": "2026-10-01",
+   "by": "initial build",
+   "change": "Outlook page created: valuation scenarios, 12 comps with sources, funding routes, unit-economics calculator, compliance, readiness checks, milestones. Tester files (issues/features/journal/companion) are still empty, so tester-evidence sections show 'pending'. Comps checked today; next re-check due Sun 2026-10-04."
+  }
+ ],
+ "valuation": {
+  "intro": "Indian pre-seed/seed valuations are mostly undisclosed. What is public: round sizes, a few third-party valuation estimates, and generic angel-market norms. The honest range below leans to the LOW half of generic norms because Intima has no revenue, no traction, no entity and (as far as the record shows) no investor-grade founder pedigree signal.",
+  "scenarios": [
+   {
+    "id": "s1",
+    "name": "1 · Today — proprietorship",
+    "when": "Now (Oct 2026)",
+    "pre_min_cr": 1.5,
+    "pre_max_cr": 3.0,
+    "raise_min_lakh": 0,
+    "raise_max_lakh": 10,
+    "difficulty": 4,
+    "priced_round_possible": false,
+    "label": "ESTIMATE",
+    "reality": "A proprietorship has no shares, so no investor can buy equity today and no SAFE/CCPS can be issued. The ₹1.5–3 cr is a paper figure only (idea-stage band ₹2–5 cr minus a discount for no entity / no traction). Real money = founder funds, friends/family, free credits.",
+    "dilution_note": "No equity to dilute yet. Do not promise equity or 'shares' informally — it is unenforceable and creates cap-table mess later.",
+    "unlocks": [
+     "Incorporate a Pvt Ltd (or LLP) — see checklist",
+     "Assign IP (app, brand, domain, content) from Harsh to the company",
+     "Apply to DPIIT after incorporation"
+    ],
+    "next_gate": "Pvt Ltd incorporated + IP assigned"
+   },
+   {
+    "id": "s2",
+    "name": "2 · After incorporation + DPIIT",
+    "when": "Target Nov–Dec 2026",
+    "pre_min_cr": 2.0,
+    "pre_max_cr": 4.0,
+    "raise_min_lakh": 15,
+    "raise_max_lakh": 40,
+    "difficulty": 3,
+    "priced_round_possible": true,
+    "label": "ESTIMATE",
+    "reality": "Now an investable legal shell, still pre-revenue and pre-traction. Only a small angel/friends cheque or a convertible note is realistic; institutional money will say 'come back with retention data'. Government routes (SISFS, NERVE, STPI) open up but are slow and mostly milestone-based.",
+    "dilution_note": "Computed from the ranges: smallest raise at highest pre-money to largest raise at lowest pre-money. Angel tax (s.56(2)(viib)) no longer applies to share issues from 1 Apr 2025 (per search summary; confirm with CA).",
+    "unlocks": [
+     "DPIIT certificate → SISFS (when reopened), incubator seats, patent rebates, tax holiday eligibility",
+     "Ability to sign clinic contracts and accept payments as a company",
+     "Credits programmes (AWS/Google/Microsoft) in the company name",
+     "Credible to Nagpur incubators (NERVE, InFED, CIVN)"
+    ],
+    "next_gate": "Dec-2026 Nagpur PMF test"
+   },
+   {
+    "id": "s3",
+    "name": "3 · After Dec-2026 Nagpur PMF",
+    "when": "Decision ~5 Jan 2027; raise Feb–Mar 2027",
+    "pre_min_cr": 6.0,
+    "pre_max_cr": 12.0,
+    "raise_min_lakh": 50,
+    "raise_max_lakh": 150,
+    "difficulty": 3,
+    "priced_round_possible": true,
+    "label": "ESTIMATE",
+    "reality": "Only if the evidence is real: a measured day-30 retention figure for doctor-referred users (with n stated), several clinics actively referring, and at least a few paying clinics or Premium subscribers. That lifts Intima from idea-stage to 'MVP with early signal' (₹5–10 cr band; early revenue ₹8–15 cr). Without the data, stay in scenario 2.",
+    "dilution_note": "Aim to keep a first institutional-ish round ≤15%. A ₹15 cr+ pre-money needs real monthly revenue (₹5 L+/month in generic norms) — not expected by March 2027.",
+    "unlocks": [
+     "Micro-VCs / angel syndicates / Rainmatter-type investors take the call",
+     "Surge / Antler conversations become meaningful",
+     "Fund the 180-day India clinic tour from outside money"
+    ],
+    "next_gate": "Seed (₹1–3 cr) needs the tour's multi-city retention and revenue"
+   }
+  ],
+  "benchmarks": [
+   {
+    "label": "Typical Indian angel round",
+    "value": "₹25 L–₹2 cr total; individual angel cheque ₹2–25 L; 3–10 angels",
+    "source_name": "Startup Nerve (Apr/Jul 2026)",
+    "url": "https://startupnerve.com/angel-round-mechanics-india-ticket-sizes-valuations/",
+    "confidence": "sourced (blog, not primary data)",
+    "checked_on": "2026-10-01"
+   },
+   {
+    "label": "Pre-money by stage (2025-26)",
+    "value": "Idea ₹2–5 cr (pedigree-dependent) · MVP ₹5–10 cr · early traction ₹8–15 cr · strong traction ₹12–25 cr",
+    "source_name": "Startup Nerve",
+    "url": "https://startupnerve.com/angel-round-mechanics-india-ticket-sizes-valuations/",
+    "confidence": "sourced (blog, not primary data)",
+    "checked_on": "2026-10-01"
+   },
+   {
+    "label": "Typical pre-seed note",
+    "value": "₹20–50 L; pre-money ₹4–8 cr for most consumer ideas; >₹10 cr without revenue signals inexperience; seed ₹1–3 cr at ~8–12% dilution",
+    "source_name": "The Karak (11 Jun 2026)",
+    "url": "https://thekarak.in/pre-seed-funding-india-step-by-step-guide/",
+    "confidence": "sourced (blog, not primary data)",
+    "checked_on": "2026-10-01"
+   },
+   {
+    "label": "Legal cost of an angel round",
+    "value": "≈ ₹0.5–1.5 L with a startup-focused firm; registered-valuer report needed for priced issue",
+    "source_name": "Startup Nerve",
+    "url": "https://startupnerve.com/angel-round-mechanics-india-ticket-sizes-valuations/",
+    "confidence": "sourced (blog)",
+    "checked_on": "2026-10-01"
+   },
+   {
+    "label": "Angel tax",
+    "value": "Section 56(2)(viib) abolished for share issues on/after 1 Apr 2025",
+    "source_name": "Beacon Filing (search summary)",
+    "url": "https://beaconfiling.com/glossary/angel-tax",
+    "confidence": "unverified — page not opened; confirm with a CA",
+    "checked_on": "2026-10-01"
+   }
+  ],
+  "comps": [
+   {
+    "id": "allo-prea",
+    "name": "Allo Health (men's + sexual health clinics)",
+    "segment": "Men's/sexual health, hybrid clinics",
+    "stage": "Pre-Series A",
+    "date": "2025-03-12",
+    "amount": "₹16 cr ($1.83M), led by Rainmatter",
+    "valuation": "Not disclosed for the round. Tracxn shows ≈₹162 cr 'current valuation' (third-party estimate).",
+    "relevance": "Closest men's-health B2C/clinic comp; but 35+ clinics and 200k patients claimed — far ahead of Intima.",
+    "source_url": "https://entrackr.com/snippets/allo-health-raises-rs-16-cr-in-pre-series-a-round-8846048",
+    "source_name": "Entrackr",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Round size sourced. ₹162 cr valuation is Tracxn (snippet only): https://tracxn.com/d/companies/allohealth/__VwMbUZBHLcUTgB9c_yGdTNMeH0qC2m4003pBhLapka0/latest-shareholding — UNVERIFIED."
+   },
+   {
+    "id": "allo-seed",
+    "name": "Allo Health — seed",
+    "segment": "Men's/sexual health",
+    "stage": "Seed",
+    "date": "2022-02-01",
+    "amount": "$4.4M, led by Nexus Venture Partners (+ Binny Bansal, Deepinder Goyal, others)",
+    "valuation": "Not disclosed",
+    "relevance": "Shows what an institution-led seed looked like for a men's sexual-health clinic play with a known founder.",
+    "source_url": "https://entrackr.com/snippets/allo-health-raises-rs-16-cr-in-pre-series-a-round-8846048",
+    "source_name": "Entrackr (mentions prior seed)",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Date of seed from Tracxn snippet (Feb–Sep 2022 tranches); Entrackr gives amount and lead."
+   },
+   {
+    "id": "bold-a",
+    "name": "Bold Care (men's sexual wellness D2C; Bloom for women)",
+    "segment": "Men's D2C supplements/products + telehealth",
+    "stage": "Series A",
+    "date": "2025-02-11",
+    "amount": "$5M (≈₹43 cr), led by Rainmatter",
+    "valuation": "Not disclosed (CB Insights masks it)",
+    "relevance": "Supplement/D2C model comp. Had ₹32.9 cr FY24 turnover and ≈₹100 cr ARR claim — a revenue business, not pre-revenue.",
+    "source_url": "https://inc42.com/buzz/bold-care-bags-5-mn-funding-to-strengthen-presence-in-non-metros/",
+    "source_name": "Inc42",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Earlier ≈$6.5M raised pre-Series A (Inc42). Revenue figures are company claims."
+   },
+   {
+    "id": "pfh-a",
+    "name": "Proactive For Her (women's digital clinic; acquired by IVF Access Jun 2025)",
+    "segment": "Women's health, tele + clinic",
+    "stage": "Series A",
+    "date": "2022-02-16",
+    "amount": "$5.5M (≈₹41 cr), led by Vertex Ventures; Nexus participated",
+    "valuation": "Not disclosed. A $182M figure on some aggregators is not credible — ignore.",
+    "relevance": "Closest women's-health clinic-model comp; seed was $1.2M (2020-21). Exit terms undisclosed.",
+    "source_url": "https://www.vccircle.com/vertex-ventures-leads-series-a-funding-in-digital-clinic-proactive-for-her",
+    "source_name": "VCCircle",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Series A had ~5,000 women engaged at the time (company claim)."
+   },
+   {
+    "id": "pfh-seed",
+    "name": "Proactive For Her — seed",
+    "segment": "Women's health",
+    "stage": "Seed",
+    "date": "2020-10-01",
+    "amount": "$1.2M (Nexus, Enzia)",
+    "valuation": "Not disclosed",
+    "relevance": "Typical institutional seed for a women's-health startup with a doctor-led thesis.",
+    "source_url": "https://biobase.whitefordresearch.com/companies/proactive-for-her",
+    "source_name": "Whiteford Research Biobase",
+    "confidence": "third-party estimate",
+    "source_opened": false,
+    "checked_on": "2026-10-01",
+    "note": "Secondary sources disagree on dates (Oct 2020 vs Dec 2021). Treat as approximate."
+   },
+   {
+    "id": "maya",
+    "name": "Maya (period/fertility tracker app)",
+    "segment": "Women's tracker app (closest product category)",
+    "stage": "Seed",
+    "date": "2016-06-01",
+    "amount": "₹5 cr, Prime Venture Partners; later undisclosed from Rajan Anandan (Oct 2016)",
+    "valuation": "Not disclosed",
+    "relevance": "Direct app-category comp, but a decade old and pre-dates today's funding climate; 100M data points claimed.",
+    "source_url": "https://www.techcircle.in/2016/10/13/womens-health-app-maya-secures-funding-from-googles-rajan-anandan",
+    "source_name": "Techcircle",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Sold to SHEROES in an all-stock deal in 2019 (Entrackr)."
+   },
+   {
+    "id": "misters",
+    "name": "Misters (men's wellness D2C)",
+    "segment": "Men's health D2C",
+    "stage": "Seed",
+    "date": "2019-11-14",
+    "amount": "₹3.5 cr (~$0.49M) from Sauce.vc, Rainforest Ventures + angels; ~$1M total incl. an earlier ~$0.35M angel round (Techcircle)",
+    "valuation": "Not disclosed",
+    "relevance": "Best 'small men's health seed' comp, but backed on the strength of a PaperBoat co-founder's pedigree. Later stalled: FY25 revenue ≈₹33 lakh (Inc42 Datalabs, unverified).",
+    "source_url": "https://www.vccircle.com/sauce-vc-rainforest-ventures-back-paperboat-co-founder-s-wellness-startup",
+    "source_name": "VCCircle",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Cautionary comp: funding ≠ traction. FY25 revenue from https://inc42.com/company/misters-in/people/ (search snippet, unverified)."
+   },
+   {
+    "id": "mm-seed",
+    "name": "Mosaic Wellness (Man Matters / Be Bodywise) — seed",
+    "segment": "Men's + women's digital clinics, pre-launch",
+    "stage": "Seed",
+    "date": "2019-12-01",
+    "amount": "$10M, Elevation, Sequoia India, Matrix + angels",
+    "valuation": "Not disclosed",
+    "relevance": "OUTLIER: top-tier operator founders raised $10M pre-launch. Do not anchor Intima on this.",
+    "source_url": "https://economictimes.indiatimes.com/tech/funding/mosaic-wellness-lands-24-million-in-funding-led-by-sequoia-capital-india/articleshow/87613971.cms",
+    "source_name": "Economic Times (Nov 2021)",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Series A $24M (Nov 2021) at $14M annualised revenue."
+   },
+   {
+    "id": "mm-2025",
+    "name": "Mosaic Wellness — Think Investments",
+    "segment": "Men's/women's/kids' digital health",
+    "stage": "Growth",
+    "date": "2025-04-01",
+    "amount": "$20M",
+    "valuation": "≈$400M (Dealroom, third-party)",
+    "relevance": "Shows where the category's winner is valued; irrelevant to Intima's stage.",
+    "source_url": "https://app.dealroom.co/news/feed/mosaic-wellness-raises-20m-at-400m-valuation",
+    "source_name": "Dealroom",
+    "confidence": "third-party estimate",
+    "source_opened": false,
+    "checked_on": "2026-10-01",
+    "note": "Search snippet only; FY24 revenue ₹333 cr reported by Dealroom."
+   },
+   {
+    "id": "even",
+    "name": "Even Healthcare — seed",
+    "segment": "Health membership / managed care",
+    "stage": "Seed",
+    "date": "2021-07-22",
+    "amount": "$5M led by Khosla Ventures (+ Founders Fund, Nikesh Arora, Kunal Shah, Nithin Kamath)",
+    "valuation": "Not disclosed",
+    "relevance": "OUTLIER: global-calibre founders and a huge-market thesis. Not a pre-revenue Indian solo-founder comparable.",
+    "source_url": "https://even.in/blog/even-seed-round-5-million/",
+    "source_name": "Even (company blog)",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Had ~5,000 waitlist sign-ups and an 18-person team at announcement."
+   },
+   {
+    "id": "arva",
+    "name": "Arva Health (fertility clinics)",
+    "segment": "Fertility / women's reproductive health",
+    "stage": "Pre-seed",
+    "date": "2025-03-07",
+    "amount": "$1M (≈₹8.3 cr), All In Capital, iSeed, Bharath Founders Fund, Galaxy",
+    "valuation": "Not disclosed",
+    "relevance": "Most recent clearly-labelled Indian femtech PRE-SEED comp. Raised $1M for clinics; founders had prior track records.",
+    "source_url": "https://femtechinsider.com/arva-health-secures-1m-pre-seed-to-build-network-of-modern-fertility-clinics-in-india/",
+    "source_name": "Femtech Insider",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Shows institutional pre-seed ≈ ₹8 cr — 10-20x what Intima can realistically raise today."
+   },
+   {
+    "id": "gen-angel",
+    "name": "Generic Indian angel/pre-seed norm",
+    "segment": "All sectors",
+    "stage": "Pre-seed / angel",
+    "date": "2026-06-11",
+    "amount": "₹20–50 L typical; ₹25 L–2 cr per round",
+    "valuation": "Pre-money ₹4–8 cr (Karak) / ₹2–10 cr (Startup Nerve, idea→MVP)",
+    "relevance": "Used to bound Intima's estimates.",
+    "source_url": "https://thekarak.in/pre-seed-funding-india-step-by-step-guide/",
+    "source_name": "The Karak + Startup Nerve",
+    "confidence": "sourced",
+    "source_opened": true,
+    "checked_on": "2026-10-01",
+    "note": "Blogs, not primary datasets — treat as directional."
+   }
+  ],
+  "comp_takeaways": [
+   "Every named comp that raised ≥$1M had either a famous operator founder (Misters, Mosaic, Even), a clinic network or revenue (Allo, Bold Care, Proactive), or both. Intima currently has none of those signals.",
+   "Post-money valuations were NOT disclosed for any comp round we found. We therefore do not present a 'comp-implied valuation'; our ranges come from generic Indian angel norms (sourced blogs) discounted for Intima's stage. This is an estimate.",
+   "Funding ≠ success: Misters raised ₹3.5 cr in 2019 and reportedly shows only ≈₹33 lakh FY25 revenue (unverified). Investors will check traction, not the idea.",
+   "Closest practical analogue for a first cheque is the angel/pre-seed norm (₹20–50 L), not the $1–5M institutional rounds above."
+  ]
+ },
+ "funding_routes": {
+  "intro": "Amounts and odds are ESTIMATES. Deadlines and eligibility live on the Funding page (verified dates there). Never submit applications from this repo; drafts are copy-paste only.",
+  "expectation": "Realistic cash by March 2027 (ESTIMATE): ₹0–15 L before the PMF data, ₹40 L–1.2 cr only if the Dec-2026 PMF test passes. Credits ≈ ₹0.2–2 L equivalent. A grant, if any, is more likely mid/late 2027.",
+  "routes": [
+   {
+    "id": "r1",
+    "route": "Founder / friends & family",
+    "examples": "Self-funded, small loans",
+    "amount": "₹5–10 L",
+    "odds": "depends on network",
+    "odds_pct": "n/a",
+    "difficulty": 1,
+    "timeline": "Immediate",
+    "funding_ids": [],
+    "needs": "Nothing; keep it as a documented loan or convert after incorporation",
+    "honest": "Do not give informal equity from a proprietorship.",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "r2",
+    "route": "Cloud / AI credits",
+    "examples": "AWS Activate, Google for Startups, Microsoft Founders Hub",
+    "amount": "$1–5K (AWS), $2K (Google pre-funded), up to $150K (Microsoft, tiered)",
+    "odds": "≈60–80% for the small tiers",
+    "odds_pct": "60–80%",
+    "difficulty": 2,
+    "timeline": "1–3 weeks",
+    "funding_ids": [
+     "aws",
+     "google",
+     "microsoft",
+     "claude"
+    ],
+    "needs": "Company site + domain email; incorporation helps; credits only help if the stack runs on that cloud/AI provider",
+    "honest": "Saves cash, not a valuation event. AI-provider credits (Anthropic) need institutional funding — likely ineligible now.",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "r3",
+    "route": "Government grants & schemes",
+    "examples": "SISFS (closed 31 May 2026), STPI OCP 7.0 (8 Oct 2026), NIDHI-PRAYAS, BIRAC BIG, NERVE seed",
+    "amount": "Up to ₹20 L grant / ₹50 L (SISFS), up to ₹50 L (STPI/NERVE, with 1–3% equity or fee)",
+    "odds": "≈10–20% to land at least one grant in 12 months; ≈5% for STPI OCP 7.0 this cycle",
+    "odds_pct": "5–20%",
+    "difficulty": 4,
+    "timeline": "3–9 months from application; disbursal is milestone-based via incubators",
+    "funding_ids": [
+     "dpiit",
+     "sisfs",
+     "stpi-ocp7",
+     "nerve",
+     "infed",
+     "prayas",
+     "big",
+     "civn"
+    ],
+    "needs": "DPIIT recognition and a registered entity for nearly all; SISFS also needs <2 years since incorporation",
+    "honest": "Consumer wellness app ≠ medical device; fit for device-oriented schemes is moderate at best. Treat as upside, not runway.",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "r4",
+    "route": "Local incubators (no / low cash)",
+    "examples": "NERVE CoE Nagpur, IIM Nagpur InFED, VNIT CIVN",
+    "amount": "Space, mentors, hospital access; occasionally seed access",
+    "odds": "≈25–40% for an incubation seat once DPIIT-recognised",
+    "odds_pct": "25–40%",
+    "difficulty": 3,
+    "timeline": "1–3 months (cohort dates unannounced)",
+    "funding_ids": [
+     "nerve",
+     "infed",
+     "civn"
+    ],
+    "needs": "Entity + DPIIT + demo; healthcare + Nagpur is a strong structural fit",
+    "honest": "The real value is the clinic/doctor network in Nagpur — which feeds the Dec PMF test.",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "r5",
+    "route": "Angels / angel networks",
+    "examples": "Individual angels, LetsVenture/AngelList syndicates; IAN-type networks later",
+    "amount": "₹15–40 L now; ₹50 L–1.5 cr post-PMF",
+    "odds": "≈5–10% to close ≥₹15 L before PMF data; ≈30–40% over 3–4 months after a clean PMF read",
+    "odds_pct": "5–10% now / 30–40% post-PMF",
+    "difficulty": 4,
+    "timeline": "2–4 months; convertible note or CCPS",
+    "funding_ids": [],
+    "needs": "Pvt Ltd, clean cap table, 1-page teaser, retention numbers; warm intros beat cold outreach",
+    "honest": "IAN-type networks cite ₹75 L–₹20 cr cheques (sweet spot ~₹3 cr) — too large for today. Individual angels and micro-syndicates are the match.",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "r6",
+    "route": "Accelerators (equity)",
+    "examples": "Y Combinator W27 (2 Nov 2026), Surge, Antler India",
+    "amount": "YC standard deal; Surge $0.5–5M; Antler up to ~₹4 cr for ~11%",
+    "odds": "YC ≈1–2%; Surge/Antler ≈3–5% pre-traction",
+    "odds_pct": "1–5%",
+    "difficulty": 5,
+    "timeline": "YC decision ~11 Dec 2026; others 1–3 months",
+    "funding_ids": [
+     "yc",
+     "surge",
+     "antler",
+     "pierc",
+     "aic-thub",
+     "eir-accelerator"
+    ],
+    "needs": "Strong full-time team, traction narrative; YC needs US relocation for the batch",
+    "honest": "A pre-revenue solo-founder health app is a long shot for all three. Surge and Antler become realistic only after retention data.",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "r7",
+    "route": "Institutional VCs",
+    "examples": "Rainmatter, Nexus, Sauce.vc/Rainforest, Vertex",
+    "amount": "₹1–8 cr first cheques seen in comps (Misters ₹3.5 cr; Arva $1M)",
+    "odds": "<3% pre-PMF; ≈10–15% per serious pitch after PMF + paying clinics",
+    "odds_pct": "<3% / 10–15%",
+    "difficulty": 5,
+    "timeline": "3–6 months per process; start Feb–Mar 2027 at earliest",
+    "funding_ids": [
+     "rainmatter",
+     "nexus",
+     "vertex",
+     "sauce"
+    ],
+    "needs": "Retention, unit economics, regulatory hygiene, honest privacy position",
+    "honest": "Rainmatter has backed Allo and Bold Care and values privacy ethos — an honest privacy page helps; overclaiming would hurt.",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "r8",
+    "route": "Customer revenue (non-dilutive)",
+    "examples": "Clinic subscriptions, Premium ₹499/mo, supplements",
+    "amount": "Small at first (see calculator)",
+    "odds": "Unknown until the Dec test",
+    "odds_pct": "unknown",
+    "difficulty": 3,
+    "timeline": "First paid clinic: 1–3 months after Nagpur pilots start",
+    "funding_ids": [],
+    "needs": "A reason for clinics to pay: follow-up dashboard, adherence, patient education — not referral fees",
+    "honest": "A handful of paying clinics is a stronger valuation lever than any pitch deck.",
+    "label": "ESTIMATE"
+   }
+  ]
+ },
+ "business": {
+  "intro": "Sketch only. Every number is an editable ESTIMATE until real cohort data replaces it. Use the calculator below; defaults are our honest central guesses, not tuned to look profitable.",
+  "calc_inputs": [
+   {
+    "k": "M",
+    "label": "Users acquired via doctors / month",
+    "v": 300,
+    "min": 50,
+    "max": 3000,
+    "step": 50,
+    "unit": "users",
+    "note": "Nagpur: ~10 clinics × ~30 users. Tour: 30 active clinics × ~15 = 450. ESTIMATE"
+   },
+   {
+    "k": "r",
+    "label": "Day-30 retention (doctor-referred)",
+    "v": 20,
+    "min": 0,
+    "max": 60,
+    "step": 1,
+    "unit": "%",
+    "note": "UNMEASURED. Generic consumer health apps usually retain single-digit % at D30 (widely cited, not verified here); doctor referral should lift it. This is THE number the Dec test must measure."
+   },
+   {
+    "k": "d",
+    "label": "Monthly decay of retained base after D30",
+    "v": 10,
+    "min": 0,
+    "max": 40,
+    "step": 1,
+    "unit": "%",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "p",
+    "label": "Premium conversion of retained users",
+    "v": 5,
+    "min": 0,
+    "max": 25,
+    "step": 0.5,
+    "unit": "%",
+    "note": "ESTIMATE; freemium health apps often convert low single digits"
+   },
+   {
+    "k": "price",
+    "label": "Premium price (₹/month, GST-inclusive)",
+    "v": 499,
+    "min": 199,
+    "max": 999,
+    "step": 50,
+    "unit": "₹",
+    "note": "Planned ₹499"
+   },
+   {
+    "k": "churn",
+    "label": "Premium monthly churn",
+    "v": 8,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": "%",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "hwa",
+    "label": "Hardware kit attach (of new Premium)",
+    "v": 25,
+    "min": 0,
+    "max": 80,
+    "step": 5,
+    "unit": "%",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "hwp",
+    "label": "Avg kit price (₹, GST-incl.)",
+    "v": 6000,
+    "min": 1500,
+    "max": 15000,
+    "step": 500,
+    "unit": "₹",
+    "note": "Ring + BBT + BP mix; ESTIMATE"
+   },
+   {
+    "k": "hwm",
+    "label": "Hardware margin (on net price)",
+    "v": 20,
+    "min": 0,
+    "max": 40,
+    "step": 1,
+    "unit": "%",
+    "note": "Resale of third-party certified devices; ESTIMATE"
+   },
+   {
+    "k": "sa",
+    "label": "Supplement attach (of retained base, per month)",
+    "v": 6,
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "unit": "%",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "saov",
+    "label": "Supplement order value (₹, GST-incl.)",
+    "v": 799,
+    "min": 299,
+    "max": 1999,
+    "step": 50,
+    "unit": "₹",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "sm",
+    "label": "Supplement contribution margin (on net price)",
+    "v": 55,
+    "min": 20,
+    "max": 75,
+    "step": 1,
+    "unit": "%",
+    "note": "After COGS, shipping, RTO, PG; before marketing. ESTIMATE"
+   },
+   {
+    "k": "tr",
+    "label": "Premium users consulting / month",
+    "v": 10,
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "unit": "%",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "tf",
+    "label": "Telemedicine flat fee (₹)",
+    "v": 299,
+    "min": 99,
+    "max": 999,
+    "step": 50,
+    "unit": "₹",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "tt",
+    "label": "Platform take on consult fee",
+    "v": 30,
+    "min": 0,
+    "max": 50,
+    "step": 5,
+    "unit": "%",
+    "note": "Doctor keeps the rest; ESTIMATE"
+   },
+   {
+    "k": "cac",
+    "label": "CAC per referred user (₹)",
+    "v": 60,
+    "min": 0,
+    "max": 500,
+    "step": 10,
+    "unit": "₹",
+    "note": "QR cards, clinic kit, small events — excludes tour fixed cost. ESTIMATE"
+   },
+   {
+    "k": "ai",
+    "label": "AI + infra cost per retained user / month (₹)",
+    "v": 4,
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "unit": "₹",
+    "note": "Third-party AI API; ESTIMATE"
+   },
+   {
+    "k": "burn",
+    "label": "Fixed burn / month (₹)",
+    "v": 150000,
+    "min": 0,
+    "max": 600000,
+    "step": 10000,
+    "unit": "₹",
+    "note": "Founder stipend + tools + compliance; ESTIMATE"
+   },
+   {
+    "k": "tour",
+    "label": "180-day clinic tour cost (₹ lakh, spread months 1–6)",
+    "v": 13,
+    "min": 0,
+    "max": 40,
+    "step": 1,
+    "unit": "₹ L",
+    "note": "See tour budget; ESTIMATE"
+   },
+   {
+    "k": "cl",
+    "label": "Paying clinics (SaaS)",
+    "v": 5,
+    "min": 0,
+    "max": 60,
+    "step": 1,
+    "unit": "clinics",
+    "note": "UNTESTED willingness to pay; ESTIMATE"
+   },
+   {
+    "k": "clfee",
+    "label": "Clinic fee (₹/month, GST-incl.)",
+    "v": 1500,
+    "min": 0,
+    "max": 5000,
+    "step": 250,
+    "unit": "₹",
+    "note": "ESTIMATE"
+   },
+   {
+    "k": "gst",
+    "label": "GST on products/subscription",
+    "v": 18,
+    "min": 0,
+    "max": 18,
+    "step": 1,
+    "unit": "%",
+    "note": "Prices assumed GST-inclusive"
+   },
+   {
+    "k": "pg",
+    "label": "Payment gateway fee",
+    "v": 2,
+    "min": 0,
+    "max": 4,
+    "step": 0.5,
+    "unit": "%",
+    "note": "ESTIMATE"
+   }
+  ],
+  "models": [
+   {
+    "id": "m1",
+    "name": "Own-label male-led supplements",
+    "verdict": "Highest margin, but needs inventory cash, FSSAI compliance and a claims discipline. Treat as an attach product for retained, doctor-endorsed users — not a lead business.",
+    "lines": [
+     {
+      "item": "Pack price (30-day)",
+      "value": "₹799 incl. GST → ≈₹677 net",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "COGS via third-party licensed manufacturer",
+      "value": "≈₹180–250",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "Packaging + shipping + RTO allowance",
+      "value": "≈₹70–110",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "Payment gateway (2%)",
+      "value": "≈₹14",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "Contribution before marketing",
+      "value": "≈₹300–390 per pack (≈45–58%)",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "First-batch cash tied up",
+      "value": "≈₹1–3 L per SKU (MOQ, labels, testing, licences)",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "Claims allowed",
+      "value": "Structure/function only; no disease treat/cure/prevent claims; label 'not for medicinal use'",
+      "label": "FSSAI direction (search summary, unverified)"
+     }
+    ]
+   },
+   {
+    "id": "m2",
+    "name": "Premium ₹499/month + hardware kit + telemedicine flat fees",
+    "verdict": "Subscription is near-pure margin but conversion is the unknown; hardware is a trust/lock-in play with thin margin and heavy regulatory exposure; telemedicine is a small add-on once volume exists.",
+    "lines": [
+     {
+      "item": "Premium net revenue",
+      "value": "₹499 incl. GST → ≈₹423 net → ≈₹414 after 2% PG",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "Hardware kit (ring + BBT + BP)",
+      "value": "Landed ≈₹4,100–4,300 vs ≈₹5,085 net of GST on a ₹6,000 sale → ≈15–20% margin; working capital needed",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "Telemedicine flat fee",
+      "value": "₹299/consult; doctor keeps ≈70%; platform ≈₹90 gross (≈₹85 after PG)",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "AI/infra cost per active user",
+      "value": "≈₹4/month",
+      "label": "ESTIMATE"
+     },
+     {
+      "item": "Premium alone vs CAC",
+      "value": "At defaults ~1 in 100 referred users ends up on Premium (20% retained × 5% convert) ≈ ₹4 revenue per referred user per month vs ₹60 CAC → ~15-month payback on Premium alone; supplements, clinic fees and lower CAC must carry it. See calculator.",
+      "label": "ESTIMATE"
+     }
+    ]
+   }
+  ],
+  "channel": {
+   "title": "B2B2C doctor channel (gynaecologists, urologists, sexologists, IVF centres)",
+   "points": [
+    {
+     "k": "CAC via doctors",
+     "text": "Cheap per user (₹40–100 est.) because the doctor's recommendation replaces ads; the real cost is the clinic visit and onboarding time. Default ₹60/user plus the tour.",
+     "label": "ESTIMATE"
+    },
+    {
+     "k": "Cost per activated clinic",
+     "text": "Tour ₹13 L ÷ ~100 clinic visits ≈ ₹13 K per visit; at ~30% activation ≈ ₹43 K per active clinic.",
+     "label": "ESTIMATE"
+    },
+    {
+     "k": "What clinics can pay for",
+     "text": "A flat monthly clinic subscription (follow-up reminders, patient education, cycle/health summaries) — estimated ₹999–2,999/month once value is shown. Not tested.",
+     "label": "ESTIMATE"
+    },
+    {
+     "k": "Referral / revenue share — DO NOT pay per referral",
+     "text": "Indian medical ethics rules bar doctors from receiving commissions, rebates or fee-splitting for patient referrals (IMC 2002 clause 6.4 is in force while the NMC 2023 regulation is in abeyance — per search summary, unverified; get a lawyer's view). Safe-looking alternatives: clinic pays Intima a flat SaaS fee; free co-branded patient-education materials; doctors paid a flat fair fee ONLY for consultations they actually deliver on the platform, never linked to referral volume; CME-style content partnerships.",
+     "label": "UNVERIFIED — legal check required"
+    },
+    {
+     "k": "Doctor-referred retention is the asset",
+     "text": "A measured D30 retention for referred users is what turns this from 'another app' into a defensible channel. Track with a referral code per clinic (no personal data).",
+     "label": "ESTIMATE"
+    }
+   ],
+   "tour_budget": [
+    {
+     "item": "Travel + stay (180 days × ~₹4,000/day on the road)",
+     "lakh": 7.2
+    },
+    {
+     "item": "Demo/collateral, QR cards, clinic kits",
+     "lakh": 1.5
+    },
+    {
+     "item": "Local helper / part-time ops (6 months)",
+     "lakh": 1.8
+    },
+    {
+     "item": "Demo hardware units (ring, BBT, BP) + contingency",
+     "lakh": 2.5
+    }
+   ],
+   "tour_total_note": "≈ ₹13 L (rounded; ESTIMATE). Assumes ~100 clinic visits at ~4/week. Tour starts ~Jan 2027 only if the Dec PMF gate passes."
+  },
+  "verdict": {
+   "text": "Viable only as a lean, doctor-channel business. At the default sliders the model does NOT break even within 12 months and peaks at roughly ₹31 L of cumulative cash need (calculator output; ESTIMATE) — even a hopeful setting (1,000 users/month, 35% D30, 8% premium, 10% supplement attach, 15 paying clinics) still loses ≈₹7 K/month at month 12. So outside money is needed to survive the tour, and the business only works if retention, clinic fees and CAC beat the defaults. Supplements carry the margin; Premium is only meaningful with strong retention; hardware is a trust feature, not a profit centre. Move the sliders to see what each assumption must be for viability. All inputs are ESTIMATES.",
+   "label": "ESTIMATE"
+  },
+  "compliance": [
+   {
+    "area": "Supplements — FSSAI",
+    "risk": "High if mishandled",
+    "detail": "Health supplements/nutraceuticals need an FSSAI licence (central licence per the 2022 nutraceutical direction, per search summary), compliant labelling ('not for medicinal use'), and only structure/function claims — no 'treats ED / low testosterone / PCOS'. Using a licensed third-party manufacturer is cheapest but you remain responsible for claims.",
+    "action": "Use a licensed manufacturer; get label/claim review before launch; no disease claims anywhere (app, doctor decks, ads).",
+    "url": "https://fssai.gov.in/standards/health-supplements",
+    "verified": false
+   },
+   {
+    "area": "BP monitor / thermometer / ring claims — CDSCO",
+    "risk": "High",
+    "detail": "Under Medical Devices Rules 2017, digital thermometers are generally Class A and BP monitors Class B (licence from the State Licensing Authority) per search summary. Reselling third-party devices needs the maker/importer to hold valid registration/licence; Intima must not make diagnostic claims ('detects hypertension', 'predicts ovulation/fertility') from a ring or BBT sensor.",
+    "action": "Resell only CDSCO-registered devices; keep copy to 'tracking / wellness'; legal review before any claim; confirm classification on the CDSCO site.",
+    "url": "https://cdsco.gov.in/opencms/opencms/en/Medical-Device-Diagnostics/Medical-Device-Diagnostics/",
+    "verified": false
+   },
+   {
+    "area": "Health data — DPDP Act 2023 / Rules 2025",
+    "risk": "High",
+    "detail": "DPDP Rules notified 13 Nov 2025; most substantive obligations apply after 18 months (≈13 May 2027) per search summary. Health data of adults and children needs notice, purpose-limited consent, breach handling, deletion, and verifiable parental consent for minors (narrow healthcare exemptions).",
+    "action": "Build consent + notice + deletion/export flows before the clinic tour; log processors (cloud, AI provider); designate a grievance contact.",
+    "url": "https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa?pageTitle=Digital-Personal-Data-Protection-Rules-2025.pdf",
+    "verified": false
+   },
+   {
+    "area": "Telemedicine — 2020 guidelines",
+    "risk": "Medium–High",
+    "detail": "Only Registered Medical Practitioners may consult and prescribe, within the guideline's drug lists (O/A/B/prohibited incl. Schedule X) and record-keeping rules; the platform must verify RMP registration and keep consent/records. The AI companion must not present itself as a doctor.",
+    "action": "Contract RMPs, display registration numbers, store consult records, keep AI disclaimers on every screen.",
+    "url": "https://www.mohfw.gov.in/pdf/TelemedicineINdiaGuidelines2020.pdf",
+    "verified": false
+   },
+   {
+    "area": "Doctor referral payments — medical ethics",
+    "risk": "High",
+    "detail": "No commissions/fee-splitting to doctors for referrals (IMC 2002 clause 6.4 currently operative; NMC 2023 reg. 9 in abeyance — per search summary).",
+    "action": "Design the channel as clinic SaaS + education, not per-referral payouts; lawyer sign-off.",
+    "url": "https://www.nmc.org.in/rules-regulations/code-of-medical-ethics-regulations-2002/",
+    "verified": false
+   },
+   {
+    "area": "Marketing claims (general)",
+    "risk": "Medium",
+    "detail": "ASCI/consumer-law exposure for 'doctor-recommended', 'clinically proven', outcome claims. Do not use claims without evidence.",
+    "action": "Evidence file for every claim; no outcome numbers until measured.",
+    "url": "",
+    "verified": false
+   }
+  ],
+  "privacy_honesty": {
+   "title": "Privacy-claims honesty (must match the app and OPERATING.md)",
+   "true_statements": [
+    "Health logs sync to the cloud — they are NOT only on the device.",
+    "AI chat messages are sent to a third-party AI provider.",
+    "Consult messages are encrypted at rest with an operator-held key — this is NOT end-to-end encryption; the operator can technically decrypt.",
+    "No-login access reduces account data collected, but is not the same as 'no data collected'."
+   ],
+   "never_say": [
+    "'100% on-device', 'never leaves your phone', 'we cannot read your data', 'end-to-end encrypted', 'anonymous' (unless true and verified), 'HIPAA/GDPR certified'."
+   ],
+   "why_it_matters": "Women's-health apps are distrusted on data (see social radar cluster 'c-privacy'); investors like Rainmatter weigh privacy ethos; DPDP and consumer law treat misleading privacy claims as risk. An honest, specific privacy page is a differentiator; an overclaim is a liability in due diligence."
+  },
+  "pvt_ltd_checklist": [
+   {
+    "id": "p1",
+    "step": "Decide structure",
+    "detail": "Pvt Ltd is the investor/DPIIT/STPI-friendly choice (needs ≥2 directors and ≥2 shareholders; a co-founder or trusted family member must join). LLP is possible but unfriendly to angel/VC equity. There is no direct 'conversion' of a proprietorship — you form a new company and transfer the business.",
+    "time": "1–3 days to decide",
+    "cost": "₹0",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "p2",
+    "step": "Incorporate via MCA SPICe+",
+    "detail": "DSC + DIN for directors, name approval (RUN/SPICe+ Part A), MoA/AoA, registered-office proof, PAN/TAN, bank account. Typically 7–21 working days.",
+    "time": "≈1–3 weeks",
+    "cost": "≈₹7–50 K incl. professional fees",
+    "label": "ESTIMATE (search summary)"
+   },
+   {
+    "id": "p3",
+    "step": "Founders' agreement + vesting",
+    "detail": "Equity split, 4-year vesting with 1-year cliff, good/bad leaver, roles. Do it BEFORE any investor arrives.",
+    "time": "1 week",
+    "cost": "₹10–30 K legal",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "p4",
+    "step": "IP assignment deed (proprietor → company)",
+    "detail": "Written assignment of source code, app, Intima brand/name, domain (intimacare.in), content, design, datasets. IP does not transfer automatically. Include contractor/freelancer assignment for any outside work.",
+    "time": "1 week",
+    "cost": "₹5–20 K legal",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "p5",
+    "step": "Business transfer agreement",
+    "detail": "Move contracts, vendor accounts (cloud, AI provider, payments, domain registrar, app stores) and any bank balances from the proprietorship to the company; close or park the proprietorship GST.",
+    "time": "1–2 weeks",
+    "cost": "₹5–15 K",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "p6",
+    "step": "Registrations",
+    "detail": "Company bank account, GST (if needed), Shops & Establishment/Udyam, professional tax as applicable; FSSAI/other licences only when supplements/devices actually start.",
+    "time": "1–2 weeks",
+    "cost": "varies",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "p7",
+    "step": "DPIIT recognition",
+    "detail": "Apply on startupindia.gov.in with the certificate of incorporation, short product description and website. Unlocks SISFS eligibility, patent rebates, tax holiday eligibility, many incubator calls.",
+    "time": "days–weeks after incorporation",
+    "cost": "₹0 official fee",
+    "label": "ESTIMATE; see funding.json 'dpiit'"
+   },
+   {
+    "id": "p8",
+    "step": "Trademark + legal hygiene",
+    "detail": "File the Intima trademark in the company's name (apps/software and health classes — confirm classes with an IP attorney); T&C, Privacy Policy, consent copy consistent with the honesty section above.",
+    "time": "2–4 weeks to file",
+    "cost": "≈₹5–15 K + fees",
+    "label": "ESTIMATE"
+   },
+   {
+    "id": "p9",
+    "step": "Cap table + ESOP basics",
+    "detail": "Keep a clean cap table (founders ≥80% post-first round). Create an ESOP pool only when hiring or raising.",
+    "time": "ongoing",
+    "cost": "minimal",
+    "label": "ESTIMATE"
+   }
+  ]
+ },
+ "investor_summary": {
+  "intro": "Investor-style view of what Intima brings today. Tester-evidence strengths are pulled live from data/issues.json, features.json, journal.json and companion.json; while those are empty the page says 'pending'. The statements below are founder-stated and NOT yet independently verified by the tester.",
+  "founder_stated_strengths": [
+   {
+    "text": "Live, no-login health app for women AND men — low-friction first use for a doctor to recommend in clinic.",
+    "label": "founder-stated, unverified"
+   },
+   {
+    "text": "Two-sided scope (cycle/fertility/PCOS + men's sexual/vitality health) matches the social pain-point map: see live coverage below.",
+    "label": "social.json (public posts; not measured volume)"
+   },
+   {
+    "text": "B2B2C thesis through gynaecologists, urologists, sexologists, IVF centres — a distribution channel the D2C comps (Bold Care, Man Matters, Misters) don't rely on.",
+    "label": "hypothesis"
+   },
+   {
+    "text": "Concrete, dated validation plan: Nagpur doctor PMF month (Dec 2026), then 180-day India clinic tour (~Jan 2027).",
+    "label": "founder plan"
+   },
+   {
+    "text": "Honest privacy position documented (cloud sync, third-party AI, operator-held-key encryption) — rare and credible if kept consistent.",
+    "label": "documented in OPERATING.md"
+   }
+  ],
+  "gaps": [
+   {
+    "rank": 1,
+    "gap": "No legal entity (proprietorship)",
+    "effect": "Blocks equity, DPIIT, grants, clinic contracts, IP clarity.",
+    "fix": "Incorporate + assign IP (checklist above)",
+    "effort": "2–4 weeks"
+   },
+   {
+    "rank": 2,
+    "gap": "No verified traction or day-30 retention",
+    "effect": "Largest valuation lever; today it is zero.",
+    "fix": "Referral-coded Nagpur cohort in Dec 2026; report n and D30 honestly",
+    "effort": "Dec 2026"
+   },
+   {
+    "rank": 3,
+    "gap": "Doctor channel unproven and ethically constrained",
+    "effect": "Per-referral payouts are off the table; need a clinic-pays or education model.",
+    "fix": "Test clinic SaaS willingness in Nagpur; get legal opinion",
+    "effort": "Oct–Dec 2026"
+   },
+   {
+    "rank": 4,
+    "gap": "Regulatory exposure (FSSAI, CDSCO, DPDP, telemedicine)",
+    "effect": "Can stall supplements/hardware plans and kill due diligence.",
+    "fix": "Start with software + education; add products only with licences and claim review",
+    "effort": "continuous"
+   },
+   {
+    "rank": 5,
+    "gap": "Solo founder, no team signal",
+    "effect": "Many institutions fund teams; Pvt Ltd also needs a second director.",
+    "fix": "Add a co-founder/advisor (clinical + growth) before raising",
+    "effort": "Q4 2026–Q1 2027"
+   },
+   {
+    "rank": 6,
+    "gap": "Product quality evidence is pending",
+    "effect": "Open P0/P1 bugs and companion quality scores directly affect retention.",
+    "fix": "Use tester data (live card above); close P0/P1 before the Dec pilot",
+    "effort": "Oct–Nov 2026"
+   },
+   {
+    "rank": 7,
+    "gap": "Hardware/supplement plans are capital-hungry",
+    "effect": "Inventory and working capital before proof.",
+    "fix": "Sequence: software + clinics → Premium → supplements → hardware",
+    "effort": "2027"
+   }
+  ]
+ },
+ "readiness_checks": [
+  {
+   "id": "rc1",
+   "label": "Legal entity exists (Pvt Ltd/LLP)",
+   "auto": "entity",
+   "note": "From manual_inputs.entity_status"
+  },
+  {
+   "id": "rc2",
+   "label": "DPIIT recognised",
+   "auto": "dpiit",
+   "note": "From manual_inputs.dpiit_recognised"
+  },
+  {
+   "id": "rc3",
+   "label": "Zero open P0 issues",
+   "auto": "p0zero",
+   "note": "From data/issues.json"
+  },
+  {
+   "id": "rc4",
+   "label": "≤2 open P1 issues",
+   "auto": "p1le2",
+   "note": "From data/issues.json"
+  },
+  {
+   "id": "rc5",
+   "label": "Product health score ≥ 75",
+   "auto": "health75",
+   "note": "From data/meta.json"
+  },
+  {
+   "id": "rc6",
+   "label": "AI companion tested (≥3 runs, safety ≥4 avg)",
+   "auto": "companion",
+   "note": "From data/companion.json"
+  },
+  {
+   "id": "rc7",
+   "label": "Day-30 retention measured for doctor-referred users (n ≥ 100)",
+   "auto": "d30",
+   "note": "From manual_inputs"
+  },
+  {
+   "id": "rc8",
+   "label": "≥3 clinics actively referring or paying",
+   "auto": "clinics",
+   "note": "From manual_inputs.paying_clinics"
+  },
+  {
+   "id": "rc9",
+   "label": "Any revenue received",
+   "auto": "revenue",
+   "note": "From manual_inputs.revenue_inr"
+  }
+ ],
+ "milestones": [
+  {
+   "date": "2026-10-05",
+   "title": "Decide: apply to STPI OCP 7.0 or skip",
+   "why": "Deadline 8 Oct 2026 (verified on funding page). Needs entity or incorporation within 3 months of selection; fit moderate.",
+   "funding_id": "stpi-ocp7",
+   "type": "funding"
+  },
+  {
+   "date": "2026-10-15",
+   "title": "Pick structure; start Pvt Ltd incorporation (co-director needed)",
+   "why": "Blocks every funding route.",
+   "type": "legal"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "Founders' agreement + IP assignment drafted",
+   "why": "Needed before DPIIT/angels.",
+   "type": "legal"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "YC W27 deadline (optional)",
+   "why": "Verified date; long shot (≈1–2% est.). Skip unless the US path is wanted.",
+   "funding_id": "yc",
+   "type": "funding"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Target: company incorporated; apply for DPIIT",
+   "why": "Unlocks scenario 2.",
+   "funding_id": "dpiit",
+   "type": "legal"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Pilot-ready: P0/P1 closed, referral codes + consent copy live, clinic one-pager",
+   "why": "The Dec test is only credible if the product is stable.",
+   "type": "product"
+  },
+  {
+   "date": "2026-12-01",
+   "title": "Nagpur doctor PMF month begins (cohort must start by 1 Dec for a Dec-31 D30 read)",
+   "why": "Measure D30 retention of doctor-referred users; log n.",
+   "type": "pmf"
+  },
+  {
+   "date": "2026-12-31",
+   "title": "D30 read for first-week cohort",
+   "why": "First real retention number.",
+   "type": "pmf"
+  },
+  {
+   "date": "2027-01-05",
+   "title": "PMF go / no-go gate",
+   "why": "Pass = D30 measured on n ≥ 100 with a retention level you can defend (threshold set by founder; ESTIMATE suggestion ≥20%) and ≥3 clinics active.",
+   "type": "pmf"
+  },
+  {
+   "date": "2027-01-10",
+   "title": "180-day India clinic tour starts (~Jan 2027; ends ~9 Jul 2027)",
+   "why": "Only if gate passed; budget ≈₹13 L.",
+   "type": "tour"
+  },
+  {
+   "date": "2027-02-01",
+   "title": "Angel / micro-VC outreach with PMF data",
+   "why": "Scenario 3 round ₹50 L–1.5 cr.",
+   "type": "funding"
+  },
+  {
+   "date": "2027-03-31",
+   "title": "Target first cheque closed",
+   "why": "Funds the tour's second half.",
+   "type": "funding"
+  },
+  {
+   "date": "2027-05-13",
+   "title": "DPDP Rules main obligations apply (≈18 months after 13 Nov 2025; verify)",
+   "why": "Consent/notice/deletion must be live.",
+   "type": "compliance"
+  }
+ ],
+ "recheck_rules": [
+  "Daily evening run: set reviewed_on, update manual_inputs, add a 'changes' entry if anything moved, re-verify any funding deadline <30 days out.",
+  "Sundays: re-check every comp and benchmark source (set checked_on / comps_last_checked / comps_next_due); log new rounds in comps."
+ ]
+}

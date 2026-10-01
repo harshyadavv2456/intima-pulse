@@ -108,3 +108,7 @@ Home page computes opened-vs-fixed from issues.json; funding deadlines from fund
     "url":"..","verified_on":"2026-10-01","verified":true,"notes":".."} ],
   "drafts":[ {"id":"d1","for_item":"f1","title":"..","blocks":[ {"label":"Problem","text":".."} ] } ] }
 ```
+
+## data/outlook.json  (site owner)
+Keys: `updated`, `reviewed_on`, `reviewed_by`, `comps_last_checked`, `comps_next_due`, `disclaimer`, `manual_inputs` (entity_status, dpiit_recognised, revenue_inr, paying_clinics, d30_retention_doctor_referred_pct, doctor_referred_users_tracked), `headline`, `changes[{date,by,change}]`, `valuation{scenarios,benchmarks,comps[{id,name,stage,date,amount,valuation,source_url,confidence,source_opened,checked_on}],comp_takeaways}`, `funding_routes{routes[{route,amount,odds,difficulty,timeline,funding_ids[]}]}` (funding_ids reference funding.json item ids), `business{calc_inputs[{k,label,v,min,max,step,unit,note}],models,channel,compliance,privacy_honesty,pvt_ltd_checklist,verdict}`, `investor_summary`, `readiness_checks`, `milestones[{date,title,why,type,funding_id?}]`, `recheck_rules`.
+Live numbers (health score, open P0/P1, D30 gaps, deadlines, social coverage, tester evidence) are NOT stored here; outlook.html reads them from the other files.

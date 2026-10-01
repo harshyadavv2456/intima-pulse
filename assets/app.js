@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-var PAGES=[['index','Home'],['issues','Issues'],['features','Features'],['journal','Journal'],['companion','AI Companion'],['social','Social'],['funding','Funding'],['performance','Performance'],['changelog','Changelog'],['accounts','Accounts']];
+var PAGES=[['index','Home'],['issues','Issues'],['features','Features'],['journal','Journal'],['companion','AI Companion'],['social','Social'],['funding','Funding'],['outlook','Outlook'],['performance','Performance'],['changelog','Changelog'],['accounts','Accounts']];
 var page=document.body.dataset.page, app=document.getElementById('app');
 var TODAY=new Date(new Date().getTime()+ (330+new Date().getTimezoneOffset())*60000).toISOString().slice(0,10);
 // ---------- helpers
@@ -197,6 +197,128 @@ R.funding=function(){
         return '<tr><td data-v="'+(i.rank_score||0)+'"><b>'+(i.rank_score!=null?(+i.rank_score).toFixed(1):'–')+'</b></td><td><b>'+link(i.url,i.name)+'</b>'+(i.notes?'<div class="sub">'+esc(i.notes)+'</div>':'')+'</td><td>'+chip(i.category,'P3')+'</td><td>'+esc(i.gives)+'</td><td><div>'+esc(i.eligibility)+'</div><div class="sub"><b>Needs:</b> '+esc(i.intima_needs)+'</div></td><td data-v="'+(dd?i.deadline:'9999')+'">'+esc(i.deadline||'—')+(n!=null&&n>=0?'<br>'+chip(n+'d',n<=30?'bad':'OK'):'')+'<br>'+chip(i.deadline_status||'?',i.deadline_status==='verified'?'good':i.deadline_status==='closed'?'bad':'OK')+'</td><td data-v="'+i.effort+'">'+esc(i.effort)+'/5</td><td data-v="'+i.fit+'">'+esc(i.fit)+'/5</td><td>'+(i.verified?chip('verified','good'):chip('UNVERIFIED','bad'))+'<div class="sub">'+esc(i.verified_on||'')+'</div></td></tr>'}).join('')+'</tbody></table></div>';
       var t2=document.getElementById('ft');if(t2)sortable(t2)}
     var elf=document.getElementById('flt');['fc','df','dt','fv'].forEach(function(id){document.getElementById(id).onchange=draw});draw()})};
+
+// ---------- Outlook (valuation / funding / business reference)
+function lakh(n){return n>=100?'₹'+(n/100).toFixed(n%100?2:0).replace(/\.?0+$/,'')+' cr':'₹'+n+' L'}
+function crs(n){return '₹'+n+' cr'}
+function lbl(t){if(!t)return '';var u=String(t).toUpperCase(),c=/^SOURCED|^SOURCED/.test(u)||/^SOURCED/.test(u)?'good':/UNVERIFIED|THIRD-PARTY|FOUNDER-STATED|HYPOTHESIS/.test(u)?'bad':'OK';return '<span class="chip '+c+'">'+esc(t)+'</span>'}
+function conf(t){var u=String(t||'').toLowerCase();return '<span class="chip '+(u==='sourced'?'good':u.indexOf('third')===0?'bad':'OK')+'">'+esc(t||'?')+'</span>'}
+function diff(n){var c=n>=5?'bad':n>=4?'P1':n>=3?'OK':'good';return '<span class="chip '+c+'">Difficulty '+n+'/5</span>'}
+function dil(r,pre0,pre1){return (r/(pre1*100+r)*100).toFixed(1)}
+function secs(l){return '<div class="jump">'+l.map(function(x){return '<a href="#'+x[0]+'">'+x[1]+'</a>'}).join('')+'</div>'}
+function simulate(v,months){
+  var g=1+v.gst/100,pg=v.pg/100,cohorts=[],P=0,cum=0,rows=[],trough=0,be=null,beCum=null;
+  for(var t=1;t<=months;t++){
+    var ret=v.M*v.r/100,A=0;cohorts.push(ret);
+    for(var k=0;k<cohorts.length;k++)A+=cohorts[k]*Math.pow(1-v.d/100,t-1-k);
+    var newP=ret*v.p/100;P=P*(1-v.churn/100)+newP;
+    var prem=P*v.price/g*(1-pg),hw=newP*v.hwa/100*v.hwp/g*v.hwm/100,sup=A*v.sa/100*v.saov/g*v.sm/100,
+        tele=P*v.tr/100*v.tf/g*v.tt/100,cl=v.cl*v.clfee/g;
+    var rev=prem+hw+sup+tele+cl,cost=v.M*v.cac+A*v.ai+v.burn+(t<=6?v.tour*1e5/6:0),net=rev-cost;cum+=net;
+    if(cum<trough)trough=cum;if(be==null&&net>=0)be=t;
+    rows.push({t:t,A:A,P:P,prem:prem,hw:hw,sup:sup,tele:tele,cl:cl,rev:rev,cost:cost,net:net,cum:cum})}
+  return {rows:rows,trough:trough,be:be,cum:cum}}
+function inr(n){var a=Math.abs(n),s=a>=1e7?(a/1e7).toFixed(2)+' cr':a>=1e5?(a/1e5).toFixed(1)+' L':a>=1e3?(a/1e3).toFixed(1)+' K':Math.round(a)+'';return (n<0?'−':'')+'₹'+s}
+function cashChart(rows){
+  var W=600,H=170,P={l:48,r:10,t:10,b:22},vals=rows.map(function(r){return r.cum}),mn=Math.min(0,Math.min.apply(null,vals)),mx=Math.max(0,Math.max.apply(null,vals));if(mx===mn)mx=mn+1;
+  function X(i){return P.l+i/(rows.length-1)*(W-P.l-P.r)}function Y(v){return H-P.b-(v-mn)/(mx-mn)*(H-P.t-P.b)}
+  var g='<line x1="'+P.l+'" x2="'+(W-P.r)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="currentColor" opacity=".35"/>';
+  [mn,mx].forEach(function(v){g+='<text x="'+(P.l-4)+'" y="'+(Y(v)+4)+'" font-size="10" text-anchor="end" fill="currentColor" opacity=".7">'+inr(v)+'</text>'});
+  g+='<polyline fill="none" stroke="#b0356b" stroke-width="2.4" points="'+rows.map(function(r,i){return X(i)+','+Y(r.cum)}).join(' ')+'"/>';
+  rows.forEach(function(r,i){g+='<circle cx="'+X(i)+'" cy="'+Y(r.cum)+'" r="3" fill="#b0356b"><title>'+esc('Month '+r.t+': '+inr(r.cum))+'</title></circle>';if(i%2===0||i===rows.length-1)g+='<text x="'+X(i)+'" y="'+(H-6)+'" font-size="10" text-anchor="middle" fill="currentColor" opacity=".6">M'+r.t+'</text>'});
+  return '<svg class="ch" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Cumulative cash by month">'+g+'</svg>'}
+R.outlook=function(){
+  return Promise.all(['outlook','meta','issues','features','journal','companion','funding','social'].map(load)).then(function(d){
+    var O=d[0],meta=d[1],iss=arr(d[2].issues),ft=d[3],jr=arr(d[4].entries),cp=arr(d[5].runs),fu=d[6],so=d[7];
+    if(!O||!O.valuation){app.innerHTML=head('Outlook','Valuation, funding and viability reference')+empty('outlook.json missing or empty.');return}
+    var mi=O.manual_inputs||{},V=O.valuation,F=O.funding_routes,B=O.business,I=O.investor_summary;
+    var hist=arr(meta.health_score_history).slice().sort(function(a,b){return a.date<b.date?-1:1});
+    var score=meta.health_score!=null?meta.health_score:(hist.length?hist[hist.length-1].score:null);
+    var open=iss.filter(function(i){return i.status!=='fixed'}),p0=open.filter(function(i){return i.severity==='P0'}).length,p1=open.filter(function(i){return i.severity==='P1'}).length;
+    var gaps=arr(ft.gaps),d30=gaps.filter(function(g){return g.retention_effect&&String(g.retention_effect).trim()}),d30H=d30.filter(function(g){return g.impact==='H'});
+    var fitems=arr(fu.items),upc=fitems.filter(function(i){return /^\d{4}-\d{2}-\d{2}$/.test(i.deadline||'')&&i.deadline>=TODAY}).sort(function(a,b){return a.deadline<b.deadline?-1:1}),
+        near=upc.slice(0,3);
+    var stale=daysTo(O.reviewed_on||'2000-01-01')<-1,compsDue=O.comps_next_due&&daysTo(O.comps_next_due)<0;
+    var feats=arr(ft.features),great=feats.filter(function(f){return f.status==='great'||f.status==='OK'}).length,broken=feats.filter(function(f){return f.status==='broken'||f.status==='missing'}).length;
+    var jw=jr.filter(function(j){return j.result==='works'}).length;
+    var avg=null,saf=null;if(cp.length){var sum=0,n=0,ss=0,sn=0;cp.forEach(function(r){var sc=r.scores||{};Object.keys(sc).forEach(function(k){if(typeof sc[k]==='number'){sum+=sc[k];n++;if(k==='safety'){ss+=sc[k];sn++}}})});avg=n?sum/n:null;saf=sn?ss/sn:null}
+    var cl=arr(so.clusters),cw=cl.filter(function(c){return c.coverage==='Covered well'}),cpar=cl.filter(function(c){return c.coverage==='Partly'}),cnc=cl.filter(function(c){return c.coverage==='Not covered'});
+    // readiness
+    var chk={entity:/pvt|llp|private|limited/i.test(mi.entity_status||'')&&!/propriet/i.test(mi.entity_status||''),dpiit:!!mi.dpiit_recognised,
+      p0zero:iss.length?p0===0:null,p1le2:iss.length?p1<=2:null,health75:score!=null?score>=75:null,companion:cp.length>=3&&saf!=null?saf>=4:(cp.length?false:null),
+      d30:mi.d30_retention_doctor_referred_pct!=null&&(mi.doctor_referred_users_tracked||0)>=100,clinics:(mi.paying_clinics||0)>=3,revenue:(mi.revenue_inr||0)>0};
+    var ok=0,known=0;arr(O.readiness_checks).forEach(function(r){var v=chk[r.auto];if(v!=null){known++;if(v)ok++}});
+    function mark(v){return v==null?'<span class="chip OK">pending data</span>':v?'<span class="chip good">✓ yes</span>':'<span class="chip bad">✗ not yet</span>'}
+    var out='<h1>Outlook</h1><div class="sub">Valuation, funding &amp; viability reference for Harsh · estimates, not advice · '+(O.updated?'Updated '+ago(O.updated):'')+'</div>';
+    out+='<div class="card warn"><b>Last reviewed: '+esc(O.reviewed_on||'never')+'</b> '+(stale?'<span class="chip bad">stale — daily run missed</span>':'<span class="chip good">fresh</span>')+' · comps last checked '+esc(O.comps_last_checked||'never')+' · next weekly re-check due <b>'+esc(O.comps_next_due||'?')+'</b> '+(compsDue?'<span class="chip bad">overdue</span>':'')+'<div class="sub" style="margin:4px 0 0">'+esc(O.disclaimer||'')+'</div></div>';
+    out+=secs([['live','Live numbers'],['val','Valuation'],['fund','Funding'],['biz','Business'],['calc','Calculator'],['risk','Compliance'],['pvt','Pvt Ltd'],['inv','Investor view'],['ms','Milestones'],['log','What changed']]);
+    // headline
+    out+='<h2 id="verdict">Bottom line</h2><div class="grid">'+arr(O.headline&&O.headline.valuation_lines).map(function(x){return '<div class="card"><h3>'+esc(x.scenario)+'</h3><p style="margin:4px 0">'+esc(x.text)+'</p>'+lbl(x.label)+'</div>'}).join('')+'</div><div class="card"><b>Verdict.</b> '+esc(O.headline&&O.headline.verdict)+'</div>';
+    // live
+    out+='<h2 id="live">📡 Live numbers (computed from other data files)</h2><div class="grid">'+
+     '<div class="card"><h3>Product health score</h3>'+(score!=null?'<div class="big">'+esc(score)+'<span style="font-size:18px;color:var(--mut)">/100</span></div>':'<div class="empty">pending — no test run yet</div>')+'<div class="sub">from meta.json</div></div>'+
+     '<div class="card"><h3>Open P0 / P1</h3>'+(iss.length?'<div class="big">'+(p0+p1)+'</div><div class="sub">'+p0+' P0 · '+p1+' P1 open (of '+iss.length+' logged)</div>':'<div class="empty">pending — issues.json empty</div>')+'<a href="issues.html">Issues →</a></div>'+
+     '<div class="card"><h3>Day-30 retention gaps</h3>'+(gaps.length?'<div class="big">'+d30.length+'</div><div class="sub">'+d30H.length+' high-impact gaps with a stated retention effect (features.json)</div>'+(d30H.slice(0,3).map(function(g){return '<div class="sub">• '+esc(g.title||g.change)+'</div>'}).join('')):'<div class="empty">pending — features.json gaps empty</div>')+'<a href="features.html">Features →</a></div>'+
+     '<div class="card"><h3>Measured D30 (doctor-referred)</h3>'+(mi.d30_retention_doctor_referred_pct!=null?'<div class="big">'+esc(mi.d30_retention_doctor_referred_pct)+'%</div><div class="sub">n = '+esc(mi.doctor_referred_users_tracked||'?')+' (manual input)</div>':'<div class="big" style="font-size:30px">not measured</div><div class="sub">No cohort yet. The Dec-2026 Nagpur month produces the first number.</div>')+'</div>'+
+     '<div class="card"><h3>Next funding deadlines</h3>'+(near.length?near.map(function(i){var n=daysTo(i.deadline);return '<div><b>'+esc(i.deadline)+'</b> '+chip(n+'d',n<=14?'bad':'OK')+' '+chip(i.deadline_status||'?',i.deadline_status==='verified'?'good':'OK')+'<br>'+link(i.url,i.name)+'</div>'}).join(''):'<div class="empty">none dated</div>')+'<a href="funding.html">Funding →</a></div>'+
+     '<div class="card"><h3>Investability checklist</h3><div class="big">'+ok+'<span style="font-size:18px;color:var(--mut)">/'+arr(O.readiness_checks).length+'</span></div><div class="sub">'+known+' checks have data; the rest are pending</div></div></div>';
+    out+='<div class="card"><h3>Readiness checks</h3><table><tbody>'+arr(O.readiness_checks).map(function(r){return '<tr><td>'+esc(r.label)+'<div class="sub">'+esc(r.note||'')+'</div></td><td>'+mark(chk[r.auto])+'</td></tr>'}).join('')+'</tbody></table></div>';
+    // valuation
+    out+='<h2 id="val">1 · Honest valuation range</h2><div class="sub">'+esc(V.intro)+'</div><div class="grid">'+arr(V.scenarios).map(function(s){
+      var dl=s.priced_round_possible?dil(s.raise_min_lakh,s.pre_min_cr,s.pre_max_cr).replace(/^/,'')+'':'';
+      var dmin=s.priced_round_possible?(s.raise_min_lakh/(s.pre_max_cr*100+s.raise_min_lakh)*100).toFixed(1):null,dmax=s.priced_round_possible?(s.raise_max_lakh/(s.pre_min_cr*100+s.raise_max_lakh)*100).toFixed(1):(s.raise_max_lakh/(s.pre_min_cr*100+s.raise_max_lakh)*100).toFixed(1);
+      return '<div class="card sc"><h3>'+esc(s.name)+'</h3><div class="sub">'+esc(s.when)+'</div>'+
+      '<div class="kv"><span>Pre-money</span><b>'+crs(s.pre_min_cr)+' – '+crs(s.pre_max_cr)+'</b></div><div class="kv"><span>Realistic funding</span><b>'+lakh(s.raise_min_lakh)+' – '+lakh(s.raise_max_lakh)+'</b></div>'+
+      '<div class="kv"><span>Dilution</span><b>'+(s.priced_round_possible?dmin+'% – '+dmax+'%':'none possible (no shares)')+'</b></div><div style="margin:6px 0">'+diff(s.difficulty)+' '+lbl(s.label)+'</div>'+
+      '<p style="margin:6px 0">'+esc(s.reality)+'</p><div class="sub">'+esc(s.dilution_note)+'</div><b>Unlocks:</b><ul>'+arr(s.unlocks).map(function(u){return '<li>'+esc(u)+'</li>'}).join('')+'</ul><div class="sub">Next gate: <b>'+esc(s.next_gate)+'</b></div></div>'}).join('')+'</div>';
+    out+='<div class="card"><h3>Sourced benchmarks</h3><div class="tw"><table><thead><tr><th>What</th><th>Value</th><th>Source</th><th>Confidence</th></tr></thead><tbody>'+arr(V.benchmarks).map(function(b){return '<tr><td>'+esc(b.label)+'</td><td>'+esc(b.value)+'</td><td>'+link(b.url,b.source_name)+'<div class="sub">checked '+esc(b.checked_on)+'</div></td><td>'+conf(b.confidence)+'</td></tr>'}).join('')+'</tbody></table></div></div>';
+    out+='<h3 style="margin-top:14px">Comparable rounds</h3><div class="sub">Round sizes are from the linked reports (date = report date). Valuations are mostly undisclosed — marked as such, never guessed.</div><div class="tw"><table><thead><tr><th>Company</th><th>Round / date</th><th>Amount</th><th>Valuation</th><th>Relevance to Intima</th><th>Source</th></tr></thead><tbody>'+arr(V.comps).map(function(c){return '<tr><td><b>'+esc(c.name)+'</b><div class="sub">'+esc(c.segment)+'</div></td><td>'+esc(c.stage)+'<div class="sub">'+esc(c.date)+'</div></td><td>'+esc(c.amount)+'</td><td>'+esc(c.valuation)+'</td><td>'+esc(c.relevance)+'<div class="sub">'+esc(c.note||'')+'</div></td><td>'+link(c.source_url,c.source_name)+'<br>'+conf(c.confidence)+(c.source_opened?'':' <span class="chip OK">snippet only</span>')+'<div class="sub">checked '+esc(c.checked_on)+'</div></td></tr>'}).join('')+'</tbody></table></div>';
+    out+='<div class="card"><h3>What the comps really say</h3><ul>'+arr(V.comp_takeaways).map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul></div>';
+    // funding
+    out+='<h2 id="fund">2 · Funding expectation by route</h2><div class="card"><b>Expectation:</b> '+esc(F.expectation)+' '+lbl('ESTIMATE')+'<div class="sub">'+esc(F.intro)+'</div></div><div class="tw"><table><thead><tr><th>Route</th><th>Amount</th><th>Odds</th><th>Difficulty</th><th>Timeline</th><th>Funding pipeline</th></tr></thead><tbody>'+arr(F.routes).map(function(r){
+      return '<tr><td><b>'+esc(r.route)+'</b><div class="sub">'+esc(r.examples)+'</div><div class="sub"><b>Needs:</b> '+esc(r.needs)+'</div><div class="sub"><i>'+esc(r.honest)+'</i></div></td><td>'+esc(r.amount)+'</td><td>'+esc(r.odds)+'<br>'+lbl(r.label)+'</td><td data-v="'+r.difficulty+'">'+diff(r.difficulty)+'</td><td>'+esc(r.timeline)+'</td><td>'+(arr(r.funding_ids).map(function(id){var it=fitems.filter(function(x){return x.id===id})[0];return it?'<div>'+link(it.url,it.name)+' '+(it.deadline_status==='verified'?'<span class="chip good">'+esc(it.deadline)+'</span>':it.deadline_status==='closed'?'<span class="chip bad">closed</span>':'')+'</div>':''}).join('')||'—')+'</td></tr>'}).join('')+'</tbody></table></div><div class="sub">Full list, deadlines and verification status: <a href="funding.html">Funding pipeline</a>.</div>';
+    // business
+    out+='<h2 id="biz">3 · Is it a viable business?</h2><div class="sub">'+esc(B.intro)+'</div><div class="grid">'+arr(B.models).map(function(m){return '<div class="card"><h3>'+esc(m.name)+'</h3><p style="margin:4px 0"><b>Take:</b> '+esc(m.verdict)+'</p><table><tbody>'+arr(m.lines).map(function(l){return '<tr><td>'+esc(l.item)+'</td><td>'+esc(l.value)+'<div>'+lbl(l.label)+'</div></td></tr>'}).join('')+'</tbody></table></div>'}).join('')+'</div>';
+    var ch=B.channel||{};out+='<div class="card"><h3>'+esc(ch.title)+'</h3>'+arr(ch.points).map(function(p){return '<div style="margin:6px 0"><b>'+esc(p.k)+'.</b> '+esc(p.text)+' '+lbl(p.label)+'</div>'}).join('')+'<h3 style="margin-top:10px">180-day clinic tour budget</h3><table><tbody>'+arr(ch.tour_budget).map(function(t){return '<tr><td>'+esc(t.item)+'</td><td>₹'+t.lakh+' L</td></tr>'}).join('')+'</tbody></table><div class="sub">'+esc(ch.tour_total_note)+'</div></div>';
+    // calculator
+    out+='<h2 id="calc">🧮 Break-even &amp; cohort calculator</h2><div class="card"><div class="sub">All sliders are editable ESTIMATES (no real cohort data yet). 12-month view, tour in months 1–6. Nothing is saved or sent. <button class="sm" id="cres">Reset defaults</button></div><div class="calc" id="cin"></div></div><div id="cout"></div><div class="card"><b>Verdict.</b> '+esc(B.verdict&&B.verdict.text)+' '+lbl(B.verdict&&B.verdict.label)+'</div>';
+    // compliance
+    out+='<h2 id="risk">⚖️ Regulatory &amp; compliance risks</h2><div class="sub">Summaries come from web-search syntheses, not legal advice; every row is unverified until a lawyer/regulator page is read. Check the linked official page.</div><div class="grid">'+arr(B.compliance).map(function(c){return '<div class="card"><h3>'+esc(c.area)+' '+chip(c.risk,/High/.test(c.risk)&&!/Medium/.test(c.risk)?'bad':'OK')+'</h3><p style="margin:4px 0">'+esc(c.detail)+'</p><div class="sub"><b>Action:</b> '+esc(c.action)+'</div>'+(c.url?link(c.url,'Official page')+' ':'')+'<span class="chip bad">UNVERIFIED</span></div>'}).join('')+'</div>';
+    var pv=B.privacy_honesty||{};out+='<div class="card"><h3>🔐 '+esc(pv.title)+'</h3><b>True today:</b><ul>'+arr(pv.true_statements).map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul><b>Never say:</b><ul>'+arr(pv.never_say).map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul><div class="sub">'+esc(pv.why_it_matters)+'</div></div>';
+    out+='<h2 id="pvt">🏢 Proprietorship → Pvt Ltd checklist</h2><div class="card">'+arr(B.pvt_ltd_checklist).map(function(p,i){return '<details'+(i<2?' open':'')+'><summary><b>'+(i+1)+'. '+esc(p.step)+'</b> <span class="sub">'+esc(p.time)+' · '+esc(p.cost)+'</span></summary><p style="margin:4px 0 8px">'+esc(p.detail)+' '+lbl(p.label)+'</p></details>'}).join('')+'<div class="sub">Checked state is not stored; track completion in manual_inputs (entity_status, dpiit_recognised).</div></div>';
+    // investor
+    out+='<h2 id="inv">🤝 What Intima brings to the table</h2><div class="sub">'+esc(I.intro)+'</div><div class="grid"><div class="card"><h3>Strengths — tester evidence (live)</h3>'+((feats.length||jr.length||cp.length)?
+      '<ul>'+(feats.length?'<li>Features rated great/OK: <b>'+great+'</b> of '+feats.length+'; broken/missing: <b>'+broken+'</b></li>':'<li>features.json: <i>pending</i></li>')+(jr.length?'<li>Journal: <b>'+jw+'</b> of '+jr.length+' checks worked</li>':'<li>journal.json: <i>pending</i></li>')+(cp.length?'<li>AI companion: avg score <b>'+(avg==null?'?':avg.toFixed(1))+'/5</b>'+(saf!=null?', safety '+saf.toFixed(1):'')+' over '+cp.length+' runs</li>':'<li>companion.json: <i>pending</i></li>')+(iss.length?'<li>Issues: '+(iss.length-open.length)+' fixed, '+open.length+' open</li>':'<li>issues.json: <i>pending</i></li>')+'</ul>':'<div class="empty">Pending — tester files (issues, features, journal, companion) are still empty. No tester-evidenced strength can be claimed yet.</div>')+'</div>'+
+      '<div class="card"><h3>Founder-stated strengths</h3><ul>'+arr(I.founder_stated_strengths).map(function(x){return '<li>'+esc(x.text)+' '+lbl(x.label)+'</li>'}).join('')+'</ul></div>'+
+      '<div class="card"><h3>Social pain-point coverage (live)</h3>'+(cl.length?'<div class="kv"><span>Covered well</span><b>'+cw.length+'</b></div><div class="kv"><span>Partly</span><b>'+cpar.length+'</b></div><div class="kv"><span>Not covered</span><b>'+cnc.length+'</b></div><div class="bar"><i style="width:'+(cw.length/cl.length*100)+'%;background:var(--ok)"></i><i style="width:'+(cpar.length/cl.length*100)+'%;background:var(--warn)"></i><i style="width:'+(cnc.length/cl.length*100)+'%;background:var(--bad)"></i></div><div class="sub">'+cl.length+' clusters from public posts (social.json). Volume not measured yet.</div>'+(cnc.length?'<div class="sub"><b>Gaps:</b> '+cnc.map(function(c){return esc(c.title)}).join('; ')+'</div>':'')+'<a href="social.html">Social radar →</a>':'<div class="empty">pending</div>')+'</div></div>';
+    out+='<h3 style="margin-top:12px">Gaps that most affect investability</h3><div class="tw"><table><thead><tr><th>#</th><th>Gap</th><th>Effect</th><th>Fix</th><th>When</th></tr></thead><tbody>'+arr(I.gaps).map(function(g){return '<tr><td>'+g.rank+'</td><td><b>'+esc(g.gap)+'</b></td><td>'+esc(g.effect)+'</td><td>'+esc(g.fix)+'</td><td>'+esc(g.effort)+'</td></tr>'}).join('')+'</tbody></table></div>';
+    // milestones
+    var ms=arr(O.milestones).slice().sort(function(a,b){return a.date<b.date?-1:1});
+    out+='<h2 id="ms">🗓️ Top milestones — next 6 months</h2><div class="card">'+ms.map(function(m){var n=daysTo(m.date);return '<div class="ms'+(n<0?' past':'')+'"><div class="d"><b>'+esc(m.date)+'</b><div>'+chip(n<0?Math.abs(n)+'d ago':n+'d',n<0?'P3':n<=14?'bad':'OK')+'</div></div><div><b>'+esc(m.title)+'</b> '+chip(m.type,'P3')+'<div class="sub">'+esc(m.why)+(m.funding_id?' · <a href="funding.html">pipeline</a>':'')+'</div></div></div>'}).join('')+'</div>';
+    // log
+    out+='<h2 id="log">📝 What changed</h2><div class="card">'+arr(O.changes).slice().sort(function(a,b){return a.date<b.date?1:-1}).map(function(c){return '<div style="margin:6px 0"><b>'+esc(c.date)+'</b> <span class="sub">'+esc(c.by||'')+'</span><div>'+esc(c.change)+'</div></div>'}).join('')+'<div class="sub">Refresh rules: '+arr(O.recheck_rules).map(esc).join(' · ')+'</div></div>';
+    app.innerHTML=out;
+    // calculator wiring
+    var defs={},cur={};arr(B.calc_inputs).forEach(function(x){defs[x.k]=x.v});
+    function resetV(){for(var k in defs)cur[k]=defs[k]}resetV();
+    var ci=document.getElementById('cin');
+    ci.innerHTML=arr(B.calc_inputs).map(function(x){return '<label class="sl"><span>'+esc(x.label)+' <b id="v_'+x.k+'"></b></span><input type="range" id="s_'+x.k+'" min="'+x.min+'" max="'+x.max+'" step="'+x.step+'" value="'+x.v+'" aria-label="'+esc(x.label)+'"><small>'+esc(x.note||'')+'</small></label>'}).join('');
+    function fmtv(x,v){return x.unit==='₹'?'₹'+(+v).toLocaleString('en-IN'):x.unit==='%'?v+'%':x.unit==='₹ L'?'₹'+v+' L':v+' '+x.unit}
+    function calc(){
+      arr(B.calc_inputs).forEach(function(x){cur[x.k]=+document.getElementById('s_'+x.k).value;document.getElementById('v_'+x.k).textContent=fmtv(x,cur[x.k])});
+      var s=simulate(cur,12),r=s.rows,last=r[11],g=1+cur.gst/100;
+      var retained=cur.M*cur.r/100,ltvMonthly=(cur.p/100*cur.price/g*(1-cur.pg/100)+cur.sa/100*cur.saov/g*cur.sm/100)/1;
+      var perRef=cur.r/100*(cur.p/100*cur.price/g/(cur.churn/100||1)+cur.sa/100*cur.saov/g*cur.sm/100/((cur.d/100)||1))*1; // lifetime contribution per referred user (rough)
+      document.getElementById('cout').innerHTML='<div class="grid">'+
+       '<div class="card"><h3>Month-12 run-rate</h3><div class="kv"><span>Active retained base</span><b>'+Math.round(last.A)+'</b></div><div class="kv"><span>Premium subscribers</span><b>'+Math.round(last.P)+'</b></div><div class="kv"><span>Revenue / month</span><b>'+inr(last.rev)+'</b></div><div class="kv"><span>Costs / month</span><b>'+inr(last.cost)+'</b></div><div class="kv"><span>Net / month</span><b style="color:var(--'+(last.net>=0?'ok':'bad')+')">'+inr(last.net)+'</b></div></div>'+
+       '<div class="card"><h3>Break-even &amp; funding need</h3><div class="kv"><span>First month net ≥ 0</span><b>'+(s.be?'Month '+s.be:'not within 12 months')+'</b></div><div class="kv"><span>Peak cash needed (12 mo)</span><b>'+inr(-s.trough)+'</b></div><div class="kv"><span>Cumulative after 12 mo</span><b>'+inr(s.cum)+'</b></div><div class="kv"><span>Revenue mix M12</span><b>'+(last.rev>0?Math.round(last.sup/last.rev*100)+'% suppl · '+Math.round(last.prem/last.rev*100)+'% prem · '+Math.round((last.hw+last.tele+last.cl)/last.rev*100)+'% other':'—')+'</b></div></div>'+
+       '<div class="card"><h3>Per referred user (rough, ESTIMATE)</h3><div class="kv"><span>CAC</span><b>₹'+cur.cac+'</b></div><div class="kv"><span>Lifetime contribution</span><b>'+inr(perRef)+'</b></div><div class="kv"><span>LTV : CAC</span><b>'+(cur.cac?(perRef/cur.cac).toFixed(1)+'x':'∞')+'</b></div><div class="sub">Lifetime = retained share × (Premium margin ÷ churn + supplement margin ÷ decay). Rough, ignores hardware/clinic fees.</div></div></div>'+
+       '<div class="card"><h3>Cumulative cash (₹)</h3>'+cashChart(r)+'</div>'+
+       '<div class="card"><h3>Cohort table</h3><div class="tw"><table><thead><tr><th>Mo</th><th>Active</th><th>Prem</th><th>Premium</th><th>Hardware</th><th>Suppl.</th><th>Tele</th><th>Clinics</th><th>Costs</th><th>Net</th><th>Cum.</th></tr></thead><tbody>'+r.map(function(x){return '<tr><td>'+x.t+'</td><td>'+Math.round(x.A)+'</td><td>'+Math.round(x.P)+'</td><td>'+inr(x.prem)+'</td><td>'+inr(x.hw)+'</td><td>'+inr(x.sup)+'</td><td>'+inr(x.tele)+'</td><td>'+inr(x.cl)+'</td><td>'+inr(x.cost)+'</td><td>'+inr(x.net)+'</td><td>'+inr(x.cum)+'</td></tr>'}).join('')+'</tbody></table></div></div>'}
+    ci.addEventListener('input',calc);
+    document.getElementById('cres').onclick=function(){arr(B.calc_inputs).forEach(function(x){document.getElementById('s_'+x.k).value=x.v});calc()};
+    calc();
+  })};
 R.performance=function(){
   return load('performance').then(function(d){var all=arr(d.samples);
     app.innerHTML=head('Performance','Page load time per page per device',d)+dateBar('<label>Device<select id="fd">'+opts(['mobile','desktop'])+'</select></label><label>Page<select id="fp">'+opts(uniq(all.map(function(s){return s.page})))+'</select></label><label>Metric<select id="fm"><option value="load_ms">Load (ms)</option><option value="lcp_ms">LCP (ms)</option></select></label>')+'<div id="out"></div>';

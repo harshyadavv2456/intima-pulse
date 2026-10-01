@@ -1,7 +1,7 @@
 // Generates the static page shells (each with noindex). Run: node scripts/build.js
 const fs=require('fs'),path=require('path');
 const root=path.join(__dirname,'..');
-const pages=[['index','Home'],['issues','Issues'],['features','Features'],['journal','Journal'],['companion','AI Companion'],['social','Social radar'],['funding','Funding'],['performance','Performance'],['changelog','Changelog'],['accounts','Test accounts']];
+const pages=[['index','Home'],['issues','Issues'],['features','Features'],['journal','Journal'],['companion','AI Companion'],['social','Social radar'],['funding','Funding'],['outlook','Outlook'],['performance','Performance'],['changelog','Changelog'],['accounts','Test accounts']];
 for(const [slug,title] of pages){
 const html=`<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
