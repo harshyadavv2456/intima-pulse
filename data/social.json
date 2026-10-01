@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T10:45:00+05:30",
+ "updated": "2026-10-01T19:09:10+05:30",
  "history_note": "Day-1 baseline pass (1 Oct 2026). Trend is 'insufficient history' for every cluster - volume snapshots start today and trends will only be set after >=2 comparable snapshots. Reddit threads could not be opened directly (blocked/timeouts), so 'quotes' are verbatim post titles surfaced by search with their URLs; post dates were not exposed and are left blank. X and YouTube comments were not accessible this pass (login walls) - coverage gap. No usernames recorded.",
  "clusters": [
   {

@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-01T11:30:00+05:30",
+ "updated": "2026-10-01T19:09:10+05:30",
  "reviewed_on": "2026-10-01",
- "reviewed_by": "initial build (daily evening run keeps this current)",
+ "reviewed_by": "Intima Pulse evening",
  "comps_last_checked": "2026-10-01",
  "comps_next_due": "2026-10-04",
  "fx_note": "Working rate ~₹88 per US$ (Entrackr priced Allo's ₹16 cr as $1.83M, Mar 2025). Estimate; INR figures converted from USD are approximate.",
@@ -41,6 +41,11 @@
    "date": "2026-10-01",
    "by": "initial build",
    "change": "Outlook page created: valuation scenarios, 12 comps with sources, funding routes, unit-economics calculator, compliance, readiness checks, milestones. Tester files (issues/features/journal/companion) are still empty, so tester-evidence sections show 'pending'. Comps checked today; next re-check due Sun 2026-10-04."
+  },
+  {
+   "date": "2026-10-01",
+   "by": "Intima Pulse evening",
+   "change": "reviewed, no change"
   }
  ],
  "valuation": {
@@ -51,7 +56,7 @@
     "name": "1 · Today — proprietorship",
     "when": "Now (Oct 2026)",
     "pre_min_cr": 1.5,
-    "pre_max_cr": 3.0,
+    "pre_max_cr": 3,
     "raise_min_lakh": 0,
     "raise_max_lakh": 10,
     "difficulty": 4,
@@ -70,8 +75,8 @@
     "id": "s2",
     "name": "2 · After incorporation + DPIIT",
     "when": "Target Nov–Dec 2026",
-    "pre_min_cr": 2.0,
-    "pre_max_cr": 4.0,
+    "pre_min_cr": 2,
+    "pre_max_cr": 4,
     "raise_min_lakh": 15,
     "raise_max_lakh": 40,
     "difficulty": 3,
@@ -91,8 +96,8 @@
     "id": "s3",
     "name": "3 · After Dec-2026 Nagpur PMF",
     "when": "Decision ~5 Jan 2027; raise Feb–Mar 2027",
-    "pre_min_cr": 6.0,
-    "pre_max_cr": 12.0,
+    "pre_min_cr": 6,
+    "pre_max_cr": 12,
     "raise_min_lakh": 50,
     "raise_max_lakh": 150,
     "difficulty": 3,
