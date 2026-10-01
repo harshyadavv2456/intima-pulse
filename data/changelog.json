@@ -1,1 +1,13 @@
-{"updated":null,"entries":[]}
+{
+ "entries": [
+  {
+   "date": "2026-10-01",
+   "change": "baseline",
+   "detected_by": "tester baseline.js snapshot",
+   "fixed": [],
+   "broke": [],
+   "notes": "App version 5.2.1 (Settings). Home HTML hash 1fa371086269f9f2, 23 JS chunks, sw.js d9738e04fd7c5e61, landing text 5f13f52657266417, legal text 02178203a3d0d9d3. Full hashes in tester/baseline/baseline.json (private)."
+  }
+ ],
+ "updated": "2026-10-01T12:00:00+05:30"
+}

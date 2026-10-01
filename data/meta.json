@@ -1,1 +1,42 @@
-{"updated":null,"summary_today":[],"health_score":null,"health_score_history":[],"weekly":[]}
+{
+ "app_url": "https://www.intimacare.in",
+ "app_version": "5.2.1",
+ "last_test_run": "2026-10-01T11:54:00+05:30",
+ "health_score": 54,
+ "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
+ "summary_today": [
+  "Day 1: both personas onboarded in ~30-35 s and have value immediately; Partner Mode linked and 5 of 8 sharing toggles verified both ways (3 inconclusive).",
+  "35 issues opened (9 P1): identity fork on cold load, false \"all data stays on device\" copy, no data export, companion quotes US 911 and downplays chest pain.",
+  "AI companion: warm and personalised (memory 4/5) but language 2-3/5 for Hinglish and invents statistics.",
+  "Performance: 0.5-1.8 s LCP on normal network, ~10 s on slow 3G, offline fails on every page.",
+  "Doctor-referral model: 5-minute value yes; day-30 return at risk (no QR link, export or clinician summary, thin doctor supply)."
+ ],
+ "health_score_history": [
+  {
+   "date": "2026-10-01",
+   "score": 54
+  }
+ ],
+ "weekly": [
+  {
+   "week_start": "2026-09-28",
+   "narrative": "Day-1 baseline. Intima Health v5.2.1 is a fast, no-login, warm product with unusually deep content (IVF mode, labs, partner sharing). The main risks are trust (privacy copy that is not true), reliability (identity forks lose data), and an AI that can be unsafe in India-specific red-flag moments. For doctor-referred users the app delivers value in 5 minutes but gives no reason to return by day 30 unless export/summary and reminders are added.",
+   "top_build_next": [
+    {
+     "title": "Truthful privacy copy everywhere",
+     "why": "GAP-001 – quick win, protects trust and store compliance."
+    },
+    {
+     "title": "Fix identity fork + India-correct red-flag handling",
+     "why": "GAP-003, GAP-002 – data loss and safety."
+    },
+    {
+     "title": "Doctor summary export + QR landing",
+     "why": "GAP-004/005 – the missing doctor-referral loop."
+    }
+   ],
+   "funding_moves": []
+  }
+ ],
+ "updated": "2026-10-01T12:00:00+05:30"
+}

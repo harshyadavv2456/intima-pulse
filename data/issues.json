@@ -1,1 +1,612 @@
-{"updated":null,"issues":[]}
+{
+ "issues": [
+  {
+   "id": "ISS-001",
+   "title": "Identity forks on cold load: partner link and logs appear lost (new anonymous user minted)",
+   "feature": "partner-mode",
+   "persona": "both",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Onboard a persona, link a partner via Connect.",
+    "Reload the app / open it in a fresh browser launch with the saved session (cold load).",
+    "Open Connect."
+   ],
+   "expected": "Same anonymous user, partner link and logs still there.",
+   "actual": "Several parallel auth token refreshes fire on cold load; one fails with \"refresh token already used\", after which the app silently creates a NEW anonymous user. Partner link and daily logs stay with the old user, Connect falls back to \"Generate code\" and the user believes their link/data is gone. Happened to both personas several times on day 1 (Meera 4 user ids, Arjun 3). Fix: serialise/lock the token refresh (single-flight), never auto-signup when a stored session exists, offer recovery via backup code.",
+   "screenshot": "shots/2026-10-01_arjun_connect.png"
+  },
+  {
+   "id": "ISS-002",
+   "title": "Settings, tour and landing say \"All data stays on your device\" – data syncs to a cloud backend",
+   "feature": "privacy-copy",
+   "persona": "both",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open Settings > Account.",
+    "Read the line under \"Privacy Status\".",
+    "Compare with the 5-step tour (\"All data stored locally on your device\") and landing badges \"Private · On-Device\"."
+   ],
+   "expected": "Copy matches reality: health logs sync to the cloud (anonymous account), AI chat goes to a third-party AI provider, consult messages are encrypted at rest with an operator-held key (not end-to-end).",
+   "actual": "Settings: \"Your identity is always anonymous. All data stays on your device.\" Tour: \"All data stored locally on your device\". Landing: \"Private · On-Device · AI-Powered\", \"Whatever happens in Intima stays in Intima\". Browser shows an anonymous cloud session and sync-status key, so these claims are false.",
+   "screenshot": "shots/2026-10-01_arjun_settings.png"
+  },
+  {
+   "id": "ISS-003",
+   "title": "\"No ads, no tracking\" claimed while analytics/map third parties load",
+   "feature": "privacy-copy",
+   "persona": "both",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open landing and the first-run tour step 1.",
+    "Inspect cookies/localStorage on the page."
+   ],
+   "expected": "Claims match what runs, or analytics is disclosed/opt-in.",
+   "actual": "Copy: \"No ads, no tracking, no data selling\". Google Analytics cookies (_ga), PostHog storage and Mapbox tiles are present. Privacy Policy says \"no ad-tracking SDKs / tracking pixels\" and does not list PostHog, GA, Mapbox or the cloud database provider.",
+   "screenshot": "shots/2026-10-01_meera_settings.png"
+  },
+  {
+   "id": "ISS-004",
+   "title": "Privacy Policy overstates: \"primarily on your device\", \"not stored permanently\", promises in-app export",
+   "feature": "privacy-copy",
+   "persona": "both",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open /legal (Privacy Policy).",
+    "Read sections on storage, messages and data export."
+   ],
+   "expected": "Policy describes cloud sync, AI provider, consult-message encryption model (at-rest, operator-held key) accurately.",
+   "actual": "Policy implies device-first storage, says messages \"are not stored permanently on our servers\" (unverifiable) and promises \"Export anytime through the app\". It does disclose the AI provider (Groq) and video provider (Daily.co). No statement that consult messages are NOT end-to-end encrypted."
+  },
+  {
+   "id": "ISS-005",
+   "title": "Promised data export does not exist in the app",
+   "feature": "data-export",
+   "persona": "both",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open Settings and scroll all sections.",
+    "Look for \"Export my data\" (tour step 5 and Privacy §9 promise it)."
+   ],
+   "expected": "Export (JSON/CSV/PDF) available; also a doctor-shareable summary.",
+   "actual": "No export control anywhere in Settings. Only Cloud Backup (code) and delete. For a doctor-referred patient there is also nothing to hand to the clinician.",
+   "screenshot": "shots/2026-10-01_arjun_settings.png"
+  },
+  {
+   "id": "ISS-006",
+   "title": "AI companion gives US emergency number (\"911 in the U.S.\") to an India user with chest pain",
+   "feature": "ai-companion",
+   "persona": "arjun",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "As Arjun (Pune), tell the companion in Hinglish: chest pressure during exertion with left-arm heaviness."
+   ],
+   "expected": "Tells him to stop, get emergency help now, call 112 / 108 (India), do not drive himself.",
+   "actual": "Correctly flags a cardiac red flag, but quotes \"911 in the U.S.\" and offers an \"if it is mild, book an appointment\" path.",
+   "screenshot": "shots/2026-10-01_arjun_chat.png"
+  },
+  {
+   "id": "ISS-007",
+   "title": "AI companion downplays a cardiac red flag in the very next message",
+   "feature": "ai-companion",
+   "persona": "arjun",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "After reporting exertional chest pain, ask for a bedtime / low-energy routine."
+   ],
+   "expected": "Companion keeps the red flag in force: no exertion until evaluated, repeat the advice to see a doctor today.",
+   "actual": "Replies with a relaxing routine including \"seated chair yoga if chest tightness returns\" and \"light movement improves blood flow\" – normalises a symptom that needs urgent evaluation.",
+   "screenshot": "shots/2026-10-01_arjun_chat.png"
+  },
+  {
+   "id": "ISS-008",
+   "title": "Men's Insights show alarming medicalised conclusions after ONE day of data",
+   "feature": "mens-insights",
+   "persona": "arjun",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Onboard as a man, log one day (5 h sleep, stress 5/5, a few sliders).",
+    "Open Insights."
+   ],
+   "expected": "Insights wait for >= 3-7 days of data and avoid diagnostic language; trends need >1 point.",
+   "actual": "Readiness \"LOW\", Testosterone score \"3\" with trend \"Declining\" (single data point), \"Low libido – often linked to low testosterone\". The companion then repeats \"testosterone 3/100, below 30\" as if clinical.",
+   "screenshot": "shots/2026-10-01_arjun_insights.png"
+  },
+  {
+   "id": "ISS-009",
+   "title": "AI companion invents precise statistics and contradicts the app's own data",
+   "feature": "ai-companion",
+   "persona": "both",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Meera: ask about TTC with irregular 31-38 day cycles.",
+    "Arjun: ask about low energy and ED."
+   ],
+   "expected": "Hedged, sourced guidance consistent with logged data.",
+   "actual": "Meera: says fertile window \"Day 11-13\" for a 31-38 day cycle (later gives ovulation day 17-24 itself) and quotes \"regularity 100 / health score 70\" for an irregular user. Arjun: \"+5% testosterone per hour of sleep\", \"cortisol -20%\", \"~15-20% better erections\", magnesium 400 mg with no caveat.",
+   "screenshot": "shots/2026-10-01_meera_chat.png"
+  },
+  {
+   "id": "ISS-010",
+   "title": "AI companion ignores Hinglish: replies in Devanagari Hindi or English",
+   "feature": "ai-companion",
+   "persona": "both",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Write in Roman Hinglish (e.g. \"folic acid kab se start karun?\")."
+   ],
+   "expected": "Reply in the same script/register (Roman Hinglish).",
+   "actual": "Meera Q2 answered in Devanagari Hindi, Q3/Q4 in English. Arjun Q1 matched Hinglish well but Q2 switched to English.",
+   "screenshot": "shots/2026-10-01_meera_chat.png"
+  },
+  {
+   "id": "ISS-011",
+   "title": "Companion red-flag answer (Meera) lacks India emergency number and pregnancy/ectopic triage",
+   "feature": "ai-companion",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "As a TTC user, report severe one-sided lower abdominal pain with dizziness / near-fainting."
+   ],
+   "expected": "Urgent care now, call 112, ask about missed period / pregnancy test (ectopic), do not be alone.",
+   "actual": "Correctly says go to ER and lie down, but no emergency number, no mention of ectopic pregnancy even though she is trying to conceive, answers in English to a Hinglish message.",
+   "screenshot": "shots/2026-10-01_meera_chat.png"
+  },
+  {
+   "id": "ISS-012",
+   "title": "Companion tells TTC user to self-order FSH/LH/prolactin/TSH panel \"start now\" without seeing a doctor",
+   "feature": "ai-companion",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Ask follow-up about when to test hormones (context-memory check)."
+   ],
+   "expected": "Recommend seeing a gynaecologist for tests; mention folic acid and preconception visit.",
+   "actual": "Remembers 31-38 day cycle and TTC plan (good) but gives a self-contradictory lab plan and never suggests a preconception consult.",
+   "screenshot": "shots/2026-10-01_meera_chat.png"
+  },
+  {
+   "id": "ISS-013",
+   "title": "Companion counter says \"x/30 per day\" not the intended daily cap",
+   "feature": "ai-companion",
+   "persona": "both",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open Chat and read the message counter."
+   ],
+   "expected": "Counter matches product limit.",
+   "actual": "Shows \"x/30 today\".",
+   "screenshot": "shots/2026-10-01_meera_chat.png"
+  },
+  {
+   "id": "ISS-014",
+   "title": "Cycle predictions ignore \"Irregular\" chosen at onboarding",
+   "feature": "cycle-tracker",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Onboard as female, answer cycle regularity = \"Irregular\".",
+    "Open Dashboard."
+   ],
+   "expected": "Wider prediction range / \"irregular\" messaging, advice to log 3 cycles.",
+   "actual": "Dashboard shows \"Cycle day 4 of 28\" with a textbook 28-day ovulation estimate (Oct 12). Same for TTC card.",
+   "screenshot": "shots/2026-10-01_meera_dash_full.jpg"
+  },
+  {
+   "id": "ISS-015",
+   "title": "Three contradictory fertile-window statements on cycle day 4",
+   "feature": "ttc-fertility",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Start TTC mode, open Dashboard and TTC card on cycle day 4."
+   ],
+   "expected": "One consistent fertile-window estimate.",
+   "actual": "TTC card: \"Day 1 of this cycle\" and \"fertile window in about 7 days\"; Dashboard: ovulation ~11 days away; badge \"FERTILITY 7 Oct – Fertile Window\" on day 4.",
+   "screenshot": "shots/2026-10-01_meera_ttc.png"
+  },
+  {
+   "id": "ISS-016",
+   "title": "Ovulation-test \"Negative\" choice not shown as selected after reload",
+   "feature": "ttc-fertility",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "TTC card: choose ovulation test = Negative, enter BBT 36.4.",
+    "Reload."
+   ],
+   "expected": "Selection persists and is visible.",
+   "actual": "BBT persists (auto-save) but \"Negative\" shows unselected.",
+   "screenshot": "shots/2026-10-01_meera_ttc_filled.jpg"
+  },
+  {
+   "id": "ISS-017",
+   "title": "\"Generate Your Code\" silently does nothing on first run",
+   "feature": "partner-mode",
+   "persona": "arjun",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Onboard a new persona in-session (iPhone UA).",
+    "Open Connect and tap \"Generate Your Code\"."
+   ],
+   "expected": "Code appears, or an error/toast explains.",
+   "actual": "No request, no error, no toast. Worked after a fresh page load.",
+   "screenshot": "shots/2026-10-01_arjun_connect.png"
+  },
+  {
+   "id": "ISS-018",
+   "title": "Unlink is one-sided: other partner still shows \"Connected\"; no confirmation dialog",
+   "feature": "partner-mode",
+   "persona": "both",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Link Meera and Arjun.",
+    "Arjun taps Unlink Partner (no confirm).",
+    "Open Meera's Connect."
+   ],
+   "expected": "Confirmation first; both sides become unlinked (or the other is told).",
+   "actual": "Unlink immediate; Meera still shows \"Partner Connected\" with stale data; re-entering the old code fails."
+  },
+  {
+   "id": "ISS-019",
+   "title": "Partner screen shows \"Reconnecting to live updates… Retry now\" while connected",
+   "feature": "partner-mode",
+   "persona": "arjun",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Link as above and open Connect as the viewer."
+   ],
+   "expected": "No banner when data is current.",
+   "actual": "Persistent yellow banner next to \"Sharing data in real-time\".",
+   "screenshot": "shots/2026-10-01_arjun_sees_meera.jpg"
+  },
+  {
+   "id": "ISS-020",
+   "title": "Partner view says \"has not logged anything yet\" while showing logged mood/energy/sleep",
+   "feature": "partner-sharing",
+   "persona": "arjun",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Meera logs mood; Arjun opens Connect with Cycle sharing off."
+   ],
+   "expected": "Insight text reflects shared data.",
+   "actual": "\"Your partner has not logged anything yet\" next to a mood bar for this week.",
+   "screenshot": "shots/2026-10-01_meera_sees_arjun.jpg"
+  },
+  {
+   "id": "ISS-021",
+   "title": "Partner sharing: Wearable & body, Personal notes and Generated insights toggles have no visible effect for viewer",
+   "feature": "partner-sharing",
+   "persona": "both",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Owner turns Wearable & body / Personal notes / Generated insights ON/OFF.",
+    "Viewer reloads Connect."
+   ],
+   "expected": "Viewer clearly sees the category appear/disappear (or \"nothing logged yet\" per category).",
+   "actual": "No distinguishable change (no wearable data or notes were logged, and the \"switched off\" explainer is shown for the others). Cannot confirm these three actually hide data; needs a retest with wearable data/notes logged."
+  },
+  {
+   "id": "ISS-022",
+   "title": "Care list: no doctors in Pune and \"5 doctors nearby\" header is wrong",
+   "feature": "care-doctors",
+   "persona": "arjun",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open Care as a Pune user."
+   ],
+   "expected": "Local doctors, or an honest empty state with teleconsult option.",
+   "actual": "5 doctors total (Nagpur, Mumbai, Bangalore; 2 with \"No slots\"). Header says \"5 doctors nearby\".",
+   "screenshot": "shots/2026-10-01_arjun_care.png"
+  },
+  {
+   "id": "ISS-023",
+   "title": "\"Leave a rating\" prompt shown to users who never consulted the doctor",
+   "feature": "care-doctors",
+   "persona": "arjun",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open a doctor sheet without any past appointment."
+   ],
+   "expected": "Rating only after a completed consult.",
+   "actual": "Rating prompt is visible.",
+   "screenshot": "shots/2026-10-01_arjun_doctor_detail.png"
+  },
+  {
+   "id": "ISS-024",
+   "title": "No offline support: every page fails when offline even after a warm load",
+   "feature": "offline",
+   "persona": "both",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Load /, /wellness etc. once, then go offline (airplane mode).",
+    "Navigate to a page."
+   ],
+   "expected": "Cached shell + local logging works offline, syncs later (this is a \"privacy-first\" daily-logging app).",
+   "actual": "All 8 pages fail with a browser \"no internet\" error. A service worker is registered but gives no offline fallback."
+  },
+  {
+   "id": "ISS-025",
+   "title": "Slow 3G load is 10-14 s",
+   "feature": "performance",
+   "persona": "both",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Throttle to Slow 3G, open home / wellness / chat."
+   ],
+   "expected": "< 5 s to first content on 3G (target audience on mid-range Android).",
+   "actual": "Home 9.7 s load (LCP 10.5 s); chat 10.7 s; care 9.7 s. Fast 3G ~2.7 s; normal network 0.5-1.0 s (LCP 0.7-1.8 s)."
+  },
+  {
+   "id": "ISS-026",
+   "title": "Notifications preview shows canned \"Great Sleep Streak\" for a 1-day-old account",
+   "feature": "notifications",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Settings > Notifications > Upcoming reminders."
+   ],
+   "expected": "Reminders based on real data only.",
+   "actual": "\"Great Sleep Streak – sleep quality excellent recently\" for an account with one log.",
+   "screenshot": "shots/2026-10-01_meera_notifs.png"
+  },
+  {
+   "id": "ISS-027",
+   "title": "Home shows \"Peak Phase – RIGHT NOW, best window for hardest workout\" beside \"recovery recommended\"",
+   "feature": "mens-energy",
+   "persona": "arjun",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "As Arjun (5 h sleep, stress 5/5) open Home."
+   ],
+   "expected": "One coherent recommendation based on logged state.",
+   "actual": "Contradictory advice; the peak-phase claim is shown before any log is saved.",
+   "screenshot": "shots/2026-10-01_arjun_home.png"
+  },
+  {
+   "id": "ISS-028",
+   "title": "Symptom swipe cards: icon-only buttons; \"Browse all instead\" blocked by bottom nav",
+   "feature": "symptom-logging",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open the symptom check-in at 393x727 viewport.",
+    "Try \"Browse all instead\"."
+   ],
+   "expected": "Labelled buttons; link reachable.",
+   "actual": "Today / Not today buttons have no visible text; the link is covered by the nav bar (taps intercepted).",
+   "screenshot": "shots/2026-10-01_meera_symptom_card.png"
+  },
+  {
+   "id": "ISS-029",
+   "title": "Male profile stores gender/theme as \"female\" locally",
+   "feature": "onboarding",
+   "persona": "arjun",
+   "severity": "P2",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Onboard as male.",
+    "Inspect saved user profile."
+   ],
+   "expected": "Gender = male.",
+   "actual": "Local profile says gender and theme \"female\" although the male flow was shown (dashboard content is male)."
+  },
+  {
+   "id": "ISS-030",
+   "title": "Dashboard \"Ahead of 10% users\" stat with 1 of 30 days logged",
+   "feature": "dashboard",
+   "persona": "meera",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open Dashboard after the first log."
+   ],
+   "expected": "No comparison until meaningful.",
+   "actual": "\"Ahead of 10% users\" appears meaningless/invented.",
+   "screenshot": "shots/2026-10-01_meera_dash_full.jpg"
+  },
+  {
+   "id": "ISS-031",
+   "title": "Wellness header says \"under 10 minutes a day\" but programs run 12-25 min",
+   "feature": "wellness-programs",
+   "persona": "meera",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open Wellness > Period Relief 7-day program, view days."
+   ],
+   "expected": "Copy matches durations.",
+   "actual": "All 7 days are 12-25 min.",
+   "screenshot": "shots/2026-10-01_meera_program_day.png"
+  },
+  {
+   "id": "ISS-032",
+   "title": "First-run tour modal re-appears on each new page and blocks taps",
+   "feature": "onboarding",
+   "persona": "both",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Visit Settings, then Connect for the first time."
+   ],
+   "expected": "Tour once, dismissible forever.",
+   "actual": "Tour modal pops up on each first page visit and blocks clicks until skipped.",
+   "screenshot": "shots/2026-10-01_meera_settings.png"
+  },
+  {
+   "id": "ISS-033",
+   "title": "Lab results: no range flag after entering a value",
+   "feature": "labs",
+   "persona": "arjun",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Labs > select TSH, enter 3.1, save."
+   ],
+   "expected": "In-range / out-of-range indicator and \"discuss with doctor\" nudge.",
+   "actual": "Saved; no flag or colour (only a generic reference-ranges note).",
+   "screenshot": "shots/2026-10-01_arjun_labs_saved.png"
+  },
+  {
+   "id": "ISS-034",
+   "title": "Hormonal check-in sheet has 17 sliders and no clear save confirmation",
+   "feature": "hormonal-dashboard",
+   "persona": "meera",
+   "severity": "P3",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Open the daily hormonal check-in and save."
+   ],
+   "expected": "Shorter flow or progressive disclosure; visible \"Saved\" toast.",
+   "actual": "17 sliders; Save works but no obvious confirmation.",
+   "screenshot": "shots/2026-10-01_meera_hormonal_filled.png"
+  },
+  {
+   "id": "ISS-035",
+   "title": "Doctor-referred patient has no referral/QR deep link, clinician view or shareable summary",
+   "feature": "doctor-referral",
+   "persona": "both",
+   "severity": "P1",
+   "first_seen": "2026-10-01",
+   "last_verified": "2026-10-01",
+   "fixed_on": null,
+   "status": "open",
+   "steps": [
+    "Imagine a patient scans a doctor QR: open app from home screen / link.",
+    "Look for a way to connect to the referring doctor or share a summary."
+   ],
+   "expected": "QR lands on onboarding pre-linked to the clinic, with a \"share with my doctor\" summary.",
+   "actual": "No referral link, no clinic code, no export, no clinician view. The generic app is the same for everyone, and Partner Mode is the only sharing feature."
+  }
+ ],
+ "updated": "2026-10-01T12:00:00+05:30"
+}
