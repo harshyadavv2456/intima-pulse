@@ -1,1 +1,524 @@
-{"updated":null,"clusters":[],"volume_history":[],"competitors":[]}
+{
+ "updated": "2026-10-01T10:45:00+05:30",
+ "history_note": "Day-1 baseline pass (1 Oct 2026). Trend is 'insufficient history' for every cluster - volume snapshots start today and trends will only be set after >=2 comparable snapshots. Reddit threads could not be opened directly (blocked/timeouts), so 'quotes' are verbatim post titles surfaced by search with their URLs; post dates were not exposed and are left blank. X and YouTube comments were not accessible this pass (login walls) - coverage gap. No usernames recorded.",
+ "clusters": [
+  {
+   "id": "c-dismissed",
+   "title": "Doctors dismiss symptoms / misdiagnosis (PCOS, irregular periods)",
+   "topic": "pcos",
+   "description": "Women with PCOS/PCOD or irregular cycles repeatedly describe being told 'it's not PCOS' on the basis of one normal lab panel, body size or regular bleeding, and feel unheard by endocrinologists/gynaecologists.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "Cycle/ovulation/BBT logs and hormonal dashboard (evidence to take to a doctor); doctor map; anonymous booking; chat/video care.",
+   "coverage_note": "Gap: no 'doctor visit summary / symptom timeline export' and no way to know whether a listed doctor is dismissive. Exportable timeline = strong doctor-referral hook.",
+   "quotes": [
+    {
+     "text": "Endocrinologist told me there's no reason to even see me",
+     "source": "Reddit r/PCOS",
+     "url": "https://www.reddit.com/r/PCOS/comments/1ukuki4/endocrinologist_told_me_theres_no_reason_to_even/",
+     "date": ""
+    },
+    {
+     "text": "Hormone testing is \"normal\" after 2 years of a PCOS diagnosis",
+     "source": "Reddit r/PCOS",
+     "url": "https://www.reddit.com/r/PCOS/comments/1w3usby/hormone_testing_is_normal_after_2_years_of_a_pcos/",
+     "date": ""
+    },
+    {
+     "text": "My period was late by 2 years but my doctor said it wasnt PCOS/scans showed no evidence.",
+     "source": "Reddit r/PCOS",
+     "url": "https://www.reddit.com/r/PCOS/comments/1vanx5s/my_period_was_late_by_2_years_but_my_doctor_said/",
+     "date": ""
+    },
+    {
+     "text": "Struggling with being told I was misdiagnosed with PCOS",
+     "source": "Reddit r/PCOS",
+     "url": "https://www.reddit.com/r/PCOS/comments/1vvwaaz/struggling_with_being_told_i_was_misdiagnosed/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-privacy",
+   "title": "Fear that period/health apps share or sell data",
+   "topic": "privacy",
+   "description": "Period-tracker privacy is a live concern: a Mozilla Foundation study (Jul 2026) found one app sending symptom/birth-control data to an analytics vendor and recommended the only on-device, no-account app; Flo's earlier FTC case is still cited. In India, health-data leaks (e.g. an insurer's records exposed via Telegram bots, 2024) feed distrust.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "No-login anonymous ID + PIN + 8-char backup code (no name/phone/email).",
+   "coverage_note": "Strong on identity (nothing ties logs to a person). NOT on-device: logs sync to cloud, AI chat goes to a third-party AI provider, consult messages encrypted at rest with operator-held key (not end-to-end). Copy must say exactly this; do not claim 'fully private/on-device'.",
+   "quotes": [
+    {
+     "text": "Flo Health was fined by the FTC for sharing users' pregnancy data with Facebook and advertisers. How are we still trusting period apps with our most sensitive health information?",
+     "source": "Reddit r/TwoXChromosomes",
+     "url": "https://www.reddit.com/r/TwoXChromosomes/comments/1rz1n20/flo_health_was_fined_by_the_ftc_for_sharing_users/",
+     "date": ""
+    },
+    {
+     "text": "Period tracker Stardust shares users' health data with analytics firm, says new research (headline)",
+     "source": "TechCrunch",
+     "url": "https://techcrunch.com/2026/07/16/period-tracker-stardust-shares-users-health-data-with-analytics-firm-says-mozilla-research/",
+     "date": "2026-07-16"
+    },
+    {
+     "text": "How period trackers share your private details (headline)",
+     "source": "BBC Future",
+     "url": "https://www.bbc.com/future/article/20260715-how-period-trackers-share-womens-private-details",
+     "date": "2026-07-28"
+    },
+    {
+     "text": "India has zero concept of digital privacy!",
+     "source": "Reddit r/IndiaSpeaks",
+     "url": "https://www.reddit.com/r/IndiaSpeaks/comments/1lx9gco/india_has_zero_concept_of_digital_privacy/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-ttc-irregular",
+   "title": "Ovulation/fertile-window predictions fail on irregular cycles (TTC)",
+   "topic": "fertility",
+   "description": "People trying to conceive complain that app calendars give wrong fertile windows when cycles are irregular and ask whether to trust OPK strips or BBT instead.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "Cycle, ovulation, fertility and BBT tracking; hormonal dashboard.",
+   "coverage_note": "Listed features lack explicit LH/OPK strip logging and cervical-mucus logging; unclear how predictions adapt to irregular cycles - tester should verify with the Meera persona.",
+   "quotes": [
+    {
+     "text": "Incorrect Fertile Window on Apps",
+     "source": "Reddit r/TryingForABaby",
+     "url": "https://www.reddit.com/r/TryingForABaby/comments/1256le3/incorrect_fertile_window_on_apps/",
+     "date": ""
+    },
+    {
+     "text": "Tips for Ovulation Tracking Irregular Cycles?",
+     "source": "Reddit r/TryingForABaby",
+     "url": "https://www.reddit.com/r/TryingForABaby/comments/1ocmy1l/tips_for_ovulation_tracking_irregular_cycles/",
+     "date": ""
+    },
+    {
+     "text": "Do you rely more on ovulation test strips or temperature tracking?",
+     "source": "Reddit r/TryingForABaby",
+     "url": "https://www.reddit.com/r/TryingForABaby/comments/1vo7ik6/do_you_rely_more_on_ovulation_test_strips_or/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-ed-shame",
+   "title": "Embarrassment about seeking ED / sexual-health care",
+   "topic": "male-sexual-health",
+   "description": "Men describe shame about visiting a clinic for ED and turn to discreet online options; Indian telehealth brands market privacy and low-cost consults.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Covered well",
+   "intima_features": "ED score, performance log, Kegel, anonymous booking, chat/video care, no-login ID.",
+   "coverage_note": "Core strength. Risk: AI/consult copy must stay medically safe (ED drugs interact with nitrates/heart conditions - route to doctor).",
+   "quotes": [
+    {
+     "text": "How do you get over the embarrassment of going to a clinic for this?",
+     "source": "Reddit r/erectiledysfunction",
+     "url": "https://www.reddit.com/r/erectiledysfunction/comments/1qtolja/how_do_you_get_over_the_embarrassment_of_going_to/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-lowt",
+   "title": "Low testosterone / fatigue: 'how do I get tested and what do the numbers mean?'",
+   "topic": "low-t",
+   "description": "Young Indian men (mid-20s to 30s) post lab values and ask whether they have low T, what to do, and which specialist to see.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "Low-T screen, testosterone rhythm, lab results entry, energy/stress/vitality tracking.",
+   "coverage_note": "Intima can interpret/track but no ordering of a morning-draw panel (T, LH, FSH, prolactin, thyroid, vit D) or referral to an andrologist/endocrinologist is in the listed feature set beyond the doctor map.",
+   "quotes": [
+    {
+     "text": "31M - Low testosterone levels",
+     "source": "Reddit r/Fitness_India",
+     "url": "https://www.reddit.com/r/Fitness_India/comments/1ujee7o/31m_low_testosterone_levels/",
+     "date": ""
+    },
+    {
+     "text": "I think my testosterone levels are very low, how do i deal with it?",
+     "source": "Reddit r/AskIndianMen",
+     "url": "https://www.reddit.com/r/AskIndianMen/comments/1vpx2cq/i_think_my_testosterone_levels_are_very_low_how/",
+     "date": ""
+    },
+    {
+     "text": "Testosterone - 25M - Low",
+     "source": "Reddit r/Fitness_India",
+     "url": "https://www.reddit.com/r/Fitness_India/comments/1uf6p80/testosterone_25m_low/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-stress-men",
+   "title": "Men 30+: constant stress, burnout, low energy and libido",
+   "topic": "men-stress-energy",
+   "description": "Chronic stress and sleep debt show up as low energy/libido in men over 30; people ask what to do before going to a doctor.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Covered well",
+   "intima_features": "Energy/stress/vitality tracking, 7-day programs, AI wellness companion, low-T screen.",
+   "coverage_note": "Good fit. Day-30 retention depends on program/companion quality - see Pulse tests.",
+   "quotes": [
+    {
+     "text": "Men over 30, how do you deal with the constant stress and low energy?",
+     "source": "Reddit r/AskMen",
+     "url": "https://www.reddit.com/r/AskMen/comments/1rwgw6h/men_over_30_how_do_you_deal_with_the_constant/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-ivf",
+   "title": "IVF in India: cost opacity and emotional strain",
+   "topic": "ivf",
+   "description": "Couples report unclear itemised pricing (meds, PGT-A, freezing, FET, cancellation), pressure from family/work, and depression after failed cycles.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "IVF mode (women).",
+   "coverage_note": "IVF logging exists; no cost planner/quote checklist, emotional-support content or peer support (communities are hidden).",
+   "quotes": [
+    {
+     "text": "The real cost of IVF in India - what's included, what's not, and the questions to ask before you pay",
+     "source": "Reddit r/Ivf_pulse",
+     "url": "https://www.reddit.com/r/Ivf_pulse/comments/1sha6gh/the_real_cost_of_ivf_in_india_whats_included/",
+     "date": ""
+    },
+    {
+     "text": "IVF in India: what we women go through",
+     "source": "Reddit r/IVF",
+     "url": "https://www.reddit.com/r/IVF/comments/1oiv4g5/ivf_in_india_what_we_women_go_through/",
+     "date": ""
+    },
+    {
+     "text": "Ivf over 40 in india",
+     "source": "Reddit r/IVF",
+     "url": "https://www.reddit.com/r/IVF/comments/1syrfl6/ivf_over_40_in_india/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-menopause",
+   "title": "Perimenopause/menopause symptoms go unrecognised in India",
+   "topic": "menopause",
+   "description": "Women describe insomnia, anxiety, brain fog, heavy bleeding and low libido being blamed on stress or age, with cultural silence; media coverage is rising (HT, The Week, Jul 2026).",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Not covered",
+   "intima_features": "Nothing menopause-specific in the listed feature set (cycle tracker and AI companion only incidentally).",
+   "coverage_note": "Clear white space; Flo is expanding into perimenopause in 2026.",
+   "quotes": [
+    {
+     "text": "Peri/Menopause in India: Why is no one talking about it?",
+     "source": "Reddit r/perimenopause_under45",
+     "url": "https://www.reddit.com/r/perimenopause_under45/comments/1p1vy1v/perimenopause_in_india_why_is_no_one_talking/",
+     "date": ""
+    },
+    {
+     "text": "Menopause in India: Health crisis hiding in plain sight (headline)",
+     "source": "Hindustan Times",
+     "url": "https://www.hindustantimes.com/ht-insight/public-health/menopause-in-india-health-crisis-hiding-in-plain-sight-101789551685568.html",
+     "date": ""
+    },
+    {
+     "text": "In your 30s and feeling off? Why perimenopause is happening earlier than you think (headline)",
+     "source": "The Week",
+     "url": "https://www.theweek.in/news/health/2026/07/30/in-your-30s-and-feeling-off-why-perimenopause-is-happening-earlier-than-you-think.html",
+     "date": "2026-07-30"
+    }
+   ]
+  },
+  {
+   "id": "c-male-infertility",
+   "title": "Male-factor infertility stigma; couples' testing",
+   "topic": "couples",
+   "description": "Male infertility is under-discussed in India; men delay semen analysis due to shame, and the burden falls on women.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "Partner Mode, ED/vitality tracking, doctor map and anonymous booking.",
+   "coverage_note": "No semen-analysis tracking/guidance or male-fertility journey in the listed features; Partner Mode is the natural home.",
+   "quotes": [
+    {
+     "text": "Male infertility in India: A growing health concern (headline)",
+     "source": "Hindustan Times",
+     "url": "https://www.hindustantimes.com/ht-insight/public-health/male-infertility-in-india-a-growing-health-concern-101785480297458.html",
+     "date": ""
+    },
+    {
+     "text": "Male Infertility: Breaking The Silence Amid Cultural And Societal Taboos (headline)",
+     "source": "Forbes",
+     "url": "https://www.forbes.com/sites/priyaoberoi/2024/10/23/male-infertility-breaking-the-silence-amid-cultural-and-societal-taboos/",
+     "date": "2024-10-23"
+    }
+   ]
+  },
+  {
+   "id": "c-judgy-gyn",
+   "title": "Finding a non-judgemental gynaecologist (unmarried/single women)",
+   "topic": "care-access",
+   "description": "Women ask city subreddits for gynaecologists who won't moralise about marital status; crowdsourced lists circulate.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "Doctor map, anonymous booking, chat/video care.",
+   "coverage_note": "Opportunity: 'judgement-free' badge/filters and anonymous reviews.",
+   "quotes": [
+    {
+     "text": "Gynac being judgemental about me being single. Is it fine?",
+     "source": "Reddit r/AskIndianWoman",
+     "url": "https://www.reddit.com/r/AskIndianWoman/comments/1vjl82p/gynac_being_judgemental_about_me_being_single_is/",
+     "date": ""
+    },
+    {
+     "text": "Ladies, do you have suggestions for non-judgemental gynaecologists in the city? Especially if you're an \"unmarried\" woman seeking gynac consultation.",
+     "source": "Reddit r/hyderabad",
+     "url": "https://www.reddit.com/r/hyderabad/comments/1w1ofl3/ladies_do_you_have_suggestions_for_nonjudgemental/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-preg-anxiety",
+   "title": "Pregnancy anxiety and wanting trustworthy, local-language guidance",
+   "topic": "pregnancy",
+   "description": "Expectant parents look for doctor-reviewed guidance and mood support; several Indian apps compete (EazyPregnancy, Premaa, Mamily, PregAmie).",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Partly",
+   "intima_features": "Pregnancy mode, AI wellness companion, 7-day programs.",
+   "coverage_note": "Only app-store/marketing evidence found on day 1 (no direct user quotes captured); revisit with community threads.",
+   "quotes": [
+    {
+     "text": "Premaa - Everything About Pregnancy in One App (competitor listing; Indian languages, evidence-based)",
+     "source": "premaa.in",
+     "url": "https://www.premaa.in/home/",
+     "date": ""
+    }
+   ]
+  },
+  {
+   "id": "c-d2c-upsell",
+   "title": "Men's D2C telehealth: delivery delays and sales-heavy 'doctor' consults",
+   "topic": "competitor-complaints",
+   "description": "Recent consumer feedback about Man Matters-type brands: shipping delays, order inaccuracies, hard-to-reach support and aggressive upselling in free consults.",
+   "volume": "not measured",
+   "trend": "insufficient history",
+   "coverage": "Not covered",
+   "intima_features": "Intima sells no products; care is chat/video + booking.",
+   "coverage_note": "Not a gap to fill - a positioning angle (guidance without a product push). Keep consults non-salesy.",
+   "quotes": [
+    {
+     "text": "Disappointed with my recent experience with Man Matters. (post about delayed delivery)",
+     "source": "LinkedIn",
+     "url": "https://www.linkedin.com/posts/sumitbose0402_customerexperience-delayeddelivery-consumerrights-activity-7465181761413595136-yM3e",
+     "date": "2026-05-26"
+    },
+    {
+     "text": "Be careful before ordering man matters product or taking their free \"doctor\" consults",
+     "source": "Reddit r/IndianSkincareAddicts",
+     "url": "https://www.reddit.com/r/IndianSkincareAddicts/comments/1arytik/be_careful_before_ordering_man_matters_product_or/",
+     "date": ""
+    }
+   ]
+  }
+ ],
+ "volume_history": [],
+ "competitors": [
+  {
+   "name": "Flo",
+   "items": [
+    {
+     "date": "2026-09",
+     "type": "news",
+     "title": "New CMO hired; expanding beyond periods into perimenopause; says no immediate IPO plans",
+     "url": "https://www.futurefemhealth.com/p/flo-health-hires-ipo-experienced",
+     "summary": "Signals push into midlife women's health (Intima has no menopause feature)."
+    },
+    {
+     "date": "2026-09-11",
+     "type": "launch",
+     "title": "PMOS awareness month: doctor-reviewed Symptom Checker free during September",
+     "url": "https://www.linkedin.com/posts/flohealth_pmosawarenessmonth-womenshealth-flohealth-activity-7504223797630107648-ftoQ",
+     "summary": "Competing directly for PCOS/PMOS users."
+    },
+    {
+     "date": "2026-07-28",
+     "type": "complaint",
+     "title": "Mozilla study: Flo and Clue store lots of health data on their own servers (criticised) but scored relatively well; no third-party health-data sharing found",
+     "url": "https://www.bbc.com/future/article/20260715-how-period-trackers-share-womens-private-details",
+     "summary": "Flo's 2021 FTC settlement is still cited in privacy discussions."
+    },
+    {
+     "date": "2026-09-18",
+     "type": "news",
+     "title": "'Is Flo Health Safe? What Mozilla's Test Found' (explainer)",
+     "url": "https://www.newsgram.com/health/2026/09/18/flo-health-privacy-mozilla-test-reproductive-data",
+     "summary": "Privacy narrative remains active."
+    }
+   ]
+  },
+  {
+   "name": "Clue",
+   "items": [
+    {
+     "date": "2026-05-28",
+     "type": "launch",
+     "title": "Becomes first insurance-covered period/cycle tracker (via Germany's SDK)",
+     "url": "https://www.globenewswire.com/news-release/2026/05/28/3303076/0/en/clue-becomes-the-first-insurance-covered-period-and-menstrual-cycle-tracker-in-the-world.html",
+     "summary": "Payer-funded distribution model."
+    },
+    {
+     "date": "2026-06-29",
+     "type": "launch",
+     "title": "Partners with Twentyeight Health for birth-control access in the US",
+     "url": "https://www.globenewswire.com/news-release/2026/06/29/3319340/0/en/Twentyeight-Health-partners-with-Clue-to-expand-access-to-affordable-birth-control-nationwide.html",
+     "summary": "Tracker + care pathway, like Intima's care layer."
+    },
+    {
+     "date": "",
+     "type": "launch",
+     "title": "Partners with Flora Fertility on fertility planning/insurance",
+     "url": "https://www.mobihealthnews.com/news/flora-fertility-clue-partner-fertility-planning",
+     "summary": "Fertility vertical expansion."
+    }
+   ]
+  },
+  {
+   "name": "Maya",
+   "items": [
+    {
+     "date": "",
+     "type": "launch",
+     "title": "'Maya 2' update: refreshed UI, new tech platform, partner sync, updated pregnancy tracking (per store listing)",
+     "url": "https://apps.apple.com/in/app/maya-period-health/id492534636",
+     "summary": "India-origin tracker adding partner sync - overlaps Intima Partner Mode."
+    },
+    {
+     "date": "",
+     "type": "complaint",
+     "title": "Privacy International research findings on Maya (older report; date not verified)",
+     "url": "https://www.privacyinternational.org/long-read/5564/maya-research-findings",
+     "summary": "Historic privacy criticism of Indian-built tracker. No 2026 funding round found."
+    }
+   ]
+  },
+  {
+   "name": "Proactive For Her",
+   "items": [
+    {
+     "date": "2025-06",
+     "type": "news",
+     "title": "Acquired by IVF Access (terms undisclosed); had raised $5.5M Series A led by Vertex Ventures (Feb 2022)",
+     "url": "https://timesofindia.indiatimes.com/business/india-business/femtech-funding-dips-sector-consolidates/articleshow/121574241.cms",
+     "summary": "Consolidation signal: standalone women's digital clinics getting absorbed by fertility chains."
+    }
+   ]
+  },
+  {
+   "name": "Allo Health",
+   "items": [
+    {
+     "date": "2026-04-03",
+     "type": "launch",
+     "title": "Opens Jaipur clinic - 50+ clinics across India",
+     "url": "https://www.linkedin.com/posts/1989gaurav_after-50-clinics-across-india-allo-health-activity-7445712576241594368-KzUz",
+     "summary": "Offline-first sexual-health chain; goal of 100 clinics by year end (per a team post)."
+    },
+    {
+     "date": "2026-04-10",
+     "type": "news",
+     "title": "'Big quarter' update from Allo Health team",
+     "url": "https://www.linkedin.com/posts/yash-uppal_big-quarter-for-us-at-allo-health-we-activity-7448286331853750272-MKBE",
+     "summary": "Growth momentum."
+    },
+    {
+     "date": "2026-01-13",
+     "type": "news",
+     "title": "45th clinic live; 12 cities; 400,000+ patients served (4th anniversary)",
+     "url": "https://www.linkedin.com/posts/allo-healthcare_normalisingsexualwellness-allohealth-activity-7416759677121679360-iNp3",
+     "summary": "Scale benchmark for male/sexual health in India."
+    },
+    {
+     "date": "",
+     "type": "news",
+     "title": "Raised Rs 16 cr pre-Series A led by Rainmatter (earlier seed ~$4.4M incl. Nexus, angels)",
+     "url": "https://entrackr.com/snippets/allo-health-raises-rs-16-cr-in-pre-series-a-round-8846048",
+     "summary": "Funding comparable."
+    }
+   ]
+  },
+  {
+   "name": "Bold Care",
+   "items": [
+    {
+     "date": "2025-02",
+     "type": "news",
+     "title": "Raises $5M Series A led by Rainmatter (total raised ~ $17.2M per Tracxn); expanding into women's wellness (Bloom)",
+     "url": "https://economictimes.indiatimes.com/tech/funding/wellness-co-bold-care-raises-5-million/articleshow/118125302.cms",
+     "summary": "Men's sexual-wellness D2C comparable; moving into women's."
+    }
+   ]
+  },
+  {
+   "name": "Misters",
+   "items": [
+    {
+     "date": "",
+     "type": "news",
+     "title": "Raised Rs 3.5 crore led by Sauce.vc and Rainforest Ventures (as reported)",
+     "url": "https://smestreet.in/infocus/misters-in-raises-inr-3-5-crore-as-series-b-funding-led-by-sauce-vc-rainforest-ventures/",
+     "summary": "Small-cheque comparable for early men's health."
+    }
+   ]
+  },
+  {
+   "name": "Man Matters",
+   "items": [
+    {
+     "date": "2026-03-12",
+     "type": "news",
+     "title": "Parent Mosaic Wellness raised $22M led by 360 ONE; further $20M from Think Investments in April (per search summary; page not opened)",
+     "url": "https://www.bwdisrupt.com/article/mosaic-wellness-raises-rs-175-cr-from-think-investment-553299",
+     "summary": "Well-capitalised category leader."
+    },
+    {
+     "date": "2026-05-26",
+     "type": "complaint",
+     "title": "Customer post: delayed delivery and poor support",
+     "url": "https://www.linkedin.com/posts/sumitbose0402_customerexperience-delayeddelivery-consumerrights-activity-7465181761413595136-yM3e",
+     "summary": "Recurring service complaints."
+    }
+   ]
+  },
+  {
+   "name": "Practo",
+   "items": [
+    {
+     "date": "2026-01-08",
+     "type": "launch",
+     "title": "Launches care-navigation platform in the US after UAE debut; 200,000+ doctors listed",
+     "url": "https://www.business-standard.com/industry/news/practo-expands-to-us-after-uae-debut-launches-care-navigation-platform-126010800529_1.html",
+     "summary": "International expansion; IPO reportedly pushed to 2027."
+    },
+    {
+     "date": "",
+     "type": "news",
+     "title": "New CEO appointed; Shashank ND becomes executive chairman",
+     "url": "https://timesofindia.indiatimes.com/business/india-business/practo-appoints-new-ceo-shashank-nd-becomes-exec-chairman/articleshow/134314023.cms",
+     "summary": "Leadership change (date not shown in result)."
+    }
+   ]
+  }
+ ]
+}
