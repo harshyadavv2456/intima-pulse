@@ -1,15 +1,15 @@
 {
  "app_url": "https://www.intimacare.in",
  "app_version": "5.2.1",
- "last_test_run": "2026-10-01T11:54:00+05:30",
+ "last_test_run": "2026-10-01T13:28:00+05:30",
  "health_score": 54,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
  "summary_today": [
-  "Day 1: both personas onboarded in ~30-35 s and have value immediately; Partner Mode linked and 5 of 8 sharing toggles verified both ways (3 inconclusive).",
-  "35 issues opened (9 P1): identity fork on cold load, false \"all data stays on device\" copy, no data export, companion quotes US 911 and downplays chest pain.",
-  "AI companion: warm and personalised (memory 4/5) but language 2-3/5 for Hinglish and invents statistics.",
-  "Performance: 0.5-1.8 s LCP on normal network, ~10 s on slow 3G, offline fails on every page.",
-  "Doctor-referral model: 5-minute value yes; day-30 return at risk (no QR link, export or clinician summary, thin doctor supply)."
+  "Midday: both personas identity-stable under single-client act.js; Partner live view shows Meera Day 4 + mood/energy/sleep to Arjun.",
+  "Re-verified open cluster (ISS-002/008/014–016/022/028/029 etc.) — none fixed; ovulation Negative still fails to persist; insights still alarmist after 2 logs.",
+  "Deep dives: wellness/Kegel + hormonal sheet (Meera); labs/settings/notifs/Care Pune gap (Arjun). Sharing defaults restored both sides (4/8).",
+  "Companion +1 each (Hinglish, non-red-flag) → day total 5/5 hard max; still invents stats / answers English.",
+  "Doctor-referred day-30 retention: still at risk / no movement day 1 (no QR link, export, or clinician summary)."
  ],
  "health_score_history": [
   {
@@ -38,5 +38,5 @@
    "funding_moves": []
   }
  ],
- "updated": "2026-10-01T12:00:00+05:30"
+ "updated": "2026-10-01T13:28:00+05:30"
 }

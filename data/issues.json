@@ -16,7 +16,7 @@
     "Open Connect."
    ],
    "expected": "Same anonymous user, partner link and logs still there.",
-   "actual": "Several parallel auth token refreshes fire on cold load; one fails with \"refresh token already used\", after which the app silently creates a NEW anonymous user. Partner link and daily logs stay with the old user, Connect falls back to \"Generate code\" and the user believes their link/data is gone. Happened to both personas several times on day 1 (Meera 4 user ids, Arjun 3). Fix: serialise/lock the token refresh (single-flight), never auto-signup when a stored session exists, offer recovery via backup code.",
+   "actual": "Several parallel auth token refreshes fire on cold load; one fails with \"refresh token already used\", after which the app silently creates a NEW anonymous user. Partner link and daily logs stay with the old user, Connect falls back to \"Generate code\" and the user believes their link/data is gone. Happened to both personas several times on day 1 (Meera 4 user ids, Arjun 3). Fix: serialise/lock the token refresh (single-flight), never auto-signup when a stored session exists, offer recovery via backup code. | Midday: both personas kept same anon/user ids across sequential act.js sessions (no fork this pass). Risk remains on multi-client/cold refresh_token_already_used.",
    "screenshot": "shots/2026-10-01_arjun_connect.png"
   },
   {
@@ -35,7 +35,7 @@
     "Compare with the 5-step tour (\"All data stored locally on your device\") and landing badges \"Private · On-Device\"."
    ],
    "expected": "Copy matches reality: health logs sync to the cloud (anonymous account), AI chat goes to a third-party AI provider, consult messages are encrypted at rest with an operator-held key (not end-to-end).",
-   "actual": "Settings: \"Your identity is always anonymous. All data stays on your device.\" Tour: \"All data stored locally on your device\". Landing: \"Private · On-Device · AI-Powered\", \"Whatever happens in Intima stays in Intima\". Browser shows an anonymous cloud session and sync-status key, so these claims are false.",
+   "actual": "Settings: \"Your identity is always anonymous. All data stays on your device.\" Tour: \"All data stored locally on your device\". Landing: \"Private · On-Device · AI-Powered\", \"Whatever happens in Intima stays in Intima\". Browser shows an anonymous cloud session and sync-status key, so these claims are false. | Midday re-confirm: Settings still \"All data stays on your device\"; About \"no tracking\"; GA+PostHog+intima-auth+sync present.",
    "screenshot": "shots/2026-10-01_arjun_settings.png"
   },
   {
@@ -105,7 +105,7 @@
     "As Arjun (Pune), tell the companion in Hinglish: chest pressure during exertion with left-arm heaviness."
    ],
    "expected": "Tells him to stop, get emergency help now, call 112 / 108 (India), do not drive himself.",
-   "actual": "Correctly flags a cardiac red flag, but quotes \"911 in the U.S.\" and offers an \"if it is mild, book an appointment\" path.",
+   "actual": "Correctly flags a cardiac red flag, but quotes \"911 in the U.S.\" and offers an \"if it is mild, book an appointment\" path. | Not re-probed midday (prior 911 finding stands).",
    "screenshot": "shots/2026-10-01_arjun_chat.png"
   },
   {
@@ -122,7 +122,7 @@
     "After reporting exertional chest pain, ask for a bedtime / low-energy routine."
    ],
    "expected": "Companion keeps the red flag in force: no exertion until evaluated, repeat the advice to see a doctor today.",
-   "actual": "Replies with a relaxing routine including \"seated chair yoga if chest tightness returns\" and \"light movement improves blood flow\" – normalises a symptom that needs urgent evaluation.",
+   "actual": "Replies with a relaxing routine including \"seated chair yoga if chest tightness returns\" and \"light movement improves blood flow\" – normalises a symptom that needs urgent evaluation. | Not re-probed midday (prior cardiac downplay stands).",
    "screenshot": "shots/2026-10-01_arjun_chat.png"
   },
   {
@@ -140,7 +140,7 @@
     "Open Insights."
    ],
    "expected": "Insights wait for >= 3-7 days of data and avoid diagnostic language; trends need >1 point.",
-   "actual": "Readiness \"LOW\", Testosterone score \"3\" with trend \"Declining\" (single data point), \"Low libido – often linked to low testosterone\". The companion then repeats \"testosterone 3/100, below 30\" as if clinical.",
+   "actual": "Readiness \"LOW\", Testosterone score \"3\" with trend \"Declining\" (single data point), \"Low libido – often linked to low testosterone\". The companion then repeats \"testosterone 3/100, below 30\" as if clinical. | Midday after 2nd performance log: still Readiness LOW, Testosterone 3 Declining, Libido linked to low T, Morning Erections 0%.",
    "screenshot": "shots/2026-10-01_arjun_insights.png"
   },
   {
@@ -244,7 +244,7 @@
     "Open Dashboard."
    ],
    "expected": "Wider prediction range / \"irregular\" messaging, advice to log 3 cycles.",
-   "actual": "Dashboard shows \"Cycle day 4 of 28\" with a textbook 28-day ovulation estimate (Oct 12). Same for TTC card.",
+   "actual": "Dashboard shows \"Cycle day 4 of 28\" with a textbook 28-day ovulation estimate (Oct 12). Same for TTC card. | Midday: still Cycle day 4 of 28; irregular never shown on home.",
    "screenshot": "shots/2026-10-01_meera_dash_full.jpg"
   },
   {
@@ -261,7 +261,7 @@
     "Start TTC mode, open Dashboard and TTC card on cycle day 4."
    ],
    "expected": "One consistent fertile-window estimate.",
-   "actual": "TTC card: \"Day 1 of this cycle\" and \"fertile window in about 7 days\"; Dashboard: ovulation ~11 days away; badge \"FERTILITY 7 Oct – Fertile Window\" on day 4.",
+   "actual": "TTC card: \"Day 1 of this cycle\" and \"fertile window in about 7 days\"; Dashboard: ovulation ~11 days away; badge \"FERTILITY 7 Oct – Fertile Window\" on day 4. | Midday: still Fertile Window 7 Oct + fertile window in ~7 days + TTC Day 1 of this cycle vs dashboard day 4.",
    "screenshot": "shots/2026-10-01_meera_ttc.png"
   },
   {
@@ -279,7 +279,7 @@
     "Reload."
    ],
    "expected": "Selection persists and is visible.",
-   "actual": "BBT persists (auto-save) but \"Negative\" shows unselected.",
+   "actual": "BBT persists (auto-save) but \"Negative\" shows unselected. | Midday: re-tapped Negative; after reload button muted, copy still \"no ovulation signal has been logged yet\".",
    "screenshot": "shots/2026-10-01_meera_ttc_filled.jpg"
   },
   {
@@ -297,7 +297,7 @@
     "Open Connect and tap \"Generate Your Code\"."
    ],
    "expected": "Code appears, or an error/toast explains.",
-   "actual": "No request, no error, no toast. Worked after a fresh page load.",
+   "actual": "No request, no error, no toast. Worked after a fresh page load. | Not re-tested first-run path midday (partner already linked).",
    "screenshot": "shots/2026-10-01_arjun_connect.png"
   },
   {
@@ -332,7 +332,7 @@
     "Link as above and open Connect as the viewer."
    ],
    "expected": "No banner when data is current.",
-   "actual": "Persistent yellow banner next to \"Sharing data in real-time\".",
+   "actual": "Persistent yellow banner next to \"Sharing data in real-time\". | Midday: no Reconnecting banner; Partner Connected both sides. Meera view still had \"partner has not logged anything\" contradiction once.",
    "screenshot": "shots/2026-10-01_arjun_sees_meera.jpg"
   },
   {
@@ -383,7 +383,7 @@
     "Open Care as a Pune user."
    ],
    "expected": "Local doctors, or an honest empty state with teleconsult option.",
-   "actual": "5 doctors total (Nagpur, Mumbai, Bangalore; 2 with \"No slots\"). Header says \"5 doctors nearby\".",
+   "actual": "5 doctors total (Nagpur, Mumbai, Bangalore; 2 with \"No slots\"). Header says \"5 doctors nearby\". | Midday: still \"5 doctors nearby\"; cities Nagpur/Mumbai/Bangalore; no Pune for Arjun.",
    "screenshot": "shots/2026-10-01_arjun_care.png"
   },
   {
@@ -450,7 +450,7 @@
     "Settings > Notifications > Upcoming reminders."
    ],
    "expected": "Reminders based on real data only.",
-   "actual": "\"Great Sleep Streak – sleep quality excellent recently\" for an account with one log.",
+   "actual": "\"Great Sleep Streak – sleep quality excellent recently\" for an account with one log. | Midday: \"Great Sleep Streak\" string not seen; reminders more contextual (Rest Up Tonight). Weekly Wellness 47/100 still day-1 canned risk — keep open.",
    "screenshot": "shots/2026-10-01_meera_notifs.png"
   },
   {
@@ -485,7 +485,7 @@
     "Try \"Browse all instead\"."
    ],
    "expected": "Labelled buttons; link reachable.",
-   "actual": "Today / Not today buttons have no visible text; the link is covered by the nav bar (taps intercepted).",
+   "actual": "Today / Not today buttons have no visible text; the link is covered by the nav bar (taps intercepted). | Midday: Browse all at y≈686 blocked by Wellness nav (vh 727).",
    "screenshot": "shots/2026-10-01_meera_symptom_card.png"
   },
   {
@@ -503,7 +503,7 @@
     "Inspect saved user profile."
    ],
    "expected": "Gender = male.",
-   "actual": "Local profile says gender and theme \"female\" although the male flow was shown (dashboard content is male)."
+   "actual": "Local profile says gender and theme \"female\" although the male flow was shown (dashboard content is male). | Midday: Settings Gender Identity Male; localStorage gender became male during session (started female). theme still female. Partial improvement; keep open for theme mismatch + earlier fork."
   },
   {
    "id": "ISS-030",
@@ -608,5 +608,5 @@
    "actual": "No referral link, no clinic code, no export, no clinician view. The generic app is the same for everyone, and Partner Mode is the only sharing feature."
   }
  ],
- "updated": "2026-10-01T12:00:00+05:30"
+ "updated": "2026-10-01T13:28:00+05:30"
 }

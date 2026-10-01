@@ -491,6 +491,162 @@
    "screenshot": null,
    "issue_id": "ISS-035",
    "notes": "5-minute value is good (35 s onboarding + instant dashboard) but there is nothing to take back to the doctor."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "meera",
+   "feature": "daily-log",
+   "steps": "Midday act.js: open home, log mood Okay / energy Good / sleep Good; hormonal check-in (18 sliders) Save my day; symptom swipe; ovulation Negative re-tap.",
+   "result": "ok",
+   "severity": null,
+   "repro": "n/a",
+   "screenshot": "shots/2026-10-01_midday_meera_B_mood.jpg",
+   "issue_id": null,
+   "notes": "Cycle still day 4. Identity stable anon_2d240f4f…"
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "meera",
+   "feature": "ttc-fertility",
+   "steps": "Re-check fertile statements + ovulation Negative persistence after reload.",
+   "result": "bug",
+   "severity": "P2",
+   "repro": "Open Fertility Tracking, tap Negative, reload.",
+   "screenshot": "shots/2026-10-01_midday_meera_B_fert_reload.jpg",
+   "issue_id": "ISS-016",
+   "notes": "ISS-014/015/016 all still open midday."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "meera",
+   "feature": "privacy",
+   "steps": "Open /settings; compare on-device/no-tracking copy to GA/PostHog/auth/sync.",
+   "result": "bug",
+   "severity": "P1",
+   "repro": "Settings → Privacy Status / About.",
+   "screenshot": null,
+   "issue_id": "ISS-002",
+   "notes": "Backup code shown in Cloud Backup UI (private only; not in repo)."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "meera",
+   "feature": "wellness-programs",
+   "steps": "Wellness tab: Period Relief Day 1/7 0%; Kegel Quick Session Start; Care browse doctor sheet without Request Appointment.",
+   "result": "ok",
+   "severity": "P3",
+   "repro": "n/a",
+   "screenshot": "shots/2026-10-01_midday_meera_C_wellness.jpg",
+   "issue_id": null,
+   "notes": "Copy still \"under 10 minutes\" while programs list longer days. Care stopped before submit."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "meera",
+   "feature": "partner-mode",
+   "steps": "Connect: Partner Connected; restore sharing defaults to 4/8 (cycle/mood/activity/insights).",
+   "result": "ok",
+   "severity": null,
+   "repro": "n/a",
+   "screenshot": "shots/2026-10-01_midday_meera_F_sharing.jpg",
+   "issue_id": "ISS-019",
+   "notes": "No reconnecting banner this pass."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "meera",
+   "feature": "ai-companion",
+   "steps": "Hinglish mild cramps/TTC prep (msg 5/5 hard max).",
+   "result": "mixed",
+   "severity": "P2",
+   "repro": "Chat textarea Hinglish.",
+   "screenshot": "shots/2026-10-01_midday_meera_E_chat.jpg",
+   "issue_id": null,
+   "notes": "English reply; uses logged hydration/exercise; UI 5/30."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "arjun",
+   "feature": "daily-log",
+   "steps": "Midday: mood/energy Low path, sleep Okay; performance sheet save (17 sliders).",
+   "result": "ok",
+   "severity": null,
+   "repro": "n/a",
+   "screenshot": "shots/2026-10-01_midday_arjun_A_logged.jpg",
+   "issue_id": null,
+   "notes": "Identity stable anon_0a7e58a7…"
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "arjun",
+   "feature": "mens-insights",
+   "steps": "Open Insights after 2nd log; check alarming medicalised claims.",
+   "result": "bug",
+   "severity": "P1",
+   "repro": "Home → Insights with 1–2 days data.",
+   "screenshot": "shots/2026-10-01_midday_arjun_A_insights.jpg",
+   "issue_id": "ISS-008",
+   "notes": "Still LOW / Declining / clinical framing."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "arjun",
+   "feature": "partner-mode",
+   "steps": "Connect view of Meera; restore wearable off (defaults 4/8).",
+   "result": "ok",
+   "severity": null,
+   "repro": "n/a",
+   "screenshot": "shots/2026-10-01_midday_arjun_B_connect.jpg",
+   "issue_id": null,
+   "notes": "Sees Meera Day 4 Menstrual + mood/energy/sleep. Works well."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "arjun",
+   "feature": "care-doctors",
+   "steps": "Care list as Pune user.",
+   "result": "bug",
+   "severity": "P2",
+   "repro": "Care tab.",
+   "screenshot": "shots/2026-10-01_midday_arjun_B_care.jpg",
+   "issue_id": "ISS-022",
+   "notes": "No Pune doctors; nearby header wrong."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "arjun",
+   "feature": "notifications",
+   "steps": "Notification Settings upcoming reminders.",
+   "result": "mixed",
+   "severity": "P2",
+   "repro": "Settings → Notification Settings.",
+   "screenshot": "shots/2026-10-01_midday_arjun_B_notifs.jpg",
+   "issue_id": "ISS-026",
+   "notes": "Great Sleep Streak absent; Rest Up Tonight more apt; Weekly Wellness still day-1 canned."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "arjun",
+   "feature": "ai-companion",
+   "steps": "Hinglish sleep/stress routine (msg 5/5). No cardiac.",
+   "result": "mixed",
+   "severity": "P2",
+   "repro": "Chat.",
+   "screenshot": "shots/2026-10-01_midday_arjun_B_chat.jpg",
+   "issue_id": null,
+   "notes": "Unsourced % claims and T score leap; warm tone; UI 5/30."
+  },
+  {
+   "date": "2026-10-01",
+   "persona": "both",
+   "feature": "week-one-audit",
+   "steps": "Balance log: what works well midday.",
+   "result": "ok",
+   "severity": null,
+   "repro": "n/a",
+   "screenshot": null,
+   "issue_id": null,
+   "notes": "Works well: (1) identity held under single-client act.js (2) Partner live view of Meera logs (3) sharing toggles persist/restorable (4) hormonal/performance sheets smooth; Care easy to abandon before submit (5) companion warm + uses logged data. Day-30 doctor-referred retention: still at risk / no movement day 1 (no QR, export, clinician summary)."
   }
  ],
  "narratives": [
@@ -500,5 +656,5 @@
    "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care."
   }
  ],
- "updated": "2026-10-01T12:00:00+05:30"
+ "updated": "2026-10-01T13:28:00+05:30"
 }
