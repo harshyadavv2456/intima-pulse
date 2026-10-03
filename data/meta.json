@@ -1,15 +1,15 @@
 {
   "app_url": "https://www.intimacare.in",
   "app_version": "5.2.1",
-  "last_test_run": "2026-10-03T13:15:00+05:30",
+  "last_test_run": "2026-10-03T19:10:00+05:30",
   "health_score": 53,
   "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
   "summary_today": [
-    "Midday catch-up after Oct 2 gap (usage limits): Meera+Arjun sessions done; identities STABLE; companions 4/4 each.",
-    "Health 54→53 (36 open after ISS-036; 9 P1 / 0 P0). Observation week — log/verify only.",
-    "Meera Cycle Day 6/28; ISS-014/015/016/002/005 still open; IVF Medicated Cycle deep-dive OK (no clinic data entered).",
-    "Arjun: ISS-008 still alarmist after multi-day data; ISS-029 partial (gender male, theme female); Labs Ferritin 78; Care no Pune (ISS-022).",
-    "ISS-036 new: Connect page link-code UI while LS active + Home partner card live. Partner live view itself works."
+    "Day complete (morning social/funding + midday Meera/Arjun + evening rebuild). Oct 2 gap noted; observation week — log/verify only.",
+    "Health 53 (36 open: 0 P0 / 9 P1 / 18 P2 / 9 P3). No new P0/P1 today; ISS-036 P2 (Connect link-code UI vs live Home partner card).",
+    "Personas stable (companions 4/4 each). ISS-029 still partial (gender male, theme female). Baseline app 5.2.1 unchanged.",
+    "Top quick win: Make privacy copy truthful (GAP-001) — H/Easy; still blocks trust + store compliance.",
+    "Nearest funding: STPI MedTech CoE OCP 7.0 (NIRMAAN) 2026-10-08 (verified today). Social trend: insufficient history."
   ],
   "health_score_history": [
     {
@@ -42,5 +42,5 @@
       "funding_moves": []
     }
   ],
-  "updated": "2026-10-03T13:15:00+05:30"
+  "updated": "2026-10-03T19:10:00+05:30"
 }

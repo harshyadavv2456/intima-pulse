@@ -1,13 +1,21 @@
 {
- "entries": [
-  {
-   "date": "2026-10-01",
-   "change": "baseline",
-   "detected_by": "tester baseline.js snapshot",
-   "fixed": [],
-   "broke": [],
-   "notes": "App version 5.2.1 (Settings). Home HTML hash 1fa371086269f9f2, 23 JS chunks, sw.js d9738e04fd7c5e61, landing text 5f13f52657266417, legal text 02178203a3d0d9d3. Full hashes in tester/baseline/baseline.json (private)."
-  }
- ],
- "updated": "2026-10-01T12:00:00+05:30"
+  "entries": [
+    {
+      "date": "2026-10-01",
+      "change": "baseline",
+      "detected_by": "tester baseline.js snapshot",
+      "fixed": [],
+      "broke": [],
+      "notes": "App version 5.2.1 (Settings). Home HTML hash 1fa371086269f9f2, 23 JS chunks, sw.js d9738e04fd7c5e61, landing text 5f13f52657266417, legal text 02178203a3d0d9d3. Full hashes in tester/baseline/baseline.json (private)."
+    },
+    {
+      "date": "2026-10-03",
+      "change": "No app change detected vs baseline 5.2.1 (evening rebuild)",
+      "detected_by": "evening rebuild cross-check (midday sessions + morning scan)",
+      "fixed": [],
+      "broke": [],
+      "notes": "ISS-036 logged midday (Connect UI). Identities stable. Observation week."
+    }
+  ],
+  "updated": "2026-10-03T19:10:00+05:30"
 }
