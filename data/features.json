@@ -1,459 +1,489 @@
 {
- "features": [
-  {
-   "id": "onboarding",
-   "name": "Onboarding (no login)",
-   "group": "Platform",
-   "status": "great",
-   "note": "Women 7 Qs ~35 s, men 4 Qs ~30 s; dashboard instantly. Tour modal repeats (ISS-032), male gender stored wrong (ISS-029).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "anon-identity",
-   "name": "Anonymous ID / session",
-   "group": "Platform",
-   "status": "weak",
-   "note": "Works without login but forks identity on token refresh race (ISS-001).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "backup-code",
-   "name": "Cloud backup (8-char code)",
-   "group": "Platform",
-   "status": "OK",
-   "note": "Code in ~5 s; restore in a fresh context not yet tested (day 2).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "pin-lock",
-   "name": "PIN lock",
-   "group": "Platform",
-   "status": "OK",
-   "note": "4-digit PIN, lock screen and wrong PIN work. (Security notes are in the private report.)",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "settings",
-   "name": "Settings",
-   "group": "Platform",
-   "status": "weak",
-   "note": "Privacy copy false (ISS-002); no export (ISS-005).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "notifications",
-   "name": "Notifications",
-   "group": "Platform",
-   "status": "weak",
-   "note": "Fine-grained types; canned preview (ISS-026).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "data-export",
-   "name": "Data export",
-   "group": "Platform",
-   "status": "missing",
-   "note": "Promised in tour + policy, not present (ISS-005).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "data-delete",
-   "name": "Data delete",
-   "group": "Platform",
-   "status": "OK",
-   "note": "Control exists; NOT exercised (persistent accounts); throwaway test pending.",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "offline",
-   "name": "Offline / PWA",
-   "group": "Platform",
-   "status": "weak",
-   "note": "Service worker present, pages fail offline (ISS-024).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "performance",
-   "name": "Page performance",
-   "group": "Platform",
-   "status": "OK",
-   "note": "Fast on normal network (LCP 0.7-1.8 s) but 10-14 s on slow 3G (ISS-025).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "privacy-copy",
-   "name": "Privacy claims accuracy",
-   "group": "Platform",
-   "status": "broken",
-   "note": "Multiple claims contradict reality (ISS-002/003/004).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "cycle-tracker",
-   "name": "Cycle / period logging",
-   "group": "Women",
-   "status": "weak",
-   "note": "Logging fine; predictions ignore irregular cycles (ISS-014).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "ttc-fertility",
-   "name": "TTC / ovulation / BBT",
-   "group": "Women",
-   "status": "weak",
-   "note": "Good inputs; three inconsistent fertile statements (ISS-015), selection not retained (ISS-016).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "ivf-mode",
-   "name": "IVF / medicated cycle mode",
-   "group": "Women",
-   "status": "great",
-   "note": "Meds, monitoring and clinic red-flag list; good depth.",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "pregnancy-mode",
-   "name": "Pregnancy mode",
-   "group": "Women",
-   "status": "OK",
-   "note": "Due-date form opens; start/cancel; only tested to the form (cancelled, nothing to revert).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "hormonal-dashboard",
-   "name": "Hormonal dashboard check-in",
-   "group": "Women",
-   "status": "OK",
-   "note": "Rich 17-slider check-in saves; long (ISS-034).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "symptom-logging",
-   "name": "Symptom swipe cards",
-   "group": "Women",
-   "status": "weak",
-   "note": "Cute but icon-only and blocked link (ISS-028).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "mens-energy",
-   "name": "Men's energy / stress / vitality",
-   "group": "Men",
-   "status": "OK",
-   "note": "Quick logging works; contradictory home advice (ISS-027).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "mens-insights",
-   "name": "Men's insights (T rhythm, readiness, low-T, ED)",
-   "group": "Men",
-   "status": "weak",
-   "note": "Over-medicalised from 1 day of data (ISS-008).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "performance-log",
-   "name": "Performance log",
-   "group": "Men",
-   "status": "OK",
-   "note": "~30 fields; saved fine; heavy for daily use.",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "labs",
-   "name": "Lab results",
-   "group": "Men",
-   "status": "OK",
-   "note": "23 markers, saves; no range flags (ISS-033).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "kegel",
-   "name": "Kegel / pelvic programs",
-   "group": "Shared",
-   "status": "OK",
-   "note": "Quick session 3x10 reps/5 min present; session run not tested.",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "wellness-programs",
-   "name": "7-day wellness programs",
-   "group": "Shared",
-   "status": "OK",
-   "note": "6 programs, 1-tap start; durations exceed claim (ISS-031).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "ai-companion",
-   "name": "AI companion",
-   "group": "Shared",
-   "status": "weak",
-   "note": "Warm, personalised, catches red flags; wrong emergency number, invented stats, language drift (ISS-006..012).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "partner-mode",
-   "name": "Partner Mode link",
-   "group": "Connect",
-   "status": "weak",
-   "note": "Linking by 6-char code works instantly; reliability and unlink issues (ISS-001/017/018/019).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "partner-sharing",
-   "name": "Partner per-field sharing toggles",
-   "group": "Connect",
-   "status": "OK",
-   "note": "5 of 8 categories verified hide/show in both directions; 3 inconclusive (ISS-021).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "devices",
-   "name": "Devices / wearables",
-   "group": "Connect",
-   "status": "OK",
-   "note": "Not exercised on day 1 (no wearable available in synthetic test).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "care-doctors",
-   "name": "Care: doctor list / map",
-   "group": "Care",
-   "status": "weak",
-   "note": "Only 5 doctors in 3 cities; none in Pune (ISS-022).",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "care-booking",
-   "name": "Anonymous booking (tested up to final button)",
-   "group": "Care",
-   "status": "OK",
-   "note": "Clear request-not-booked copy; stopped before \"Request Appointment\".",
-   "last_verified": "2026-10-01"
-  },
-  {
-   "id": "doctor-referral",
-   "name": "Doctor-referral onboarding (QR, clinic link, summary)",
-   "group": "Care",
-   "status": "missing",
-   "note": "No referral entry point or clinician-facing output (ISS-035).",
-   "last_verified": "2026-10-01"
-  }
- ],
- "gaps": [
-  {
-   "id": "GAP-001",
-   "feature": "privacy-copy",
-   "title": "Make privacy copy truthful",
-   "change": "Replace \"all data stays on your device / no tracking / E2E-sounding\" with an honest 3-line explainer: logs sync to your anonymous cloud account, AI chat goes to a third-party AI provider, doctor messages are encrypted at rest with a key we hold (not end-to-end). Update tour, Settings, landing, policy and store listings.",
-   "why": "Day-1 evidence: Settings, tour and landing claims vs cloud session, GA/PostHog (ISS-002/003/004). A privacy-first app lives on trust; one screenshot of the mismatch is a store-policy and brand risk.",
-   "impact": "H",
-   "effort": "Easy",
-   "retention_effect": "Doctor-referred patients are told the app is safe by their doctor; a discovered mismatch ends trust and the doctor's recommendation. Neutral-to-positive for D30 once fixed.",
-   "evidence_issue_ids": [
-    "ISS-002",
-    "ISS-003",
-    "ISS-004"
-   ],
-   "quick_win": true
-  },
-  {
-   "id": "GAP-002",
-   "feature": "ai-companion",
-   "title": "India-correct red-flag handling",
-   "change": "Hard-code India emergency numbers (112/108), add a red-flag classifier that pins safety advice for the session (no soothing routines after a red flag), ask pregnancy/ectopic questions for TTC users.",
-   "why": "Arjun chest-pain reply quoted 911 and next reply offered chair yoga (ISS-006/007); Meera pelvic pain reply lacked ectopic triage (ISS-011).",
-   "impact": "H",
-   "effort": "Easy",
-   "retention_effect": "Safety incidents are the fastest way for a doctor to stop referring; fixing keeps the doctor channel alive.",
-   "evidence_issue_ids": [
-    "ISS-006",
-    "ISS-007",
-    "ISS-011"
-   ],
-   "quick_win": true
-  },
-  {
-   "id": "GAP-003",
-   "feature": "anon-identity",
-   "title": "Serialise token refresh; never auto-create a new identity",
-   "change": "Single-flight the auth refresh, only sign up anonymously when no stored session exists, and surface \"restore with backup code\" when the server rejects a session.",
-   "why": "Both personas lost their partner link/logs several times in one day (ISS-001).",
-   "impact": "H",
-   "effort": "Easy",
-   "retention_effect": "Lost history at week 1-2 is the top D30 killer: users who see an empty dashboard after a reload will not rebuild a streak.",
-   "evidence_issue_ids": [
-    "ISS-001"
-   ],
-   "quick_win": true
-  },
-  {
-   "id": "GAP-004",
-   "feature": "data-export",
-   "title": "Build export + doctor summary",
-   "change": "JSON/CSV export plus a one-page PDF cycle/symptom summary a patient can show her gynaecologist.",
-   "why": "Tour and policy promise export; none exists (ISS-005, ISS-035).",
-   "impact": "H",
-   "effort": "Medium",
-   "retention_effect": "Gives the patient a concrete reason to keep logging until the next appointment (the D30 hook for referred users) and gives the doctor visible value.",
-   "evidence_issue_ids": [
-    "ISS-005",
-    "ISS-035"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-005",
-   "feature": "doctor-referral",
-   "title": "Doctor QR landing + clinic code",
-   "change": "QR opens /?ref=clinic: pre-fills TTC/PCOS template, offers to share summary with that clinic, shows clinic slots first.",
-   "why": "Referred patient lands on a generic app; nothing connects her to the referrer (ISS-035).",
-   "impact": "H",
-   "effort": "Medium",
-   "retention_effect": "Core of the referral model: without a link back to the clinic the doctor sees no benefit and the patient has no appointment-to-appointment loop.",
-   "evidence_issue_ids": [
-    "ISS-035"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-006",
-   "feature": "mens-insights",
-   "title": "Gate insights until enough data",
-   "change": "Show \"Collecting data\" for 3-7 days, remove diagnostic wording (\"low libido linked to low testosterone\"), show scores with scale and confidence.",
-   "why": "Readiness LOW / Testosterone 3 declining from one entry (ISS-008, ISS-027).",
-   "impact": "H",
-   "effort": "Easy",
-   "retention_effect": "Alarming day-1 verdicts cause churn or anxiety; calm early insights keep curiosity into week 2.",
-   "evidence_issue_ids": [
-    "ISS-008",
-    "ISS-027"
-   ],
-   "quick_win": true
-  },
-  {
-   "id": "GAP-007",
-   "feature": "cycle-tracker",
-   "title": "Irregular-cycle aware predictions",
-   "change": "Use range predictions (e.g. day 17-24), unify the three fertile-window statements, adapt after 2-3 logged cycles.",
-   "why": "Meera irregular 31-38 days, app showed 28-day logic (ISS-014/015).",
-   "impact": "H",
-   "effort": "Medium",
-   "retention_effect": "Irregular-cycle and TTC patients are exactly the doctor-referral cohort; wrong predictions in week 3-4 lose them.",
-   "evidence_issue_ids": [
-    "ISS-014",
-    "ISS-015",
-    "ISS-016"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-008",
-   "feature": "ai-companion",
-   "title": "Companion language + grounding",
-   "change": "Reply in the user's script (Roman Hinglish), ground numbers in the logged values, ban invented percentages, add \"see your doctor\" triggers for TTC > 6-12 months.",
-   "why": "ISS-009/010/012.",
-   "impact": "M",
-   "effort": "Easy",
-   "retention_effect": "Hinglish users in Tier-2 cities (Nagpur) disengage if replies drift to Devanagari/English; accuracy wins doctor trust.",
-   "evidence_issue_ids": [
-    "ISS-009",
-    "ISS-010",
-    "ISS-012"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-009",
-   "feature": "offline",
-   "title": "Offline logging + 3G budget",
-   "change": "Cache app shell and queue logs offline; lazy-load Mapbox and chat bundles; target <5 s on slow 3G.",
-   "why": "Offline fails on all pages; slow 3G 10-14 s (ISS-024/025).",
-   "impact": "M",
-   "effort": "Medium",
-   "retention_effect": "Daily-logging apps are used on the move/low data; failed opens break streaks.",
-   "evidence_issue_ids": [
-    "ISS-024",
-    "ISS-025"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-010",
-   "feature": "partner-mode",
-   "title": "Partner Mode reliability & consent",
-   "change": "Confirmation before unlink, two-sided unlink, remove stale \"Reconnecting\" banner, first-tap code generation.",
-   "why": "ISS-017/018/019/020.",
-   "impact": "M",
-   "effort": "Easy",
-   "retention_effect": "Partner linking is the viral/retention loop for couples; broken first impression loses the second user.",
-   "evidence_issue_ids": [
-    "ISS-017",
-    "ISS-018",
-    "ISS-019",
-    "ISS-020"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-011",
-   "feature": "care-doctors",
-   "title": "Doctor supply + honest empty states",
-   "change": "Onboard doctors in launch cities (Nagpur, Pune), show \"teleconsult\" when no local doctors, fix \"nearby\" header.",
-   "why": "Pune user sees none (ISS-022).",
-   "impact": "M",
-   "effort": "Hard",
-   "retention_effect": "Doctors are the referral engine; users in uncovered cities have no next step after the app suggests \"see a doctor\".",
-   "evidence_issue_ids": [
-    "ISS-022"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-012",
-   "feature": "notifications",
-   "title": "Data-driven reminders and re-engagement",
-   "change": "Replace canned previews, add a gentle \"log tomorrow\" push/WhatsApp-style nudge and weekly summary.",
-   "why": "Canned Great Sleep Streak (ISS-026); streak resets lose users.",
-   "impact": "M",
-   "effort": "Medium",
-   "retention_effect": "Day 7-30 return depends on a real reason to come back; weekly summary tied to the next appointment is the strongest hook.",
-   "evidence_issue_ids": [
-    "ISS-026"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-013",
-   "feature": "symptom-logging",
-   "title": "Labelled, shorter check-ins",
-   "change": "Add text labels, reachable \"browse all\", and a 3-question daily mode.",
-   "why": "17-slider hormonal sheet and icon-only cards (ISS-028/034).",
-   "impact": "M",
-   "effort": "Easy",
-   "retention_effect": "Low-friction logging sustains streaks past week 2.",
-   "evidence_issue_ids": [
-    "ISS-028",
-    "ISS-034"
-   ],
-   "quick_win": false
-  },
-  {
-   "id": "GAP-014",
-   "feature": "onboarding",
-   "title": "Tour once, fix male profile",
-   "change": "Show the tour once and persist dismissal; fix gender storage.",
-   "why": "ISS-029/032.",
-   "impact": "L",
-   "effort": "Easy",
-   "retention_effect": "Minor polish.",
-   "evidence_issue_ids": [
-    "ISS-029",
-    "ISS-032"
-   ],
-   "quick_win": false
-  }
- ],
- "updated": "2026-10-01T13:28:00+05:30"
+  "features": [
+    {
+      "id": "onboarding",
+      "name": "Onboarding (no login)",
+      "group": "Platform",
+      "status": "great",
+      "note": "Women 7 Qs ~35 s, men 4 Qs ~30 s; dashboard instantly. Tour modal repeats (ISS-032), male gender stored wrong (ISS-029).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "anon-identity",
+      "name": "Anonymous ID / session",
+      "group": "Platform",
+      "status": "weak",
+      "note": "Works without login but forks identity on token refresh race (ISS-001).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "backup-code",
+      "name": "Cloud backup (8-char code)",
+      "group": "Platform",
+      "status": "OK",
+      "note": "Code in ~5 s; restore in a fresh context not yet tested (day 2).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "pin-lock",
+      "name": "PIN lock",
+      "group": "Platform",
+      "status": "OK",
+      "note": "4-digit PIN, lock screen and wrong PIN work. (Security notes are in the private report.)",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "settings",
+      "name": "Settings",
+      "group": "Platform",
+      "status": "weak",
+      "note": "Privacy copy false (ISS-002); no export (ISS-005).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "notifications",
+      "name": "Notifications",
+      "group": "Platform",
+      "status": "weak",
+      "note": "Fine-grained types; canned preview (ISS-026).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "data-export",
+      "name": "Data export",
+      "group": "Platform",
+      "status": "missing",
+      "note": "Promised in tour + policy, not present (ISS-005).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "data-delete",
+      "name": "Data delete",
+      "group": "Platform",
+      "status": "OK",
+      "note": "Control exists; NOT exercised (persistent accounts); throwaway test pending.",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "offline",
+      "name": "Offline / PWA",
+      "group": "Platform",
+      "status": "weak",
+      "note": "Service worker present, pages fail offline (ISS-024).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "performance",
+      "name": "Page performance",
+      "group": "Platform",
+      "status": "OK",
+      "note": "Fast on normal network (LCP 0.7-1.8 s) but 10-14 s on slow 3G (ISS-025).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "privacy-copy",
+      "name": "Privacy claims accuracy",
+      "group": "Platform",
+      "status": "broken",
+      "note": "Multiple claims contradict reality (ISS-002/003/004).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "cycle-tracker",
+      "name": "Cycle / period logging",
+      "group": "Women",
+      "status": "weak",
+      "note": "Logging fine; predictions ignore irregular cycles (ISS-014).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "ttc-fertility",
+      "name": "TTC / ovulation / BBT",
+      "group": "Women",
+      "status": "weak",
+      "note": "Good inputs; three inconsistent fertile statements (ISS-015), selection not retained (ISS-016).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "ivf-mode",
+      "name": "IVF / medicated cycle mode",
+      "group": "Women",
+      "status": "great",
+      "note": "Meds, monitoring and clinic red-flag list; good depth.",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "pregnancy-mode",
+      "name": "Pregnancy mode",
+      "group": "Women",
+      "status": "OK",
+      "note": "Due-date form opens; start/cancel; only tested to the form (cancelled, nothing to revert).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "hormonal-dashboard",
+      "name": "Hormonal dashboard check-in",
+      "group": "Women",
+      "status": "OK",
+      "note": "Rich 17-slider check-in saves; long (ISS-034).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "symptom-logging",
+      "name": "Symptom swipe cards",
+      "group": "Women",
+      "status": "weak",
+      "note": "Cute but icon-only and blocked link (ISS-028).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "mens-energy",
+      "name": "Men's energy / stress / vitality",
+      "group": "Men",
+      "status": "OK",
+      "note": "Quick logging works; contradictory home advice (ISS-027).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "mens-insights",
+      "name": "Men's insights (T rhythm, readiness, low-T, ED)",
+      "group": "Men",
+      "status": "weak",
+      "note": "Over-medicalised from 1 day of data (ISS-008).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "performance-log",
+      "name": "Performance log",
+      "group": "Men",
+      "status": "OK",
+      "note": "~30 fields; saved fine; heavy for daily use.",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "labs",
+      "name": "Lab results",
+      "group": "Men",
+      "status": "OK",
+      "note": "23 markers, saves; no range flags (ISS-033).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "kegel",
+      "name": "Kegel / pelvic programs",
+      "group": "Shared",
+      "status": "OK",
+      "note": "Quick session 3x10 reps/5 min present; session run not tested.",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "wellness-programs",
+      "name": "7-day wellness programs",
+      "group": "Shared",
+      "status": "OK",
+      "note": "6 programs, 1-tap start; durations exceed claim (ISS-031).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "ai-companion",
+      "name": "AI companion",
+      "group": "Shared",
+      "status": "weak",
+      "note": "Warm, personalised, catches red flags; wrong emergency number, invented stats, language drift (ISS-006..012).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "partner-mode",
+      "name": "Partner Mode link",
+      "group": "Connect",
+      "status": "weak",
+      "note": "Linking by 6-char code works instantly; reliability and unlink issues (ISS-001/017/018/019).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "partner-sharing",
+      "name": "Partner per-field sharing toggles",
+      "group": "Connect",
+      "status": "OK",
+      "note": "5 of 8 categories verified hide/show in both directions; 3 inconclusive (ISS-021).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "devices",
+      "name": "Devices / wearables",
+      "group": "Connect",
+      "status": "OK",
+      "note": "Not exercised on day 1 (no wearable available in synthetic test).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "care-doctors",
+      "name": "Care: doctor list / map",
+      "group": "Care",
+      "status": "weak",
+      "note": "Only 5 doctors in 3 cities; none in Pune (ISS-022).",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "care-booking",
+      "name": "Anonymous booking (tested up to final button)",
+      "group": "Care",
+      "status": "OK",
+      "note": "Clear request-not-booked copy; stopped before \"Request Appointment\".",
+      "last_verified": "2026-10-01"
+    },
+    {
+      "id": "doctor-referral",
+      "name": "Doctor-referral onboarding (QR, clinic link, summary)",
+      "group": "Care",
+      "status": "missing",
+      "note": "No referral entry point or clinician-facing output (ISS-035).",
+      "last_verified": "2026-10-01"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "GAP-001",
+      "feature": "privacy-copy",
+      "title": "Make privacy copy truthful",
+      "change": "Replace \"all data stays on your device / no tracking / E2E-sounding\" with an honest 3-line explainer: logs sync to your anonymous cloud account, AI chat goes to a third-party AI provider, doctor messages are encrypted at rest with a key we hold (not end-to-end). Update tour, Settings, landing, policy and store listings.",
+      "why": "Day-1 evidence: Settings, tour and landing claims vs cloud session, GA/PostHog (ISS-002/003/004). A privacy-first app lives on trust; one screenshot of the mismatch is a store-policy and brand risk.",
+      "impact": "H",
+      "effort": "Easy",
+      "retention_effect": "Doctor-referred patients are told the app is safe by their doctor; a discovered mismatch ends trust and the doctor's recommendation. Neutral-to-positive for D30 once fixed.",
+      "evidence_issue_ids": [
+        "ISS-002",
+        "ISS-003",
+        "ISS-004"
+      ],
+      "quick_win": true
+    },
+    {
+      "id": "GAP-002",
+      "feature": "ai-companion",
+      "title": "India-correct red-flag handling",
+      "change": "Hard-code India emergency numbers (112/108), add a red-flag classifier that pins safety advice for the session (no soothing routines after a red flag), ask pregnancy/ectopic questions for TTC users.",
+      "why": "Arjun chest-pain reply quoted 911 and next reply offered chair yoga (ISS-006/007); Meera pelvic pain reply lacked ectopic triage (ISS-011).",
+      "impact": "H",
+      "effort": "Easy",
+      "retention_effect": "Safety incidents are the fastest way for a doctor to stop referring; fixing keeps the doctor channel alive.",
+      "evidence_issue_ids": [
+        "ISS-006",
+        "ISS-007",
+        "ISS-011"
+      ],
+      "quick_win": true
+    },
+    {
+      "id": "GAP-003",
+      "feature": "anon-identity",
+      "title": "Serialise token refresh; never auto-create a new identity",
+      "change": "Single-flight the auth refresh, only sign up anonymously when no stored session exists, and surface \"restore with backup code\" when the server rejects a session.",
+      "why": "Both personas lost their partner link/logs several times in one day (ISS-001).",
+      "impact": "H",
+      "effort": "Easy",
+      "retention_effect": "Lost history at week 1-2 is the top D30 killer: users who see an empty dashboard after a reload will not rebuild a streak.",
+      "evidence_issue_ids": [
+        "ISS-001"
+      ],
+      "quick_win": true
+    },
+    {
+      "id": "GAP-004",
+      "feature": "data-export",
+      "title": "Build export + doctor summary",
+      "change": "JSON/CSV export plus a one-page PDF cycle/symptom summary a patient can show her gynaecologist.",
+      "why": "Tour and policy promise export; none exists (ISS-005, ISS-035).",
+      "impact": "H",
+      "effort": "Medium",
+      "retention_effect": "Gives the patient a concrete reason to keep logging until the next appointment (the D30 hook for referred users) and gives the doctor visible value.",
+      "evidence_issue_ids": [
+        "ISS-005",
+        "ISS-035"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-005",
+      "feature": "doctor-referral",
+      "title": "Doctor QR landing + clinic code",
+      "change": "QR opens /?ref=clinic: pre-fills TTC/PCOS template, offers to share summary with that clinic, shows clinic slots first.",
+      "why": "Referred patient lands on a generic app; nothing connects her to the referrer (ISS-035).",
+      "impact": "H",
+      "effort": "Medium",
+      "retention_effect": "Core of the referral model: without a link back to the clinic the doctor sees no benefit and the patient has no appointment-to-appointment loop.",
+      "evidence_issue_ids": [
+        "ISS-035"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-006",
+      "feature": "mens-insights",
+      "title": "Gate insights until enough data",
+      "change": "Show \"Collecting data\" for 3-7 days, remove diagnostic wording (\"low libido linked to low testosterone\"), show scores with scale and confidence.",
+      "why": "Readiness LOW / Testosterone 3 declining from one entry (ISS-008, ISS-027).",
+      "impact": "H",
+      "effort": "Easy",
+      "retention_effect": "Alarming day-1 verdicts cause churn or anxiety; calm early insights keep curiosity into week 2.",
+      "evidence_issue_ids": [
+        "ISS-008",
+        "ISS-027"
+      ],
+      "quick_win": true
+    },
+    {
+      "id": "GAP-007",
+      "feature": "cycle-tracker",
+      "title": "Irregular-cycle aware predictions",
+      "change": "Use range predictions (e.g. day 17-24), unify the three fertile-window statements, adapt after 2-3 logged cycles.",
+      "why": "Meera irregular 31-38 days, app showed 28-day logic (ISS-014/015).",
+      "impact": "H",
+      "effort": "Medium",
+      "retention_effect": "Irregular-cycle and TTC patients are exactly the doctor-referral cohort; wrong predictions in week 3-4 lose them.",
+      "evidence_issue_ids": [
+        "ISS-014",
+        "ISS-015",
+        "ISS-016"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-008",
+      "feature": "ai-companion",
+      "title": "Companion language + grounding",
+      "change": "Reply in the user's script (Roman Hinglish), ground numbers in the logged values, ban invented percentages, add \"see your doctor\" triggers for TTC > 6-12 months.",
+      "why": "ISS-009/010/012.",
+      "impact": "M",
+      "effort": "Easy",
+      "retention_effect": "Hinglish users in Tier-2 cities (Nagpur) disengage if replies drift to Devanagari/English; accuracy wins doctor trust.",
+      "evidence_issue_ids": [
+        "ISS-009",
+        "ISS-010",
+        "ISS-012"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-009",
+      "feature": "offline",
+      "title": "Offline logging + 3G budget",
+      "change": "Cache app shell and queue logs offline; lazy-load Mapbox and chat bundles; target <5 s on slow 3G.",
+      "why": "Offline fails on all pages; slow 3G 10-14 s (ISS-024/025).",
+      "impact": "M",
+      "effort": "Medium",
+      "retention_effect": "Daily-logging apps are used on the move/low data; failed opens break streaks.",
+      "evidence_issue_ids": [
+        "ISS-024",
+        "ISS-025"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-010",
+      "feature": "partner-mode",
+      "title": "Partner Mode reliability & consent",
+      "change": "Confirmation before unlink, two-sided unlink, remove stale \"Reconnecting\" banner, first-tap code generation.",
+      "why": "ISS-017/018/019/020.",
+      "impact": "M",
+      "effort": "Easy",
+      "retention_effect": "Partner linking is the viral/retention loop for couples; broken first impression loses the second user.",
+      "evidence_issue_ids": [
+        "ISS-017",
+        "ISS-018",
+        "ISS-019",
+        "ISS-020"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-011",
+      "feature": "care-doctors",
+      "title": "Doctor supply + honest empty states",
+      "change": "Onboard doctors in launch cities (Nagpur, Pune), show \"teleconsult\" when no local doctors, fix \"nearby\" header.",
+      "why": "Pune user sees none (ISS-022).",
+      "impact": "M",
+      "effort": "Hard",
+      "retention_effect": "Doctors are the referral engine; users in uncovered cities have no next step after the app suggests \"see a doctor\".",
+      "evidence_issue_ids": [
+        "ISS-022"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-012",
+      "feature": "notifications",
+      "title": "Data-driven reminders and re-engagement",
+      "change": "Replace canned previews, add a gentle \"log tomorrow\" push/WhatsApp-style nudge and weekly summary.",
+      "why": "Canned Great Sleep Streak (ISS-026); streak resets lose users.",
+      "impact": "M",
+      "effort": "Medium",
+      "retention_effect": "Day 7-30 return depends on a real reason to come back; weekly summary tied to the next appointment is the strongest hook.",
+      "evidence_issue_ids": [
+        "ISS-026"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-013",
+      "feature": "symptom-logging",
+      "title": "Labelled, shorter check-ins",
+      "change": "Add text labels, reachable \"browse all\", and a 3-question daily mode.",
+      "why": "17-slider hormonal sheet and icon-only cards (ISS-028/034).",
+      "impact": "M",
+      "effort": "Easy",
+      "retention_effect": "Low-friction logging sustains streaks past week 2.",
+      "evidence_issue_ids": [
+        "ISS-028",
+        "ISS-034"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-014",
+      "feature": "onboarding",
+      "title": "Tour once, fix male profile",
+      "change": "Show the tour once and persist dismissal; fix gender storage.",
+      "why": "ISS-029/032.",
+      "impact": "L",
+      "effort": "Easy",
+      "retention_effect": "Minor polish.",
+      "evidence_issue_ids": [
+        "ISS-029",
+        "ISS-032"
+      ],
+      "quick_win": false
+    },
+    {
+      "id": "GAP-015",
+      "feature": "menopause",
+      "title": "Add perimenopause / menopause mode",
+      "change": "Life-stage mode with midlife symptom set (hot flashes, sleep, mood, cycle change), India-local clinic/HRT education (not diagnosis), and doctor-summary export. Mark clearly as wellness guidance.",
+      "why": "Social cluster c-menopause = Not covered; r/TwoXIndia and r/AskIndianWomen threads on who to see for perimenopause/HRT and supporting mothers. Clue already ships perimenopause mode.",
+      "impact": "H",
+      "effort": "Hard",
+      "retention_effect": "Opens 40+ cohort and mother-caregivers; without it Intima loses midlife users to Clue/Flo. Doctor-referred midlife users need a reason to return past day 7.",
+      "evidence_issue_ids": [],
+      "quick_win": false,
+      "evidence_social_clusters": [
+        "c-menopause"
+      ]
+    },
+    {
+      "id": "GAP-016",
+      "feature": "ivf-companion",
+      "title": "IVF emotional + cost-expectation companion content",
+      "change": "Companion/content packs that set honest expectations on IVF cost opacity and near-universal insurance exclusion in India, plus emotional check-ins between clinic visits (defer clinical decisions to doctors).",
+      "why": "r/AskIndianWomen IVF defeat/no-ecosystem thread; r/IndianTTC_Support and r/indiahealthinsurance on fertility insurance gaps. Cluster c-ivf coverage Partly.",
+      "impact": "M",
+      "effort": "Medium",
+      "retention_effect": "Keeps TTC/IVF users engaged between appointments; doctor-referred fertility patients need non-clinic support to hit day-30.",
+      "evidence_issue_ids": [],
+      "quick_win": false,
+      "evidence_social_clusters": [
+        "c-ivf"
+      ]
+    }
+  ],
+  "updated": "2026-10-03T09:15:00+05:30"
 }
