@@ -1,15 +1,15 @@
 {
   "app_url": "https://www.intimacare.in",
   "app_version": "5.2.1",
-  "last_test_run": "2026-10-03T19:10:00+05:30",
-  "health_score": 53,
+  "last_test_run": "2026-10-07T21:35:00+05:30",
+  "health_score": 49,
   "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
   "summary_today": [
-    "Runs missed 4–7 Oct (all scheduled runs failed, incl. today's morning + midday) — no new testing, social or app data for those days; nothing invented. Data below is from 1–3 Oct.",
-    "Health 53 (unchanged; recomputed from current issues/features): 36 open — 0 P0 / 9 P1 / 18 P2 / 9 P3. No new P0/P1; no issue re-verified since 3 Oct.",
-    "Top quick win still GAP-001: make privacy copy truthful (H/Easy). Only 4 gaps qualify as quick wins (GAP-001/002/003/006).",
-    "Funding: STPI MedTech CoE OCP 7.0 (NIRMAAN) closes TOMORROW 8 Oct (re-verified on official page today); YC W27 2 Nov (re-verified). Nothing submitted.",
-    "Sunday 4 Oct weekly 'State of Intima' added late today; comps re-check overdue (due 4 Oct). Social trend: insufficient history (1 snapshot)."
+    "Watchdog caught up today's missed morning scan + midday Meera/Arjun sessions (21:30–22:15 IST). 4–6 Oct remain a gap; nothing invented. App unchanged (v5.2.1).",
+    "Health 49 (was 53): 40 open — 0 P0 / 10 P1 / 20 P2 / 10 P3. NEW P1 ISS-037: AI companion did not escalate heavy bleeding + dizziness (home remedies, 'tight bandage', no 112). Also new ISS-038/039 (P2), ISS-040 (P3). None fixed.",
+    "Top quick win still GAP-001: make privacy copy truthful (H/Easy) — 'All data stays on your device' still live. Next: hard-code red-flag escalation (112 + urgent care) in the companion.",
+    "Funding: STPI MedTech OCP 7.0 closes TOMORROW 8 Oct (re-verified on official page tonight); YC W27 2 Nov 8pm PT (re-verified). Nothing submitted.",
+    "Social: trend still 'insufficient history' (7 Oct snapshot not comparable with 3 Oct). Signal: rising press scrutiny of period-app accuracy/privacy (BMJ 30 Sep, Flo settlement 15 Oct). Comps re-check done; next due 11 Oct."
   ],
   "health_score_history": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "date": "2026-10-07",
-      "score": 53
+      "score": 49
     }
   ],
   "weekly": [
@@ -57,5 +57,5 @@
       "day1_baseline": "Day-1 baseline. Intima Health v5.2.1 is a fast, no-login, warm product with unusually deep content (IVF mode, labs, partner sharing). The main risks are trust (privacy copy that is not true), reliability (identity forks lose data), and an AI that can be unsafe in India-specific red-flag moments. For doctor-referred users the app delivers value in 5 minutes but gives no reason to return by day 30 unless export/summary and reminders are added."
     }
   ],
-  "updated": "2026-10-07T19:30:00+05:30"
+  "updated": "2026-10-07T22:20:00+05:30"
 }

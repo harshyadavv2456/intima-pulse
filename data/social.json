@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-03T09:15:00+05:30",
-  "history_note": "Catch-up morning pass 3 Oct 2026 (IST) after Oct 2 routines failed; prior baseline 1 Oct. Trend remains 'insufficient history' — first volume_history snapshot added today; trends need >=2 snapshots. Reddit threads still block direct fetch (403/login wall), so new quotes are verbatim post titles from search with URLs; post dates left blank when not exposed. X/Instagram/YouTube comments not accessible this pass (login walls). Official competitor pages and press wires opened where possible. No usernames recorded.",
+  "updated": "2026-10-07T22:20:00+05:30",
+  "history_note": "Snapshot 2 taken 7 Oct 2026 (watchdog catch-up, ~22:00 IST); 4-6 Oct not covered (runs failed). The 7 Oct counts use a different, simpler method (relevant results in one targeted search) than the 3 Oct relative estimates, so the two are NOT comparable and every trend stays \"insufficient history\". Qualitative signal this week: more press scrutiny of period apps (BMJ analysis 30 Sep; Harvard 2 Oct; Fashion Times 6 Oct; Flo settlement deadline 15 Oct) and a Nagpur menopause/social-media study (4 Oct). Reddit and X still block direct fetch; quotes are post titles/text from search with URLs, no usernames. Clusters not searched on 7 Oct (stress-men, ivf, male-infertility, judgy-gyn, preg-anxiety, d2c-upsell) have no 7 Oct snapshot.",
   "clusters": [
     {
       "id": "c-dismissed",
@@ -48,6 +48,12 @@
           "source": "Reddit r/AskIndianWomen",
           "url": "https://www.reddit.com/r/AskIndianWomen/comments/1vataqx/want_to_seek_advicediagnosis_for_potential_pcos/",
           "date": ""
+        },
+        {
+          "text": "Gynaecologist in Delhi NCR for PCOS, tired of upselling, need real recommendations",
+          "source": "Reddit r/PcosIndia (post title)",
+          "url": "https://www.reddit.com/r/PcosIndia/comments/1vecazx/gynaecologist_in_delhi_ncr_for_pcos_tired_of/",
+          "date": "2026-08-03"
         }
       ]
     },
@@ -97,6 +103,18 @@
           "source": "Reddit r/PCOS",
           "url": "https://www.reddit.com/r/PCOS/comments/1ubc14e/sooo_whats_our_favorite_period_tracking_app_thats/",
           "date": ""
+        },
+        {
+          "text": "The apps can dangerously mislead women while also exposing them to commercial exploitation and legal concerns.",
+          "source": "Harvard FAS Current (on BMJ analysis of menstrual-tracking apps, 30 Sep 2026)",
+          "url": "https://current.fas.harvard.edu/stories/alarm-over-menstrual-tracking-apps",
+          "date": "2026-10-02"
+        },
+        {
+          "text": "Researchers say the evidence behind many cycle-syncing claims remains weak, while the sensitive nature of menstrual and reproductive data creates another reason for users to think carefully.",
+          "source": "Fashion Times (news)",
+          "url": "https://www.fashiontimes.co.uk/bmj-analysis-cycle-syncing-period-tracking-apps-1765167",
+          "date": "2026-10-06"
         }
       ]
     },
@@ -134,6 +152,12 @@
           "source": "Reddit r/PcosIndia",
           "url": "https://www.reddit.com/r/PcosIndia/comments/1uolqx2/how_do_i_know_what_symptoms_indicate_pcospcod_and/",
           "date": ""
+        },
+        {
+          "text": "Every app gives me different dates and then keeps changing them as the month goes on.",
+          "source": "Reddit r/PCOS (post text, via search)",
+          "url": "https://www.reddit.com/r/PCOS/comments/1vlng9c/how_do_people_with_irregular_periods_even_figure/",
+          "date": ""
         }
       ]
     },
@@ -164,6 +188,12 @@
           "text": "Anxiety, ED and marriage?",
           "source": "Reddit r/AskIndianMen",
           "url": "https://www.reddit.com/r/AskIndianMen/comments/1vfxvgo/anxiety_ed_and_marriage/",
+          "date": ""
+        },
+        {
+          "text": "Men in their late 20s or early 30s often believe ED is temporary or stress-related and suffer in silence.",
+          "source": "The Patriot (news, quoting a fertility specialist)",
+          "url": "https://thepatriot.in/health/erectile-dysfunction-rising-among-young-men-doctors-warn-of-impact-on-fertility-82200/amp",
           "date": ""
         }
       ]
@@ -319,6 +349,12 @@
           "source": "Reddit r/AskIndianWomen",
           "url": "https://www.reddit.com/r/AskIndianWomen/comments/1vpkqc0/menopausal_issue_of_my_mom_what_to_do/",
           "date": ""
+        },
+        {
+          "text": "Nagpur study (200 urban women, 40-55): women aged 46-50 reported comparatively higher social-media engagement for menopause support.",
+          "source": "Scienmag (on SN Social Sciences paper, VNIT Nagpur)",
+          "url": "https://scienmag.com/menopause-goes-digital-urban-indian-women-turn-to-social-media-for-support-study-finds/",
+          "date": "2026-10-04"
         }
       ]
     },
@@ -489,6 +525,42 @@
       "cluster_id": "c-d2c-upsell",
       "mentions": 2,
       "note": "relative estimate from search density; not absolute count"
+    },
+    {
+      "date": "2026-10-07",
+      "cluster_id": "c-dismissed",
+      "mentions": 5,
+      "note": "7 Oct method: relevant results in ONE targeted web search (top 5) — NOT comparable with the 3 Oct relative estimates; no trend drawn"
+    },
+    {
+      "date": "2026-10-07",
+      "cluster_id": "c-privacy",
+      "mentions": 5,
+      "note": "7 Oct method: relevant results in ONE targeted web search (top 5) — NOT comparable with the 3 Oct relative estimates; no trend drawn"
+    },
+    {
+      "date": "2026-10-07",
+      "cluster_id": "c-ttc-irregular",
+      "mentions": 5,
+      "note": "7 Oct method: relevant results in ONE targeted web search (top 5) — NOT comparable with the 3 Oct relative estimates; no trend drawn"
+    },
+    {
+      "date": "2026-10-07",
+      "cluster_id": "c-ed-shame",
+      "mentions": 5,
+      "note": "7 Oct method: relevant results in ONE targeted web search (top 5) — NOT comparable with the 3 Oct relative estimates; no trend drawn"
+    },
+    {
+      "date": "2026-10-07",
+      "cluster_id": "c-lowt",
+      "mentions": 4,
+      "note": "7 Oct method: relevant results in ONE targeted web search (top 5) — NOT comparable with the 3 Oct relative estimates; no trend drawn"
+    },
+    {
+      "date": "2026-10-07",
+      "cluster_id": "c-menopause",
+      "mentions": 5,
+      "note": "7 Oct method: relevant results in ONE targeted web search (top 5) — NOT comparable with the 3 Oct relative estimates; no trend drawn"
     }
   ],
   "competitors": [
@@ -529,6 +601,20 @@
           "title": "Flo privacy settlements ($59.5M with Google/Flurry) claim deadline Oct 15, 2026",
           "url": "https://www.prnewswire.com/news-releases/time-is-running-out-flo-app-users-have-less-than-one-month-to-claim-their-share-of-59-5-million-settlements--deadline-is-october-15--2026--302896607.html",
           "summary": "US class-action claim window closing; keeps period-app data-sharing fear in the news cycle. Reinforces Intima need for honest privacy copy."
+        },
+        {
+          "date": "2026-10-07",
+          "type": "news",
+          "title": "$59.5M privacy settlement: claims due 15 Oct, objections 8 Oct, approval hearing 29 Oct 2026",
+          "url": "https://www.ibtimes.co.uk/flo-period-tracker-privacy-settlement-claim-deadline-1824196",
+          "summary": "US class action (Frasco v. Flo Health) over in-app health data shared with Google/Flurry; defendants deny wrongdoing. Keeps period-app privacy in the news."
+        },
+        {
+          "date": "",
+          "type": "news",
+          "title": "Mozilla 2026 period-tracker privacy review: Euki 10/10, Clue 8/10, Flo 7/10, Stardust 2/10",
+          "url": "https://www.mozillafoundation.org/en/nothing-personal/period-ovulation-trackers/",
+          "summary": "Top score went to the app that keeps data on the phone with no account; Flo/Clue store data on servers. Relevant to Intima's \"on-device\" claims (ISS-002)."
         }
       ]
     },
@@ -619,6 +705,13 @@
           "title": "Raised Rs 16 cr pre-Series A led by Rainmatter (earlier seed ~$4.4M incl. Nexus, angels)",
           "url": "https://entrackr.com/snippets/allo-health-raises-rs-16-cr-in-pre-series-a-round-8846048",
           "summary": "Funding comparable."
+        },
+        {
+          "date": "2026-10-07",
+          "type": "news",
+          "title": "Press-release site re-publishes the Mar 2025 Rs 16 cr pre-Series A round",
+          "url": "https://www.forpressrelease.com/forpressrelease/649256/11/allo-health-raises-16-crore-to-expand-indias-largest-sexual-health-ecosystem",
+          "summary": "Dated 7 Oct 2026 but the text is the 12 Mar 2025 announcement — NOT a new round."
         }
       ]
     },

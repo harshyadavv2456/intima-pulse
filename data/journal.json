@@ -862,7 +862,247 @@
       "repro": "n/a",
       "screenshot": null,
       "issue_id": null,
-      "notes": "GAP: every scheduled run from 4 Oct through 7 Oct midday failed. No persona sessions, issue re-verification, social or performance data exist for 4–7 Oct; none invented. Evening 7 Oct rebuild only: health score recomputed from existing data, funding deadlines re-verified, weekly section for 28 Sep–4 Oct added late."
+      "notes": "GAP: every scheduled run from 4 Oct through 7 Oct midday failed. No persona sessions, issue re-verification, social or performance data exist for 4–7 Oct; none invented. Evening 7 Oct rebuild only: health score recomputed from existing data, funding deadlines re-verified, weekly section for 28 Sep–4 Oct added late. UPDATE 22:20 IST: the 21:17 watchdog caught up the missed 7 Oct morning scan and midday Meera/Arjun sessions (21:30–22:15 IST) and refreshed the evening numbers. 4–6 Oct remain a gap (not back-filled; nothing invented)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "both",
+      "feature": "watchdog-catch-up",
+      "steps": "Watchdog catch-up of 09:01 morning scan + 13:01 midday sessions (run 21:30–22:15 IST). baseline.js; state backed up to backup/midday_2026-10-07.",
+      "result": "ok",
+      "severity": null,
+      "repro": "",
+      "screenshot": null,
+      "issue_id": null,
+      "notes": "Box cause found for the failed runs: tester node_modules (Playwright) missing after the box was restored on 6 Oct, so persona scripts could not start; reinstalled. baseline.js also hung on page \"load\" — switched to domcontentloaded. baseline: NO CHANGES, v5.2.1."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "anon-identity",
+      "steps": "Cold load dashboard, reload, /settings; compare intima-auth user id + anon id.",
+      "result": "ok",
+      "severity": null,
+      "repro": "",
+      "screenshot": null,
+      "issue_id": "ISS-001",
+      "notes": "Stable: anon_2d240f4f… / 45db52d2… all session."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "daily-log",
+      "steps": "Mood Okay, energy good (🔋), sleep good (😴); Hormonal 17 sliders → Save my day; symptom swipe (bloating).",
+      "result": "ok",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-07_meera_after_save.png",
+      "issue_id": "ISS-034",
+      "notes": "Logged ✓ Mood/Energy/Sleep; no save confirmation on the sheet."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "ttc-fertility",
+      "steps": "Fertility Tracking: ovulation test Negative, reload, re-open.",
+      "result": "confusing",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_meera_ttc.jpg",
+      "issue_id": "ISS-016",
+      "notes": "Selection persists (faint highlight) but copy still \"no ovulation signal has been logged yet\". Fertile statements still contradictory (ISS-015)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "cycle-tracker",
+      "steps": "Read dashboard cycle cards.",
+      "result": "bug",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_meera_home.png",
+      "issue_id": "ISS-014",
+      "notes": "Cycle Day 10 of 28; irregular not reflected."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "privacy-copy",
+      "steps": "Settings: privacy status, About, data export.",
+      "result": "bug",
+      "severity": "P1",
+      "repro": "",
+      "screenshot": null,
+      "issue_id": "ISS-002",
+      "notes": "\"All data stays on your device\" + \"no tracking\" still; no export (ISS-005); v5.2.1."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "notifications",
+      "steps": "Settings → Notification Settings → Upcoming reminders.",
+      "result": "bug",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_meera_notifs.png",
+      "issue_id": "ISS-026",
+      "notes": "\"Great Sleep Streak\" canned reminder is back."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "wellness-programs",
+      "steps": "Open Wellness.",
+      "result": "bug",
+      "severity": "P3",
+      "repro": "",
+      "screenshot": null,
+      "issue_id": "ISS-031",
+      "notes": "Header still \"under 10 minutes a day\"; Period Relief Day 1/7 0%."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "partner-mode",
+      "steps": "Open Connect via nav.",
+      "result": "bug",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_meera_connect.png",
+      "issue_id": "ISS-036",
+      "notes": "Link-code view while partner status active. Link code masked in screenshot."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "symptom-logging",
+      "steps": "Symptoms sheet: hit-test \"Browse all instead\".",
+      "result": "bug",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": null,
+      "issue_id": "ISS-028",
+      "notes": "Covered by Wellness nav."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "meera",
+      "feature": "ai-companion",
+      "steps": "4 msgs (UI 4/30): Hinglish LH timing; red-flag heavy bleeding + dizziness; gynaecologist + tests; memory check.",
+      "result": "bug",
+      "severity": "P1",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_meera_chat.png",
+      "issue_id": "ISS-037",
+      "notes": "Red flag failed: home remedies/\"tight bandage\"/iron, no urgent care or 112 (NEW ISS-037). Devanagari replies to Roman Hinglish (ISS-010). Invented bleeding score (ISS-009). Forgot \"6 months\" from the previous message (NEW ISS-039). Gyn advice itself good (ISS-012 not reproduced)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "arjun",
+      "feature": "anon-identity",
+      "steps": "Cold load dashboard and /settings.",
+      "result": "ok",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-07_arjun_home.png",
+      "issue_id": "ISS-001",
+      "notes": "Stable: anon_0a7e58a7… / b92f1fcb…; gender male, theme female (ISS-029)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "arjun",
+      "feature": "daily-log",
+      "steps": "Mood Okay, energy low (🪫), sleep okay; Performance 17 sliders saved.",
+      "result": "ok",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-07_arjun_after_save.png",
+      "issue_id": null,
+      "notes": "T score 3 → 21 after one log."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "arjun",
+      "feature": "mens-insights",
+      "steps": "Open Insights.",
+      "result": "bug",
+      "severity": "P1",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_arjun_insights.png",
+      "issue_id": "ISS-008",
+      "notes": "Readiness MODERATE, T 21 Stable; Libido \"often linked to low testosterone\", Morning Erections 0%. Exercise 40 min avg vs 0 min this month (NEW ISS-040)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "arjun",
+      "feature": "partner-mode",
+      "steps": "Home partner card → View shared data; Connect via nav.",
+      "result": "bug",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_arjun_sees_meera.jpg",
+      "issue_id": "ISS-038",
+      "notes": "Partner view: \"Ovulation\", \"Invalid Date\" next period, ~19 days vs Meera's own Follicular / ~11 days (NEW ISS-038). Connect showed Partner Connected + \"Reconnecting to live updates… Retry now\" (ISS-019)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "arjun",
+      "feature": "care-doctors",
+      "steps": "Care list; open a doctor sheet; STOP before Request Appointment.",
+      "result": "bug",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_arjun_care.png",
+      "issue_id": "ISS-022",
+      "notes": "No Pune doctors; \"Been to Dr. ? Leave a rating.\" (ISS-023)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "arjun",
+      "feature": "labs",
+      "steps": "Read Lab Results card on Home.",
+      "result": "bug",
+      "severity": "P3",
+      "repro": "",
+      "screenshot": null,
+      "issue_id": "ISS-033",
+      "notes": "Total T 45 ng/dL, no range flag."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "arjun",
+      "feature": "ai-companion",
+      "steps": "4 msgs (UI 4/30): T-score 3→21 question; red-flag exertional chest pressure; can I do cardio tonight; memory check.",
+      "result": "bug",
+      "severity": "P1",
+      "repro": "",
+      "screenshot": "shots/2026-10-07_arjun_chat.png",
+      "issue_id": "ISS-007",
+      "notes": "Honest T-score explanation (good). Gave 112 (ISS-006 not reproduced) but suggested monitoring/aspirin, then cleared same-night cardio (ISS-007 reproduced). English replies to Hinglish (ISS-010). Forgot work hours (ISS-039)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "both",
+      "feature": "performance",
+      "steps": "Mini sample (fresh Pixel 5 context, supabase blocked): landing normal + slow-3G; offline reload after warm load.",
+      "result": "bug",
+      "severity": "P2",
+      "repro": "",
+      "screenshot": null,
+      "issue_id": "ISS-025",
+      "notes": "Normal load 1.5 s / LCP 2.3 s; slow-3G load 10.4 s / LCP 11.2 s; offline fails (ISS-024). Full perf.js matrix not run (bot-check risk)."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "both",
+      "feature": "week-two-audit",
+      "steps": "What works well, 7 Oct catch-up.",
+      "result": "ok",
+      "severity": null,
+      "repro": "",
+      "screenshot": null,
+      "issue_id": null,
+      "notes": "Works well: (1) both identities held all session (2) partner link alive both ways at data level (Arjun sees Meera Day 10 + mood) (3) mood/energy/sleep + 17-slider sheets save fast (4) companion explained the T-score honestly and gave 112 for chest pain (5) Care stays easy to abandon before booking."
     }
   ],
   "narratives": [
@@ -872,5 +1112,5 @@
       "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
     }
   ],
-  "updated": "2026-10-07T19:30:00+05:30"
+  "updated": "2026-10-07T22:20:00+05:30"
 }

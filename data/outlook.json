@@ -1,9 +1,9 @@
 {
-  "updated": "2026-10-07T19:30:00+05:30",
+  "updated": "2026-10-07T22:20:00+05:30",
   "reviewed_on": "2026-10-07",
-  "reviewed_by": "Intima Pulse (evening 2026-10-07)",
-  "comps_last_checked": "2026-10-01",
-  "comps_next_due": "2026-10-04",
+  "reviewed_by": "Intima Pulse (watchdog catch-up)",
+  "comps_last_checked": "2026-10-07",
+  "comps_next_due": "2026-10-11",
   "fx_note": "Working rate ~₹88 per US$ (Entrackr priced Allo's ₹16 cr as $1.83M, Mar 2025). Estimate; INR figures converted from USD are approximate.",
   "disclaimer": "Reference for founder Harsh only. Not financial, legal or tax advice. Every figure is labelled: SOURCED (a cited page that was opened and read on the checked date), THIRD-PARTY ESTIMATE (aggregator numbers, unverified), or ESTIMATE (our own judgement, editable). Nothing here is a promise that money is available.",
   "manual_inputs": {
@@ -56,6 +56,11 @@
       "date": "2026-10-07",
       "by": "Intima Pulse evening",
       "change": "Reviewed after missed runs 4–7 Oct (outlook was stale since 3 Oct). STPI OCP 7.0 deadline re-verified 2026-10-08 (tomorrow); 'decide' milestone (5 Oct) passed with no decision recorded — note updated. YC W27 2 Nov re-verified. manual_inputs unchanged (no new founder-confirmed facts). Sunday 4 Oct comps re-check NOT done — overdue; comps_next_due left at 2026-10-04."
+    },
+    {
+      "date": "2026-10-07",
+      "by": "Intima Pulse watchdog catch-up",
+      "change": "Overdue Sunday comps/benchmarks re-check done: 11 of 12 comp sources and all 5 benchmark sources opened; amounts unchanged; no new rounds; Mosaic/Dealroom blocked (403), stays third-party; undisclosed valuations stay \"Not disclosed\". Angel-tax benchmark source now opened. comps_next_due 2026-10-11. STPI OCP 7.0 (8 Oct) and YC W27 (2 Nov PT) re-verified again tonight. Midday sessions found a new P1 safety issue (ISS-037) — no change to valuation scenarios."
     }
   ],
   "valuation": {
@@ -130,7 +135,7 @@
         "source_name": "Startup Nerve (Apr/Jul 2026)",
         "url": "https://startupnerve.com/angel-round-mechanics-india-ticket-sizes-valuations/",
         "confidence": "sourced (blog, not primary data)",
-        "checked_on": "2026-10-01"
+        "checked_on": "2026-10-07"
       },
       {
         "label": "Pre-money by stage (2025-26)",
@@ -138,7 +143,7 @@
         "source_name": "Startup Nerve",
         "url": "https://startupnerve.com/angel-round-mechanics-india-ticket-sizes-valuations/",
         "confidence": "sourced (blog, not primary data)",
-        "checked_on": "2026-10-01"
+        "checked_on": "2026-10-07"
       },
       {
         "label": "Typical pre-seed note",
@@ -146,7 +151,7 @@
         "source_name": "The Karak (11 Jun 2026)",
         "url": "https://thekarak.in/pre-seed-funding-india-step-by-step-guide/",
         "confidence": "sourced (blog, not primary data)",
-        "checked_on": "2026-10-01"
+        "checked_on": "2026-10-07"
       },
       {
         "label": "Legal cost of an angel round",
@@ -154,15 +159,15 @@
         "source_name": "Startup Nerve",
         "url": "https://startupnerve.com/angel-round-mechanics-india-ticket-sizes-valuations/",
         "confidence": "sourced (blog)",
-        "checked_on": "2026-10-01"
+        "checked_on": "2026-10-07"
       },
       {
         "label": "Angel tax",
         "value": "Section 56(2)(viib) abolished for share issues on/after 1 Apr 2025",
         "source_name": "Beacon Filing (search summary)",
         "url": "https://beaconfiling.com/glossary/angel-tax",
-        "confidence": "unverified — page not opened; confirm with a CA",
-        "checked_on": "2026-10-01"
+        "confidence": "sourced (firm glossary page opened 2026-10-07: \"Section 56(2)(viib) Angel Tax: Abolished From April 2025\") — confirm with a CA",
+        "checked_on": "2026-10-07"
       }
     ],
     "comps": [
@@ -179,8 +184,8 @@
         "source_name": "Entrackr",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Round size sourced. ₹162 cr valuation is Tracxn (snippet only): https://tracxn.com/d/companies/allohealth/__VwMbUZBHLcUTgB9c_yGdTNMeH0qC2m4003pBhLapka0/latest-shareholding — UNVERIFIED."
+        "checked_on": "2026-10-07",
+        "note": "Round size sourced. ₹162 cr valuation is Tracxn (snippet only): https://tracxn.com/d/companies/allohealth/__VwMbUZBHLcUTgB9c_yGdTNMeH0qC2m4003pBhLapka0/latest-shareholding — UNVERIFIED. | 7 Oct re-check: Entrackr page opened, $1.83M / Rs 16 cr unchanged. A press site re-published this 2025 round on 7 Oct 2026 — not a new round."
       },
       {
         "id": "allo-seed",
@@ -195,8 +200,8 @@
         "source_name": "Entrackr (mentions prior seed)",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Date of seed from Tracxn snippet (Feb–Sep 2022 tranches); Entrackr gives amount and lead."
+        "checked_on": "2026-10-07",
+        "note": "Date of seed from Tracxn snippet (Feb–Sep 2022 tranches); Entrackr gives amount and lead. | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "bold-a",
@@ -211,8 +216,8 @@
         "source_name": "Inc42",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Earlier ≈$6.5M raised pre-Series A (Inc42). Revenue figures are company claims."
+        "checked_on": "2026-10-07",
+        "note": "Earlier ≈$6.5M raised pre-Series A (Inc42). Revenue figures are company claims. | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "pfh-a",
@@ -227,8 +232,8 @@
         "source_name": "VCCircle",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Series A had ~5,000 women engaged at the time (company claim)."
+        "checked_on": "2026-10-07",
+        "note": "Series A had ~5,000 women engaged at the time (company claim). | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "pfh-seed",
@@ -242,9 +247,9 @@
         "source_url": "https://biobase.whitefordresearch.com/companies/proactive-for-her",
         "source_name": "Whiteford Research Biobase",
         "confidence": "third-party estimate",
-        "source_opened": false,
-        "checked_on": "2026-10-01",
-        "note": "Secondary sources disagree on dates (Oct 2020 vs Dec 2021). Treat as approximate."
+        "source_opened": true,
+        "checked_on": "2026-10-07",
+        "note": "Secondary sources disagree on dates (Oct 2020 vs Dec 2021). Treat as approximate. | 7 Oct re-check: page opened, $1.2M seed shown; still a third-party source."
       },
       {
         "id": "maya",
@@ -259,8 +264,8 @@
         "source_name": "Techcircle",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Sold to SHEROES in an all-stock deal in 2019 (Entrackr)."
+        "checked_on": "2026-10-07",
+        "note": "Sold to SHEROES in an all-stock deal in 2019 (Entrackr). | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "misters",
@@ -275,8 +280,8 @@
         "source_name": "VCCircle",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Cautionary comp: funding ≠ traction. FY25 revenue from https://inc42.com/company/misters-in/people/ (search snippet, unverified)."
+        "checked_on": "2026-10-07",
+        "note": "Cautionary comp: funding ≠ traction. FY25 revenue from https://inc42.com/company/misters-in/people/ (search snippet, unverified). | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "mm-seed",
@@ -291,8 +296,8 @@
         "source_name": "Economic Times (Nov 2021)",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Series A $24M (Nov 2021) at $14M annualised revenue."
+        "checked_on": "2026-10-07",
+        "note": "Series A $24M (Nov 2021) at $14M annualised revenue. | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "mm-2025",
@@ -307,8 +312,8 @@
         "source_name": "Dealroom",
         "confidence": "third-party estimate",
         "source_opened": false,
-        "checked_on": "2026-10-01",
-        "note": "Search snippet only; FY24 revenue ₹333 cr reported by Dealroom."
+        "checked_on": "2026-10-07",
+        "note": "Search snippet only; FY24 revenue ₹333 cr reported by Dealroom. | 7 Oct re-check: Dealroom returned HTTP 403; stays third-party estimate."
       },
       {
         "id": "even",
@@ -323,8 +328,8 @@
         "source_name": "Even (company blog)",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Had ~5,000 waitlist sign-ups and an 18-person team at announcement."
+        "checked_on": "2026-10-07",
+        "note": "Had ~5,000 waitlist sign-ups and an 18-person team at announcement. | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "arva",
@@ -339,8 +344,8 @@
         "source_name": "Femtech Insider",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Shows institutional pre-seed ≈ ₹8 cr — 10-20x what Intima can realistically raise today."
+        "checked_on": "2026-10-07",
+        "note": "Shows institutional pre-seed ≈ ₹8 cr — 10-20x what Intima can realistically raise today. | 7 Oct re-check: source opened, figures unchanged; no new round found."
       },
       {
         "id": "gen-angel",
@@ -355,8 +360,8 @@
         "source_name": "The Karak + Startup Nerve",
         "confidence": "sourced",
         "source_opened": true,
-        "checked_on": "2026-10-01",
-        "note": "Blogs, not primary datasets — treat as directional."
+        "checked_on": "2026-10-07",
+        "note": "Blogs, not primary datasets — treat as directional. | 7 Oct re-check: source opened, figures unchanged; no new round found."
       }
     ],
     "comp_takeaways": [

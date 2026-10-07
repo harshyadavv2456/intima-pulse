@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T19:30:00+05:30",
+  "updated": "2026-10-07T22:20:00+05:30",
   "today": "2026-10-07",
   "items": [
     {
@@ -34,9 +34,9 @@
       "fit": 5,
       "rank_score": 6.67,
       "url": "https://nerve.stpi.in/",
-      "verified_on": "2026-10-01",
+      "verified_on": "2026-10-07",
       "verified": true,
-      "notes": "Local (Nagpur) + healthcare + AI = best structural fit. Search results indicate OCP Cohort 1 closed 15 Jul 2026 and no new call is listed; watch nerve.stpi.in and Sayuj. Source page opened and read on verified_on date."
+      "notes": "Local (Nagpur) + healthcare + AI = best structural fit. Search results indicate OCP Cohort 1 closed 15 Jul 2026 and no new call is listed; watch nerve.stpi.in and Sayuj. Source page opened and read on verified_on date. Re-checked 2026-10-07: nerve.stpi.in shows \"Apply now\" healthcare banner and up to Rs 50 L seed support but NO dated call or deadline on the page - deadline stays unverified (not invented)."
     },
     {
       "id": "stpi-ocp7",
@@ -54,7 +54,7 @@
       "url": "https://medtech.stpi.in/open-challenge/open-challenge-7",
       "verified_on": "2026-10-07",
       "verified": true,
-      "notes": "Re-verified 2026-10-07 (evening) on official page https://medtech.stpi.in/open-challenge/open-challenge-7: TIMELINES still show 09-09-2026 launch, 08-10-2026 Application Submission Ends, 09-10-2026 screening starts; no extension notice on the page. DUE TOMORROW (8 Oct 2026). No founder decision recorded for the 5 Oct decide milestone; nothing has been submitted from here. Fit still moderate (health informatics angle via problem stmt #6 digitisation/follow-up and #12 any other HealthTech; Intima is wellness not MedElectronics device). No fee to apply via Sayuj. Incubation equity 1-3% or per-seat fee if selected."
+      "notes": "Re-verified again 2026-10-07 ~22:05 IST (watchdog catch-up morning scan) on https://medtech.stpi.in/open-challenge/open-challenge-7: TIMELINES 09-09-2026 launch; 08-10-2026 Application Submission Ends; 09-10-2026 screening starts. Seed up to Rs 50 L; Medi-Electronics & Health Informatics; DPIIT encouraged; unregistered founders must incorporate within ~3 months of selection. Apply only via Sayuj portal. Closes TOMORROW; nothing submitted from here; no decision recorded."
     },
     {
       "id": "infed",
@@ -288,7 +288,7 @@
       "url": "https://www.ycombinator.com/apply/",
       "verified_on": "2026-10-07",
       "verified": true,
-      "notes": "Re-verified 2026-10-07 on https://www.ycombinator.com/apply/: Winter 2027 batch; on-time deadline November 2 at 8pm PT (= 3 Nov ~09:30 IST); decision by December 11 for on-time apps. 26 days away. Pre-revenue consumer health from India remains a long shot; apply only if founder wants US path."
+      "notes": "Re-verified 2026-10-07 ~22:05 IST on https://www.ycombinator.com/apply/: Winter 2027 batch (Jan-Mar, San Francisco); on-time deadline November 2 at 8pm PT (= 3 Nov ~09:30 IST); decision by December 11 for on-time apps. 26 days away. Nothing submitted."
     },
     {
       "id": "surge",

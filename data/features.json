@@ -6,15 +6,15 @@
       "group": "Platform",
       "status": "great",
       "note": "Women 7 Qs ~35 s, men 4 Qs ~30 s; dashboard instantly. Tour modal repeats (ISS-032), male gender stored wrong (ISS-029).",
-      "last_verified": "2026-10-01"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "anon-identity",
       "name": "Anonymous ID / session",
       "group": "Platform",
       "status": "weak",
-      "note": "Works without login but forks identity on token refresh race (ISS-001).",
-      "last_verified": "2026-10-01"
+      "note": "Works without login but forks identity on token refresh race (ISS-001). | Identities held 7 Oct (no fork).",
+      "last_verified": "2026-10-07"
     },
     {
       "id": "backup-code",
@@ -38,15 +38,15 @@
       "group": "Platform",
       "status": "weak",
       "note": "Privacy copy false (ISS-002); no export (ISS-005).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "notifications",
       "name": "Notifications",
       "group": "Platform",
       "status": "weak",
-      "note": "Fine-grained types; canned preview (ISS-026).",
-      "last_verified": "2026-10-03"
+      "note": "Fine-grained types; canned preview (ISS-026). | ISS-026 Great Sleep Streak back 7 Oct.",
+      "last_verified": "2026-10-07"
     },
     {
       "id": "data-export",
@@ -54,7 +54,7 @@
       "group": "Platform",
       "status": "missing",
       "note": "Promised in tour + policy, not present (ISS-005).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "data-delete",
@@ -70,7 +70,7 @@
       "group": "Platform",
       "status": "weak",
       "note": "Service worker present, pages fail offline (ISS-024).",
-      "last_verified": "2026-10-01"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "performance",
@@ -78,7 +78,7 @@
       "group": "Platform",
       "status": "OK",
       "note": "Fast on normal network (LCP 0.7-1.8 s) but 10-14 s on slow 3G (ISS-025).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "privacy-copy",
@@ -86,7 +86,7 @@
       "group": "Platform",
       "status": "broken",
       "note": "Multiple claims contradict reality (ISS-002/003/004).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "cycle-tracker",
@@ -94,7 +94,7 @@
       "group": "Women",
       "status": "weak",
       "note": "Logging fine; predictions ignore irregular cycles (ISS-014).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "ttc-fertility",
@@ -102,7 +102,7 @@
       "group": "Women",
       "status": "weak",
       "note": "Good inputs; three inconsistent fertile statements (ISS-015), selection not retained (ISS-016).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "ivf-mode",
@@ -126,7 +126,7 @@
       "group": "Women",
       "status": "OK",
       "note": "Rich 17-slider check-in saves; long (ISS-034).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "symptom-logging",
@@ -134,7 +134,7 @@
       "group": "Women",
       "status": "weak",
       "note": "Cute but icon-only and blocked link (ISS-028).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "mens-energy",
@@ -142,15 +142,15 @@
       "group": "Men",
       "status": "OK",
       "note": "Quick logging works; contradictory home advice (ISS-027).",
-      "last_verified": "2026-10-01"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "mens-insights",
       "name": "Men's insights (T rhythm, readiness, low-T, ED)",
       "group": "Men",
       "status": "weak",
-      "note": "Over-medicalised from 1 day of data (ISS-008).",
-      "last_verified": "2026-10-03"
+      "note": "Over-medicalised from 1 day of data (ISS-008). | 7 Oct: T score 3→21 in one log; exercise contradictions (ISS-040).",
+      "last_verified": "2026-10-07"
     },
     {
       "id": "performance-log",
@@ -158,7 +158,7 @@
       "group": "Men",
       "status": "OK",
       "note": "~30 fields; saved fine; heavy for daily use.",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "labs",
@@ -166,7 +166,7 @@
       "group": "Men",
       "status": "OK",
       "note": "23 markers, saves; no range flags (ISS-033).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "kegel",
@@ -182,23 +182,23 @@
       "group": "Shared",
       "status": "OK",
       "note": "6 programs, 1-tap start; durations exceed claim (ISS-031).",
-      "last_verified": "2026-10-01"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "ai-companion",
       "name": "AI companion",
       "group": "Shared",
       "status": "weak",
-      "note": "Warm, personalised, catches red flags; wrong emergency number, invented stats, language drift (ISS-006..012).",
-      "last_verified": "2026-10-03"
+      "note": "Warm, personalised, catches red flags; wrong emergency number, invented stats, language drift (ISS-006..012). | 7 Oct: failed heavy-bleeding red flag (ISS-037), memory loss (ISS-039), cleared cardio after chest pain (ISS-007). 112 given once.",
+      "last_verified": "2026-10-07"
     },
     {
       "id": "partner-mode",
       "name": "Partner Mode link",
       "group": "Connect",
       "status": "weak",
-      "note": "Linking by 6-char code works instantly; reliability and unlink issues (ISS-001/017/018/019).",
-      "last_verified": "2026-10-03"
+      "note": "Linking by 6-char code works instantly; reliability and unlink issues (ISS-001/017/018/019). | 7 Oct: partner view shows Ovulation/Invalid Date vs owner Follicular (ISS-038); reconnecting banner (ISS-019).",
+      "last_verified": "2026-10-07"
     },
     {
       "id": "partner-sharing",
@@ -206,7 +206,7 @@
       "group": "Connect",
       "status": "OK",
       "note": "5 of 8 categories verified hide/show in both directions; 3 inconclusive (ISS-021).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "devices",
@@ -222,7 +222,7 @@
       "group": "Care",
       "status": "weak",
       "note": "Only 5 doctors in 3 cities; none in Pune (ISS-022).",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "care-booking",
@@ -230,7 +230,7 @@
       "group": "Care",
       "status": "OK",
       "note": "Clear request-not-booked copy; stopped before \"Request Appointment\".",
-      "last_verified": "2026-10-03"
+      "last_verified": "2026-10-07"
     },
     {
       "id": "doctor-referral",
@@ -238,7 +238,7 @@
       "group": "Care",
       "status": "missing",
       "note": "No referral entry point or clinician-facing output (ISS-035).",
-      "last_verified": "2026-10-01"
+      "last_verified": "2026-10-07"
     }
   ],
   "gaps": [
@@ -485,5 +485,5 @@
       ]
     }
   ],
-  "updated": "2026-10-03T13:15:00+05:30"
+  "updated": "2026-10-07T22:20:00+05:30"
 }

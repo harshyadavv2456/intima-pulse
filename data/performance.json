@@ -343,6 +343,30 @@
    "load_ms": null,
    "lcp_ms": null,
    "notes": "Offline after warm load: every page fails (ERR_INTERNET_DISCONNECTED); service worker registered but no offline fallback (ISS-024)."
+  },
+  {
+   "date": "2026-10-07",
+   "page": "landing",
+   "device": "mobile",
+   "load_ms": 1456,
+   "lcp_ms": 2288,
+   "notes": "Pixel 5 fresh context, supabase blocked; normal network; FCP 1704 ms, TTFB 637 ms, ~447 KB. Mini sample (watchdog catch-up), not the full perf.js matrix."
+  },
+  {
+   "date": "2026-10-07",
+   "page": "landing @slow3g",
+   "device": "mobile",
+   "load_ms": 10404,
+   "lcp_ms": 11200,
+   "notes": "Pixel 5 fresh context; slow 3G (400 kbps, 400 ms); FCP 10452 ms. ISS-025."
+  },
+  {
+   "date": "2026-10-07",
+   "page": "landing @offline",
+   "device": "mobile",
+   "load_ms": null,
+   "lcp_ms": null,
+   "notes": "Offline reload after warm load: net::ERR_INTERNET_DISCONNECTED (ISS-024)."
   }
  ],
  "detail_full": [
@@ -1788,5 +1812,5 @@
   }
  ],
  "method": "Playwright/Chrome, navigation timing + PerformanceObserver FCP/LCP, Slow 3G (400 kbps, 400 ms) and Fast 3G (1.6 Mbps, 150 ms) CDP throttling; throttled rows use wall time. iOS = iPhone UA on Chrome (WebKit unavailable). /dashboard excluded: redirected to /questionnaire under synthetic state.",
- "updated": "2026-10-01T12:00:00+05:30"
+ "updated": "2026-10-07T22:20:00+05:30"
 }

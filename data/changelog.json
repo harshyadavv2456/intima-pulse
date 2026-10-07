@@ -15,7 +15,15 @@
       "fixed": [],
       "broke": [],
       "notes": "ISS-036 logged midday (Connect UI). Identities stable. Observation week."
+    },
+    {
+      "date": "2026-10-07",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (watchdog catch-up 21:3x IST) + Settings version",
+      "fixed": [],
+      "broke": [],
+      "notes": "Behaviour differences seen without a code change: ISS-016 selection now persists (faint), Arjun Connect showed Partner Connected; companion behaviour varies run to run. New issues ISS-037..040 found by deeper probing, not by an app change."
     }
   ],
-  "updated": "2026-10-03T19:10:00+05:30"
+  "updated": "2026-10-07T22:20:00+05:30"
 }
