@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-03T09:15:00+05:30",
-  "today": "2026-10-03",
+  "updated": "2026-10-07T19:30:00+05:30",
+  "today": "2026-10-07",
   "items": [
     {
       "id": "dpiit",
@@ -52,9 +52,9 @@
       "fit": 3,
       "rank_score": 4,
       "url": "https://medtech.stpi.in/open-challenge/open-challenge-7",
-      "verified_on": "2026-10-03",
+      "verified_on": "2026-10-07",
       "verified": true,
-      "notes": "Re-verified 2026-10-03 on official page https://medtech.stpi.in/open-challenge/open-challenge-7: Application Submission Ends 08-10-2026; screening starts 09-10-2026. Launch was 09-09-2026. WITHIN 7 DAYS — critical. Fit still moderate (health informatics angle via problem stmt #6 digitisation/follow-up and #12 any other HealthTech; Intima is wellness not MedElectronics device). No fee to apply via Sayuj. Incubation equity 1-3% or per-seat fee if selected."
+      "notes": "Re-verified 2026-10-07 (evening) on official page https://medtech.stpi.in/open-challenge/open-challenge-7: TIMELINES still show 09-09-2026 launch, 08-10-2026 Application Submission Ends, 09-10-2026 screening starts; no extension notice on the page. DUE TOMORROW (8 Oct 2026). No founder decision recorded for the 5 Oct decide milestone; nothing has been submitted from here. Fit still moderate (health informatics angle via problem stmt #6 digitisation/follow-up and #12 any other HealthTech; Intima is wellness not MedElectronics device). No fee to apply via Sayuj. Incubation equity 1-3% or per-seat fee if selected."
     },
     {
       "id": "infed",
@@ -286,9 +286,9 @@
       "fit": 2,
       "rank_score": 2.5,
       "url": "https://www.ycombinator.com/apply/",
-      "verified_on": "2026-10-03",
+      "verified_on": "2026-10-07",
       "verified": true,
-      "notes": "Re-verified 2026-10-03 on https://www.ycombinator.com/apply/: Winter 2027 batch (Jan–Mar SF); on-time deadline November 2 at 8pm PT; decision by December 11 for on-time apps. Exactly ~30 days away. Pre-revenue consumer health from India remains a long shot; apply only if founder wants US path."
+      "notes": "Re-verified 2026-10-07 on https://www.ycombinator.com/apply/: Winter 2027 batch; on-time deadline November 2 at 8pm PT (= 3 Nov ~09:30 IST); decision by December 11 for on-time apps. 26 days away. Pre-revenue consumer health from India remains a long shot; apply only if founder wants US path."
     },
     {
       "id": "surge",

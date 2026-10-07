@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-03T19:10:00+05:30",
-  "reviewed_on": "2026-10-03",
-  "reviewed_by": "Intima Pulse",
+  "updated": "2026-10-07T19:30:00+05:30",
+  "reviewed_on": "2026-10-07",
+  "reviewed_by": "Intima Pulse (evening 2026-10-07)",
   "comps_last_checked": "2026-10-01",
   "comps_next_due": "2026-10-04",
   "fx_note": "Working rate ~₹88 per US$ (Entrackr priced Allo's ₹16 cr as $1.83M, Mar 2025). Estimate; INR figures converted from USD are approximate.",
@@ -51,6 +51,11 @@
       "date": "2026-10-03",
       "by": "Intima Pulse",
       "change": "reviewed, no change — STPI OCP 7.0 deadline still 2026-10-08 (verified morning); decide-milestone 2026-10-05 unchanged; comps refresh due Sun 2026-10-04"
+    },
+    {
+      "date": "2026-10-07",
+      "by": "Intima Pulse evening",
+      "change": "Reviewed after missed runs 4–7 Oct (outlook was stale since 3 Oct). STPI OCP 7.0 deadline re-verified 2026-10-08 (tomorrow); 'decide' milestone (5 Oct) passed with no decision recorded — note updated. YC W27 2 Nov re-verified. manual_inputs unchanged (no new founder-confirmed facts). Sunday 4 Oct comps re-check NOT done — overdue; comps_next_due left at 2026-10-04."
     }
   ],
   "valuation": {
@@ -1146,7 +1151,7 @@
     {
       "date": "2026-10-05",
       "title": "Decide: apply to STPI OCP 7.0 or skip",
-      "why": "Deadline 8 Oct 2026 (verified on funding page). Needs entity or incorporation within 3 months of selection; fit moderate.",
+      "why": "Decision date passed with no founder decision recorded. Submission ends 8 Oct 2026 (re-verified on official page 7 Oct) — tomorrow. Needs entity or incorporation within 3 months of selection; fit moderate.",
       "funding_id": "stpi-ocp7",
       "type": "funding"
     },

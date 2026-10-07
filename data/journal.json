@@ -851,14 +851,26 @@
       "screenshot": null,
       "issue_id": null,
       "notes": "Works well: (1) identities held under sequential act.js (2) Arjun Home Partner live view of Meera Day 6 after her log (3) hormonal/performance sheets + Labs Ferritin add smooth (4) IVF/Medicated Cycle depth with clinic red-flag list (5) companion warm, uses memory/partner context, Hinglish accepted. Oct 2 gap noted; no invented session data."
+    },
+    {
+      "date": "2026-10-07",
+      "persona": "both",
+      "feature": "run-gap",
+      "steps": "Scheduled runs 4–7 Oct 2026 (morning scan, midday Meera/Arjun sessions, evening rebuild, watchdog) incl. today's morning + midday.",
+      "result": "missed",
+      "severity": null,
+      "repro": "n/a",
+      "screenshot": null,
+      "issue_id": null,
+      "notes": "GAP: every scheduled run from 4 Oct through 7 Oct midday failed. No persona sessions, issue re-verification, social or performance data exist for 4–7 Oct; none invented. Evening 7 Oct rebuild only: health score recomputed from existing data, funding deadlines re-verified, weekly section for 28 Sep–4 Oct added late."
     }
   ],
   "narratives": [
     {
       "week_start": "2026-09-28",
-      "meera": "Meera (27, Nagpur, irregular cycles, TTC in ~6 months) gets a dashboard in 35 seconds, which feels great. But it tells her \"day 4 of 28\" and a textbook ovulation date, contradicting what she told it. The AI is kind and knows her cycle, yet answers her Hinglish in Hindi script, and the settings page says everything stays on her phone, which is not true. She links with Arjun and enjoys controlling what he sees. Twice her app seemed to forget the link.",
-      "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care."
+      "meera": "Meera (27, Nagpur, irregular cycles, TTC in ~6 months) gets a dashboard in 35 seconds, which feels great. But it tells her \"day 4 of 28\" and a textbook ovulation date, contradicting what she told it. The AI is kind and knows her cycle, yet answers her Hinglish in Hindi script, and the settings page says everything stays on her phone, which is not true. She links with Arjun and enjoys controlling what he sees. Twice her app seemed to forget the link. [Added 7 Oct, late, from the real 3 Oct session:] After the 2 Oct gap her identity and partner link held; the app moved her to cycle day 6 but the irregular-cycle problem and conflicting fertile-window copy remain, the Connect page shows a link-code screen even though the link is live, and the AI remembers her context while still inventing sleep stats.",
+      "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
     }
   ],
-  "updated": "2026-10-03T13:15:00+05:30"
+  "updated": "2026-10-07T19:30:00+05:30"
 }
