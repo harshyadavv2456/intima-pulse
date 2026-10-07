@@ -5,7 +5,7 @@
   "health_score": 49,
   "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
   "summary_today": [
-    "Watchdog caught up today's missed morning scan + midday Meera/Arjun sessions (21:30–22:15 IST). 4–6 Oct remain a gap; nothing invented. App unchanged (v5.2.1).",
+    "Watchdog caught up today's missed morning scan + midday Meera/Arjun sessions (21:30–22:00 IST). 4–6 Oct remain a gap; nothing invented. App unchanged (v5.2.1).",
     "Health 49 (was 53): 40 open — 0 P0 / 10 P1 / 20 P2 / 10 P3. NEW P1 ISS-037: AI companion did not escalate heavy bleeding + dizziness (home remedies, 'tight bandage', no 112). Also new ISS-038/039 (P2), ISS-040 (P3). None fixed.",
     "Top quick win still GAP-001: make privacy copy truthful (H/Easy) — 'All data stays on your device' still live. Next: hard-code red-flag escalation (112 + urgent care) in the companion.",
     "Funding: STPI MedTech OCP 7.0 closes TOMORROW 8 Oct (re-verified on official page tonight); YC W27 2 Nov 8pm PT (re-verified). Nothing submitted.",
@@ -57,5 +57,5 @@
       "day1_baseline": "Day-1 baseline. Intima Health v5.2.1 is a fast, no-login, warm product with unusually deep content (IVF mode, labs, partner sharing). The main risks are trust (privacy copy that is not true), reliability (identity forks lose data), and an AI that can be unsafe in India-specific red-flag moments. For doctor-referred users the app delivers value in 5 minutes but gives no reason to return by day 30 unless export/summary and reminders are added."
     }
   ],
-  "updated": "2026-10-07T22:20:00+05:30"
+  "updated": "2026-10-07T22:00:00+05:30"
 }

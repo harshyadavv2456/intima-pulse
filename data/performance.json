@@ -1812,5 +1812,5 @@
   }
  ],
  "method": "Playwright/Chrome, navigation timing + PerformanceObserver FCP/LCP, Slow 3G (400 kbps, 400 ms) and Fast 3G (1.6 Mbps, 150 ms) CDP throttling; throttled rows use wall time. iOS = iPhone UA on Chrome (WebKit unavailable). /dashboard excluded: redirected to /questionnaire under synthetic state.",
- "updated": "2026-10-07T22:20:00+05:30"
+ "updated": "2026-10-07T22:00:00+05:30"
 }

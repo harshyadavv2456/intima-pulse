@@ -862,13 +862,13 @@
       "repro": "n/a",
       "screenshot": null,
       "issue_id": null,
-      "notes": "GAP: every scheduled run from 4 Oct through 7 Oct midday failed. No persona sessions, issue re-verification, social or performance data exist for 4–7 Oct; none invented. Evening 7 Oct rebuild only: health score recomputed from existing data, funding deadlines re-verified, weekly section for 28 Sep–4 Oct added late. UPDATE 22:20 IST: the 21:17 watchdog caught up the missed 7 Oct morning scan and midday Meera/Arjun sessions (21:30–22:15 IST) and refreshed the evening numbers. 4–6 Oct remain a gap (not back-filled; nothing invented)."
+      "notes": "GAP: every scheduled run from 4 Oct through 7 Oct midday failed. No persona sessions, issue re-verification, social or performance data exist for 4–7 Oct; none invented. Evening 7 Oct rebuild only: health score recomputed from existing data, funding deadlines re-verified, weekly section for 28 Sep–4 Oct added late. UPDATE 22:00 IST: the 21:17 watchdog caught up the missed 7 Oct morning scan and midday Meera/Arjun sessions (21:30–22:00 IST) and refreshed the evening numbers. 4–6 Oct remain a gap (not back-filled; nothing invented)."
     },
     {
       "date": "2026-10-07",
       "persona": "both",
       "feature": "watchdog-catch-up",
-      "steps": "Watchdog catch-up of 09:01 morning scan + 13:01 midday sessions (run 21:30–22:15 IST). baseline.js; state backed up to backup/midday_2026-10-07.",
+      "steps": "Watchdog catch-up of 09:01 morning scan + 13:01 midday sessions (run 21:30–22:00 IST). baseline.js; state backed up to backup/midday_2026-10-07.",
       "result": "ok",
       "severity": null,
       "repro": "",
@@ -1112,5 +1112,5 @@
       "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
     }
   ],
-  "updated": "2026-10-07T22:20:00+05:30"
+  "updated": "2026-10-07T22:00:00+05:30"
 }

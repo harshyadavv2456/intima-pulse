@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-07T22:20:00+05:30",
-  "history_note": "Snapshot 2 taken 7 Oct 2026 (watchdog catch-up, ~22:00 IST); 4-6 Oct not covered (runs failed). The 7 Oct counts use a different, simpler method (relevant results in one targeted search) than the 3 Oct relative estimates, so the two are NOT comparable and every trend stays \"insufficient history\". Qualitative signal this week: more press scrutiny of period apps (BMJ analysis 30 Sep; Harvard 2 Oct; Fashion Times 6 Oct; Flo settlement deadline 15 Oct) and a Nagpur menopause/social-media study (4 Oct). Reddit and X still block direct fetch; quotes are post titles/text from search with URLs, no usernames. Clusters not searched on 7 Oct (stress-men, ivf, male-infertility, judgy-gyn, preg-anxiety, d2c-upsell) have no 7 Oct snapshot.",
+  "updated": "2026-10-07T22:00:00+05:30",
+  "history_note": "Snapshot 2 taken 7 Oct 2026 (watchdog catch-up, ~21:55 IST); 4-6 Oct not covered (runs failed). The 7 Oct counts use a different, simpler method (relevant results in one targeted search) than the 3 Oct relative estimates, so the two are NOT comparable and every trend stays \"insufficient history\". Qualitative signal this week: more press scrutiny of period apps (BMJ analysis 30 Sep; Harvard 2 Oct; Fashion Times 6 Oct; Flo settlement deadline 15 Oct) and a Nagpur menopause/social-media study (4 Oct). Reddit and X still block direct fetch; quotes are post titles/text from search with URLs, no usernames. Clusters not searched on 7 Oct (stress-men, ivf, male-infertility, judgy-gyn, preg-anxiety, d2c-upsell) have no 7 Oct snapshot.",
   "clusters": [
     {
       "id": "c-dismissed",

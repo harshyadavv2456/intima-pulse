@@ -25,5 +25,5 @@
       "notes": "Behaviour differences seen without a code change: ISS-016 selection now persists (faint), Arjun Connect showed Partner Connected; companion behaviour varies run to run. New issues ISS-037..040 found by deeper probing, not by an app change."
     }
   ],
-  "updated": "2026-10-07T22:20:00+05:30"
+  "updated": "2026-10-07T22:00:00+05:30"
 }
