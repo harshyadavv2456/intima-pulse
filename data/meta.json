@@ -1,61 +1,82 @@
 {
-  "app_url": "https://www.intimacare.in",
-  "app_version": "5.2.1",
-  "last_test_run": "2026-10-07T21:35:00+05:30",
-  "health_score": 49,
-  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
-  "summary_today": [
-    "Watchdog caught up today's missed morning scan + midday Meera/Arjun sessions (21:30–22:00 IST). 4–6 Oct remain a gap; nothing invented. App unchanged (v5.2.1).",
-    "Health 49 (was 53): 40 open — 0 P0 / 10 P1 / 20 P2 / 10 P3. NEW P1 ISS-037: AI companion did not escalate heavy bleeding + dizziness (home remedies, 'tight bandage', no 112). Also new ISS-038/039 (P2), ISS-040 (P3). None fixed.",
-    "Top quick win still GAP-001: make privacy copy truthful (H/Easy) — 'All data stays on your device' still live. Next: hard-code red-flag escalation (112 + urgent care) in the companion.",
-    "Funding: STPI MedTech OCP 7.0 closes TOMORROW 8 Oct (re-verified on official page tonight); YC W27 2 Nov 8pm PT (re-verified). Nothing submitted.",
-    "Social: trend still 'insufficient history' (7 Oct snapshot not comparable with 3 Oct). Signal: rising press scrutiny of period-app accuracy/privacy (BMJ 30 Sep, Flo settlement 15 Oct). Comps re-check done; next due 11 Oct."
-  ],
-  "health_score_history": [
+ "app_url": "https://www.intimacare.in",
+ "app_version": "5.2.1",
+ "last_test_run": "2026-10-14T19:15:00+05:30",
+ "health_score": 48,
+ "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
+ "summary_today": [
+  "Catch-up run 14 Oct (~18:45–20:30 IST). GAP: no runs 8–13 Oct (account usage ran out) — no data exists for those days, nothing invented. App unchanged (v5.2.1); both identities stable.",
+  "Health 48 (was 49 on 7 Oct): 41 open — 0 P0 / 10 P1 / 21 P2 / 10 P3. New ISS-041 (P2, wrong TTC timing from companion). No new P0/P1. ISS-007 (chest pain not referred) reproduced and worse; ISS-037 (heavy bleeding) improved — now says urgent care, still no 112.",
+  "Top quick win still GAP-001: make privacy copy truthful (H/Easy) — Settings still says \"All data stays on your device\" and \"no tracking\". Next: hard-coded red-flag escalation (112 + doctor) for chest pain and heavy bleeding.",
+  "Funding: STPI MedTech OCP 7.0 CLOSED 8 Oct (nothing submitted). Nearest open deadline: YC W27 2 Nov 8pm PT (= 3 Nov ~09:30 IST), re-verified today. Nothing submitted.",
+  "Social: privacy scrutiny of period/menopause apps keeps rising (Peak Privacy study 6 Oct, Mozilla 2026 review); Menopause Awareness Month coverage in Indian press. Trend now \"flat\" for 6 clusters (2 comparable snapshots, capped method). Comps re-check due 11 Oct is overdue."
+ ],
+ "health_score_history": [
+  {
+   "date": "2026-10-01",
+   "score": 54
+  },
+  {
+   "date": "2026-10-03",
+   "score": 53
+  },
+  {
+   "date": "2026-10-07",
+   "score": 49
+  },
+  {
+   "date": "2026-10-14",
+   "score": 48,
+   "note": "8–13 Oct: no runs (gap) — no scores exist for those days"
+  }
+ ],
+ "weekly": [
+  {
+   "week_start": "2026-09-28",
+   "week_end": "2026-10-04",
+   "added_late": "Added late on 2026-10-07 (evening) — the Sunday 2026-10-04 run was missed. Based only on real sessions of 1 and 3 Oct; 2 and 4 Oct had no runs.",
+   "health_trend": "54 (1 Oct) → 53 (3 Oct); no run on 2 or 4 Oct.",
+   "issues_opened": 36,
+   "issues_fixed": 0,
+   "narrative": "[Added late on 7 Oct; Sunday 4 Oct run was missed.] Week of 28 Sep–4 Oct (testing on 1 and 3 Oct only; 2 and 4 Oct runs failed). Health Score 54 → 53. Issues: 36 opened (35 on 1 Oct baseline + ISS-036 on 3 Oct), 0 fixed; 9 P1 / 0 P0 open at week end. App stayed on v5.2.1 with no fixes detected. How it feels to be a user: Meera (irregular cycles, TTC) gets a dashboard in seconds and warm, memory-aware AI help, but the app still treats her like a textbook 28-day cycle (day 6 by 3 Oct) with three different fertile-window messages, and Settings still tells her her data stays on the phone. Her partner link with Arjun held all week once identities stopped forking, though the Connect page shows a link-code screen while the link is live (ISS-036). Arjun gets an instant testosterone card, but after two logged days Insights still say 'Readiness LOW' and draw medical-sounding conclusions (ISS-008), Care has no Pune doctors, and the companion — kind, Hinglish-friendly and remembering his context — still invents statistics; on 1 Oct it quoted the US emergency number for chest pain (ISS-006). Net: delivers value in 5 minutes, but trust (privacy copy), safety (India red flags) and a reason to come back by day 30 for doctor-referred users are still missing.",
+   "top_build_next": [
     {
-      "date": "2026-10-01",
-      "score": 54
+     "title": "Truthful privacy copy everywhere",
+     "why": "GAP-001 (H/Easy) – ISS-002/003 still open on 3 Oct; protects trust and store compliance."
     },
     {
-      "date": "2026-10-03",
-      "score": 53
+     "title": "Fix identity fork + India-correct red-flag handling",
+     "why": "GAP-003, GAP-002 – ISS-001 data loss risk and ISS-006/007 safety."
     },
     {
-      "date": "2026-10-07",
-      "score": 49
+     "title": "Doctor summary export + QR landing",
+     "why": "GAP-004/005 – ISS-005/035; the missing doctor-referral loop that drives day-30 retention."
     }
-  ],
-  "weekly": [
-    {
-      "week_start": "2026-09-28",
-      "week_end": "2026-10-04",
-      "added_late": "Added late on 2026-10-07 (evening) — the Sunday 2026-10-04 run was missed. Based only on real sessions of 1 and 3 Oct; 2 and 4 Oct had no runs.",
-      "health_trend": "54 (1 Oct) → 53 (3 Oct); no run on 2 or 4 Oct.",
-      "issues_opened": 36,
-      "issues_fixed": 0,
-      "narrative": "[Added late on 7 Oct; Sunday 4 Oct run was missed.] Week of 28 Sep–4 Oct (testing on 1 and 3 Oct only; 2 and 4 Oct runs failed). Health Score 54 → 53. Issues: 36 opened (35 on 1 Oct baseline + ISS-036 on 3 Oct), 0 fixed; 9 P1 / 0 P0 open at week end. App stayed on v5.2.1 with no fixes detected. How it feels to be a user: Meera (irregular cycles, TTC) gets a dashboard in seconds and warm, memory-aware AI help, but the app still treats her like a textbook 28-day cycle (day 6 by 3 Oct) with three different fertile-window messages, and Settings still tells her her data stays on the phone. Her partner link with Arjun held all week once identities stopped forking, though the Connect page shows a link-code screen while the link is live (ISS-036). Arjun gets an instant testosterone card, but after two logged days Insights still say 'Readiness LOW' and draw medical-sounding conclusions (ISS-008), Care has no Pune doctors, and the companion — kind, Hinglish-friendly and remembering his context — still invents statistics; on 1 Oct it quoted the US emergency number for chest pain (ISS-006). Net: delivers value in 5 minutes, but trust (privacy copy), safety (India red flags) and a reason to come back by day 30 for doctor-referred users are still missing.",
-      "top_build_next": [
-        {
-          "title": "Truthful privacy copy everywhere",
-          "why": "GAP-001 (H/Easy) – ISS-002/003 still open on 3 Oct; protects trust and store compliance."
-        },
-        {
-          "title": "Fix identity fork + India-correct red-flag handling",
-          "why": "GAP-003, GAP-002 – ISS-001 data loss risk and ISS-006/007 safety."
-        },
-        {
-          "title": "Doctor summary export + QR landing",
-          "why": "GAP-004/005 – ISS-005/035; the missing doctor-referral loop that drives day-30 retention."
-        }
-      ],
-      "funding_moves": [
-        "STPI MedTech CoE OCP 7.0 (NIRMAAN) deadline 8 Oct verified on the official page (1 and 3 Oct); decide-milestone was 5 Oct — no decision recorded.",
-        "YC Winter 2027 on-time deadline 2 Nov verified (3 Oct); long shot.",
-        "Passed/closed this cycle: T-Hub Healthcare C6, MeitY GENESIS EIR 3.0, PIEDS Womenpreneur 4.0, SwasthyaTech Synapse 2026.",
-        "No applications submitted; DPIIT recognition (rolling) still the top-ranked enabler."
-      ],
-      "day1_baseline": "Day-1 baseline. Intima Health v5.2.1 is a fast, no-login, warm product with unusually deep content (IVF mode, labs, partner sharing). The main risks are trust (privacy copy that is not true), reliability (identity forks lose data), and an AI that can be unsafe in India-specific red-flag moments. For doctor-referred users the app delivers value in 5 minutes but gives no reason to return by day 30 unless export/summary and reminders are added."
-    }
-  ],
-  "updated": "2026-10-07T22:00:00+05:30"
+   ],
+   "funding_moves": [
+    "STPI MedTech CoE OCP 7.0 (NIRMAAN) deadline 8 Oct verified on the official page (1 and 3 Oct); decide-milestone was 5 Oct — no decision recorded.",
+    "YC Winter 2027 on-time deadline 2 Nov verified (3 Oct); long shot.",
+    "Passed/closed this cycle: T-Hub Healthcare C6, MeitY GENESIS EIR 3.0, PIEDS Womenpreneur 4.0, SwasthyaTech Synapse 2026.",
+    "No applications submitted; DPIIT recognition (rolling) still the top-ranked enabler."
+   ],
+   "day1_baseline": "Day-1 baseline. Intima Health v5.2.1 is a fast, no-login, warm product with unusually deep content (IVF mode, labs, partner sharing). The main risks are trust (privacy copy that is not true), reliability (identity forks lose data), and an AI that can be unsafe in India-specific red-flag moments. For doctor-referred users the app delivers value in 5 minutes but gives no reason to return by day 30 unless export/summary and reminders are added."
+  },
+  {
+   "week_start": "2026-10-05",
+   "week_end": "2026-10-11",
+   "added_late": "Added late on 2026-10-14 — the Sunday 2026-10-11 run was missed. Based only on the real 7 Oct session; 5, 6 and 8–11 Oct had no runs.",
+   "health_trend": "53 (3 Oct) → 49 (7 Oct); no run on other days.",
+   "issues_opened": 4,
+   "issues_fixed": 0,
+   "narrative": "[Added late on 14 Oct; Sunday 11 Oct run was missed.] Only one test day (7 Oct) this week. 4 issues opened (ISS-037 P1 heavy-bleeding escalation, ISS-038/039 P2, ISS-040 P3), 0 fixed; app stayed on v5.2.1. No observations exist for 8–11 Oct."
+  }
+ ],
+ "updated": "2026-10-14T20:30:00+05:30",
+ "run_gaps": [
+  {
+   "from": "2026-10-08",
+   "to": "2026-10-13",
+   "reason": "Daily runs failed (account usage ran out); 14 Oct morning/midday also missed, done in an evening catch-up. Nothing back-filled."
+  }
+ ]
 }
