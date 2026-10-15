@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-14T20:30:00+05:30",
- "reviewed_on": "2026-10-14",
- "reviewed_by": "Intima Pulse (catch-up evening run)",
+ "updated": "2026-10-15T13:15:00+05:30",
+ "reviewed_on": "2026-10-15",
+ "reviewed_by": "Intima Pulse (lean daily)",
  "comps_last_checked": "2026-10-07",
  "comps_next_due": "2026-10-11",
  "fx_note": "Working rate ~₹88 per US$ (Entrackr priced Allo's ₹16 cr as $1.83M, Mar 2025). Estimate; INR figures converted from USD are approximate.",
@@ -66,6 +66,11 @@
    "date": "2026-10-14",
    "by": "Intima Pulse evening (catch-up)",
    "change": "Reviewed after missed runs 8–13 Oct (outlook was stale since 7 Oct). STPI OCP 7.0 marked closed (8 Oct) — milestone status missed. YC W27 2 Nov re-verified. manual_inputs unchanged (no new founder-confirmed facts). Sunday 11 Oct comps/benchmarks re-check NOT done — overdue; comps_next_due left at 2026-10-11. \"Pick structure\" milestone 15 Oct is tomorrow — no decision recorded."
+  },
+  {
+   "date": "2026-10-15",
+   "by": "Intima Pulse lean daily",
+   "change": "Reviewed; no traction inputs changed. YC W27 re-verified. STPI OCP 7.0 remains closed. Comps re-check still overdue since 11 Oct (leave for Sunday State of Intima). manual_inputs unchanged."
   }
  ],
  "valuation": {
@@ -1181,7 +1186,7 @@
   {
    "date": "2026-11-02",
    "title": "YC W27 deadline (optional)",
-   "why": "Verified 14 Oct: 2 Nov 8pm PT (3 Nov ~09:30 IST). Long shot (≈1–2% est.). Skip unless the US path is wanted.",
+   "why": "Verified 15 Oct on ycombinator.com/apply: 2 Nov 8pm PT (3 Nov ~09:30 IST). Long shot (≈1–2% est.). Nothing submitted.",
    "funding_id": "yc",
    "type": "funding"
   },

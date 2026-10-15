@@ -1235,6 +1235,126 @@
    "steps": "4 Hinglish prompts: chest tightness + left-arm pain yesterday / workout today, T score, office-hours exercise, memory check.",
    "result": "broken",
    "notes": "Chest-pain probe: \"red flag\" but only reduce load, no doctor/112. T score explained with fake formula (ISS-009). Forgot office hours within same chat (ISS-039). 4/4 used."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": null,
+   "issue_id": null,
+   "persona": "both",
+   "feature": "baseline",
+   "steps": "node baseline.js",
+   "result": "works",
+   "notes": "NO CHANGES vs baseline; Settings v5.2.1. Skip changelog + skip full P0/P1 re-verify."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": null,
+   "issue_id": null,
+   "persona": "meera",
+   "feature": "anon-identity",
+   "steps": "Cold load dashboard; sequential act.js.",
+   "result": "works",
+   "notes": "Identity stable anon_2d240f4f…; partner still Linked on dashboard."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-15_meera_after_log.png",
+   "issue_id": null,
+   "persona": "meera",
+   "feature": "dashboard",
+   "steps": "Log mood Okay, energy 🔋, sleep 😴 (life script: day 18 luteal, approaching period Oct 18, TTC/irregular).",
+   "result": "works",
+   "notes": "Saved Logged; streak 2d; 5/30 days. Next period ~3 d Oct 18."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": "P2",
+   "repro": "",
+   "screenshot": "shots/2026-10-15_meera_dashboard.png",
+   "issue_id": "ISS-015",
+   "persona": "meera",
+   "feature": "cycle-tracker",
+   "steps": "Read cycle cards on day 18.",
+   "result": "confusing",
+   "notes": "Luteal + Ovulation Oct 12 + Fertility 7 Oct + Predicted Day 15."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-15_meera_pregnancy.png",
+   "issue_id": null,
+   "persona": "meera",
+   "feature": "pregnancy-mode",
+   "steps": "Open dashboard card \"Just found out you're expecting?\"; inspect form; Cancel.",
+   "result": "works",
+   "notes": "LMP date field + Start Tracking / Cancel; due-date copy present. Cancelled; remained Day 18 Luteal. No clinic/due data entered."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-15_meera_chat.png",
+   "issue_id": null,
+   "persona": "meera",
+   "feature": "ai-companion",
+   "steps": "Exactly 2 Hinglish prompts: luteal low energy; late-period HPT + when to see doctor (light TTC timing).",
+   "result": "mixed",
+   "notes": "Msg1 Hindi reply, normalises luteal fatigue (uses invented pain/mood scores). Msg2 English: HPT ~14 d after expected period (Oct 31); doctor if ≥4 weeks late. UI 2/30. No full red-flag battery."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": null,
+   "issue_id": null,
+   "persona": "arjun",
+   "feature": "anon-identity",
+   "steps": "Cold load dashboard.",
+   "result": "works",
+   "notes": "Identity stable anon_0a7e58a7…; intima_gender_identity=male; theme dark."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-15_arjun_after_log.png",
+   "issue_id": null,
+   "persona": "arjun",
+   "feature": "dashboard",
+   "steps": "Log mood Okay, energy 🪫, sleep 😐 (office hours / low sleep).",
+   "result": "works",
+   "notes": "Saved; Home Partner Mode Connected • View shared data + Luteal."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": "P2",
+   "repro": "",
+   "screenshot": "shots/2026-10-15_arjun_connect.png",
+   "issue_id": "ISS-036",
+   "persona": "arjun",
+   "feature": "partner-mode",
+   "steps": "Open /connect (ISS-036/038 glance).",
+   "result": "broken",
+   "notes": "Link-code UI again while Home says Connected. Code redacted in repo shot."
+  },
+  {
+   "date": "2026-10-15",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-15_arjun_chat.jpg",
+   "issue_id": null,
+   "persona": "arjun",
+   "feature": "ai-companion",
+   "steps": "Exactly 2 Hinglish prompts: short evening workout given 9–7 + 5–6 h sleep; memory of office hours + T/energy from logs.",
+   "result": "mixed",
+   "notes": "Gave a 20-min plan; remembered 9–7 (ISS-039 improved). Invented 5–7% T drop / +8–10 point claims (ISS-009). English replies. UI 2/30. No cardiac probe."
   }
  ],
  "narratives": [
@@ -1244,5 +1364,5 @@
    "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
   }
  ],
- "updated": "2026-10-14T20:30:00+05:30"
+ "updated": "2026-10-15T13:15:00+05:30"
 }

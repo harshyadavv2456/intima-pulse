@@ -31,7 +31,15 @@
    "fixed": [],
    "broke": [],
    "notes": "Behaviour differences without a code change: companion now escalates heavy bleeding to urgent care (ISS-037 improved); partner phase now consistent (ISS-038 partly); no Connect link-code view (ISS-036) or Reconnecting banner (ISS-019) seen. 8–13 Oct not observed (gap)."
+  },
+  {
+   "date": "2026-10-15",
+   "change": "No app change detected vs baseline (v5.2.1)",
+   "detected_by": "baseline.js (~13:04 IST)",
+   "fixed": [],
+   "broke": [],
+   "notes": "Lean Thursday run. Behaviour: ISS-036 link-code UI back on Arjun Connect; ISS-039 companion memory improved for office hours. Pregnancy-mode form re-verified (cancel path)."
   }
  ],
- "updated": "2026-10-14T20:30:00+05:30"
+ "updated": "2026-10-15T13:15:00+05:30"
 }

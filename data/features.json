@@ -38,7 +38,7 @@
    "group": "Platform",
    "status": "weak",
    "note": "Privacy copy false (ISS-002); no export (ISS-005).",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-15"
   },
   {
    "id": "notifications",
@@ -86,15 +86,15 @@
    "group": "Platform",
    "status": "broken",
    "note": "Multiple claims contradict reality (ISS-002/003/004).",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-15"
   },
   {
    "id": "cycle-tracker",
    "name": "Cycle / period logging",
    "group": "Women",
    "status": "weak",
-   "note": "Logging fine; predictions ignore irregular cycles (ISS-014).",
-   "last_verified": "2026-10-14"
+   "note": "Logging fine; predictions ignore irregular cycles (ISS-014). | 15 Oct: Day 18 Luteal, next ~3 d Oct 18; ISS-014/015 still.",
+   "last_verified": "2026-10-15"
   },
   {
    "id": "ttc-fertility",
@@ -102,7 +102,7 @@
    "group": "Women",
    "status": "weak",
    "note": "Good inputs; three inconsistent fertile statements (ISS-015), selection not retained (ISS-016).",
-   "last_verified": "2026-10-14"
+   "last_verified": "2026-10-15"
   },
   {
    "id": "ivf-mode",
@@ -117,8 +117,8 @@
    "name": "Pregnancy mode",
    "group": "Women",
    "status": "OK",
-   "note": "Due-date form opens; start/cancel; only tested to the form (cancelled, nothing to revert).",
-   "last_verified": "2026-10-01"
+   "note": "Due-date form opens from dashboard card \"Just found out you're expecting?\": LMP date input, copy \"Due dates are calculated from this date — the same method doctors use\", Start Tracking / Cancel. Cancelled cleanly on 15 Oct; stayed on Day 18 Luteal; nothing submitted. Status OK.",
+   "last_verified": "2026-10-15"
   },
   {
    "id": "hormonal-dashboard",
@@ -189,16 +189,16 @@
    "name": "AI companion",
    "group": "Shared",
    "status": "weak",
-   "note": "Warm, personalised, catches red flags; wrong emergency number, invented stats, language drift (ISS-006..012). | 7 Oct: failed heavy-bleeding red flag (ISS-037), memory loss (ISS-039), cleared cardio after chest pain (ISS-007). 112 given once. | 14 Oct: heavy-bleeding probe now escalates to urgent care (ISS-037 improved), but chest-pain + arm-pain probe NOT referred to a doctor (ISS-007), wrong TTC timing (ISS-041), Hinglish→English, same-chat memory lapse (Arjun).",
-   "last_verified": "2026-10-14"
+   "note": "Warm, personalised, catches red flags; wrong emergency number, invented stats, language drift (ISS-006..012). | 7 Oct: failed heavy-bleeding red flag (ISS-037), memory loss (ISS-039), cleared cardio after chest pain (ISS-007). 112 given once. | 14 Oct: heavy-bleeding probe now escalates to urgent care (ISS-037 improved), but chest-pain + arm-pain probe NOT referred to a doctor (ISS-007), wrong TTC timing (ISS-041), Hinglish→English, same-chat memory lapse (Arjun). | 15 Oct lean (2 msgs each): Meera luteal mood OK (Hindi reply) + late-period HPT timing (English, no LH invent); Arjun office-hours workout + memory OK today (ISS-039 improved) but invented T%% stats; Hinglish mostly → English (ISS-010).",
+   "last_verified": "2026-10-15"
   },
   {
    "id": "partner-mode",
    "name": "Partner Mode link",
    "group": "Connect",
    "status": "weak",
-   "note": "Linking by 6-char code works instantly; reliability and unlink issues (ISS-001/017/018/019). | 7 Oct: partner view shows Ovulation/Invalid Date vs owner Follicular (ISS-038); reconnecting banner (ISS-019). | 14 Oct: phase now matches across partners (Day 17 Luteal); next-period estimate still differs (12 d vs 4 d); no \"Reconnecting\" banner.",
-   "last_verified": "2026-10-14"
+   "note": "Linking by 6-char code works instantly; reliability and unlink issues (ISS-001/017/018/019). | 7 Oct: partner view shows Ovulation/Invalid Date vs owner Follicular (ISS-038); reconnecting banner (ISS-019). | 14 Oct: phase now matches across partners (Day 17 Luteal); next-period estimate still differs (12 d vs 4 d); no \"Reconnecting\" banner. | 15 Oct: Arjun Home Connected+Luteal; /connect link-code UI back (ISS-036).",
+   "last_verified": "2026-10-15"
   },
   {
    "id": "partner-sharing",
@@ -485,5 +485,5 @@
    ]
   }
  ],
- "updated": "2026-10-14T20:30:00+05:30"
+ "updated": "2026-10-15T13:15:00+05:30"
 }

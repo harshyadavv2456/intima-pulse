@@ -1,15 +1,15 @@
 {
  "app_url": "https://www.intimacare.in",
  "app_version": "5.2.1",
- "last_test_run": "2026-10-14T19:15:00+05:30",
+ "last_test_run": "2026-10-15T13:15:00+05:30",
  "health_score": 48,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
  "summary_today": [
-  "Catch-up run 14 Oct (~18:45–20:30 IST). GAP: no runs 8–13 Oct (account usage ran out) — no data exists for those days, nothing invented. App unchanged (v5.2.1); both identities stable.",
-  "Health 48 (was 49 on 7 Oct): 41 open — 0 P0 / 10 P1 / 21 P2 / 10 P3. New ISS-041 (P2, wrong TTC timing from companion). No new P0/P1. ISS-007 (chest pain not referred) reproduced and worse; ISS-037 (heavy bleeding) improved — now says urgent care, still no 112.",
-  "Top quick win still GAP-001: make privacy copy truthful (H/Easy) — Settings still says \"All data stays on your device\" and \"no tracking\". Next: hard-coded red-flag escalation (112 + doctor) for chest pain and heavy bleeding.",
-  "Funding: STPI MedTech OCP 7.0 CLOSED 8 Oct (nothing submitted). Nearest open deadline: YC W27 2 Nov 8pm PT (= 3 Nov ~09:30 IST), re-verified today. Nothing submitted.",
-  "Social: privacy scrutiny of period/menopause apps keeps rising (Peak Privacy study 6 Oct, Mozilla 2026 review); Menopause Awareness Month coverage in Indian press. Trend now \"flat\" for 6 clusters (2 comparable snapshots, capped method). Comps re-check due 11 Oct is overdue."
+  "Lean daily 15 Oct (~13:04–13:15 IST). App unchanged (v5.2.1, baseline empty). Both identities stable (Meera anon_2d240f4f…, Arjun anon_0a7e58a7…).",
+  "Health 48 (was 48): 41 open — 0 P0 / 10 P1 / 21 P2 / 10 P3. No new P0/P1. ISS-036 reproduced (Arjun Connect link-code while Home Connected). ISS-039 memory improved today.",
+  "Top quick win still GAP-001: truthful privacy copy (Settings still \"All data stays on your device\" / \"no tracking\").",
+  "Funding: YC W27 re-verified on official apply page — 2 Nov 8pm PT (~18 days). Nothing submitted. Full funding refresh is Mondays only.",
+  "Social (Thu): privacy + irregular-cycle app reliability + ED shame + perimenopause dismissal still active themes. Trends mostly flat vs 14 Oct (capped method). Comps re-check still overdue (Sunday)."
  ],
  "health_score_history": [
   {
@@ -28,6 +28,11 @@
    "date": "2026-10-14",
    "score": 48,
    "note": "8–13 Oct: no runs (gap) — no scores exist for those days"
+  },
+  {
+   "date": "2026-10-15",
+   "score": 48,
+   "note": "Lean daily: Meera+Arjun 2 msgs each; pregnancy-mode deep-dive; Thursday social; YC re-verify"
   }
  ],
  "weekly": [
@@ -71,7 +76,7 @@
    "narrative": "[Added late on 14 Oct; Sunday 11 Oct run was missed.] Only one test day (7 Oct) this week. 4 issues opened (ISS-037 P1 heavy-bleeding escalation, ISS-038/039 P2, ISS-040 P3), 0 fixed; app stayed on v5.2.1. No observations exist for 8–11 Oct."
   }
  ],
- "updated": "2026-10-14T20:30:00+05:30",
+ "updated": "2026-10-15T13:15:00+05:30",
  "run_gaps": [
   {
    "from": "2026-10-08",
