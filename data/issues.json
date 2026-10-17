@@ -150,7 +150,7 @@
       "persona": "both",
       "severity": "P2",
       "first_seen": "2026-10-01",
-      "last_verified": "2026-10-15",
+      "last_verified": "2026-10-17",
       "fixed_on": null,
       "status": "open",
       "steps": [
@@ -159,7 +159,8 @@
       ],
       "expected": "Hedged, sourced guidance consistent with logged data.",
       "actual": "Meera: says fertile window \"Day 11-13\" for a 31-38 day cycle (later gives ovulation day 17-24 itself) and quotes \"regularity 100 / health score 70\" for an irregular user. Arjun: \"+5% testosterone per hour of sleep\", \"cortisol -20%\", \"~15-20% better erections\", magnesium 400 mg with no caveat. || 2026-10-07: Meera companion claimed her tracking shows \"heavy bleeding 3-5/5 severity\" (never logged), then two messages later said \"you didn't log today's bleeding\". Ovulation for a 31-38 d cycle given as day 16-18 (should be ~17-24). [14 Oct] Reproduced: \"testing day 10-14 captures 80–90% of ovulations\", \"1-2% of women...\", micro-workouts boost \"testosterone signal by ~2–3 points\"; explained the app T score with a bone-density-style T-score formula (−3.4). [15 Oct] Arjun companion again invents % effects (\"each hour below 6 h drops free T ~5–7%\", \"+8–10 points\" from wind-down) — same invented-stat pattern.",
-      "screenshot": "shots/2026-10-01_meera_chat.png"
+      "screenshot": "shots/2026-10-01_meera_chat.png",
+      "notes": "17 Oct: \"magnesium + walk can cut pain score 10–15% in a month\"; quoted cycle health 68/100, pain 61."
     },
     {
       "id": "ISS-010",
@@ -236,7 +237,7 @@
       "persona": "meera",
       "severity": "P2",
       "first_seen": "2026-10-01",
-      "last_verified": "2026-10-15",
+      "last_verified": "2026-10-17",
       "fixed_on": null,
       "status": "open",
       "steps": [
@@ -254,7 +255,7 @@
       "persona": "meera",
       "severity": "P2",
       "first_seen": "2026-10-01",
-      "last_verified": "2026-10-15",
+      "last_verified": "2026-10-17",
       "fixed_on": null,
       "status": "open",
       "steps": [
@@ -512,7 +513,7 @@
       "persona": "meera",
       "severity": "P3",
       "first_seen": "2026-10-01",
-      "last_verified": "2026-10-15",
+      "last_verified": "2026-10-17",
       "fixed_on": null,
       "status": "open",
       "steps": [
@@ -614,13 +615,14 @@
       "persona": "both",
       "severity": "P2",
       "first_seen": "2026-10-03",
-      "last_verified": "2026-10-16",
+      "last_verified": "2026-10-17",
       "fixed_on": null,
       "status": "open",
       "steps": "1) Cold-load /connect for Meera or Arjun via fresh Playwright storageState. 2) Observe YOUR LINK CODE / Share this code UI. 3) Check localStorage intima_partner_status.status (active) and Home Partner Mode card (Connected • View shared data with partner cycle day/mood).",
       "expected": "Connect page shows Partner Connected state consistent with localStorage and Home partner card.",
       "actual": "2026-10-03 midday: both personas' /connect shows generate/link-code view; LS status=active; Arjun Home Partner card correctly shows Meera Cycle Day 6 Follicular + mood. Distinct from ISS-019 reconnecting banner (not seen today). || 2026-10-07: Meera /connect (SPA nav) still shows YOUR LINK CODE view while LS partner status=active; Arjun /connect showed Partner Connected this time. Partial/intermittent. [14 Oct] Not seen today: both Connect pages show Partner Connected without a link-code view. Keep open one more pass before marking fixed. [15 Oct] REPRODUCED on Arjun: Home Partner Mode \"Connected • View shared data\" but /connect shows YOUR LINK CODE UI again (code redacted in repo shot). Meera not re-checked on Connect today.",
-      "screenshot": "shots/2026-10-15_arjun_connect.png"
+      "screenshot": "shots/2026-10-15_arjun_connect.png",
+      "notes": "17 Oct: reproduced again (Arjun Connect link-code UI while Home says Connected)."
     },
     {
       "id": "ISS-037",
@@ -702,7 +704,7 @@
       "persona": "meera",
       "severity": "P2",
       "first_seen": "2026-10-14",
-      "last_verified": "2026-10-15",
+      "last_verified": "2026-10-17",
       "fixed_on": null,
       "status": "open",
       "steps": [
@@ -712,8 +714,28 @@
       ],
       "expected": "Explain that ovulation can't be known without a signal; on day 17 of an irregular cycle suggest LH testing from early in the next cycle / confirm with BBT; no claims about logged data that does not exist.",
       "actual": "Claims \"Oct 12\" is likely when she logged an LH surge (none logged), says the app assumes a shortened luteal phase so she may \"ovulate today\", tells her to test LH today and time intercourse \"within the next 12 hours\", and that \"you can still have a good chance later in the luteal phase\". Repeated in the next reply. [15 Oct] Not fully re-probed; Meera asked late-period HPT timing (lean). Reply: test ~14 d after expected period (Oct 31–Nov 1); see doctor if ≥4 weeks late. No invented LH-surge claim today.",
-      "screenshot": "shots/2026-10-14_meera_chat.png"
+      "screenshot": "shots/2026-10-14_meera_chat.png",
+      "notes": "17 Oct: re-fired — Day 20 luteal, period due ~18 Oct; told Meera to use OPKs on Day 3–5 of the new cycle (Oct 20–22) \"when the LH surge will peak\" and have sex on Day 2–3; did not answer when to take a pregnancy test."
+    },
+    {
+      "id": "ISS-042",
+      "title": "AI companion claims a smartwatch/fitness-band sync exists; no device or wearable connection is in the app",
+      "feature": "ai-companion",
+      "persona": "both",
+      "severity": "P2",
+      "first_seen": "2026-10-17",
+      "last_verified": "2026-10-17",
+      "fixed_on": null,
+      "status": "open",
+      "steps": [
+        "Meera: ask companion if a smartwatch skin-temperature reading can be connected to the app",
+        "Arjun: ask if a fitness band (steps, resting HR) can be connected",
+        "Look for a device/wearable option in Settings, Home and Connect; open /devices and /wearables"
+      ],
+      "expected": "Companion says plainly that device sync is not available yet, or links the real setting if it exists.",
+      "actual": "Meera was told to \"enable the Temperature data source in the app's Connect tab\" and offered setup help; Arjun was told bands \"push steps, RHR, HRV, sleep straight into the app\" and offered sync steps. No device/wearable option in Settings, Home or Connect; /devices and /wearables give a 404. Partner sharing still lists a \"Wearable & body\" category (ISS-021).",
+      "screenshot": "shots/2026-10-17_meera_chat.png"
     }
   ],
-  "updated": "2026-10-16T13:15:00+05:30"
+  "updated": "2026-10-17T13:20:00+05:30"
 }

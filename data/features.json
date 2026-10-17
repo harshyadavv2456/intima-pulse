@@ -94,7 +94,7 @@
       "group": "Women",
       "status": "weak",
       "note": "Logging fine; predictions ignore irregular cycles (ISS-014). | 15 Oct: Day 18 Luteal, next ~3 d Oct 18; ISS-014/015 still.",
-      "last_verified": "2026-10-15"
+      "last_verified": "2026-10-17"
     },
     {
       "id": "ttc-fertility",
@@ -190,7 +190,7 @@
       "group": "Shared",
       "status": "weak",
       "note": "Warm, personalised, catches red flags; wrong emergency number, invented stats, language drift (ISS-006..012). | 7 Oct: failed heavy-bleeding red flag (ISS-037), memory loss (ISS-039), cleared cardio after chest pain (ISS-007). 112 given once. | 14 Oct: heavy-bleeding probe now escalates to urgent care (ISS-037 improved), but chest-pain + arm-pain probe NOT referred to a doctor (ISS-007), wrong TTC timing (ISS-041), Hinglish→English, same-chat memory lapse (Arjun). | 15 Oct lean (2 msgs each): Meera luteal mood OK (Hindi reply) + late-period HPT timing (English, no LH invent); Arjun office-hours workout + memory OK today (ISS-039 improved) but invented T%% stats; Hinglish mostly → English (ISS-010).",
-      "last_verified": "2026-10-15"
+      "last_verified": "2026-10-17"
     },
     {
       "id": "partner-mode",
@@ -198,7 +198,7 @@
       "group": "Connect",
       "status": "weak",
       "note": "Linking by 6-char code works instantly; reliability and unlink issues (ISS-001/017/018/019). | 7 Oct: partner view shows Ovulation/Invalid Date vs owner Follicular (ISS-038); reconnecting banner (ISS-019). | 14 Oct: phase now matches across partners (Day 17 Luteal); next-period estimate still differs (12 d vs 4 d); no \"Reconnecting\" banner. | 15 Oct: Arjun Home Connected+Luteal; /connect link-code UI back (ISS-036).",
-      "last_verified": "2026-10-15"
+      "last_verified": "2026-10-17"
     },
     {
       "id": "partner-sharing",
@@ -212,9 +212,9 @@
       "id": "devices",
       "name": "Devices / wearables",
       "group": "Connect",
-      "status": "OK",
-      "note": "Not exercised on day 1 (no wearable available in synthetic test).",
-      "last_verified": "2026-10-01"
+      "status": "missing",
+      "note": "17 Oct deep-dive: no device/wearable connection found in Settings, Home or Connect; /devices and /wearables 404. The companion still says sync exists (ISS-042), and partner sharing lists a \"Wearable & body\" category (ISS-021). Scope: Settings, Home, Connect and 2 URL guesses only; Wellness/Care not searched for a device link.",
+      "last_verified": "2026-10-17"
     },
     {
       "id": "care-doctors",
@@ -485,5 +485,5 @@
       ]
     }
   ],
-  "updated": "2026-10-16T13:15:00+05:30"
+  "updated": "2026-10-17T13:20:00+05:30"
 }

@@ -47,7 +47,15 @@
       "fixed": [],
       "broke": [],
       "notes": "Lean Friday run. Deep-dive kegel OK. ISS-036 still on Arjun Connect (link-code while Home Connected). Social skipped (Fri)."
+    },
+    {
+      "date": "2026-10-17",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (~13:04 IST)",
+      "fixed": [],
+      "broke": [],
+      "notes": "Lean Saturday run. Deep-dive devices: no device/wearable UI (status missing); new ISS-042 (companion claims device sync). ISS-036 and ISS-041 reproduced. Social skipped (Sat)."
     }
   ],
-  "updated": "2026-10-16T13:15:00+05:30"
+  "updated": "2026-10-17T13:20:00+05:30"
 }

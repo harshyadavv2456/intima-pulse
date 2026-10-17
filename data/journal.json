@@ -1451,6 +1451,150 @@
       "steps": "Exactly 2 Hinglish prompts: desk pelvic/core; Home vs Connect Connected/link-code explain.",
       "result": "mixed",
       "notes": "UI 2/30. Routine OK; invented T/stamina lifts. Connect explanation OK without codes."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "",
+      "issue_id": null,
+      "persona": "both",
+      "feature": "baseline",
+      "steps": "node baseline.js (~13:04 IST).",
+      "result": "works",
+      "notes": "No changes vs baseline; Settings shows v5.2.1. No changelog re-test of P0/P1 (weekly re-test is Sunday)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_meera_dashboard.png",
+      "issue_id": null,
+      "persona": "meera",
+      "feature": "anon-identity",
+      "steps": "Cold load /dashboard; read intima_anon_id.",
+      "result": "works",
+      "notes": "Stable anon_2d240f4f… (no fork)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_meera_dashboard.png",
+      "issue_id": null,
+      "persona": "meera",
+      "feature": "dashboard",
+      "steps": "Tap Good / 🔋 / 😴 mood-energy-sleep.",
+      "result": "works",
+      "notes": "Logged; streak 4d; 7/30 days. Day 20 of 28, Luteal; next period ~1 day (Oct 18)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_meera_dashboard.png",
+      "issue_id": "ISS-014",
+      "persona": "meera",
+      "feature": "cycle-tracker",
+      "steps": "Read cycle cards on Home.",
+      "result": "confusing",
+      "notes": "Day 20 Luteal + \"Ovulation ~23 days (Oct 12)\" + Fertility \"7 Oct\" + \"Predicted Day 17, based on a textbook cycle\". 28-day textbook model despite irregular cycle (ISS-014/015)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_meera_devices.png",
+      "issue_id": "ISS-042",
+      "persona": "meera",
+      "feature": "devices",
+      "steps": "Deep-dive: look for device/wearable connection in Settings; try /devices and /wearables. Nothing connected.",
+      "result": "broken",
+      "notes": "No device or wearable option in Settings; /devices and /wearables give a 404. Feature status OK → missing (it had never been tested)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_meera_chat.png",
+      "issue_id": "ISS-042",
+      "persona": "meera",
+      "feature": "ai-companion",
+      "steps": "Exactly 2 Hinglish prompts: smartwatch temperature for ovulation + can I connect it; PMS comfort + when to test (TTC).",
+      "result": "mixed",
+      "notes": "UI 2/30. Temperature-shift explanation correct, but claims a \"Temperature data source in Connect tab\" that does not exist (ISS-042). Msg2: comfort tips OK; wrong OPK timing (Day 3–5 of next cycle) and no pregnancy-test answer (ISS-041); invented % pain cut (ISS-009). Replied in English to Hinglish (ISS-010)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_arjun_dashboard.png",
+      "issue_id": null,
+      "persona": "arjun",
+      "feature": "anon-identity",
+      "steps": "Cold load /dashboard; read anon + gender/theme.",
+      "result": "works",
+      "notes": "Stable anon_0a7e58a7…; intima_gender_identity=male; theme dark."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_arjun_dashboard.png",
+      "issue_id": null,
+      "persona": "arjun",
+      "feature": "dashboard",
+      "steps": "Tap Good / 🔋 / 😐; look at the Partner card.",
+      "result": "works",
+      "notes": "Logged. Home Partner Mode Connected • View shared data + Luteal (matches Meera)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_arjun_connect.png",
+      "issue_id": "ISS-036",
+      "persona": "arjun",
+      "feature": "partner-mode",
+      "steps": "Open /connect and compare with the Connected card on Home; look for any device/wearable option.",
+      "result": "broken",
+      "notes": "Link-code UI again while Home says Connected (ISS-036); code redacted in shot. No device/wearable option on Connect."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "shots/2026-10-17_arjun_chat.png",
+      "issue_id": "ISS-042",
+      "persona": "arjun",
+      "feature": "ai-companion",
+      "steps": "Exactly 2 Hinglish prompts: post-drinks 5 h sleep, gym or rest; can I connect my fitness band.",
+      "result": "mixed",
+      "notes": "UI 2/30. Recovery advice sensible (rest, hydrate, walk). Claims band sync for steps/RHR/HRV/sleep and offers setup steps; no such feature (ISS-042). Cites the T-score 21/100 and links cortisol/T with no evidence (ISS-009)."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "",
+      "issue_id": null,
+      "persona": "both",
+      "feature": "funding",
+      "steps": "YC W27 deadline re-checked on ycombinator.com/apply.",
+      "result": "works",
+      "notes": "On-time deadline still Nov 2, 8pm PT. Nothing submitted. Social skipped (Saturday). Full funding refresh is Mondays only."
+    },
+    {
+      "date": "2026-10-17",
+      "severity": null,
+      "repro": "",
+      "screenshot": "",
+      "issue_id": null,
+      "persona": "both",
+      "feature": "process",
+      "steps": "Security hygiene: the 16 Oct committed shot shots/2026-10-16_arjun_connect.png showed an unredacted partner link code.",
+      "result": "works",
+      "notes": "Redacted in today's commit (rule: link codes never in repo shots)."
     }
   ],
   "narratives": [
@@ -1460,5 +1604,5 @@
       "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
     }
   ],
-  "updated": "2026-10-16T13:15:00+05:30"
+  "updated": "2026-10-17T13:20:00+05:30"
 }

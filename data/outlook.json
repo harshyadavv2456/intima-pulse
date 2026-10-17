@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-16T13:15:00+05:30",
-  "reviewed_on": "2026-10-16",
+  "updated": "2026-10-17T13:20:00+05:30",
+  "reviewed_on": "2026-10-17",
   "reviewed_by": "Intima Pulse (lean daily)",
   "comps_last_checked": "2026-10-07",
   "comps_next_due": "2026-10-11",
@@ -76,6 +76,11 @@
       "date": "2026-10-16",
       "by": "Intima Pulse lean daily",
       "change": "reviewed, no change. YC W27 re-verified on official apply page (Nov 2 8pm PT). Social skipped (Friday). Comps re-check still overdue (Sunday). manual_inputs unchanged."
+    },
+    {
+      "date": "2026-10-17",
+      "by": "Intima Pulse lean daily",
+      "change": "reviewed, no change. YC W27 re-checked on official apply page (Nov 2 8pm PT). Social skipped (Saturday). Comps re-check still overdue; due Sunday 18 Oct. manual_inputs unchanged."
     }
   ],
   "valuation": {
