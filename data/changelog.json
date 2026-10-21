@@ -63,7 +63,32 @@
    "fixed": [],
    "broke": [],
    "notes": "Lean evening catch-up after the 18–20 Oct gap. No change, so open P0/P1 were not fully re-tested. New ISS-043 (P2)."
+  },
+  {
+   "date": "2026-10-21",
+   "change": "App deploy detected (Settings still shows v5.2.1, but home HTML, sw.js, 10 JS chunks, landing and legal text changed)",
+   "detected_by": "baseline.js re-run ~23:30 IST after the founder said changes had shipped",
+   "fixed": [
+    "ISS-002",
+    "ISS-003",
+    "ISS-004",
+    "ISS-005",
+    "ISS-006",
+    "ISS-007",
+    "ISS-008",
+    "ISS-014",
+    "ISS-015",
+    "ISS-022",
+    "ISS-027",
+    "ISS-033",
+    "ISS-037",
+    "ISS-042"
+   ],
+   "broke": [
+    "ISS-044"
+   ],
+   "notes": "Privacy copy (GAP-001) rewritten truthfully, export added, India emergency numbers in companion, irregular-cycle copy, lab range flags. ISS-041/043 could not be verified (ISS-044)."
   }
  ],
- "updated": "2026-10-21T20:30:00+05:30"
+ "updated": "2026-10-21T23:59:00+05:30"
 }

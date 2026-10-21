@@ -1,15 +1,13 @@
 {
  "app_url": "https://www.intimacare.in",
- "app_version": "5.2.1",
- "last_test_run": "2026-10-21T19:55:00+05:30",
- "health_score": 46,
+ "app_version": "5.2.1 (new build deployed 21 Oct; version label unchanged)",
+ "last_test_run": "2026-10-21T23:45:00+05:30",
+ "health_score": 69,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
  "summary_today": [
-  "Lean evening catch-up 21 Oct (~19:50–20:30 IST) after failed runs 18–20 Oct (gap, nothing back-filled). App unchanged (v5.2.1, no baseline diff). Both identities stable.",
-  "Health 46 (was 47): 43 open: 0 P0 / 10 P1 / 23 P2 / 10 P3. No new P0/P1. New P2 ISS-043: companion suggests levothyroxine from one TSH value.",
-  "Meera: predicted period (Oct 18) passed; app shows Day 24 Luteal + 'Period today?' with no late-period guidance (ISS-014). Labs deep-dive: no lab-report entry on Wellness; /labs 404.",
-  "Arjun: partner view Connected • Luteal; companion supportive on partner's late period, still invents T-score/cortisol stats (ISS-009).",
-  "Overdue Sunday items done light: weekly State of Intima 12–18 Oct (real runs 14–17 Oct only), comps check (no new rounds found). YC W27 re-verified: 2 Nov 8pm PT."
+  "Founder deploy re-test 21 Oct, about 23:30 IST. New build detected (assets and legal text changed; the label still says v5.2.1).",
+  "Fixed: 14 issues (ISS-002, ISS-003, ISS-004, ISS-005, ISS-006, ISS-007, ISS-008, ISS-014, ISS-015, ISS-022, ISS-027, ISS-033, ISS-037, ISS-042). New P2 ISS-044.",
+  "Health 69: 30 open: 0 P0 / 2 P1 / 19 P2 / 9 P3."
  ],
  "health_score_history": [
   {
@@ -48,6 +46,11 @@
    "date": "2026-10-21",
    "score": 46,
    "note": "Lean evening catch-up after 18–20 Oct gap: Meera+Arjun 2 msgs each; labs deep-dive; new ISS-043; comps+social light; YC re-verify"
+  },
+  {
+   "date": "2026-10-21",
+   "score": 69,
+   "note": "Re-test after founder deploy"
   }
  ],
  "weekly": [

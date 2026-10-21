@@ -258,7 +258,9 @@
     "ISS-003",
     "ISS-004"
    ],
-   "quick_win": true
+   "quick_win": true,
+   "status": "done",
+   "done_on": "2026-10-21"
   },
   {
    "id": "GAP-002",
