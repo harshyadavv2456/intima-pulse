@@ -1,13 +1,13 @@
 {
  "app_url": "https://www.intimacare.in",
- "app_version": "5.2.1 (new build deployed 21 Oct; version label unchanged)",
- "last_test_run": "2026-10-22T00:10:00+05:30",
- "health_score": 79,
+ "app_version": "5.2.1 label (new build 22 Oct ~01:00 IST)",
+ "last_test_run": "2026-10-22T01:40:00+05:30",
+ "health_score": 85,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
  "summary_today": [
-  "Deep re-test of all issues, 21 Oct 23:40 – 22 Oct 00:10 IST, same build as the 21 Oct deploy (label v5.2.1).",
-  "17 more issues fixed. New P2 ISS-045 (lab results only on the male Home).",
-  "Health 79: 14 open: 0 P0 / 2 P1 / 9 P2 / 3 P3."
+  "Full E2E 22 Oct 01:05–01:40 IST on the new build (label v5.2.1).",
+  "8 more fixed incl. P1 ISS-001. New ISS-046/047/048. No regressions.",
+  "Health 85: 9 open: 0 P0 / 1 P1 / 5 P2 / 3 P3."
  ],
  "health_score_history": [
   {
@@ -56,6 +56,11 @@
    "date": "2026-10-22",
    "score": 79,
    "note": "Deep re-test of all issues"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 85,
+   "note": "Full E2E after 01:00 deploy"
   }
  ],
  "weekly": [

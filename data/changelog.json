@@ -114,7 +114,24 @@
    ],
    "broke": [],
    "notes": "New ISS-045 (labs only on the male Home). ISS-041 improved, still open. ISS-020/026/025/034/039/010 still reproduce."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "New deploy ~01:00 IST (home HTML 762b3397a4e7681b, 11 JS chunks changed, sw.js unchanged since 21 Oct; label still v5.2.1)",
+   "detected_by": "baseline.js 01:05 IST",
+   "fixed": [
+    "ISS-001",
+    "ISS-010",
+    "ISS-012",
+    "ISS-020",
+    "ISS-026",
+    "ISS-034",
+    "ISS-041",
+    "ISS-045"
+   ],
+   "broke": [],
+   "notes": "Full E2E both personas. New ISS-046/047/048. No regressions in the 31 previously fixed."
   }
  ],
- "updated": "2026-10-22T00:15:00+05:30"
+ "updated": "2026-10-22T01:45:00+05:30"
 }

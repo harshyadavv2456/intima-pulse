@@ -8,8 +8,8 @@
    "severity": "P1",
    "first_seen": "2026-10-01",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": [
     "Onboard a persona, link a partner via Connect.",
     "Reload the app / open it in a fresh browser launch with the saved session (cold load).",
@@ -18,7 +18,8 @@
    "expected": "Same anonymous user, partner link and logs still there.",
    "actual": "Several parallel auth token refreshes fire on cold load; one fails with \"refresh token already used\", after which the app silently creates a NEW anonymous user. Partner link and daily logs stay with the old user, Connect falls back to \"Generate code\" and the user believes their link/data is gone. Happened to both personas several times on day 1 (Meera 4 user ids, Arjun 3). Fix: serialise/lock the token refresh (single-flight), never auto-signup when a stored session exists, offer recovery via backup code. | Midday: both personas kept same anon/user ids across sequential act.js sessions (no fork this pass). Risk remains on multi-client/cold refresh_token_already_used. || 2026-10-07 catch-up: NO fork — Meera anon_2d240f4f…/45db52d2… and Arjun anon_0a7e58a7…/b92f1fcb… held across cold loads (dashboard goto, reload, /settings goto) using one client per persona. Intermittent root cause (parallel token refresh) not disproven; keep open.",
    "screenshot": "shots/2026-10-01_arjun_connect.png",
-   "retest_note": "Not reproduced: anon/auth user ids stable on all loads 21 Oct. Cold-load race not specifically re-tested."
+   "retest_note": "Not reproduced: anon/auth user ids stable on all loads 21 Oct. Cold-load race not specifically re-tested.",
+   "fix_evidence": "Cold loads 22 Oct after more than 1 h of token expiry, plus two aborted contexts whose state was not saved: auth user ids unchanged for both personas, partner link intact. Fork not reproduced."
   },
   {
    "id": "ISS-002",
@@ -179,15 +180,16 @@
    "severity": "P2",
    "first_seen": "2026-10-01",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": [
     "Write in Roman Hinglish (e.g. \"folic acid kab se start karun?\")."
    ],
    "expected": "Reply in the same script/register (Roman Hinglish).",
    "actual": "Meera Q2 answered in Devanagari Hindi, Q3/Q4 in English. Arjun Q1 matched Hinglish well but Q2 switched to English. || 2026-10-07: Meera Roman-Hinglish prompts answered in Devanagari Hindi (2/2), first reply cut off mid-sentence; Arjun Hinglish prompts answered in English (3/3). [14 Oct] Reproduced: all 8 Hinglish prompts (both personas) answered in English. [15 Oct] Reproduced: Meera msg2 and both Arjun msgs answered in English to Hinglish; Meera msg1 replied in Hindi.",
    "screenshot": "shots/2026-10-01_meera_chat.png",
-   "retest_note": "Arjun wrote Roman Hinglish; 4 of 5 replies in Devanagari Hindi."
+   "retest_note": "Arjun wrote Roman Hinglish; 4 of 5 replies in Devanagari Hindi.",
+   "fix_evidence": "Arjun Roman Hinglish → all 5 replies in Roman Hinglish."
   },
   {
    "id": "ISS-011",
@@ -215,15 +217,16 @@
    "severity": "P2",
    "first_seen": "2026-10-01",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": [
     "Ask follow-up about when to test hormones (context-memory check)."
    ],
    "expected": "Recommend seeing a gynaecologist for tests; mention folic acid and preconception visit.",
    "actual": "Remembers 31-38 day cycle and TTC plan (good) but gives a self-contradictory lab plan and never suggests a preconception consult. || 2026-10-07: not reproduced — asked directly, companion recommended seeing a gynaecologist first (CBC, TSH/prolactin, hormone panel, transvaginal scan). Keep open (earlier advice to self-order panel; non-deterministic).",
    "screenshot": "shots/2026-10-01_meera_chat.png",
-   "retest_note": "Not specifically re-tested."
+   "retest_note": "Not specifically re-tested.",
+   "fix_evidence": "\"6 mahine se try kar rahe ho — doctor se milna sabse accha\"; tests listed, says to consult before self-ordering."
   },
   {
    "id": "ISS-013",
@@ -297,7 +300,7 @@
    "expected": "Selection persists and is visible.",
    "actual": "After Midday Negative retap + reload: Negative button stays muted (bg-muted), copy still 'no ovulation signal has been logged yet'. || 2026-10-07: selection DOES persist after reload (button class bg-muted vs bg-muted/50 for unselected) but the highlight is almost invisible, and the card still says \"no ovulation signal has been logged yet\" with Negative selected. Partial: persistence OK, visibility/copy not.",
    "screenshot": "shots/2026-10-01_meera_ttc_filled.jpg",
-   "retest_note": "Not re-tested: Fertility Tracking card did not open in automation."
+   "retest_note": "Not verified: automation could not reach the Negative button reliably after reload (Negative/Positive shown unselected)."
   },
   {
    "id": "ISS-017",
@@ -335,7 +338,7 @@
    ],
    "expected": "Confirmation first; both sides become unlinked (or the other is told).",
    "actual": "Unlink immediate; Meera still shows \"Partner Connected\" with stale data; re-entering the old code fails.",
-   "retest_note": "Not re-tested (would require unlinking the primary pair)."
+   "retest_note": "Not re-tested (unlinking the primary pair not allowed)."
   },
   {
    "id": "ISS-019",
@@ -363,15 +366,16 @@
    "severity": "P3",
    "first_seen": "2026-10-01",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": [
     "Meera logs mood; Arjun opens Connect with Cycle sharing off."
    ],
    "expected": "Insight text reflects shared data.",
    "actual": "\"Your partner has not logged anything yet\" next to a mood bar for this week. || 2026-10-07: \"has not logged anything\" copy NOT seen on Arjun's partner view (it said \"She logged 'okay' with moderate energy today\"). Meera side not checkable (her Connect shows link-code UI, ISS-036). Keep open pending Meera-side check.",
    "screenshot": "shots/2026-10-01_meera_sees_arjun.jpg",
-   "retest_note": "Connect (both personas): \"Your partner hasn't logged health data yet… Nothing logged in the last month\" while both logged today and Arjun's Home shows Meera's Day 21 and mood."
+   "retest_note": "Connect (both personas): \"Your partner hasn't logged health data yet… Nothing logged in the last month\" while both logged today and Arjun's Home shows Meera's Day 21 and mood.",
+   "fix_evidence": "Connect shows \"She logged okay with moderate energy yesterday\", mood/energy/sleep cards. No \"has not logged\" copy."
   },
   {
    "id": "ISS-021",
@@ -461,7 +465,7 @@
    ],
    "expected": "< 5 s to first content on 3G (target audience on mid-range Android).",
    "actual": "Home 9.7 s load (LCP 10.5 s); chat 10.7 s; care 9.7 s. Fast 3G ~2.7 s; normal network 0.5-1.0 s (LCP 0.7-1.8 s). || 2026-10-07: slow-3G landing load 10.4 s, LCP 11.2 s (normal: load 1.5 s, LCP 2.3 s).",
-   "retest_note": "Slow 3G home (fresh, backend aborted): load 9.0 s, LCP 9.8 s."
+   "retest_note": "Slow 3G home 9.1 s load, LCP 9.9 s."
   },
   {
    "id": "ISS-026",
@@ -471,15 +475,16 @@
    "severity": "P2",
    "first_seen": "2026-10-01",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": [
     "Settings > Notifications > Upcoming reminders."
    ],
    "expected": "Reminders based on real data only.",
    "actual": "Specific 'Great Sleep Streak' string NOT seen. Reminders contextual: 'Rest Up Tonight', 'Weekly Wellness 47/100', 'Move Your Body'. Underlying canned-insight risk remains — keep open. || 2026-10-07: REPRODUCED — Upcoming Reminders show \"✨ Great Sleep Streak — Your sleep quality has been excellent recently\" for Meera (3 logged days, sleep logged Good/Okay ~6 h).",
    "screenshot": "shots/2026-10-07_meera_notifs.png",
-   "retest_note": "Notification Settings > Upcoming: \"✨ Great Sleep Streak – Your sleep quality has been excellent recently\" still listed."
+   "retest_note": "Notification Settings > Upcoming: \"✨ Great Sleep Streak – Your sleep quality has been excellent recently\" still listed.",
+   "fix_evidence": "Upcoming reminders no longer list \"Great Sleep Streak\"."
   },
   {
    "id": "ISS-027",
@@ -616,15 +621,16 @@
    "severity": "P3",
    "first_seen": "2026-10-01",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": [
     "Open the daily hormonal check-in and save."
    ],
    "expected": "Shorter flow or progressive disclosure; visible \"Saved\" toast.",
    "actual": "17 sliders; Save works but no obvious confirmation. || 2026-10-07: 17 sliders; \"Save my day\" closes the sheet with no visible confirmation.",
    "screenshot": "shots/2026-10-01_meera_hormonal_filled.png",
-   "retest_note": "Hormonal check-in still has 17 sliders. Save confirmation not re-tested."
+   "retest_note": "Hormonal check-in still has 17 sliders. Save confirmation not re-tested.",
+   "fix_evidence": "Hormonal check-in now 4 sliders (was 17)."
   },
   {
    "id": "ISS-035",
@@ -642,7 +648,7 @@
    ],
    "expected": "QR lands on onboarding pre-linked to the clinic, with a \"share with my doctor\" summary.",
    "actual": "No referral link, no clinic code, no export, no clinician view. The generic app is the same for everyone, and Partner Mode is the only sharing feature. || 2026-10-07: app unchanged (baseline); Care tab still has no referral/QR deep link or clinician view.",
-   "retest_note": "Improved: \"Share my 30-day health summary\" now on the doctor sheet and in Settings. Still no referral/QR deep link or clinician view."
+   "retest_note": "Still no referral/QR or clinician view. Doctor sheet now says \"Request Appointment – sends a request\" and has \"Share my 30-day health summary\"."
   },
   {
    "id": "ISS-036",
@@ -717,7 +723,7 @@
    "expected": "Recalls facts from the current conversation and, per its own pitch, from earlier chats.",
    "actual": "Meera: one message after saying \"we have been trying for 6 months\", companion replied it \"can't recall… the exact length of time you've been trying\" or her city (it remembered Nagpur/6 months on 3 Oct). Arjun: remembered logged sleep but not his 12-14 h workdays (remembered on 3 Oct). Chat history appeared reset (0/30, greeting screen). [14 Oct] Reproduced (Arjun): told office hours 9–7 in message 3, asked in message 4 → \"I'm not seeing the office-hour details\". Not reproduced for Meera (recalled \"six months\"). [15 Oct] Improved today for Arjun: companion correctly recalled \"office 9 AM to 7 PM\" from the prior message in the same chat. Keep open — was failing on 14 Oct; need another pass.",
    "screenshot": "shots/2026-10-07_meera_chat.png",
-   "retest_note": "Meera: \"not seeing that detail\" for months trying. Arjun: cannot recall his city or office hours."
+   "retest_note": "Same-conversation recall now works (6 months, Pune). Cross-day recall not re-tested; failed 21 Oct."
   },
   {
    "id": "ISS-040",
@@ -746,8 +752,8 @@
    "severity": "P2",
    "first_seen": "2026-10-14",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": [
     "Meera (irregular, TTC, dashboard: cycle day 17, Luteal).",
     "Ask companion (Hinglish) when ovulation actually happened, given \"expected today\" and \"Oct 12\".",
@@ -757,7 +763,8 @@
    "actual": "Claims \"Oct 12\" is likely when she logged an LH surge (none logged), says the app assumes a shortened luteal phase so she may \"ovulate today\", tells her to test LH today and time intercourse \"within the next 12 hours\", and that \"you can still have a good chance later in the luteal phase\". Repeated in the next reply. [15 Oct] Not fully re-probed; Meera asked late-period HPT timing (lean). Reply: test ~14 d after expected period (Oct 31–Nov 1); see doctor if ≥4 weeks late. No invented LH-surge claim today. | 21 Oct: late-period question → \"test from day 7 after expected start (Oct 25)… so you're good to test now\" (self-contradictory dates).",
    "screenshot": "shots/2026-10-14_meera_chat.png",
    "notes": "17 Oct: re-fired — Day 20 luteal, period due ~18 Oct; told Meera to use OPKs on Day 3–5 of the new cycle (Oct 20–22) \"when the LH surge will peak\" and have sex on Day 2–3; did not answer when to take a pregnancy test.",
-   "retest_note": "Improved but still wrong for a 31–38 day cycle: says start LH strips 2–3 days after the period starts, or fallback \"day 10–12\"."
+   "retest_note": "Improved but still wrong for a 31–38 day cycle: says start LH strips 2–3 days after the period starts, or fallback \"day 10–12\".",
+   "fix_evidence": "Irregular 31–38 d: \"LH strips start cycle day 11… test daily for 2 weeks\". Reasonable for an irregular cycle."
   },
   {
    "id": "ISS-042",
@@ -821,12 +828,58 @@
    "severity": "P2",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Meera: check Home, Care and Wellness for lab results; ask the companion where to add TSH/AMH.",
    "expected": "One lab-results entry point for every user, matching what the companion describes.",
    "actual": "Arjun Home has \"Lab Results – Add\" with range flags. Meera Home/Care/Wellness have no lab entry and her lab store is empty. Companion says \"log the lab numbers in the app's Health section\", which does not exist.",
-   "screenshot": "shots/2026-10-21c_arjun_dash.jpg"
+   "screenshot": "shots/2026-10-21c_arjun_dash.jpg",
+   "fix_evidence": "Meera Home now has \"Lab Results – Add\" card."
+  },
+  {
+   "id": "ISS-046",
+   "title": "Companion addresses female user as \"Bhai\" and garbles dates (\"10-10-22\")",
+   "feature": "companion",
+   "persona": "meera",
+   "severity": "P3",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null,
+   "status": "open",
+   "steps": "Meera TTC chat; Arjun data question.",
+   "expected": "Gender-appropriate address, readable dates.",
+   "actual": "Meera: \"Bhai, 6 mahine se try kar rahe ho\"; Arjun: energy dates written \"10-10-22, 10-10-21\".",
+   "screenshot": "shots/2026-10-22e_meera_chat.jpg"
+  },
+  {
+   "id": "ISS-047",
+   "title": "Partner view says partner has \"1 logged day in the last month\" while she has 9/30 days logged",
+   "feature": "partner",
+   "persona": "arjun",
+   "severity": "P2",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null,
+   "status": "open",
+   "steps": "Arjun opens Connect (Meera shares mood/cycle).",
+   "expected": "Count matching her logs.",
+   "actual": "\"Early days — 1 logged day so far… She has 1 day in the last month\"; Meera's Home shows 9/30 days logged.",
+   "screenshot": ""
+  },
+  {
+   "id": "ISS-048",
+   "title": "Men's Insights: \"Track at least 3 days to unlock\" and Readiness LOW with 9 days tracked; companion says readiness MODERATE",
+   "feature": "insights",
+   "persona": "arjun",
+   "severity": "P3",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null,
+   "status": "open",
+   "steps": "Arjun Home → Insights; ask companion about energy.",
+   "expected": "Consistent readiness, insights unlocked after 9 days.",
+   "actual": "Insights: \"Performance Readiness LOW\", \"Track at least 3 days to unlock personalized insights\", \"9 Days Tracked\". Companion: \"Performance readiness aaj MODERATE\".",
+   "screenshot": ""
   }
  ],
  "updated": "2026-10-21T20:30:00+05:30"
