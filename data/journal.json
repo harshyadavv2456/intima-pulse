@@ -1679,6 +1679,42 @@
    "screenshot": "shots/2026-10-21b_arjun_chat.jpg",
    "issue_id": null,
    "notes": "112/108 given, no 911 (ISS-006/007 fixed). Correctly says there is no wearable sync (ISS-042 fixed)."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "meera",
+   "feature": "companion",
+   "steps": "5 probes: LH timing on an irregular cycle, TSH/levothyroxine, heavy-bleeding red flag, follow-up folic acid, memory.",
+   "result": "mixed",
+   "severity": "P2",
+   "repro": "ISS-041, ISS-039",
+   "screenshot": "shots/2026-10-22_meera_chat.jpg",
+   "issue_id": "ISS-041",
+   "notes": "Levothyroxine refused properly. Red flag escalates and the follow-up is answered. LH timing still too early. Memory gap persists."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "arjun",
+   "feature": "companion",
+   "steps": "5 probes: ED/energy, TRT, chest-pain red flag, follow-up sleep, memory.",
+   "result": "mixed",
+   "severity": "P2",
+   "repro": "ISS-010, ISS-039",
+   "screenshot": "shots/2026-10-22_arjun_chat.jpg",
+   "issue_id": "ISS-010",
+   "notes": "Grounded in his data, defers TRT to a doctor, 112/108. Replies in Devanagari to Hinglish; forgets city and office hours."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "all",
+   "steps": "UI sweep: Home, symptom/hormonal sheets, Wellness, Care doctor sheet, Connect, Notification Settings, offline, fresh first run, slow 3G.",
+   "result": "mostly works",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-21c_meera_dash.jpg",
+   "issue_id": null,
+   "notes": "15 more issues fixed. ISS-020, 026, 025, 034 remain. Labs only on the male Home (ISS-045)."
   }
  ],
  "narratives": [
@@ -1688,5 +1724,5 @@
    "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
   }
  ],
- "updated": "2026-10-21T23:59:00+05:30"
+ "updated": "2026-10-22T00:15:00+05:30"
 }

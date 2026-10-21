@@ -52,9 +52,9 @@
    "id": "data-export",
    "name": "Data export",
    "group": "Platform",
-   "status": "missing",
+   "status": "OK",
    "note": "Promised in tour + policy, not present (ISS-005).",
-   "last_verified": "2026-10-07"
+   "last_verified": "2026-10-22"
   },
   {
    "id": "data-delete",
@@ -68,9 +68,9 @@
    "id": "offline",
    "name": "Offline / PWA",
    "group": "Platform",
-   "status": "weak",
-   "note": "Service worker present, pages fail offline (ISS-024).",
-   "last_verified": "2026-10-07"
+   "status": "OK",
+   "note": "Offline fallback + cached pages (ISS-024 fixed).",
+   "last_verified": "2026-10-22"
   },
   {
    "id": "performance",
@@ -238,9 +238,9 @@
    "id": "doctor-referral",
    "name": "Doctor-referral onboarding (QR, clinic link, summary)",
    "group": "Care",
-   "status": "missing",
-   "note": "No referral entry point or clinician-facing output (ISS-035).",
-   "last_verified": "2026-10-07"
+   "status": "weak",
+   "note": "30-day summary share exists; no referral/QR link or clinician view (ISS-035).",
+   "last_verified": "2026-10-22"
   }
  ],
  "gaps": [

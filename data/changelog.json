@@ -88,7 +88,33 @@
     "ISS-044"
    ],
    "notes": "Privacy copy (GAP-001) rewritten truthfully, export added, India emergency numbers in companion, irregular-cycle copy, lab range flags. ISS-041/043 could not be verified (ISS-044)."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "Deep re-test of every issue after the founder's second \"fixed everything\" message (same build as the 21 Oct deploy; label v5.2.1)",
+   "detected_by": "full sweep 21 Oct 23:40 IST – 22 Oct 00:00 IST",
+   "fixed": [
+    "ISS-009",
+    "ISS-011",
+    "ISS-017",
+    "ISS-019",
+    "ISS-021",
+    "ISS-023",
+    "ISS-024",
+    "ISS-028",
+    "ISS-029",
+    "ISS-030",
+    "ISS-031",
+    "ISS-032",
+    "ISS-036",
+    "ISS-038",
+    "ISS-040",
+    "ISS-043",
+    "ISS-044"
+   ],
+   "broke": [],
+   "notes": "New ISS-045 (labs only on the male Home). ISS-041 improved, still open. ISS-020/026/025/034/039/010 still reproduce."
   }
  ],
- "updated": "2026-10-21T23:59:00+05:30"
+ "updated": "2026-10-22T00:15:00+05:30"
 }

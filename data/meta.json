@@ -1,13 +1,13 @@
 {
  "app_url": "https://www.intimacare.in",
  "app_version": "5.2.1 (new build deployed 21 Oct; version label unchanged)",
- "last_test_run": "2026-10-21T23:45:00+05:30",
- "health_score": 69,
+ "last_test_run": "2026-10-22T00:10:00+05:30",
+ "health_score": 79,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
  "summary_today": [
-  "Founder deploy re-test 21 Oct, about 23:30 IST. New build detected (assets and legal text changed; the label still says v5.2.1).",
-  "Fixed: 14 issues (ISS-002, ISS-003, ISS-004, ISS-005, ISS-006, ISS-007, ISS-008, ISS-014, ISS-015, ISS-022, ISS-027, ISS-033, ISS-037, ISS-042). New P2 ISS-044.",
-  "Health 69: 30 open: 0 P0 / 2 P1 / 19 P2 / 9 P3."
+  "Deep re-test of all issues, 21 Oct 23:40 – 22 Oct 00:10 IST, same build as the 21 Oct deploy (label v5.2.1).",
+  "17 more issues fixed. New P2 ISS-045 (lab results only on the male Home).",
+  "Health 79: 14 open: 0 P0 / 2 P1 / 9 P2 / 3 P3."
  ],
  "health_score_history": [
   {
@@ -51,6 +51,11 @@
    "date": "2026-10-21",
    "score": 69,
    "note": "Re-test after founder deploy"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 79,
+   "note": "Deep re-test of all issues"
   }
  ],
  "weekly": [
