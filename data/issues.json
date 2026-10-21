@@ -244,7 +244,7 @@
    "expected": "Counter matches product limit.",
    "actual": "Shows \"x/30 today\". || 2026-10-07: counter still \"0/30 today\" → \"4/30 today\" for both personas. [14 Oct] Counter still \"4/30 today\".",
    "screenshot": "shots/2026-10-01_meera_chat.png",
-   "retest_note": "02:00 run: counter \"5/30 today\".",
+   "retest_note": "04:15 cache-clean: counter \"5/30 today\".",
    "cache_clean_recheck": "Cache-clean 02:30 IST: counter still \"5/30 today\" (both personas).",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
@@ -303,7 +303,7 @@
    "expected": "Selection persists and is visible.",
    "actual": "After Midday Negative retap + reload: Negative button stays muted (bg-muted), copy still 'no ovulation signal has been logged yet'. || 2026-10-07: selection DOES persist after reload (button class bg-muted vs bg-muted/50 for unselected) but the highlight is almost invisible, and the card still says \"no ovulation signal has been logged yet\" with Negative selected. Partial: persistence OK, visibility/copy not.",
    "screenshot": "shots/2026-10-01_meera_ttc_filled.jpg",
-   "retest_note": "Not re-tested in the 02:00 run."
+   "retest_note": "Not re-tested 04:15."
   },
   {
    "id": "ISS-017",
@@ -468,7 +468,7 @@
    ],
    "expected": "< 5 s to first content on 3G (target audience on mid-range Android).",
    "actual": "Home 9.7 s load (LCP 10.5 s); chat 10.7 s; care 9.7 s. Fast 3G ~2.7 s; normal network 0.5-1.0 s (LCP 0.7-1.8 s). || 2026-10-07: slow-3G landing load 10.4 s, LCP 11.2 s (normal: load 1.5 s, LCP 2.3 s).",
-   "retest_note": "02:00 run: slow 3G home 9.1 s, LCP 9.8 s.",
+   "retest_note": "04:15: slow 3G home 9.2 s, LCP 10.1 s.",
    "cache_clean_recheck": "Cache-clean (fresh context, SW+cache cleared): slow 3G home 9.3 s, LCP 10.1 s.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
@@ -731,7 +731,7 @@
    "expected": "Recalls facts from the current conversation and, per its own pitch, from earlier chats.",
    "actual": "Meera: one message after saying \"we have been trying for 6 months\", companion replied it \"can't recall… the exact length of time you've been trying\" or her city (it remembered Nagpur/6 months on 3 Oct). Arjun: remembered logged sleep but not his 12-14 h workdays (remembered on 3 Oct). Chat history appeared reset (0/30, greeting screen). [14 Oct] Reproduced (Arjun): told office hours 9–7 in message 3, asked in message 4 → \"I'm not seeing the office-hour details\". Not reproduced for Meera (recalled \"six months\"). [15 Oct] Improved today for Arjun: companion correctly recalled \"office 9 AM to 7 PM\" from the prior message in the same chat. Keep open — was failing on 14 Oct; need another pass.",
    "screenshot": "shots/2026-10-07_meera_chat.png",
-   "retest_note": "Not re-tested (0 companion messages this run)."
+   "retest_note": "Not re-tested (0 companion messages)."
   },
   {
    "id": "ISS-040",
@@ -874,7 +874,7 @@
    "expected": "Count matching her logs.",
    "actual": "\"Early days — 1 logged day so far… She has 1 day in the last month\"; Meera's Home shows 9/30 days logged.",
    "screenshot": "",
-   "retest_note": "02:00 run: Connect still \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30.",
+   "retest_note": "04:15 cache-clean: Connect still \"1/14 days logged… Only 1 day logged in the last fortnight\" (Meera 9/30).",
    "cache_clean_recheck": "Cache-clean, both personas: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30 logged.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
@@ -893,7 +893,7 @@
    "expected": "Consistent readiness, insights unlocked after 9 days.",
    "actual": "Insights: \"Performance Readiness LOW\", \"Track at least 3 days to unlock personalized insights\", \"9 Days Tracked\". Companion: \"Performance readiness aaj MODERATE\".",
    "screenshot": "",
-   "retest_note": "Not re-tested this run."
+   "retest_note": "Not re-tested 04:15."
   },
   {
    "id": "ISS-049",
@@ -903,15 +903,16 @@
    "severity": "P2",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Settings → Theme & Appearance → turn Dark Mode off → open Home/Connect/Chat/Care.",
    "expected": "App switches to a light theme.",
    "actual": "Switch flips to off, but the <html> class stays \"dark\" and every screen still renders dark (Pixel 5 and iPhone viewports).",
    "screenshot": "shots/2026-10-22cc_settings_toggle_off_still_dark.jpg",
    "cache_clean_recheck": "Cache-clean, real taps: the Settings \"Dark Mode\" switch flips (aria-checked false) but html class stays \"dark\", body bg rgb(22,11,16), localStorage theme stays \"dark\", and after reload the switch is back on. The header sun/moon button DOES work: light theme applied (bg rgb(253,246,249)) and persists after reload. Narrowed to the Settings switch only.",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "fix_evidence": "04:15 build, cache-clean, real tap: Settings Dark mode switch → light theme applied (bg rgb(253,246,249) Meera / rgb(246,249,254) Arjun) and persists after reload. Restored to dark."
   },
   {
    "id": "ISS-050",
@@ -921,15 +922,16 @@
    "severity": "P3",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Home → scroll to Daily Tracking.",
    "expected": "Emoji below or beside the date.",
    "actual": "Mood emojis sit on top of the digits (e.g. 1, 3, 7, 14–17, 21, 22).",
    "screenshot": "shots/2026-10-22u_calendar_overlap.jpg",
    "cache_clean_recheck": "Cache-clean: measured text-vs-emoji bounding-box overlap in 9 of 42 calendar cells on both personas (1, 3, 7, 14–17, 21…).",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "fix_evidence": "Cache-clean: 0 of 42 calendar cells with emoji/number overlap (both personas)."
   },
   {
    "id": "ISS-051",
@@ -947,7 +949,8 @@
    "screenshot": "shots/2026-10-22cc_care_map_clipped.jpg",
    "cache_clean_recheck": "Cache-clean screenshots, both personas: \"5 doctors l…\" still cut off under the zoom control at the map edge.",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "retest_note": "04:15 screenshots: \"5 doctors lis…\" still clipped under the zoom control (both)."
   },
   {
    "id": "ISS-052",
@@ -965,7 +968,8 @@
    "screenshot": "shots/2026-10-22u_calendar_overlap.jpg",
    "cache_clean_recheck": "Cache-clean Home: 111 (Meera) / 119 (Arjun) text elements under 11 px; 11–12 buttons under 32 px.",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "retest_note": "Improved: text under 11 px on Home down from 111/119 to 18 (Meera) / 27 (Arjun). Still 11–12 buttons under 32 px."
   },
   {
    "id": "ISS-053",
@@ -975,15 +979,16 @@
    "severity": "P2",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Meera (female) opens Connect to view Arjun.",
    "expected": "\"He\"/neutral wording for Arjun.",
    "actual": "Meera's view: \"How she is doing\", \"She logged okay…\", \"She has not shared this… from her device\".",
    "screenshot": "shots/2026-10-22u_connect_pronoun.jpg",
    "cache_clean_recheck": "Cache-clean: Meera's view of Arjun still \"How she is doing\", \"She logged…\", \"from her device\". Arjun's view of Meera correctly uses \"she\".",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "fix_evidence": "Partner copy now neutral (\"How they are doing\", \"They logged…\") for both personas. See ISS-056 for a grammar slip."
   },
   {
    "id": "ISS-054",
@@ -993,15 +998,16 @@
    "severity": "P2",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Open Chat (empty state).",
    "expected": "Accurate privacy copy, in line with the honest privacy copy elsewhere (GAP-001).",
    "actual": "Welcome bubble: \"Everything here stays between us.\"",
    "screenshot": "shots/2026-10-22u_chat_ui.jpg",
    "cache_clean_recheck": "Cache-clean: chat welcome still \"Everything here stays between us.\"",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "fix_evidence": "Chat welcome: \"Your chats are private to you — I never sell your data. (To reply, your messages are processed by a secure AI provider.)\""
   },
   {
    "id": "ISS-055",
@@ -1011,15 +1017,32 @@
    "severity": "P2",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Home → Daily Tracking vs Ovulation/Fertility cards.",
    "expected": "Calendar shows no predicted ovulation without signals (as the cards say).",
    "actual": "Calendar colours Oct 11–14 as Ovulation and others as Fertile, the same kind of contradiction ISS-015 covered (fixed 21 Oct). Unclear whether this is new in the redesign.",
    "screenshot": "shots/2026-10-22u_calendar_overlap.jpg",
    "cache_clean_recheck": "Cache-clean: Meera calendar cell colours, ovulation purple rgba(91,33,182,.5) on 12–14 and fertile pink on 9–11/15–16, while cards say \"Window unknown\".",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "fix_evidence": "Meera calendar now only colours period days (Oct 1–5) and today. No Ovulation/Fertile cells."
+  },
+  {
+   "id": "ISS-056",
+   "title": "Partner view grammar slip after pronoun change: \"Roughly 7 days to them next period\"",
+   "feature": "partner",
+   "persona": "arjun",
+   "severity": "P3",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null,
+   "status": "open",
+   "platform": "web",
+   "steps": "Arjun opens Connect to view Meera's cycle.",
+   "expected": "\"…to their next period\".",
+   "actual": "\"Roughly 7 days to them next period, though their cycle varies\".",
+   "screenshot": "shots/2026-10-22r4_arjun_connect.jpg"
   }
  ],
  "updated": "2026-10-21T20:30:00+05:30"

@@ -1763,6 +1763,18 @@
    "screenshot": "shots/2026-10-22u_referral.jpg",
    "issue_id": "ISS-035",
    "notes": "Doctor referral code entry now on Care (ISS-035 fixed). All 39 fixed items held."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "e2e",
+   "steps": "Cache-clean full E2E + UI pass 04:15–04:50 IST: Home, calendar, logging sheets, Wellness, Care, Connect, Settings (theme toggle, PIN private), Chat UI, offline, slow 3G.",
+   "result": "mostly works",
+   "severity": "P3",
+   "repro": "ISS-056",
+   "screenshot": "shots/2026-10-22r4_calendar.jpg",
+   "issue_id": "ISS-056",
+   "notes": "5 fixed (049, 050, 053, 054, 055). Map label still clipped, partner day-count still 1, slow 3G ~9 s."
   }
  ],
  "narratives": [
@@ -1772,5 +1784,5 @@
    "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
   }
  ],
- "updated": "2026-10-22T02:50:00+05:30"
+ "updated": "2026-10-22T04:50:00+05:30"
 }

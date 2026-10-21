@@ -1,13 +1,13 @@
 {
  "app_url": "https://www.intimacare.in",
- "app_version": "5.2.1 label (UI redesign build 22 Oct ~02:00 IST)",
- "last_test_run": "2026-10-22T02:40:00+05:30",
- "health_score": 84,
+ "app_version": "5.2.1 label (build 22 Oct ~04:00 IST)",
+ "last_test_run": "2026-10-22T04:50:00+05:30",
+ "health_score": 87,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
  "summary_today": [
-  "UI redesign E2E + UI review 22 Oct 02:00–02:45 IST (label v5.2.1). 0 companion messages.",
-  "ISS-035 (last P1) fixed: doctor referral code entry on Care. No regressions.",
-  "New: ISS-049–052 (UI), ISS-053–055. Health 84: 15 open: 0 P0 / 0 P1 / 9 P2 / 6 P3."
+  "Cache-clean E2E on the ~04:00 IST build (label v5.2.1). 0 companion messages.",
+  "Fixed: ISS-049, 050, 053, 054, 055. New P3 ISS-056. No regressions.",
+  "Health 87: 11 open: 0 P0 / 0 P1 / 5 P2 / 6 P3."
  ],
  "health_score_history": [
   {
@@ -66,6 +66,11 @@
    "date": "2026-10-22",
    "score": 84,
    "note": "Redesign E2E + UI review"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 87,
+   "note": "04:00 deploy E2E"
   }
  ],
  "weekly": [

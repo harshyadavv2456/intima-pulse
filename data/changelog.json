@@ -149,7 +149,21 @@
    "fixed": [],
    "broke": [],
    "notes": "All loaded JS chunks matched the live build (7/7 Meera, 12/12 Arjun). All 10 still reproduce. ISS-049 narrowed: header theme button works, Settings switch does not. Earlier runs also used fresh contexts, so stale caches were unlikely."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "Deploy ~04:00 IST (home HTML 76f67bb6cc94a5c5, 11 JS chunks; sw.js unchanged; label v5.2.1)",
+   "detected_by": "baseline.js 04:14 IST; cache-clean E2E (SW unregistered, caches cleared, all chunks matched live)",
+   "fixed": [
+    "ISS-049",
+    "ISS-050",
+    "ISS-053",
+    "ISS-054",
+    "ISS-055"
+   ],
+   "broke": [],
+   "notes": "New ISS-056 (P3 grammar). ISS-052 improved. No regressions in the 40 fixed. 0 companion messages."
   }
  ],
- "updated": "2026-10-22T02:45:00+05:30"
+ "updated": "2026-10-22T04:50:00+05:30"
 }
