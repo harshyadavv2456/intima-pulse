@@ -141,7 +141,15 @@
    ],
    "broke": [],
    "notes": "New look (INTIMA wordmark, week strip, card layout). UI review logged ISS-049–052 (UI) and ISS-053–055. No regressions in the 39 fixed. 0 companion messages sent."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "Cache-clean re-check (~02:30 IST) of ISS-013, 025, 047, 049–055 after founder reported them working",
+   "detected_by": "Playwright with SW unregistered, Cache Storage + HTTP cache cleared, cache disabled; localStorage kept",
+   "fixed": [],
+   "broke": [],
+   "notes": "All loaded JS chunks matched the live build (7/7 Meera, 12/12 Arjun). All 10 still reproduce. ISS-049 narrowed: header theme button works, Settings switch does not. Earlier runs also used fresh contexts, so stale caches were unlikely."
   }
  ],
- "updated": "2026-10-22T02:50:00+05:30"
+ "updated": "2026-10-22T02:45:00+05:30"
 }

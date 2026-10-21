@@ -1,7 +1,7 @@
 {
  "app_url": "https://www.intimacare.in",
  "app_version": "5.2.1 label (UI redesign build 22 Oct ~02:00 IST)",
- "last_test_run": "2026-10-22T02:45:00+05:30",
+ "last_test_run": "2026-10-22T02:40:00+05:30",
  "health_score": 84,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features",
  "summary_today": [
