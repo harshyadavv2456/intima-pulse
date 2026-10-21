@@ -1,61 +1,69 @@
 {
-  "entries": [
-    {
-      "date": "2026-10-01",
-      "change": "baseline",
-      "detected_by": "tester baseline.js snapshot",
-      "fixed": [],
-      "broke": [],
-      "notes": "App version 5.2.1 (Settings). Home HTML hash 1fa371086269f9f2, 23 JS chunks, sw.js d9738e04fd7c5e61, landing text 5f13f52657266417, legal text 02178203a3d0d9d3. Full hashes in tester/baseline/baseline.json (private)."
-    },
-    {
-      "date": "2026-10-03",
-      "change": "No app change detected vs baseline 5.2.1 (evening rebuild)",
-      "detected_by": "evening rebuild cross-check (midday sessions + morning scan)",
-      "fixed": [],
-      "broke": [],
-      "notes": "ISS-036 logged midday (Connect UI). Identities stable. Observation week."
-    },
-    {
-      "date": "2026-10-07",
-      "change": "No app change detected vs baseline (v5.2.1)",
-      "detected_by": "baseline.js (watchdog catch-up 21:3x IST) + Settings version",
-      "fixed": [],
-      "broke": [],
-      "notes": "Behaviour differences seen without a code change: ISS-016 selection now persists (faint), Arjun Connect showed Partner Connected; companion behaviour varies run to run. New issues ISS-037..040 found by deeper probing, not by an app change."
-    },
-    {
-      "date": "2026-10-14",
-      "change": "No app change detected vs baseline (v5.2.1)",
-      "detected_by": "baseline.js (catch-up ~18:47 IST) + Settings version",
-      "fixed": [],
-      "broke": [],
-      "notes": "Behaviour differences without a code change: companion now escalates heavy bleeding to urgent care (ISS-037 improved); partner phase now consistent (ISS-038 partly); no Connect link-code view (ISS-036) or Reconnecting banner (ISS-019) seen. 8–13 Oct not observed (gap)."
-    },
-    {
-      "date": "2026-10-15",
-      "change": "No app change detected vs baseline (v5.2.1)",
-      "detected_by": "baseline.js (~13:04 IST)",
-      "fixed": [],
-      "broke": [],
-      "notes": "Lean Thursday run. Behaviour: ISS-036 link-code UI back on Arjun Connect; ISS-039 companion memory improved for office hours. Pregnancy-mode form re-verified (cancel path)."
-    },
-    {
-      "date": "2026-10-16",
-      "change": "No app change detected vs baseline (v5.2.1)",
-      "detected_by": "baseline.js (~13:05 IST)",
-      "fixed": [],
-      "broke": [],
-      "notes": "Lean Friday run. Deep-dive kegel OK. ISS-036 still on Arjun Connect (link-code while Home Connected). Social skipped (Fri)."
-    },
-    {
-      "date": "2026-10-17",
-      "change": "No app change detected vs baseline (v5.2.1)",
-      "detected_by": "baseline.js (~13:04 IST)",
-      "fixed": [],
-      "broke": [],
-      "notes": "Lean Saturday run. Deep-dive devices: no device/wearable UI (status missing); new ISS-042 (companion claims device sync). ISS-036 and ISS-041 reproduced. Social skipped (Sat)."
-    }
-  ],
-  "updated": "2026-10-17T13:20:00+05:30"
+ "entries": [
+  {
+   "date": "2026-10-01",
+   "change": "baseline",
+   "detected_by": "tester baseline.js snapshot",
+   "fixed": [],
+   "broke": [],
+   "notes": "App version 5.2.1 (Settings). Home HTML hash 1fa371086269f9f2, 23 JS chunks, sw.js d9738e04fd7c5e61, landing text 5f13f52657266417, legal text 02178203a3d0d9d3. Full hashes in tester/baseline/baseline.json (private)."
+  },
+  {
+   "date": "2026-10-03",
+   "change": "No app change detected vs baseline 5.2.1 (evening rebuild)",
+   "detected_by": "evening rebuild cross-check (midday sessions + morning scan)",
+   "fixed": [],
+   "broke": [],
+   "notes": "ISS-036 logged midday (Connect UI). Identities stable. Observation week."
+  },
+  {
+   "date": "2026-10-07",
+   "change": "No app change detected vs baseline (v5.2.1)",
+   "detected_by": "baseline.js (watchdog catch-up 21:3x IST) + Settings version",
+   "fixed": [],
+   "broke": [],
+   "notes": "Behaviour differences seen without a code change: ISS-016 selection now persists (faint), Arjun Connect showed Partner Connected; companion behaviour varies run to run. New issues ISS-037..040 found by deeper probing, not by an app change."
+  },
+  {
+   "date": "2026-10-14",
+   "change": "No app change detected vs baseline (v5.2.1)",
+   "detected_by": "baseline.js (catch-up ~18:47 IST) + Settings version",
+   "fixed": [],
+   "broke": [],
+   "notes": "Behaviour differences without a code change: companion now escalates heavy bleeding to urgent care (ISS-037 improved); partner phase now consistent (ISS-038 partly); no Connect link-code view (ISS-036) or Reconnecting banner (ISS-019) seen. 8–13 Oct not observed (gap)."
+  },
+  {
+   "date": "2026-10-15",
+   "change": "No app change detected vs baseline (v5.2.1)",
+   "detected_by": "baseline.js (~13:04 IST)",
+   "fixed": [],
+   "broke": [],
+   "notes": "Lean Thursday run. Behaviour: ISS-036 link-code UI back on Arjun Connect; ISS-039 companion memory improved for office hours. Pregnancy-mode form re-verified (cancel path)."
+  },
+  {
+   "date": "2026-10-16",
+   "change": "No app change detected vs baseline (v5.2.1)",
+   "detected_by": "baseline.js (~13:05 IST)",
+   "fixed": [],
+   "broke": [],
+   "notes": "Lean Friday run. Deep-dive kegel OK. ISS-036 still on Arjun Connect (link-code while Home Connected). Social skipped (Fri)."
+  },
+  {
+   "date": "2026-10-17",
+   "change": "No app change detected vs baseline (v5.2.1)",
+   "detected_by": "baseline.js (~13:04 IST)",
+   "fixed": [],
+   "broke": [],
+   "notes": "Lean Saturday run. Deep-dive devices: no device/wearable UI (status missing); new ISS-042 (companion claims device sync). ISS-036 and ISS-041 reproduced. Social skipped (Sat)."
+  },
+  {
+   "date": "2026-10-21",
+   "change": "No app change detected vs baseline (v5.2.1)",
+   "detected_by": "baseline.js (~19:53 IST)",
+   "fixed": [],
+   "broke": [],
+   "notes": "Lean evening catch-up after the 18–20 Oct gap. No change, so open P0/P1 were not fully re-tested. New ISS-043 (P2)."
+  }
+ ],
+ "updated": "2026-10-21T20:30:00+05:30"
 }
