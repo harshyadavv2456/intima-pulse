@@ -1739,6 +1739,30 @@
    "screenshot": "shots/2026-10-22e_arjun_chat.jpg",
    "issue_id": "ISS-047",
    "notes": "Hinglish matched, 112/108, follow-up answered, same-chat memory OK. Partner day-count and Insights readiness inconsistent."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "ui-review",
+   "steps": "Redesign UI review 02:00–02:45 IST: full-page screenshots of Home, Wellness, Care, Connect, Settings, Chat, Legal on Pixel 5 (Meera) and iPhone 13 UA (Arjun). Automated overflow/font/contrast/tap-target audit. Dark Mode toggle test.",
+   "result": "mostly works",
+   "severity": "P2",
+   "repro": "ISS-049..052",
+   "screenshot": "shots/2026-10-22u_light_mode_dashboard.jpg",
+   "issue_id": "ISS-049",
+   "notes": "No horizontal page overflow. Polished dark UI. Light mode broken, calendar emoji overlap, clipped map label, many 9–10 px labels. Backup codes masked in all screenshots."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "e2e",
+   "steps": "Functional re-check of all screens + open issues; PIN check (private); slow 3G; offline.",
+   "result": "works",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-22u_referral.jpg",
+   "issue_id": "ISS-035",
+   "notes": "Doctor referral code entry now on Care (ISS-035 fixed). All 39 fixed items held."
   }
  ],
  "narratives": [
@@ -1748,5 +1772,5 @@
    "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
   }
  ],
- "updated": "2026-10-22T01:45:00+05:30"
+ "updated": "2026-10-22T02:50:00+05:30"
 }

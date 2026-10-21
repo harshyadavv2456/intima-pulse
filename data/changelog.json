@@ -131,7 +131,17 @@
    ],
    "broke": [],
    "notes": "Full E2E both personas. New ISS-046/047/048. No regressions in the 31 previously fixed."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "UI redesign deploy ~02:00 IST (home HTML 0c79f264cad25d98, 11 JS chunks, sw.js unchanged; label v5.2.1)",
+   "detected_by": "baseline.js 01:58 IST",
+   "fixed": [
+    "ISS-035"
+   ],
+   "broke": [],
+   "notes": "New look (INTIMA wordmark, week strip, card layout). UI review logged ISS-049–052 (UI) and ISS-053–055. No regressions in the 39 fixed. 0 companion messages sent."
   }
  ],
- "updated": "2026-10-22T01:45:00+05:30"
+ "updated": "2026-10-22T02:50:00+05:30"
 }
