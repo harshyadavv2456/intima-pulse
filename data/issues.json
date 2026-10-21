@@ -245,7 +245,9 @@
    "actual": "Shows \"x/30 today\". || 2026-10-07: counter still \"0/30 today\" → \"4/30 today\" for both personas. [14 Oct] Counter still \"4/30 today\".",
    "screenshot": "shots/2026-10-01_meera_chat.png",
    "retest_note": "02:00 run: counter \"5/30 today\".",
-   "cache_clean_recheck": "Cache-clean 02:30 IST: counter still \"5/30 today\" (both personas)."
+   "cache_clean_recheck": "Cache-clean 02:30 IST: counter still \"5/30 today\" (both personas).",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-014",
@@ -467,7 +469,9 @@
    "expected": "< 5 s to first content on 3G (target audience on mid-range Android).",
    "actual": "Home 9.7 s load (LCP 10.5 s); chat 10.7 s; care 9.7 s. Fast 3G ~2.7 s; normal network 0.5-1.0 s (LCP 0.7-1.8 s). || 2026-10-07: slow-3G landing load 10.4 s, LCP 11.2 s (normal: load 1.5 s, LCP 2.3 s).",
    "retest_note": "02:00 run: slow 3G home 9.1 s, LCP 9.8 s.",
-   "cache_clean_recheck": "Cache-clean (fresh context, SW+cache cleared): slow 3G home 9.3 s, LCP 10.1 s."
+   "cache_clean_recheck": "Cache-clean (fresh context, SW+cache cleared): slow 3G home 9.3 s, LCP 10.1 s.",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-026",
@@ -871,7 +875,9 @@
    "actual": "\"Early days — 1 logged day so far… She has 1 day in the last month\"; Meera's Home shows 9/30 days logged.",
    "screenshot": "",
    "retest_note": "02:00 run: Connect still \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30.",
-   "cache_clean_recheck": "Cache-clean, both personas: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30 logged."
+   "cache_clean_recheck": "Cache-clean, both personas: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30 logged.",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-048",
@@ -903,7 +909,9 @@
    "expected": "App switches to a light theme.",
    "actual": "Switch flips to off, but the <html> class stays \"dark\" and every screen still renders dark (Pixel 5 and iPhone viewports).",
    "screenshot": "shots/2026-10-22cc_settings_toggle_off_still_dark.jpg",
-   "cache_clean_recheck": "Cache-clean, real taps: the Settings \"Dark Mode\" switch flips (aria-checked false) but html class stays \"dark\", body bg rgb(22,11,16), localStorage theme stays \"dark\", and after reload the switch is back on. The header sun/moon button DOES work: light theme applied (bg rgb(253,246,249)) and persists after reload. Narrowed to the Settings switch only."
+   "cache_clean_recheck": "Cache-clean, real taps: the Settings \"Dark Mode\" switch flips (aria-checked false) but html class stays \"dark\", body bg rgb(22,11,16), localStorage theme stays \"dark\", and after reload the switch is back on. The header sun/moon button DOES work: light theme applied (bg rgb(253,246,249)) and persists after reload. Narrowed to the Settings switch only.",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-050",
@@ -919,7 +927,9 @@
    "expected": "Emoji below or beside the date.",
    "actual": "Mood emojis sit on top of the digits (e.g. 1, 3, 7, 14–17, 21, 22).",
    "screenshot": "shots/2026-10-22u_calendar_overlap.jpg",
-   "cache_clean_recheck": "Cache-clean: measured text-vs-emoji bounding-box overlap in 9 of 42 calendar cells on both personas (1, 3, 7, 14–17, 21…)."
+   "cache_clean_recheck": "Cache-clean: measured text-vs-emoji bounding-box overlap in 9 of 42 calendar cells on both personas (1, 3, 7, 14–17, 21…).",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-051",
@@ -935,7 +945,9 @@
    "expected": "Label fully visible.",
    "actual": "Label cut off as \"5 doctors l…\" against the right edge of the map. Arjun Home also has an element extending to x=441 on a 390 px viewport.",
    "screenshot": "shots/2026-10-22cc_care_map_clipped.jpg",
-   "cache_clean_recheck": "Cache-clean screenshots, both personas: \"5 doctors l…\" still cut off under the zoom control at the map edge."
+   "cache_clean_recheck": "Cache-clean screenshots, both personas: \"5 doctors l…\" still cut off under the zoom control at the map edge.",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-052",
@@ -951,7 +963,9 @@
    "expected": "Body text ≥11–12 px; tap targets ≥44 px (or at least 32).",
    "actual": "100+ text elements at 9–10 px on Home (weekday labels, captions, nav labels). Sleep/energy emoji buttons 28×32 px, toggles 44×24, filter chips 29 px tall, \"Back to Settings\" 21 px tall.",
    "screenshot": "shots/2026-10-22u_calendar_overlap.jpg",
-   "cache_clean_recheck": "Cache-clean Home: 111 (Meera) / 119 (Arjun) text elements under 11 px; 11–12 buttons under 32 px."
+   "cache_clean_recheck": "Cache-clean Home: 111 (Meera) / 119 (Arjun) text elements under 11 px; 11–12 buttons under 32 px.",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-053",
@@ -967,7 +981,9 @@
    "expected": "\"He\"/neutral wording for Arjun.",
    "actual": "Meera's view: \"How she is doing\", \"She logged okay…\", \"She has not shared this… from her device\".",
    "screenshot": "shots/2026-10-22u_connect_pronoun.jpg",
-   "cache_clean_recheck": "Cache-clean: Meera's view of Arjun still \"How she is doing\", \"She logged…\", \"from her device\". Arjun's view of Meera correctly uses \"she\"."
+   "cache_clean_recheck": "Cache-clean: Meera's view of Arjun still \"How she is doing\", \"She logged…\", \"from her device\". Arjun's view of Meera correctly uses \"she\".",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-054",
@@ -983,7 +999,9 @@
    "expected": "Accurate privacy copy, in line with the honest privacy copy elsewhere (GAP-001).",
    "actual": "Welcome bubble: \"Everything here stays between us.\"",
    "screenshot": "shots/2026-10-22u_chat_ui.jpg",
-   "cache_clean_recheck": "Cache-clean: chat welcome still \"Everything here stays between us.\""
+   "cache_clean_recheck": "Cache-clean: chat welcome still \"Everything here stays between us.\"",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   },
   {
    "id": "ISS-055",
@@ -999,7 +1017,9 @@
    "expected": "Calendar shows no predicted ovulation without signals (as the cards say).",
    "actual": "Calendar colours Oct 11–14 as Ovulation and others as Fertile, the same kind of contradiction ISS-015 covered (fixed 21 Oct). Unclear whether this is new in the redesign.",
    "screenshot": "shots/2026-10-22u_calendar_overlap.jpg",
-   "cache_clean_recheck": "Cache-clean: Meera calendar cell colours, ovulation purple rgba(91,33,182,.5) on 12–14 and fertile pink on 9–11/15–16, while cards say \"Window unknown\"."
+   "cache_clean_recheck": "Cache-clean: Meera calendar cell colours, ovulation purple rgba(91,33,182,.5) on 12–14 and fertile pink on 9–11/15–16, while cards say \"Window unknown\".",
+   "platform": "web",
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
   }
  ],
  "updated": "2026-10-21T20:30:00+05:30"
