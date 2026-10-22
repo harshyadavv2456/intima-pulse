@@ -1043,6 +1043,22 @@
    "expected": "\"…to their next period\".",
    "actual": "\"Roughly 7 days to them next period, though their cycle varies\".",
    "screenshot": "shots/2026-10-22r4_arjun_connect.jpg"
+  },
+  {
+   "id": "ISS-057",
+   "title": "Meera's Home says next period \"in ~0 days\" (Oct 21 estimate) on cycle day 22 of ~28, while Arjun's partner view says ~7 days (window Oct 21 – Nov 6)",
+   "feature": "cycle-tracker",
+   "persona": "both",
+   "severity": "P2",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null,
+   "status": "open",
+   "platform": "web",
+   "steps": "Meera (irregular 31–38 d) opens Home on 22 Oct; Arjun opens Connect the same day.",
+   "expected": "One consistent next-period estimate. For day 22 of an irregular 31–38 day cycle, a window about 9–16 days away (or 'late' wording if the estimate has passed).",
+   "actual": "Meera: 'Next period in ~0 days · Oct 21 (estimate — cycle varies)' (a date already past) next to 'Cycle day 22 of ~28'. Arjun: 'Next period: Oct 21 – Nov 6' and 'Roughly 7 days'. Web build finding (live site in Chrome).",
+   "screenshot": "shots/2026-10-22d_meera_ivf.jpg"
   }
  ],
  "updated": "2026-10-21T20:30:00+05:30"

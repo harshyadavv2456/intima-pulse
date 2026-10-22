@@ -163,6 +163,14 @@
    ],
    "broke": [],
    "notes": "New ISS-056 (P3 grammar). ISS-052 improved. No regressions in the 40 fixed. 0 companion messages."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "New deploy after the 04:14 IST check (home HTML 5569569b1aafdb31, sw.js changed, 11 JS chunks swapped, landing + legal text changed; label still v5.2.1)",
+   "detected_by": "baseline.js 13:07 IST (lean daily); baseline re-written",
+   "fixed": [],
+   "broke": [],
+   "notes": "No open P0/P1 to re-test. Spot-checked in the daily sessions: ISS-047, ISS-056 and ISS-013 still reproduce. Legal/landing text change not reviewed in detail (lean run). New ISS-057 (P2, next-period mismatch). 0 companion messages (daily cap already used at 01:05)."
   }
  ],
  "updated": "2026-10-22T04:50:00+05:30"

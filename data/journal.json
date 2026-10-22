@@ -1775,6 +1775,78 @@
    "screenshot": "shots/2026-10-22r4_calendar.jpg",
    "issue_id": "ISS-056",
    "notes": "5 fixed (049, 050, 053, 054, 055). Map label still clipped, partner day-count still 1, slow 3G ~9 s."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "baseline",
+   "steps": "Lean daily 13:07 IST: node baseline.js vs 21 Oct baseline.",
+   "result": "works",
+   "severity": null,
+   "repro": "",
+   "screenshot": "",
+   "issue_id": "",
+   "notes": "App changed again after the 04:14 retest (home HTML, sw.js, 11 chunks, landing+legal text). Logged in changelog; no open P0/P1 to re-test."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "meera",
+   "feature": "ivf-mode",
+   "steps": "Home → Medicated Cycle card → expand; read meds, monitoring, clinic red flags; closed with 'Not now'; reloaded Home.",
+   "result": "works",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-22d_meera_ivf.jpg",
+   "issue_id": "",
+   "notes": "Rotating deep-dive (least recently checked feature, last 3 Oct). Same depth as day 1 in the new design; nothing entered or saved; mode unchanged. Identity stable anon_2d240f4f…; logged Okay/🔋/😴; cycle day 22 Luteal."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "meera",
+   "feature": "cycle-tracker",
+   "steps": "Home cycle cards vs Arjun's partner view, same day.",
+   "result": "confusing",
+   "severity": "P2",
+   "repro": "ISS-057",
+   "screenshot": "shots/2026-10-22d_meera_ivf.jpg",
+   "issue_id": "ISS-057",
+   "notes": "Own view: next period 'in ~0 days', Oct 21 estimate (passed). Partner view: ~7 days, window Oct 21 – Nov 6."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "arjun",
+   "feature": "partner-mode",
+   "steps": "Home + Connect partner view; logged Okay/🔋/😐.",
+   "result": "mostly works",
+   "severity": "P2",
+   "repro": "ISS-047, ISS-056",
+   "screenshot": "",
+   "issue_id": "ISS-047",
+   "notes": "Identity stable anon_0a7e58a7…; Connected • Day 22 Luteal. Still '1/14 days logged' / '1 day in the last month' (ISS-047) and 'to them next period' (ISS-056). Performance sheet tap timed out in the script, so no performance entry today (tooling, not an app finding)."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "companion",
+   "steps": "Opened /chat only to read the counter.",
+   "result": "works",
+   "severity": null,
+   "repro": "",
+   "screenshot": "",
+   "issue_id": "",
+   "notes": "0 messages sent: counter already 5/30 today for both after the 01:05 E2E, which is the daily cap of 5. Rotation resumes 23 Oct."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "funding",
+   "steps": "YC W27 re-verified on ycombinator.com/apply.",
+   "result": "works",
+   "severity": null,
+   "repro": "",
+   "screenshot": "",
+   "issue_id": "",
+   "notes": "On-time deadline 2 Nov 8pm PT (= 3 Nov 08:30 IST); decisions by 11 Dec. Nothing submitted."
   }
  ],
  "narratives": [
@@ -1784,5 +1856,5 @@
    "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
   }
  ],
- "updated": "2026-10-22T04:50:00+05:30"
+ "updated": "2026-10-22T13:30:00+05:30"
 }

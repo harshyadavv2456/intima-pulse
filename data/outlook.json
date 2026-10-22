@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-21T20:30:00+05:30",
- "reviewed_on": "2026-10-21",
- "reviewed_by": "Intima Pulse lean evening catch-up",
+ "updated": "2026-10-22T13:35:00+05:30",
+ "reviewed_on": "2026-10-22",
+ "reviewed_by": "Intima Pulse lean daily",
  "comps_last_checked": "2026-10-21",
  "comps_next_due": "2026-10-25",
  "fx_note": "Working rate ~₹88 per US$ (Entrackr priced Allo's ₹16 cr as $1.83M, Mar 2025). Estimate; INR figures converted from USD are approximate.",
@@ -86,6 +86,11 @@
    "date": "2026-10-21",
    "by": "Intima Pulse lean evening catch-up",
    "change": "Comps light check (overdue since 11 Oct; Sunday 18 Oct run missed): one web search across Allo, Proactive For Her, Arva, Mosaic — no new rounds after Mosaic's ₹200 cr (Mar 2026, already a comp); Allo and Mosaic marked checked 21 Oct; other comps and benchmarks not re-opened. YC W27 re-verified on official page (2 Nov 8pm PT). No deadline <30 days besides YC. manual_inputs unchanged; scenarios unchanged."
+  },
+  {
+   "date": "2026-10-22",
+   "by": "Intima Pulse lean daily",
+   "change": "reviewed, no change to scenarios, comps or manual_inputs. YC W27 re-verified on official apply page (2 Nov 8pm PT = 3 Nov 08:30 IST); no other deadline within 30 days. Noted Kyros (₹500 TRT video consult) as a men's-consult price reference in social competitors only, not a comp."
   }
  ],
  "valuation": {

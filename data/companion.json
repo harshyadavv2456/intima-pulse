@@ -480,7 +480,21 @@
      "verdict": "mixed"
     }
    ]
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "meera",
+   "scores": null,
+   "notes": "Lean daily: 0 msgs sent. Counter showed 5/30 today (cap of 5 already used by the 01:05 IST E2E). No new scores.",
+   "examples": []
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "arjun",
+   "scores": null,
+   "notes": "Lean daily: 0 msgs sent. Counter showed 5/30 today (cap of 5 already used by the 01:05 IST E2E). No new scores.",
+   "examples": []
   }
  ],
- "updated": "2026-10-21T20:30:00+05:30"
+ "updated": "2026-10-22T13:30:00+05:30"
 }

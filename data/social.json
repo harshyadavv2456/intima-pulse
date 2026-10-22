@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-21T20:30:00+05:30",
- "history_note": "Snapshot 4 taken 15 Oct 2026 (~13:10 IST, lean Thursday). Same one-search/top-5 method as 7/14 Oct for the 6 tracked clusters. Qualitative: privacy scrutiny still live (BBC Future on Mozilla period-tracker findings; Lancet OGWH April 2026); calendar apps flagged for fertile-window misclassification especially on irregular cycles (65% predicted risk in one 2026 analysis); ED shame/delay-to-care remains a theme in Indian press (The Hindu) and clinic data; perimenopause dismissal still covered. Clusters not searched today keep prior trend/\"insufficient history\". Previous: Snapshot 3 taken 14 Oct 2026 (~18:50 IST, catch-up). 8–13 Oct NOT covered (daily runs failed: account usage ran out) — gap, not back-filled. 14 Oct uses the same one-search/top-5 method as 7 Oct, so those 6 clusters now have 2 comparable snapshots; the trend is only a weak signal because the count is capped at 5. Qualitative signal this week: privacy scrutiny keeps growing — Peak Privacy study of 10 menopause apps (6 Oct: all sent data out before asking) and Mozilla 2026 period-tracker review; Google–Flo partnership debated after $56M settlement; October is Menopause Awareness Month in Indian press (The Hindu, Onmanorama 12 Oct). Clusters not searched today (stress-men, ivf, male-infertility, judgy-gyn, preg-anxiety, d2c-upsell) keep \"insufficient history\". Previous: Snapshot 2 taken 7 Oct 2026 (watchdog catch-up, ~21:55 IST); 4-6 Oct not covered (runs failed). The 7 Oct counts use a different, simpler method (relevant results in one targeted search) than the 3 Oct relative estimates, so the two are NOT comparable and every trend stays \"insufficient history\". Qualitative signal this week: more press scrutiny of period apps (BMJ analysis 30 Sep; Harvard 2 Oct; Fashion Times 6 Oct; Flo settlement deadline 15 Oct) and a Nagpur menopause/social-media study (4 Oct). Reddit and X still block direct fetch; quotes are post titles/text from search with URLs, no usernames. Clusters not searched on 7 Oct (stress-men, ivf, male-infertility, judgy-gyn, preg-anxiety, d2c-upsell) have no 7 Oct snapshot.",
+ "updated": "2026-10-22T13:35:00+05:30",
+ "history_note": "Snapshot 6 taken 22 Oct 2026 (~13:15 IST, lean Thursday; no Monday 19 Oct snapshot — run gap). Same one-search/top-5 method for the 6 tracked clusters, compared with 21 Oct (dismissed/privacy/ttc) and 15 Oct (ed-shame/lowt/menopause). All flat at 5 except low-T 4 → 5 (weak; capped). Qualitative: Indian telehealth TRT/men's-health clinics now rank for low-T searches (Kyros ₹500 video consult, arq., LuvoMen); World Menopause Day (18 Oct) press in NDTV/Tribune/Onmanorama; period-app privacy still framed by Mozilla 2026 review and BBC Future; a PinkyBloom consumer-health-data policy (updated 18 Oct) markets on-device storage. A third-party APK listing for Intima (apkcombo, in.intimacare.app) describes data as 'stored on-device' — check store copy against the honest-privacy wording. Other clusters keep prior trend. Previous: Snapshot 4 taken 15 Oct 2026 (~13:10 IST, lean Thursday). Same one-search/top-5 method as 7/14 Oct for the 6 tracked clusters. Qualitative: privacy scrutiny still live (BBC Future on Mozilla period-tracker findings; Lancet OGWH April 2026); calendar apps flagged for fertile-window misclassification especially on irregular cycles (65% predicted risk in one 2026 analysis); ED shame/delay-to-care remains a theme in Indian press (The Hindu) and clinic data; perimenopause dismissal still covered. Clusters not searched today keep prior trend/\"insufficient history\". Previous: Snapshot 3 taken 14 Oct 2026 (~18:50 IST, catch-up). 8–13 Oct NOT covered (daily runs failed: account usage ran out) — gap, not back-filled. 14 Oct uses the same one-search/top-5 method as 7 Oct, so those 6 clusters now have 2 comparable snapshots; the trend is only a weak signal because the count is capped at 5. Qualitative signal this week: privacy scrutiny keeps growing — Peak Privacy study of 10 menopause apps (6 Oct: all sent data out before asking) and Mozilla 2026 period-tracker review; Google–Flo partnership debated after $56M settlement; October is Menopause Awareness Month in Indian press (The Hindu, Onmanorama 12 Oct). Clusters not searched today (stress-men, ivf, male-infertility, judgy-gyn, preg-anxiety, d2c-upsell) keep \"insufficient history\". Previous: Snapshot 2 taken 7 Oct 2026 (watchdog catch-up, ~21:55 IST); 4-6 Oct not covered (runs failed). The 7 Oct counts use a different, simpler method (relevant results in one targeted search) than the 3 Oct relative estimates, so the two are NOT comparable and every trend stays \"insufficient history\". Qualitative signal this week: more press scrutiny of period apps (BMJ analysis 30 Sep; Harvard 2 Oct; Fashion Times 6 Oct; Flo settlement deadline 15 Oct) and a Nagpur menopause/social-media study (4 Oct). Reddit and X still block direct fetch; quotes are post titles/text from search with URLs, no usernames. Clusters not searched on 7 Oct (stress-men, ivf, male-infertility, judgy-gyn, preg-anxiety, d2c-upsell) have no 7 Oct snapshot.",
  "clusters": [
   {
    "id": "c-dismissed",
@@ -8,7 +8,7 @@
    "topic": "pcos",
    "description": "Women with PCOS/PCOD or irregular cycles repeatedly describe being told 'it's not PCOS' on the basis of one normal lab panel, body size or regular bleeding, and feel unheard by endocrinologists/gynaecologists.",
    "volume": "high",
-   "trend": "flat (15 Oct 5 → 21 Oct 5 of top 5; method capped at 5, weak signal)",
+   "trend": "flat (21 Oct 5 → 22 Oct 5 of top 5; method capped at 5, weak signal)",
    "coverage": "Partly",
    "intima_features": "Cycle/ovulation/BBT logs and hormonal dashboard (evidence to take to a doctor); doctor map; anonymous booking; chat/video care.",
    "coverage_note": "Partly: logs help, but no doctor-visit summary/symptom timeline export and no signal of dismissive vs good clinicians. r/PcosIndia and r/AskIndianWomen still active with dismissal threads (Oct 2026 catch-up).",
@@ -72,6 +72,12 @@
      "source": "Reddit r/AskIndianWomen",
      "url": "https://www.reddit.com/r/AskIndianWomen/comments/1vataqx/want_to_seek_advicediagnosis_for_potential_pcos/",
      "date": "2026-07-30"
+    },
+    {
+     "text": "Guess what solution she gave \"after marriage all pain goes away\"",
+     "source": "Reddit r/AskIndianWomen",
+     "url": "https://www.reddit.com/r/AskIndianWomen/comments/1vktrxa/period_pain_n_indian_women/",
+     "date": "2026-08-10"
     }
    ]
   },
@@ -81,7 +87,7 @@
    "topic": "privacy",
    "description": "Period-tracker privacy is a live concern: a Mozilla Foundation study (Jul 2026) found one app sending symptom/birth-control data to an analytics vendor and recommended the only on-device, no-account app; Flo's earlier FTC case is still cited. In India, health-data leaks (e.g. an insurer's records exposed via Telegram bots, 2024) feed distrust.",
    "volume": "high",
-   "trend": "flat (15 Oct 5 → 21 Oct 5 of top 5; capped). Context: Mozilla Foundation period-tracker privacy review (16 Jul 2026) ranks local-only apps highest — https://www.mozillafoundation.org/en/nothing-personal/period-ovulation-trackers/ (opened via search 21 Oct)",
+   "trend": "flat (21 Oct 5 → 22 Oct 5 of top 5; method capped at 5, weak signal)",
    "coverage": "Partly",
    "intima_features": "No-login anonymous ID + PIN + 8-char backup code (no name/phone/email).",
    "coverage_note": "Gap remains: honest privacy copy (cloud sync + third-party AI + non-E2E consults) and clear export. Flo $59.5M US privacy settlement claim deadline 15 Oct 2026 keeps period-app data-sharing fear high; Indian privacy-first entrants (Cycla, on-device Bloom/Petal Chan) raise the bar. Exportable timeline still the doctor-referral hook.",
@@ -166,7 +172,7 @@
    "topic": "fertility",
    "description": "People trying to conceive complain that app calendars give wrong fertile windows when cycles are irregular and ask whether to trust OPK strips or BBT instead.",
    "volume": "medium",
-   "trend": "flat (15 Oct 5 → 21 Oct 5 of top 5; capped). Fresh: r/Inito post 13 Sep 2026 on wrong peak-fertility for irregular cycles — https://www.reddit.com/r/Inito/comments/1wezcdv/ (seen 21 Oct)",
+   "trend": "flat (21 Oct 5 → 22 Oct 5 of top 5; method capped at 5, weak signal)",
    "coverage": "Partly",
    "intima_features": "Cycle, ovulation, fertility and BBT tracking; hormonal dashboard.",
    "coverage_note": "Listed features lack explicit LH/OPK strip logging and cervical-mucus logging; unclear how predictions adapt to irregular cycles - tester should verify with the Meera persona.",
@@ -233,7 +239,7 @@
    "topic": "male-sexual-health",
    "description": "Men describe shame about visiting a clinic for ED and turn to discreet online options; Indian telehealth brands market privacy and low-cost consults.",
    "volume": "medium",
-   "trend": "flat (14 Oct 5 → 15 Oct 5 of top 5; method capped at 5, weak signal)",
+   "trend": "flat (15 Oct 5 → 22 Oct 5 of top 5; method capped at 5, weak signal)",
    "coverage": "Covered well",
    "intima_features": "ED score, performance log, Kegel, anonymous booking, chat/video care, no-login ID.",
    "coverage_note": "Core strength. Risk: AI/consult copy must stay medically safe (ED drugs interact with nitrates/heart conditions - route to doctor).",
@@ -282,7 +288,7 @@
    "topic": "low-t",
    "description": "Young Indian men (mid-20s to 30s) post lab values and ask whether they have low T, what to do, and which specialist to see.",
    "volume": "medium",
-   "trend": "flat (14 Oct 4 → 15 Oct 4 of top 5; method capped at 5, weak signal)",
+   "trend": "up (15 Oct 4 → 22 Oct 5 of top 5; method capped at 5, weak signal)",
    "coverage": "Partly",
    "intima_features": "Low-T screen, testosterone rhythm, lab results entry, energy/stress/vitality tracking.",
    "coverage_note": "Intima can interpret/track but no ordering of a morning-draw panel (T, LH, FSH, prolactin, thyroid, vit D) or referral to an andrologist/endocrinologist is in the listed feature set beyond the doctor map.",
@@ -310,6 +316,12 @@
      "source": "Reddit r/Fitness_India",
      "url": "https://www.reddit.com/r/Fitness_India/comments/1vxs0oc/1_year_into_the_gym_got_my_testosterone_checked/",
      "date": ""
+    },
+    {
+     "text": "Low testosterone in Indian men is common, underdiagnosed, and routinely misattributed to stress or age.",
+     "source": "Kyros Clinic (India telehealth TRT page)",
+     "url": "https://kyrosclinic.com/conditions/hormones-trt",
+     "date": "2026-10"
     }
    ]
   },
@@ -387,7 +399,7 @@
    "topic": "menopause",
    "description": "Women describe insomnia, anxiety, brain fog, heavy bleeding and low libido being blamed on stress or age, with cultural silence; media coverage is rising (HT, The Week, Jul 2026).",
    "volume": "medium",
-   "trend": "flat (14 Oct 5 → 15 Oct 5 of top 5; method capped at 5, weak signal)",
+   "trend": "flat (15 Oct 5 → 22 Oct 5 of top 5; method capped at 5, weak signal)",
    "coverage": "Not covered",
    "intima_features": "Nothing menopause-specific in the listed feature set (cycle tracker and AI companion only incidentally).",
    "coverage_note": "Not covered: no perimenopause/menopause mode, symptom set, or HRT/clinic guidance for India. Active India threads (TwoXIndia, AskIndianWomen) asking who to see and how to support mothers — clear product gap vs Clue's perimenopause mode.",
@@ -451,6 +463,12 @@
      "source": "BBC News",
      "url": "https://www.bbc.com/news/articles/ce8dzjyp4p8o",
      "date": ""
+    },
+    {
+     "text": "Menopause symptoms often mistaken for stress, ageing: Doc",
+     "source": "The Tribune (headline)",
+     "url": "https://www.tribuneindia.com/news/delhi/menopause-symptoms-often-mistaken-for-stress-ageing-doc/",
+     "date": "2026-10"
     }
    ]
   },
@@ -747,6 +765,42 @@
    "cluster_id": "c-ttc-irregular",
    "mentions": 5,
    "note": "21 Oct light pass: ONE targeted web search per cluster (top 5), same method as 7/14/15 Oct; only 3 clusters checked (lean); capped at 5"
+  },
+  {
+   "date": "2026-10-22",
+   "cluster_id": "c-dismissed",
+   "mentions": 5,
+   "note": "22 Oct Thursday pass: ONE targeted web search per tracked cluster (top 5), same method as 7/14/15/21 Oct; capped at 5"
+  },
+  {
+   "date": "2026-10-22",
+   "cluster_id": "c-privacy",
+   "mentions": 5,
+   "note": "22 Oct Thursday pass: ONE targeted web search per tracked cluster (top 5), same method as 7/14/15/21 Oct; capped at 5"
+  },
+  {
+   "date": "2026-10-22",
+   "cluster_id": "c-ttc-irregular",
+   "mentions": 5,
+   "note": "22 Oct Thursday pass: ONE targeted web search per tracked cluster (top 5), same method as 7/14/15/21 Oct; capped at 5"
+  },
+  {
+   "date": "2026-10-22",
+   "cluster_id": "c-ed-shame",
+   "mentions": 5,
+   "note": "22 Oct Thursday pass: ONE targeted web search per tracked cluster (top 5), same method as 7/14/15/21 Oct; capped at 5"
+  },
+  {
+   "date": "2026-10-22",
+   "cluster_id": "c-lowt",
+   "mentions": 5,
+   "note": "22 Oct Thursday pass: ONE targeted web search per tracked cluster (top 5), same method as 7/14/15/21 Oct; capped at 5"
+  },
+  {
+   "date": "2026-10-22",
+   "cluster_id": "c-menopause",
+   "mentions": 5,
+   "note": "22 Oct Thursday pass: ONE targeted web search per tracked cluster (top 5), same method as 7/14/15/21 Oct; capped at 5"
   }
  ],
  "competitors": [
@@ -986,6 +1040,18 @@
      "title": "Cycla — privacy-first PCOS/period tracker marketed for Indian women (on-device data claim)",
      "url": "https://www.cycla.fit/",
      "summary": "India-facing period/PCOS app emphasising on-device privacy, PDF doctor reports, pregnancy mode. Raises competitive bar on privacy messaging vs cloud-synced apps."
+    }
+   ]
+  },
+  {
+   "name": "Kyros Clinic",
+   "items": [
+    {
+     "date": "2026-10",
+     "type": "pricing",
+     "title": "Kyros — online hormones/TRT consults, ₹500 one-time 20-min video",
+     "url": "https://kyrosclinic.com/conditions/hormones-trt",
+     "summary": "India telehealth clinic ranking for low-T searches; NMC-registered doctors, no subscription, lab orders. Sets a price anchor for men's consults (seen 22 Oct)."
     }
    ]
   }
