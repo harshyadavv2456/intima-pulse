@@ -306,7 +306,7 @@
    "expected": "Selection persists and is visible.",
    "actual": "After Midday Negative retap + reload: Negative button stays muted (bg-muted), copy still 'no ovulation signal has been logged yet'. || 2026-10-07: selection DOES persist after reload (button class bg-muted vs bg-muted/50 for unselected) but the highlight is almost invisible, and the card still says \"no ovulation signal has been logged yet\" with Negative selected. Partial: persistence OK, visibility/copy not.",
    "screenshot": "shots/2026-10-01_meera_ttc_filled.jpg",
-   "retest_note": "14:50: automation could not locate the Negative ovulation-test button in the Fertility card (layout changed). Not verified."
+   "retest_note": "Not re-tested 21:25 (doctor build verification took priority)."
   },
   {
    "id": "ISS-017",
@@ -344,7 +344,7 @@
    ],
    "expected": "Confirmation first; both sides become unlinked (or the other is told).",
    "actual": "Unlink immediate; Meera still shows \"Partner Connected\" with stale data; re-entering the old code fails.",
-   "retest_note": "Not re-tested (no unlinking)."
+   "retest_note": "Not re-tested (no unlinking allowed)."
   },
   {
    "id": "ISS-019",
@@ -471,7 +471,7 @@
    ],
    "expected": "< 5 s to first content on 3G (target audience on mid-range Android).",
    "actual": "Home 9.7 s load (LCP 10.5 s); chat 10.7 s; care 9.7 s. Fast 3G ~2.7 s; normal network 0.5-1.0 s (LCP 0.7-1.8 s). || 2026-10-07: slow-3G landing load 10.4 s, LCP 11.2 s (normal: load 1.5 s, LCP 2.3 s).",
-   "retest_note": "14:50: slow 3G home 9.2 s, LCP 10.0 s.",
+   "retest_note": "Slow 3G not re-measured on 6854e59.",
    "cache_clean_recheck": "Cache-clean (fresh context, SW+cache cleared): slow 3G home 9.3 s, LCP 10.1 s.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
@@ -734,7 +734,7 @@
    "expected": "Recalls facts from the current conversation and, per its own pitch, from earlier chats.",
    "actual": "Meera: one message after saying \"we have been trying for 6 months\", companion replied it \"can't recall… the exact length of time you've been trying\" or her city (it remembered Nagpur/6 months on 3 Oct). Arjun: remembered logged sleep but not his 12-14 h workdays (remembered on 3 Oct). Chat history appeared reset (0/30, greeting screen). [14 Oct] Reproduced (Arjun): told office hours 9–7 in message 3, asked in message 4 → \"I'm not seeing the office-hour details\". Not reproduced for Meera (recalled \"six months\"). [15 Oct] Improved today for Arjun: companion correctly recalled \"office 9 AM to 7 PM\" from the prior message in the same chat. Keep open — was failing on 14 Oct; need another pass.",
    "screenshot": "shots/2026-10-07_meera_chat.png",
-   "retest_note": "Not re-tested (0 companion messages)."
+   "retest_note": "Not re-tested (companion cap used: 5/30 both today)."
   },
   {
    "id": "ISS-040",
@@ -861,7 +861,7 @@
    "expected": "Gender-appropriate address, readable dates.",
    "actual": "Meera: \"Bhai, 6 mahine se try kar rahe ho\"; Arjun: energy dates written \"10-10-22, 10-10-21\".",
    "screenshot": "shots/2026-10-22e_meera_chat.jpg",
-   "retest_note": "Not re-tested (0 companion messages)."
+   "retest_note": "Not re-tested (companion cap used)."
   },
   {
    "id": "ISS-047",
@@ -872,12 +872,12 @@
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
    "fixed_on": "2026-10-22",
-   "status": "fixed",
+   "status": "regressed",
    "steps": "Arjun opens Connect (Meera shares mood/cycle).",
    "expected": "Count matching her logs.",
    "actual": "\"Early days — 1 logged day so far… She has 1 day in the last month\"; Meera's Home shows 9/30 days logged.",
    "screenshot": "shots/2026-10-22sec_arjun_connect.jpg",
-   "retest_note": "14:50 cache-clean: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" (Meera 9/30).",
+   "retest_note": "21:25 IST (build 6854e59): Arjun's partner view again shows Meera \"1/14 days logged… only 1 day in the last fortnight\" while Meera has 6 of the last 14 days ticked (seen 6/14 at 15:20). Regressed.",
    "cache_clean_recheck": "Cache-clean, both personas: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30 logged.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
@@ -1101,8 +1101,122 @@
    "steps": "Arjun (9/30 days logged, 6 in the last 14) opens Connect while linked; then Meera opens Connect.",
    "expected": "Meera sees about 6/14 days for Arjun (the push-on-Connect-open fix).",
    "actual": "Meera still sees \"1/14 days logged… Only 1 day logged in the last fortnight\" ~1 min after Arjun opened Connect. The Meera → Arjun direction works (ISS-047 fixed).",
-   "screenshot": ""
+   "screenshot": "",
+   "retest_note": "21:25 IST: still reproduces; Meera sees Arjun \"1/14 days logged\" (he has 9/30)."
+  },
+  {
+   "id": "ISS-060",
+   "title": "After \"Make a new recovery code\", that clinic browser is stuck on \"Opening your clinic…\" forever",
+   "feature": "doctor-dashboard",
+   "persona": "both",
+   "severity": "P1",
+   "status": "open",
+   "platform": "web",
+   "steps": [
+    "Doctor signed in on desktop opens Clinic and taps \"Make a new recovery code\".",
+    "Open Appointments or reload /doctor."
+   ],
+   "expected": "Doctor stays signed in on this device, or is sent to /doctor/login with a clear message.",
+   "actual": "Every /api/doctor/me call returns 401 and the page shows only \"Opening your clinic…\" with no sign-out. /doctor/login redirects back to the spinner, so the new code cannot be entered. Only clearing the site data recovers.",
+   "screenshot": "shots/2026-10-22doc_doc_stuck_opening.jpg",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null
+  },
+  {
+   "id": "ISS-061",
+   "title": "Patient tab can silently stop reaching the server: Messages empty, booking stuck on \"Sending request…\", logs stop syncing",
+   "feature": "doctor-dashboard",
+   "persona": "meera",
+   "severity": "P2",
+   "status": "open",
+   "platform": "web",
+   "steps": [
+    "Meera keeps one tab open for ~30 min (Care, Messages, Home, several reloads).",
+    "Open Messages from your doctors; book a slot; log mood."
+   ],
+   "expected": "Data loads, or a visible error with Retry.",
+   "actual": "Messages said \"No conversations yet\" although the thread exists; Request Appointment stayed on \"Sending request…\" for 20+ s with no request sent; mood change never reached the doctor (cloud sync stopped). A fresh browser with the same profile worked straight away. Intermittent; may relate to repeated cache-clean reloads in testing.",
+   "screenshot": "shots/2026-10-22doc_m_msgs_empty.jpg",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null
+  },
+  {
+   "id": "ISS-062",
+   "title": "With automatic confirmation on, booking screen still says \"this isn't booked yet\"",
+   "feature": "doctor-dashboard",
+   "persona": "meera",
+   "severity": "P2",
+   "status": "open",
+   "platform": "web",
+   "steps": [
+    "Clinic turns on Automatic confirmation.",
+    "Patient requests a free slot."
+   ],
+   "expected": "Booking screen says Confirmed.",
+   "actual": "Sheet shows \"Request sent — You'll be notified once Dr. Clinic confirms — this isn't booked yet\" although the doctor list shows it Confirmed and the confirmation arrives in Messages seconds later. Also says \"Dr. Clinic\" instead of \"Dr. Test Clinic\".",
+   "screenshot": "shots/2026-10-22doc_m_autoconfirm.jpg",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null
+  },
+  {
+   "id": "ISS-063",
+   "title": "Doctor Insights funnel shows 0 bookings started/confirmed after 4 requests and 3 confirmations",
+   "feature": "doctor-dashboard",
+   "persona": "both",
+   "severity": "P2",
+   "status": "open",
+   "platform": "web",
+   "steps": [
+    "Make 3 bookings from Care (2 confirmed, 1 declined), with 1 earlier confirmed booking.",
+    "Open doctor Insights (7d)."
+   ],
+   "expected": "Funnel matches the booking cards.",
+   "actual": "Top cards are right (4 booking requests, 3 confirmed, 3 patients), but \"How patients find you\" shows Booking started 0, Booking confirmed 0.",
+   "screenshot": "shots/2026-10-22doc_doc_insights.jpg",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null
+  },
+  {
+   "id": "ISS-064",
+   "title": "Care booking polish: only the next day's first 6 slots, duplicate \"Gynaecologist\" filter",
+   "feature": "doctor-dashboard",
+   "persona": "both",
+   "severity": "P3",
+   "status": "open",
+   "platform": "web",
+   "steps": [
+    "Care, open Intima Test Clinic (Mon-Sat 10-13, 17-20)."
+   ],
+   "expected": "Pick from several days and all evening slots; one chip per specialty.",
+   "actual": "Only Fri 23 Oct shows, capped at 6 slots (10:30 am to 5:30 pm); no Saturday and no 6-7:30 pm. Filter chips show \"Gynaecologist\" twice.",
+   "screenshot": "shots/2026-10-22doc_m_clinic.jpg",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null
+  },
+  {
+   "id": "ISS-065",
+   "title": "Privacy policy says your name and contact info go to the doctor; the Share sheet has name off by default",
+   "feature": "doctor-dashboard",
+   "persona": "both",
+   "severity": "P3",
+   "status": "open",
+   "platform": "web",
+   "steps": [
+    "Read /legal section 6.",
+    "Open a doctor chat and tap Share."
+   ],
+   "expected": "The two say the same thing.",
+   "actual": "/legal: \"we share your name, contact info, and request with the specific doctor\". Share sheet: \"My name\" off by default; doctor sees \"Patient 45DB\".",
+   "screenshot": "",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null
   }
  ],
- "updated": "2026-10-21T20:30:00+05:30"
+ "updated": "2026-10-22T21:30:00+05:30"
 }

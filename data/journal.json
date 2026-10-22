@@ -1883,6 +1883,30 @@
    "screenshot": "shots/2026-10-22sec_arjun_connect.jpg",
    "issue_id": "ISS-047",
    "notes": "Arjun now sees Meera's 6/14 days (fixed). Meera still sees 1/14 for Arjun (ISS-059). Map label below the map. Settings lock and backup code hardening verified."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "doctor-dashboard",
+   "steps": "Doctor invite, sign-in and recovery-code rotation (desktop + 375 px); Meera and Arjun booked the test clinic; confirm, decline with note, live chat, care note, 3 broadcasts + mute, automation, auto-confirm, Share toggles, Insights.",
+   "result": "works",
+   "severity": "P1",
+   "repro": "ISS-060",
+   "screenshot": "shots/2026-10-22doc_m_carenote.jpg",
+   "issue_id": "ISS-060",
+   "notes": "12/16 pass. Live updates in 2-7 s. Recovery-code rotation locks out the device that made it."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "full-retest",
+   "steps": "Cache-clean sweep: Home, cycle cards, Wellness/Kegel, IVF card, Care browse, Connect, Settings, chat counter, legal, offline.",
+   "result": "works",
+   "severity": "P2",
+   "repro": "ISS-047",
+   "screenshot": "",
+   "issue_id": "ISS-047",
+   "notes": "Home next period ~7 d Oct 29 matches the partner view. ISS-047 regressed (Arjun sees Meera 1/14). ISS-059 still. Backup code masked. Companion 5/30 both, none sent."
   }
  ],
  "narratives": [
@@ -1898,5 +1922,5 @@
    "note": "Narrative for 19–25 Oct based on 21–22 Oct sessions only."
   }
  ],
- "updated": "2026-10-22T16:10:00+05:30"
+ "updated": "2026-10-22T21:30:00+05:30"
 }

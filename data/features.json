@@ -199,7 +199,7 @@
    "name": "Partner Mode link",
    "group": "Connect",
    "status": "OK",
-   "note": "Linking, live data and neutral copy work (ISS-019/020/036/038/053/056 fixed). Day-count wrong (ISS-047); unlink one-sided untested (ISS-018).",
+   "note": "Linking, live data and neutral copy work (ISS-019/020/036/038/053/056 fixed). Day-count wrong (ISS-047); unlink one-sided untested (ISS-018). 22 Oct 21:25: ISS-047 regressed, ISS-059 still open.",
    "last_verified": "2026-10-22"
   },
   {
@@ -241,9 +241,116 @@
    "status": "OK",
    "note": "Referral code/link entry on Care + 30-day summary share (ISS-035 fixed).",
    "last_verified": "2026-10-22"
+  },
+  {
+   "id": "doctor-dashboard",
+   "name": "Doctor dashboard and patient-doctor sync",
+   "group": "Care",
+   "status": "OK",
+   "note": "Build 6854e59, 22 Oct: 12 of 16 checks pass, 2 fail (ISS-060 P1 recovery-code lockout, ISS-063 Insights funnel), 1 partial (Visited/No-show not testable yet), 1 not tested (Clear all data, awaiting OK). Live sync works in both directions.",
+   "last_verified": "2026-10-22",
+   "checks": [
+    {
+     "check": "A1 Invite opens dashboard, recovery code shown first; reused invite refused",
+     "result": "pass",
+     "note": "Code screen first, then dashboard; second use says expired or already used."
+    },
+    {
+     "check": "A2 /doctor unsigned goes to /doctor/login; lowercase code works; wrong code refused",
+     "result": "pass",
+     "note": "Desktop and 375 px; deep links also go to login."
+    },
+    {
+     "check": "A3 New recovery code; old code refused",
+     "result": "fail",
+     "note": "Old code refused and new one works, but the browser that made it gets stuck on \"Opening your clinic…\" (ISS-060)."
+    },
+    {
+     "check": "A4 Booking appears in Needs reply live; confirm reaches patient Messages",
+     "result": "pass",
+     "note": "Appeared in under 5 s without refresh; confirmation line in Messages within 3 s."
+    },
+    {
+     "check": "A5 Decline with note; mark Visited / No-show",
+     "result": "partial",
+     "note": "Decline with note works (note shown to patient). Visited / No-show not testable, no visit time has passed yet."
+    },
+    {
+     "check": "A6 Live doctor and patient messages",
+     "result": "pass",
+     "note": "Both directions in 2-4 s without refresh."
+    },
+    {
+     "check": "A7 Follow-up template arrives as \"Care note\"",
+     "result": "pass",
+     "note": "\"Keep tracking\" template arrived labelled Care note."
+    },
+    {
+     "check": "A8 Broadcast \"From your clinic\"; 4th refused; automation persists",
+     "result": "pass",
+     "note": "3 sent, 4th refused (\"3 broadcasts a day\"); Appointment reminder still on after reload."
+    },
+    {
+     "check": "A9 Automatic confirmation confirms instantly, then off",
+     "result": "pass",
+     "note": "Instantly Confirmed for doctor and in Messages; patient sheet copy wrong (ISS-062). Switched off again."
+    },
+    {
+     "check": "A10 Insights numbers match actions",
+     "result": "fail",
+     "note": "Cards right (4 requests / 3 confirmed / 3 patients); funnel shows 0 started / 0 confirmed (ISS-063)."
+    },
+    {
+     "check": "B1 Book test clinic; Messages button; thread with request-sent line",
+     "result": "pass",
+     "note": "Header Messages button, thread with \"Your request … was sent\" right away."
+    },
+    {
+     "check": "B2 Share off by default; cycle only; then mood live",
+     "result": "pass",
+     "note": "All 4 off; cycle only showed no mood/symptoms; mood reached doctor ~7 s after logging (a stalled tab never synced, ISS-061)."
+    },
+    {
+     "check": "B3 Mute broadcasts via bell",
+     "result": "pass",
+     "note": "Muted patient did not get broadcast 2 or 3; unmuted afterwards."
+    },
+    {
+     "check": "B4 Settings > Clear all data",
+     "result": "not tested",
+     "note": "Not tested, awaiting Harsh's OK (would wipe persona history)."
+    },
+    {
+     "check": "C Must-not-work isolation and auth checks",
+     "result": "pass",
+     "note": "Patient-to-patient isolation, /api/doctor/* 401, unsigned doctor pages, shares, video 503, cron 401 and unbooked clinic all behaved as specified. Further notes reported privately."
+    },
+    {
+     "check": "D No \"E2E\" claims; /legal says doctor chat is not end-to-end encrypted",
+     "result": "pass",
+     "note": "No E2E text in app screens; /legal: \"not end-to-end encrypted\". Push text not verifiable in browser."
+    }
+   ]
   }
  ],
  "gaps": [
+  {
+   "id": "GAP-DOC1",
+   "feature": "doctor-dashboard",
+   "title": "Keep doctors signed in after a new recovery code",
+   "change": "After \"Make a new recovery code\", keep the current session (or send to /doctor/login on 401) and fix the Insights funnel and auto-confirm copy.",
+   "why": "ISS-060 (P1) locks the clinic out on the device that rotated its code; ISS-062/063 erode doctor trust in the numbers.",
+   "impact": "H",
+   "effort": "Easy",
+   "retention_effect": "Doctors are the referral channel; a lockout on day 1 loses the clinic and every patient it would refer.",
+   "evidence_issue_ids": [
+    "ISS-060",
+    "ISS-062",
+    "ISS-063"
+   ],
+   "quick_win": true,
+   "priority_score": 10
+  },
   {
    "id": "GAP-007",
    "feature": "cycle-tracker",
@@ -622,6 +729,6 @@
    "priority_score": 3
   }
  ],
- "updated": "2026-10-22T15:45:00+05:30",
+ "updated": "2026-10-22T21:30:00+05:30",
  "ranking_note": "22 Oct 15:45 IST: re-ranked open gaps by impact (H3/M2/L1) × effort (Easy3/Medium2/Hard1); top 5 flagged quick_win. Done gaps kept for history."
 }

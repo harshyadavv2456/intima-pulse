@@ -1,13 +1,13 @@
 {
  "app_url": "https://www.intimacare.in",
  "app_version": "5.2.1 label (build 07691aa6, 22 Oct ~15:20 IST)",
- "last_test_run": "2026-10-22T16:00:00+05:30",
- "health_score": 90,
+ "last_test_run": "2026-10-22T21:30:00+05:30",
+ "health_score": 84,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
  "summary_today": [
-  "22 Oct ~15:20 IST build (7f801b9, home HTML 07691aa6) verified cache-clean. 0 companion messages.",
-  "Fixed: ISS-047, ISS-058, plus Settings lock and backup code hardening. New P2 ISS-059 (reverse partner day-count). ISS-013 and ISS-052 accepted (founder decision), excluded from score.",
-  "Health 90: 6 open: 0 P0 / 0 P1 / 5 P2 / 1 P3; 2 accepted."
+  "22 Oct ~20:37-21:30 IST: doctor dashboard (build 6854e59) verified end to end with the test clinic only: 12/16 checks pass, 2 fail, 1 partial, 1 not tested.",
+  "New: ISS-060 P1 (recovery-code lockout), ISS-061/062/063 P2, ISS-064/065 P3. ISS-047 regressed (partner day count).",
+  "Health 84: 13 open: 0 P0 / 1 P1 / 9 P2 / 3 P3. 0 companion messages (cap used)."
  ],
  "health_score_history": [
   {
@@ -86,6 +86,11 @@
    "date": "2026-10-22",
    "score": 90,
    "note": "7f801b9 deploy verification; ISS-013/052 accepted"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 84,
+   "note": "21:30 doctor dashboard 6854e59 verification + full retest"
   }
  ],
  "weekly": [
@@ -138,7 +143,7 @@
    "narrative": "[Added late on 21 Oct; Sunday 18 Oct run was missed.] Week of 12–18 Oct (testing on 14–17 Oct only). Health 48 → 47. Issues opened: ISS-041 (companion fertility timing for a TTC user, 14 Oct) and ISS-042 (companion claims wearable sync that does not exist, 17 Oct); 0 fixed; app stayed on v5.2.1 with no baseline change all week. How it feels: Meera logs in seconds and gets warm Hinglish help, but the cycle view stays on a textbook 28-day cycle with contradictory ovulation/fertile cards, and the companion mixed sound advice with invented numbers and wrong LH/HPT timing. Pregnancy-mode entry and Kegel sessions looked fine on inspection; devices/wearables turned out to be missing. Arjun's partner link held all week (Connected • Luteal), though Connect still shows a link-code screen while linked; his companion remembered his office hours but kept quoting made-up testosterone/stamina stats. Net: stable and pleasant, no regressions, but no fixes either — the AI accuracy and cycle-prediction issues are now the main drag."
   }
  ],
- "updated": "2026-10-22T16:10:00+05:30",
+ "updated": "2026-10-22T21:30:00+05:30",
  "run_gaps": [
   {
    "from": "2026-10-08",
