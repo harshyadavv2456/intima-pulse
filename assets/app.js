@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-var PAGES=[['index','Home'],['issues','Issues'],['features','Features'],['journal','Journal'],['companion','AI Companion'],['social','Social'],['funding','Funding'],['outlook','Outlook'],['performance','Performance'],['changelog','Changelog'],['accounts','Accounts']];
+var PAGES=[['index','Home'],['issues','Issues'],['features','Features'],['journal','Journal'],['companion','AI Companion'],['social','Social'],['problems','Problems & solutions'],['funding','Funding'],['outlook','Outlook'],['performance','Performance'],['changelog','Changelog'],['accounts','Accounts']];
 var page=document.body.dataset.page, app=document.getElementById('app');
 var TODAY=new Date(new Date().getTime()+ (330+new Date().getTimezoneOffset())*60000).toISOString().slice(0,10);
 // ---------- helpers
@@ -319,6 +319,26 @@ R.outlook=function(){
     document.getElementById('cres').onclick=function(){arr(B.calc_inputs).forEach(function(x){document.getElementById('s_'+x.k).value=x.v});calc()};
     calc();
   })};
+R.problems=function(){
+  return load('opportunities').then(function(d){var all=arr(d.opportunities);
+    var areas=arr(d.areas).length?arr(d.areas):uniq([].concat.apply([],all.map(function(o){return arr(o.areas)})));
+    app.innerHTML=head('Problems &amp; solutions','Real problems people post about publicly, and what to build in Intima. Scores are estimates.',d)+
+      '<div class="filters" id="flt"><label>Area<select id="fa">'+opts(areas,'All areas')+'</select></label><label>Show<select id="fpr"><option value="">All</option><option value="1">Priority only</option></select></label><label>Status<select id="fs">'+opts(uniq(all.map(function(o){return o.status})))+'</select></label></div>'+
+      (d.source_note?'<div class="sub">'+esc(d.source_note)+'</div>':'')+'<div id="out"></div>';
+    function list(a){return '<ul style="margin:4px 0;padding-left:18px">'+arr(a).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'}
+    function draw(){var a=val('fa'),pr=val('fpr'),st=val('fs');
+      var l=all.filter(function(o){return (!a||arr(o.areas).indexOf(a)>=0)&&(!pr||o.priority)&&(!st||o.status===st)}).sort(function(x,y){return (x.priority?0:1)-(y.priority?0:1)||(x.priority_rank||99)-(y.priority_rank||99)||((y.score||{}).total||0)-((x.score||{}).total||0)});
+      document.getElementById('out').innerHTML=!all.length?empty('No opportunities yet.'):!l.length?empty('Nothing matches this filter.'):l.map(function(o){var sc=o.score||{};
+        return '<div class="card" id="'+esc(o.id)+'"><h3>'+esc(o.id)+' · '+esc(o.title||'')+' '+(o.priority?chip('Priority #'+o.priority_rank,'good')+' ':'')+chip(o.status,'OK')+' '+chip('Score '+sc.total+(sc.estimate?' (est.)':''),'P3')+'</h3>'+
+        '<div class="sub">Areas: '+arr(o.areas).map(esc).join(', ')+' · F'+esc(sc.frequency)+' × I'+esc(sc.intensity)+' × Fit '+esc(sc.fit)+' · updated '+esc(o.last_updated)+'</div>'+
+        '<div><b>Problem:</b> '+esc(o.problem)+'</div><div class="sub">Who: '+esc(o.who)+'</div>'+
+        '<div><b>Solution in the app:</b>'+list(o.solution_in_app)+'</div>'+
+        '<div><b>MVP (under 2 weeks):</b> '+esc(o.mvp_scope)+'</div>'+
+        '<div><b>Metric:</b> '+esc(o.metric)+'</div>'+
+        '<div><b>Competitor gap:</b> '+esc(o.competitor_gap)+'</div>'+
+        '<div><b>Risks:</b>'+list(o.risks)+'</div>'+
+        '<details><summary><b>Evidence</b> ('+arr(o.evidence).length+')</summary><ul style="margin:4px 0;padding-left:18px">'+arr(o.evidence).map(function(e){return '<li>'+link(e.url,e.source)+' · '+esc(e.date)+' '+chip(e.verified?'verified':'unverified',e.verified?'good':'P3')+(e.note?' <span class="sub">'+esc(e.note)+'</span>':'')+'</li>'}).join('')+'</ul></details></div>'}).join('')}
+    Array.prototype.forEach.call(document.querySelectorAll('#flt select'),function(el){el.onchange=draw});draw()})};
 R.performance=function(){
   return load('performance').then(function(d){var all=arr(d.samples);
     app.innerHTML=head('Performance','Page load time per page per device',d)+dateBar('<label>Device<select id="fd">'+opts(['mobile','desktop'])+'</select></label><label>Page<select id="fp">'+opts(uniq(all.map(function(s){return s.page})))+'</select></label><label>Metric<select id="fm"><option value="load_ms">Load (ms)</option><option value="lcp_ms">LCP (ms)</option></select></label>')+'<div id="out"></div>';

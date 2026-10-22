@@ -1,0 +1,600 @@
+{
+ "updated": "2026-10-23T04:50:00+05:30",
+ "source_note": "Public-post research on 23 Oct 2026. Scores are estimates (1-5 each; total = frequency x intensity x fit). No usernames or personal details. 'verified: true' = source page/post was read; false = could not confirm figure or date.",
+ "areas": [
+  "Home",
+  "Care",
+  "Connect",
+  "doctor dashboard",
+  "companion",
+  "male dashboard",
+  "Settings"
+ ],
+ "opportunities": [
+  {
+   "id": "OPP-001",
+   "priority": true,
+   "priority_rank": 1,
+   "title": "Voice follow-up on day 4, 6 and 10",
+   "problem": "Patients see a doctor once, get a prescription and drift away. Clinics lose track of them between visits, and text reminders get ignored.",
+   "who": "Small gynaecology, urology and IVF clinics (tier-1/2) and their patients, especially women on shared or monitored phones.",
+   "evidence": [
+    {
+     "source": "X post describing a Nagpur clinic's follow-up problem and WhatsApp voice-note fix",
+     "url": "https://x.com/i/status/2041199543233200402",
+     "date": "2026-04-06",
+     "verified": false,
+     "note": "40% to 75% follow-up compliance is a self-reported anecdote"
+    },
+    {
+     "source": "RCT, Punjab: WhatsApp reminders did not improve hypertension follow-up (21.8% vs 19.6%)",
+     "url": "https://doi.org/10.1186/s12889-024-19894-9",
+     "date": "2024",
+     "verified": true,
+     "note": "Published study; shows plain reminders are not enough"
+    },
+    {
+     "source": "Chennai study: weekly WhatsApp reminders improved cardiac medication adherence over 12 months",
+     "url": "https://doi.org/10.52783/jns.v14.2708",
+     "date": "2025",
+     "verified": true,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 4,
+    "fit": 5,
+    "total": 80,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard",
+    "Care",
+    "Home",
+    "Settings"
+   ],
+   "solution_in_app": [
+    "Doctor dashboard: after a visit, the doctor ticks 'Follow-up plan' and picks days (default 4/6/10) and language (Hindi, Marathi, English to start).",
+    "Home: patient sees a 'Check-in from your doctor' card with a short voice note (TTS or the doctor's own recording) and one-tap replies: Taking meds / Side effects / I have a question.",
+    "Settings: patient picks a neutral reminder phrase at first visit so the notification makes sense if someone else sees the phone.",
+    "Doctor dashboard: 'Not responding' list (no reply by day 6) with one-tap message via existing patient-doctor chat."
+   ],
+   "mvp_scope": "Scheduler + 3 TTS languages + push notification + reply buttons + non-responder list. No WhatsApp API in v1 (add later as an optional template).",
+   "metric": "Direct lever on day-30 retention of doctor-referred users: day 4-7 is the drop-off window. Pilot KPI = follow-up reply rate and return-visit rate vs the clinic's own baseline. Measure; do not quote the 75% anecdote as a result.",
+   "competitor_gap": "Practo and clinic software send booking reminders, not adherence check-ins in the patient's language.",
+   "risks": [
+    "DPDP: separate consent for follow-up messages; easy opt-out.",
+    "Shared phones: notification text must never reveal the condition.",
+    "Telemedicine guidelines: replies are not a consultation; the doctor decides next steps."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-002",
+   "priority": true,
+   "priority_rank": 2,
+   "title": "Doctor-set PCOS/PMOS 30-day plan",
+   "problem": "PCOS care is scattered and often dismissive: 'lose weight, take the pill, come back in six months'. Lean women are not believed, and nobody asks about mood.",
+   "who": "Women aged 18-40 with irregular cycles or PCOS (about 7-20% of Indian women depending on criteria), including lean PCOS and TTC users.",
+   "evidence": [
+    {
+     "source": "X post by a woman with lean PCOS on dismissive, siloed care (written after the PMOS rename)",
+     "url": "https://x.com/i/status/2054523342930284887",
+     "date": "2026-05-13",
+     "verified": true,
+     "note": "Opinion post; prevalence figures in it not re-checked"
+    },
+    {
+     "source": "JAMA Network Open: PCOS prevalence among Indian women 7.2% (NIH) to 19.6% (Rotterdam)",
+     "url": "https://doi.org/10.1001/jamanetworkopen.2024.40583",
+     "date": "2024",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "r/TwoXIndia thread: PCOS misdiagnosis without insulin-resistance check; patients moving to endocrinologists",
+     "url": "https://www.reddit.com/r/TwoXIndia/comments/1dr284d/",
+     "date": "2024-06-29",
+     "verified": true,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 5,
+    "intensity": 4,
+    "fit": 5,
+    "total": 100,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard",
+    "Home",
+    "companion"
+   ],
+   "solution_in_app": [
+    "Doctor dashboard: 'Start PCOS plan' with 3 templates (insulin-resistant, lean, TTC) and goals (regular cycles, skin/hair, conception).",
+    "Home: daily 30-second check-in (cycle/spotting, symptoms, mood PHQ-2, steps or meal nudge) plus weekly hair/skin note.",
+    "Companion: explains the plan and lab terms in simple Hindi/English; never changes medicines.",
+    "Doctor dashboard: day-30 summary auto-shared with the doctor (uses existing health-summary sharing), with flags such as 'consider endocrinologist' or 'mood low'."
+   ],
+   "mvp_scope": "3 templates, check-in screen, PHQ-2, day-30 summary card. Reuse existing cycle/symptom/mood logging.",
+   "metric": "Built-in 30-day loop that ends in a doctor-facing report, so day 30 is the natural finish line. Gives clinics between-visit data for B2B analytics.",
+   "competitor_gap": "Flo/Clue PCOS content is informational and often paywalled; no major Indian app ties a plan to the treating doctor.",
+   "risks": [
+    "Do not default to weight-loss messaging (lean PCOS).",
+    "AI companion must not diagnose or prescribe (telemedicine guidelines).",
+    "Mood screening needs a crisis path."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-003",
+   "priority": true,
+   "priority_rank": 3,
+   "title": "'Test both of us' couple fertility checklist",
+   "problem": "When a couple can't conceive, the woman is tested and blamed first. Men delay or refuse a simple semen test out of shame.",
+   "who": "Couples trying to conceive, often 1-5 years into marriage; the woman carries the burden.",
+   "evidence": [
+    {
+     "source": "Fertility specialist article: why husbands refuse semen testing",
+     "url": "https://www.drmalpani.com/knowledge-center/articles/husband-refusing-to-get-his-semen-tested",
+     "date": "undated",
+     "verified": false,
+     "note": "Date not shown on page"
+    },
+    {
+     "source": "Clinic article: test the male partner first; male factor in about half of cases",
+     "url": "https://www.jananamfertility.com/journal/we-test-him-first/",
+     "date": "undated",
+     "verified": false,
+     "note": ""
+    },
+    {
+     "source": "Reddit: husband ignored semen-analysis requests for over a year; result showed very low motility",
+     "url": "https://www.reddit.com/r/trollingforababy/comments/l20gxl/",
+     "date": "2021",
+     "verified": true,
+     "note": "Not India-specific"
+    }
+   ],
+   "score": {
+    "frequency": 3,
+    "intensity": 5,
+    "fit": 5,
+    "total": 75,
+    "estimate": true
+   },
+   "areas": [
+    "Connect",
+    "male dashboard",
+    "Care",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Connect: when both partners mark 'trying', a shared checklist appears: her (cycle data, basic hormone tests) and him (semen analysis), with status for each.",
+    "Male dashboard: plain-language semen analysis explainer in Hindi and English with 'book a test' via Care.",
+    "Connect: gentle nudge to the partner who hasn't started ('Male factors are involved in about half of cases').",
+    "Doctor dashboard: doctor can add items to the couple's checklist."
+   ],
+   "mvp_scope": "Shared checklist with statuses, partner nudge, explainer screen, link to Care booking. No lab integration in v1.",
+   "metric": "Two linked users per account increases stickiness (estimate, not measured). Shortens time to diagnosis, a clinic-pilot outcome and a unique couples story for YC.",
+   "competitor_gap": "Flo, Clue and Maya are woman-only; no competitor found with a male-partner checklist.",
+   "risks": [
+    "Never shame either partner; neutral wording.",
+    "Partner sharing needs separate DPDP consent and one-sided unlinking.",
+    "PCPNDT: no sex-selection content anywhere in TTC flows."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-004",
+   "priority": true,
+   "priority_rank": 4,
+   "title": "Private men's check and doctor-first stamina program",
+   "problem": "Men hide ED and premature ejaculation for years, turn to quacks or online pills, and miss underlying causes like diabetes.",
+   "who": "Men aged 22-45, newly married couples, men with diabetes or high BP.",
+   "evidence": [
+    {
+     "source": "X post by a sex-clinic surgeon: 2-5% of marriages unconsummated; couples present 1 year to decades late due to stigma",
+     "url": "https://x.com/i/status/2054917792181477784",
+     "date": "2026-05-14",
+     "verified": false,
+     "note": "Figures are from his own clinic"
+    },
+    {
+     "source": "r/mumbai: 26-year-old with ED unsure whether to see a psychiatrist or urologist; commenter's ED was due to diabetes",
+     "url": "https://www.reddit.com/r/mumbai/comments/15a2zhw/",
+     "date": "2023-07-26",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "News: Bengaluru techie lost Rs 48 lakh to a fake Ayurvedic sexual-treatment clinic",
+     "url": "https://www.medboundtimes.com/india/bengaluru-techie-ayurvedic-sexual-treatment-scam-kidney-damage",
+     "date": "not checked",
+     "verified": false,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 5,
+    "fit": 4,
+    "total": 80,
+    "estimate": true
+   },
+   "areas": [
+    "male dashboard",
+    "Care",
+    "companion"
+   ],
+   "solution_in_app": [
+    "Male dashboard: private 5-question self-check (IIEF-5 for ED, PEDT for PE) with a result and next steps.",
+    "Male dashboard: 4-week program building on existing kegel and stamina: kegel streaks, stop-start exercises, sleep, and 'check sugar and BP' prompts.",
+    "Care: 'Book discreetly' with verified urologists showing medical registration.",
+    "Companion: answers myths in Hindi/English and points to a doctor, never sells pills."
+   ],
+   "mvp_scope": "2 questionnaires, results screen, 4-week program on top of existing kegel features, Care link.",
+   "metric": "4-week program with daily streaks maps to day 30. Drives male growth through a urology-clinic funnel rather than supplements.",
+   "competitor_gap": "Allo Health is clinic-led and not couples-integrated; quack clinics fill the trust gap.",
+   "risks": [
+    "ASCI / Drugs and Magic Remedies Act: no claims about improving sexual performance in ads.",
+    "No prescription drugs outside a registered doctor's consult.",
+    "Avoid shame-based 'stamina' marketing."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-005",
+   "priority": true,
+   "priority_rank": 5,
+   "title": "Discreet mode and consent dashboard",
+   "problem": "Women share phones with family or have them checked by a husband, and many distrust period apps after data-sharing scandals.",
+   "who": "Young women on family phones, married women whose phones are monitored, anyone worried about health data.",
+   "evidence": [
+    {
+     "source": "The Hindu: period apps' data-sharing labels, Flo's FTC settlement, user complaints about ads and data lock-in",
+     "url": "https://www.thehindu.com/sci-tech/technology/blood-and-data-leaks-the-dark-side-of-period-tracking-apps/article69763188.ece",
+     "date": "2025",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "Mozilla Privacy Not Included review of Maya",
+     "url": "https://www.mozillafoundation.org/en/privacynotincluded/maya-period-fertility-ovulation-pregnancy/",
+     "date": "not checked",
+     "verified": false,
+     "note": ""
+    },
+    {
+     "source": "SOUPS 2018 study: phones in South Asia are shared and monitored; privacy is 'performative'",
+     "url": "https://www.usenix.org/system/files/conference/soups2018/soups2018-sambasivan.pdf",
+     "date": "2018",
+     "verified": true,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 4,
+    "fit": 4,
+    "total": 64,
+    "estimate": true
+   },
+   "areas": [
+    "Settings",
+    "Connect",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Settings: Discreet mode with alternate neutral icon and app name, separate app PIN or biometric, quick-hide gesture.",
+    "Settings: notification preview templates that never mention cycles, pregnancy, ED or doctors.",
+    "Settings: one-screen 'Who can see what' (doctor, partner, Intima), each toggle revocable, with honest wording (logs sync to cloud; AI chat goes to a third-party AI provider; consult messages encrypted at rest, not end-to-end).",
+    "Connect: unlinking needs no partner approval and sends no alert."
+   ],
+   "mvp_scope": "Alternate icon, PIN lock, notification templates, consent screen with toggles and a consent log.",
+   "metric": "Users on shared phones only stay if they feel safe. Consent logs are also needed for DPDP and make a clean investor-diligence story.",
+   "competitor_gap": "SheBloom offers a calculator disguise; global apps carry FTC/Mozilla baggage.",
+   "risks": [
+    "Privacy copy must match reality; do not claim end-to-end encryption.",
+    "DPDP Rules 2025 obligations phase in through about mid-2027 (verify dates)."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-006",
+   "priority": false,
+   "title": "'Respectful doctor' badge in Care",
+   "problem": "Unmarried women are asked 'are you married?', judged, refused scans or pap smears, and some stop seeing gynaecologists for years.",
+   "who": "Unmarried women aged 18-35 in tier-1/2 cities, especially with PCOS, contraception needs or pain.",
+   "evidence": [
+    {
+     "source": "r/TwoXIndia: labs refused a PCOS transvaginal scan because the patient was unmarried; gynae shouted over a birth-control question",
+     "url": "https://www.reddit.com/r/TwoXIndia/comments/1dr284d/",
+     "date": "2024-06-29",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "X post: gynae visit dominated by 'are you married', no history taken, pain dismissed",
+     "url": "https://x.com/i/status/2109734016115187851",
+     "date": "2026-10-12",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "r/TwoXIndia: request for a curated list of non-judgemental gynaecologists",
+     "url": "https://www.reddit.com/r/TwoXIndia/comments/1qspye0/",
+     "date": "2026-02-01",
+     "verified": true,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 5,
+    "intensity": 5,
+    "fit": 5,
+    "total": 125,
+    "estimate": true
+   },
+   "areas": [
+    "Care",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Doctor dashboard: opt-in respect pledge (ask 'sexually active?' not 'married?', explain reports, no judgement for unmarried or queer patients).",
+    "Care: after each visit, 3 private questions (Did you feel respected? Were your questions answered? Would you return?).",
+    "Care: badge and filter 'Respectful care' once a doctor has 5+ ratings."
+   ],
+   "mvp_scope": "Pledge screen, 3-question survey, badge and filter in Care.",
+   "metric": "Patients return to doctors they trust; gives clinic recruitment a clear differentiator.",
+   "competitor_gap": "Practo shows star ratings, not respect signals (not re-checked today). Curated services exist but are premium.",
+   "risks": [
+    "Ratings must be private and moderated; doctors may resist public scores.",
+    "Ranked highest on raw score, but kept out of the top 5 because it is supply-side and needs enough doctors first."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-007",
+   "priority": false,
+   "title": "IVF cost clarity sheet and injection tracker",
+   "problem": "IVF packages are not comparable, extras appear later, and clinics won't give the itemised bills insurers ask for.",
+   "who": "Urban couples aged 30-40 doing IUI or IVF.",
+   "evidence": [
+    {
+     "source": "r/IVF 'IVF in India: everything you need to know' with clinic-by-clinic cost breakdowns",
+     "url": "https://www.reddit.com/r/IVF/comments/1i3hweu/",
+     "date": "2025-01",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "r/IVF: 'Ivf is not for middle class', Nova Gurugram extras",
+     "url": "https://www.reddit.com/r/IVF/comments/1ka3ocf/",
+     "date": "2025-04-28",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "r/AskIndia: insurance rejected an IVF claim because the clinic gives no breakup bill",
+     "url": "https://www.reddit.com/r/AskIndia/comments/1n7rxwj/",
+     "date": "2025-09-03",
+     "verified": true,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 5,
+    "fit": 4,
+    "total": 80,
+    "estimate": true
+   },
+   "areas": [
+    "Care",
+    "Home",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Doctor dashboard: clinic fills a standard itemised cost template once (injections, retrieval, ICSI, culture, freezing per year, FET, PGT-A per embryo).",
+    "Home (IVF mode): stim-day calendar with injection reminders and scan dates.",
+    "Care: patient cost tracker that exports an itemised PDF for insurance."
+   ],
+   "mvp_scope": "Template form, PDF export, injection reminder calendar.",
+   "metric": "An IVF cycle has 2-6 weeks of daily tasks, a strong day-30 loop. Wedge into IVF chains expanding to tier 2/3.",
+   "competitor_gap": "No standard way to compare packages; insurers reject package bills.",
+   "risks": [
+    "ART Act 2021: list only registered clinics.",
+    "PCPNDT: no sex-selection content."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-008",
+   "priority": false,
+   "title": "Couple talk cards and 'good news?' shield",
+   "problem": "Couples trying to conceive face constant 'any good news?' pressure from family and find it hard to talk to each other about it.",
+   "who": "Married couples, mainly women, 1-5 years after marriage.",
+   "evidence": [
+    {
+     "source": "IndusLadies thread: how to answer 'ANY GOOD NEWS?'",
+     "url": "https://indusladies.com/community/threads/any-good-news-how-to-answer-this.62936/page-5",
+     "date": "undated",
+     "verified": false,
+     "note": ""
+    },
+    {
+     "source": "r/TryingForABaby: not wanting to tell family about TTC",
+     "url": "https://www.reddit.com/r/TryingForABaby/comments/14w4z7y/",
+     "date": "2023",
+     "verified": true,
+     "note": "Global subreddit"
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 4,
+    "fit": 4,
+    "total": 64,
+    "estimate": true
+   },
+   "areas": [
+    "Connect",
+    "companion"
+   ],
+   "solution_in_app": [
+    "Connect: weekly talk card sent to both partners (TTC timeline, intimacy, how to handle relatives).",
+    "Connect: one-tap mood share ('hard day, period came').",
+    "Companion: Hindi/English reply scripts for family questions."
+   ],
+   "mvp_scope": "20 cards, weekly push to both partners, mood share.",
+   "metric": "Weekly couple ritual supports day-30 retention; gives doctors a partner-inclusive counselling aid.",
+   "competitor_gap": "No Indian couples-health app found doing this.",
+   "risks": [
+    "Partner features can be used to pressure; keep sharing opt-in."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-009",
+   "priority": false,
+   "title": "Postpartum check-in with partner support tasks",
+   "problem": "New mothers face postpartum depression made worse by strict family customs and in-law conflict, and partners tell them to 'adjust'.",
+   "who": "Mothers 0-6 months after birth, and their partners.",
+   "evidence": [
+    {
+     "source": "r/TwoXIndia: in-law-enforced customs during postpartum depression (content warning: suicide)",
+     "url": "https://www.reddit.com/r/TwoXIndia/comments/1fnjyve/",
+     "date": "2024-09-23",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "r/TwoXIndia: mother-in-law's postpartum presence 'almost ended my marriage'",
+     "url": "https://www.reddit.com/r/TwoXIndia/comments/1p4t4qm/",
+     "date": "2025",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "Indian Journal of Psychiatry: lived experiences of postpartum depression and family support",
+     "url": "https://doi.org/10.4103/indianjpsychiatry.indianjpsychiatry_124_24",
+     "date": "2024",
+     "verified": true,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 3,
+    "intensity": 5,
+    "fit": 3,
+    "total": 45,
+    "estimate": true
+   },
+   "areas": [
+    "Home",
+    "Connect",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Home (postpartum mode): EPDS screen at weeks 2, 6 and 12.",
+    "Doctor dashboard: high scores alert the doctor; app shows Tele-MANAS 14416 (verified on telemanas.mohfw.gov.in, 2026-10-23).",
+    "Connect: partner gets 'what she needs this week' tasks and myth vs fact cards on confinement customs."
+   ],
+   "mvp_scope": "EPDS form, escalation rule, partner task list.",
+   "metric": "Screening cadence covers weeks 0-12; gives OBs a safety-net metric.",
+   "competitor_gap": "Global pregnancy apps don't address Indian family dynamics (assessment, not verified).",
+   "risks": [
+    "Crisis path required; app is not a replacement for care.",
+    "Respect cultural practices; frame as safety, not judgement."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  },
+  {
+   "id": "OPP-010",
+   "priority": false,
+   "title": "Hindi-first voice companion and report explainer",
+   "problem": "Many users don't read long English text; voice in their own language works better.",
+   "who": "Tier-2/3 users, older family members, low-literacy users.",
+   "evidence": [
+    {
+     "source": "X post on a Nagpur clinic: patients ignored texts but listened to Marathi voice notes",
+     "url": "https://x.com/i/status/2041199543233200402",
+     "date": "2026-04-06",
+     "verified": false,
+     "note": ""
+    },
+    {
+     "source": "ABDM newsletter: ABHA supports 13 languages",
+     "url": "https://abdm.gov.in/strapicms/uploads/ABDM_Newsletter_April_to_June_2025_revised_color_a2b033f077.pdf",
+     "date": "2025",
+     "verified": true,
+     "note": ""
+    },
+    {
+     "source": "NITI Frontier Tech: AI-enabled gynaecological care reached 400,000+ women",
+     "url": "https://frontiertech.niti.gov.in/story/ai-enabled-gynaecological-care-expands-access-to-400000-women-across-india/",
+     "date": "not checked",
+     "verified": true,
+     "note": ""
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 3,
+    "fit": 3,
+    "total": 36,
+    "estimate": true
+   },
+   "areas": [
+    "companion",
+    "Home"
+   ],
+   "solution_in_app": [
+    "Companion: voice input and spoken replies in Hindi/Hinglish, then Marathi, Tamil and Bengali.",
+    "Companion: 'Explain my report' (photo of USG or semen report) in simple language with a doctor hand-off.",
+    "Home: language toggle on first open."
+   ],
+   "mvp_scope": "Language toggle, speech-to-text and text-to-speech on the existing companion, report explainer with disclaimer.",
+   "metric": "Removes the literacy barrier for tier-2 clinic patients.",
+   "competitor_gap": "Large global trackers have little or no voice support in Indian languages (not verified).",
+   "risks": [
+    "Report explanations must not become diagnosis.",
+    "AI chat goes to a third-party provider; say so."
+   ],
+   "status": "idea",
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23",
+   "research_doc": "Research 2026-10-23 (internal)"
+  }
+ ]
+}

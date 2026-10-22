@@ -116,3 +116,21 @@ Live numbers (health score, open P0/P1, D30 gaps, deadlines, social coverage, te
 - `platform` (optional, issues): where the issue reproduces, e.g. "web". `platform_note` (optional): free-text context.
 
 - Issue `status` values: `open`, `regressed`, `fixed`, `accepted`. `accepted` = founder decision not to change (with `accepted_on`, `accepted_note`); not counted as an open bug and excluded from the health score (only `open`/`regressed` carry weights).
+
+## data/opportunities.json  (site owner)
+Rendered on `problems.html` ("Problems & solutions"), filterable by area, priority and status.
+```json
+{ "updated":"...", "source_note":"..", "areas":["Home","Care","Connect","doctor dashboard","companion","male dashboard","Settings"],
+  "opportunities":[ {
+    "id":"OPP-001","title":"short","problem":"plain words","who":"who has it",
+    "evidence":[ {"source":"..","url":"https://..","date":"YYYY-MM-DD | YYYY | undated | not checked","verified":true,"note":"optional"} ],  // 2-3 items, no usernames
+    "score":{"frequency":1-5,"intensity":1-5,"fit":1-5,"total":0,"estimate":true},   // total = f*i*fit; always an estimate
+    "areas":["Care"],                       // existing app areas it extends (values from "areas")
+    "solution_in_app":["screen/flow, naming the area"],
+    "mvp_scope":"under 2 weeks","metric":"day-30 retention / clinic pilot / funding effect",
+    "competitor_gap":"..","risks":["regulatory or stigma"],
+    "status":"idea",                        // idea | planned | building | shipped
+    "priority":true,"priority_rank":1,      // top 5 only
+    "first_seen":"YYYY-MM-DD","last_updated":"YYYY-MM-DD" } ] }
+```
+`meta.json` weekly `top_build_next` items may carry `opportunity_id` (e.g. `OPP-001`).
