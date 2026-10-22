@@ -223,6 +223,20 @@
         "ISS-068"
       ],
       "notes": "Fixed for the original trigger: the browser that makes a new recovery code stays signed in (ISS-060 still reproduces via sign-out on another device). Test clinic data appears reset since round 1 (old bookings and threads gone)."
+    },
+    {
+      "date": "2026-10-23",
+      "change": "Build 8218f50 (doctor dashboard round 3)",
+      "detected_by": "doctor dashboard retest, QA3 invite",
+      "fixed": [
+        "ISS-060"
+      ],
+      "broke": [
+        "ISS-069",
+        "ISS-070",
+        "ISS-071"
+      ],
+      "notes": "New: chat photos, doctor profile photo, 30-day summary, multi-use invite. ISS-061 raised to P1. ISS-064 partly better."
     }
   ],
   "updated": "2026-10-22T21:30:00+05:30"

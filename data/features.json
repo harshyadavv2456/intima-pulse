@@ -247,93 +247,108 @@
       "name": "Doctor dashboard and patient-doctor sync",
       "group": "Care",
       "status": "OK",
-      "note": "Build 2d5c174, 22 Oct (QA2 invite): 10 of 15 checks pass, 2 fail (A9 funnel ISS-063, E 375 px ISS-067), 3 partial (A2, A4, A11). Live sync both ways works; Clear all data removes the patient from the doctor side.",
-      "last_verified": "2026-10-22",
+      "note": "Build 8218f50, 22-23 Oct (QA3 invite): items 1-6 mostly pass (speed under 1 s for messages); patient regression mostly blocked by ISS-061 (P1).",
+      "last_verified": "2026-10-23",
       "checks": [
         {
-          "check": "A1 Invite shows recovery code, then dashboard; reusing it fails",
+          "check": "1 Speed: messages and doctor pages",
           "result": "pass",
-          "note": "Code first, then dashboard; second use: \"expired or already used\"."
+          "note": "Normal: patient to doctor median 0.74 s (worst 0.84); doctor to patient 0.67 s (0.90); sender sees own message in about 15 ms (optimistic). Today 1.4 s (3.1), Patients 1.4 s (1.8), Messages 1.2 s (1.9). Fast 3G page numbers inconclusive (throttle did not apply to clean loads)."
         },
         {
-          "check": "A2 Sign out, /doctor redirect, lowercase code, wrong code, rate limit",
+          "check": "2 30-day summary from chat",
+          "result": "pass",
+          "note": "Doctor sees a collapsible \"Health summary shared by the patient · last 30 days\" card. Day count looks low (ISS-071)."
+        },
+        {
+          "check": "2 30-day summary from the Care sheet",
+          "result": "pass",
+          "note": "Booked: \"Sent to your doctor in Messages ✓\". Unbooked temp patient: \"Summary copied — paste it into a message to the clinic.\""
+        },
+        {
+          "check": "3 Photos both ways, tap to enlarge",
+          "result": "pass",
+          "note": "Both arrive in about 1 s and enlarge on tap. Access checks reported privately."
+        },
+        {
+          "check": "4 Doctor profile photo",
+          "result": "pass",
+          "note": "Shows on Clinic, in the patient Messages list and the chat header. Replacement by a patient refused."
+        },
+        {
+          "check": "5 Codes: invite on 2nd device, multi-use, new code, QA2 reuse",
+          "result": "pass",
+          "note": "Second-device sign-in kept the code. Invite used 2 times (not up to 5). New code kills the old one. QA2 reuse: \"expired or already used\"."
+        },
+        {
+          "check": "6 Alerts card",
+          "result": "pass",
+          "note": "Playwright Chromium: \"Alerts are blocked for this site. Allow notifications in your browser's site settings, then reload.\" Real phone push not testable."
+        },
+        {
+          "check": "Sign-in/out, lowercase code, wrong code, rate limit",
+          "result": "pass",
+          "note": "Wrong code: \"That recovery code is not right.\"; \"Too many attempts\" from the 10th try; lowercase code works."
+        },
+        {
+          "check": "Signing out on one device keeps the other",
+          "result": "pass",
+          "note": "ISS-060 closed."
+        },
+        {
+          "check": "Decline",
+          "result": "pass",
+          "note": "Request in Needs reply, Decline with note removes it."
+        },
+        {
+          "check": "Confirm, Visited/No-show",
           "result": "partial",
-          "note": "Sign out via More works, /doctor goes to /doctor/login, lowercase works, wrong code says \"That recovery code is not right.\" Rate limit result reported privately."
+          "note": "Not re-run: the 2nd booking stuck on \"Sending request…\" (ISS-061); Fri visits not passed yet."
         },
         {
-          "check": "A3 New recovery code; old code stops; making browser not stuck",
+          "check": "Broadcast cap",
           "result": "pass",
-          "note": "Old code refused, new works, the browser that made it stays signed in. A sign-out elsewhere still locks other tabs (ISS-060)."
+          "note": "4th in 24 h refused (button disabled, no reason given, ISS-070). Muted-patient delivery not re-tested (cap used)."
         },
         {
-          "check": "A4 Needs reply live; confirm; decline with note; Visited / No-show",
+          "check": "Automation, auto-confirm, working hours, days off",
           "result": "partial",
-          "note": "Request in Needs reply within 5 s; confirm and decline with note work. Visited / No-show not offered: all visits are Fri 23 Oct, not passed yet."
+          "note": "Settings present; toggles not re-run this round. Auto-confirm off, no day off."
         },
         {
-          "check": "A5 Messages live both ways",
-          "result": "pass",
-          "note": "Patient to doctor ~1 s, doctor to patient ~1 s (after browser restart, see ISS-061)."
-        },
-        {
-          "check": "A6 Follow-up template arrives as \"Care note\"",
-          "result": "pass",
-          "note": "\"Keep tracking\" arrived as Care note instantly."
-        },
-        {
-          "check": "A7 Broadcast \"From your clinic\"; 4th in 24 h refused; automation persists",
-          "result": "pass",
-          "note": "3 sent and shown; 4th refused; After-visit check-in stayed on after reload (turned off again)."
-        },
-        {
-          "check": "A8 Automatic confirmation instant; switched off after",
-          "result": "pass",
-          "note": "Booking confirmed instantly; sheet copy still wrong (ISS-062). Switched off."
-        },
-        {
-          "check": "A9 Insights numbers match, funnel included",
+          "check": "Insights funnel",
           "result": "fail",
-          "note": "Cards right (4 requests, 3 confirmed); funnel Booking started/confirmed 0 (ISS-063)."
+          "note": "Funnel still 0 started/confirmed (ISS-063)."
         },
         {
-          "check": "A10 Day off blocks booking; removed after",
-          "result": "pass",
-          "note": "Fri 23 Oct off: patient saw Sat 24 first. Removed and saved."
-        },
-        {
-          "check": "A11 Alerts on this device",
+          "check": "Patient: booking, request-sent line",
           "result": "partial",
-          "note": "Section loads, no errors. Turn on alerts fails in Playwright Chromium 153 (\"This browser could not turn alerts on\": no push service in this build). Send a test not reachable. Known limit: push varies by browser."
+          "note": "\"Request sent — this isn't booked yet\" shown when it works; often stuck (ISS-061)."
         },
         {
-          "check": "375 px key A steps",
+          "check": "Patient: Share defaults, cycle only, mood within 30 s, mute",
+          "result": "partial",
+          "note": "Not re-run (blocked by ISS-061 and time)."
+        },
+        {
+          "check": "Clear all data (temp patient)",
           "result": "pass",
-          "note": "Login, lowercase code, wrong code, sign out via More all work at 375 px."
+          "note": "Temp patient cleared; nothing about it on the doctor side."
         },
         {
-          "check": "B1-B3 Patient sharing and live sync (Meera)",
-          "result": "pass",
-          "note": "Turning cycle + mood on showed instantly on the doctor side; turning mood off removed it at once. Shared values mostly empty because of ISS-066."
-        },
-        {
-          "check": "B4 Clear all data (temporary test patient)",
-          "result": "pass",
-          "note": "Temp patient booked, messaged, shared cycle, then Clear all data: doctor Patients, Messages and Appointments no longer show them."
-        },
-        {
-          "check": "C Access control",
+          "check": "Must not work (access control)",
           "result": "pass",
           "note": "Reported privately; nothing public."
         },
         {
-          "check": "D Honesty",
+          "check": "Honesty",
           "result": "partial",
-          "note": "No \"E2E\" claims; /legal says doctor chat is not end-to-end encrypted; anonymous labels unless name shared. /legal still promises name and contact go to the doctor (ISS-065)."
+          "note": "No \"E2E\"; /legal says doctor chat is not end-to-end encrypted. Notifications say they never show the message text. /legal name claim (ISS-065); chat photos missing (ISS-069)."
         },
         {
-          "check": "E 375 px, Slow 3G, small text",
-          "result": "fail",
-          "note": "Messages list clipped at 375 px (ISS-067). Slow 3G: doctor pages 4.6-6.7 s to content; patient Messages 13.8 s, empty state shown first. 10-11 px labels; \"See all\" and \"Message\" tap targets ~16 px high."
+          "check": "375 px chats",
+          "result": "partial",
+          "note": "Both chats fit; photo and 30-day buttons reachable above the input. Doctor Messages list still clipped (ISS-067); small tap targets (ISS-070)."
         }
       ]
     }

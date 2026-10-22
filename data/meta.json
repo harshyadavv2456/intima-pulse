@@ -1,13 +1,13 @@
 {
   "app_url": "https://www.intimacare.in",
-  "app_version": "5.2.1 label (build 2d5c174, 22 Oct)",
-  "last_test_run": "2026-10-22T23:59:00+05:30",
+  "app_version": "build 8218f50 (22-23 Oct)",
+  "last_test_run": "2026-10-23T00:55:00+05:30",
   "health_score": 81,
   "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
   "summary_today": [
-    "22 Oct ~22:40-23:59 IST: doctor dashboard round 2 (build 2d5c174, QA2 invite, test clinic only): 10/15 pass, 2 fail, 3 partial.",
-    "New: ISS-066 P1 (patients silently moved to new anonymous accounts), ISS-067 P2 (doctor Messages clipped at 375 px), ISS-068 P3 (copy). Still open: ISS-060 (new trigger), 061, 062, 063, 064, 065, 047, 059.",
-    "Health 81: 16 open: 0 P0 / 2 P1 / 10 P2 / 4 P3. 0 companion messages (cap used)."
+    "22-23 Oct ~23:30-00:55 IST: doctor dashboard round 3 (build 8218f50, QA3 invite, test clinic only). Messages under 1 s both ways; 30-day summary, photos, profile photo, codes and alerts card pass.",
+    "Fixed: ISS-060. New: ISS-069 P2, ISS-070 P3, ISS-071 P3. ISS-061 raised to P1 (5 repeats, blocks booking).",
+    "Health 81: 18 open: 0 P0 / 2 P1 / 10 P2 / 6 P3. 0 companion messages (cap used)."
   ],
   "health_score_history": [
     {
@@ -91,6 +91,11 @@
       "date": "2026-10-22",
       "score": 81,
       "note": "Round 2 doctor dashboard retest (build 2d5c174)"
+    },
+    {
+      "date": "2026-10-23",
+      "score": 81,
+      "note": "Round 3 doctor dashboard (build 8218f50)"
     }
   ],
   "weekly": [
@@ -143,7 +148,7 @@
       "narrative": "[Added late on 21 Oct; Sunday 18 Oct run was missed.] Week of 12–18 Oct (testing on 14–17 Oct only). Health 48 → 47. Issues opened: ISS-041 (companion fertility timing for a TTC user, 14 Oct) and ISS-042 (companion claims wearable sync that does not exist, 17 Oct); 0 fixed; app stayed on v5.2.1 with no baseline change all week. How it feels: Meera logs in seconds and gets warm Hinglish help, but the cycle view stays on a textbook 28-day cycle with contradictory ovulation/fertile cards, and the companion mixed sound advice with invented numbers and wrong LH/HPT timing. Pregnancy-mode entry and Kegel sessions looked fine on inspection; devices/wearables turned out to be missing. Arjun's partner link held all week (Connected • Luteal), though Connect still shows a link-code screen while linked; his companion remembered his office hours but kept quoting made-up testosterone/stamina stats. Net: stable and pleasant, no regressions, but no fixes either — the AI accuracy and cycle-prediction issues are now the main drag."
     }
   ],
-  "updated": "2026-10-22T17:47:35.824Z",
+  "updated": "2026-10-22T19:01:15.855Z",
   "run_gaps": [
     {
       "from": "2026-10-08",

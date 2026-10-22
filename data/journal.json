@@ -1943,6 +1943,42 @@
       "result": "broken",
       "screenshot": "shots/2026-10-22qa2_a_connect.jpg",
       "notes": "Both got new anonymous accounts with no notice."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "persona": "doctor",
+      "feature": "doctor-dashboard",
+      "steps": "Round 3 on build 8218f50, QA3 invite (used 2 times), test clinic only: items 1-6, regression, access checks, honesty, 375 px.",
+      "result": "works",
+      "screenshot": "shots/2026-10-22qa3_doc_photo_big.jpg",
+      "notes": "Items 1-6 pass. Funnel still wrong (ISS-063). Auto-confirm off, no day off."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "persona": "temp-patient",
+      "feature": "settings-clear-data",
+      "steps": "At Harsh's request, created a temporary unbooked patient in a fresh browser profile (synthetic data), used Care > Send my 30-day health summary (got copy offer), then Settings > Clear all data.",
+      "result": "works",
+      "screenshot": "shots/2026-10-22qa3_m375_chat.jpg",
+      "notes": "Temporary patient created and cleared at Harsh's request; nothing about it appears on the doctor side."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": "P1",
+      "repro": "",
+      "issue_id": "ISS-061",
+      "persona": "meera",
+      "feature": "care-booking",
+      "steps": "Request a Test Clinic slot, open Messages.",
+      "result": "broken",
+      "screenshot": "shots/2026-10-22qa3_m_booking_stuck.jpg",
+      "notes": "Stuck on \"Sending request…\" and empty Messages; lock:intima-auth held. 5 repeats."
     }
   ],
   "narratives": [
