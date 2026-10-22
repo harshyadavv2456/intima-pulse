@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T13:35:00+05:30",
+ "updated": "2026-10-22T15:45:00+05:30",
  "reviewed_on": "2026-10-22",
  "reviewed_by": "Intima Pulse lean daily",
  "comps_last_checked": "2026-10-21",
@@ -33,7 +33,7 @@
     "label": "ESTIMATE"
    }
   ],
-  "verdict": "Viable as a SMALL, capital-light, doctor-led business; not yet an investable venture. The next 90 days decide it: incorporate, then prove day-30 retention of doctor-referred users. Do not quote any valuation above ₹5 cr to an investor before that data exists."
+  "verdict": "Viable as a small, capital-light, doctor-led business, and the product risk has dropped sharply: after three founder deploys on 21–22 Oct the tester shows 0 P0 / 0 P1 open (health 90, was 46 on 21 Oct morning), with privacy copy, India emergency handling, export and doctor referral fixed in about 24 hours. That fix pace is a real execution signal, but it is not traction. Still no entity, revenue or measured day-30 retention, so valuation ranges are unchanged. The next gate is the clinic pilot: incorporate, then measure D30 of doctor-referred users. Do not quote any valuation above ₹5 cr before that data exists."
  },
  "snapshots": [],
  "changes": [
@@ -91,6 +91,11 @@
    "date": "2026-10-22",
    "by": "Intima Pulse lean daily",
    "change": "reviewed, no change to scenarios, comps or manual_inputs. YC W27 re-verified on official apply page (2 Nov 8pm PT = 3 Nov 08:30 IST); no other deadline within 30 days. Noted Kyros (₹500 TRT video consult) as a men's-consult price reference in social competitors only, not a comp."
+  },
+  {
+   "date": "2026-10-22",
+   "by": "Intima Pulse full refresh (15:45 IST)",
+   "change": "Verdict updated for 0 P0/P1 and the fix pace (health 46 → 90). Valuation numbers unchanged (no traction/entity change). Added founder plans (clinic-first Practo tier-1 pilot after Nov, free HealthKit sync, later device-on-subscription, male dashboard value now), all marked unverified. Added YC W27 (3 Nov 08:30 IST, verified 22 Oct) and pilot milestones."
   }
  ],
  "valuation": {
@@ -399,7 +404,12 @@
    "Post-money valuations were NOT disclosed for any comp round we found. We therefore do not present a 'comp-implied valuation'; our ranges come from generic Indian angel norms (sourced blogs) discounted for Intima's stage. This is an estimate.",
    "Funding ≠ success: Misters raised ₹3.5 cr in 2019 and reportedly shows only ≈₹33 lakh FY25 revenue (unverified). Investors will check traction, not the idea.",
    "Closest practical analogue for a first cheque is the angel/pre-seed norm (₹20–50 L), not the $1–5M institutional rounds above."
-  ]
+  ],
+  "product_quality_note": {
+   "date": "2026-10-22",
+   "label": "tester evidence",
+   "text": "Product quality is no longer the main diligence risk: 0 P0/P1, 49 issues fixed, 9 minor open (5 P2, 4 P3; several web-only per founder). This supports the upper half of each band only once traction exists. No change to the numeric scenarios today."
+  }
  },
  "funding_routes": {
   "intro": "Amounts and odds are ESTIMATES. Deadlines and eligibility live on the Funding page (verified dates there). Never submit applications from this repo; drafts are copy-paste only.",
@@ -1124,6 +1134,13 @@
     "fix": "Sequence: software + clinics → Premium → supplements → hardware",
     "effort": "2027"
    }
+  ],
+  "tester_evidence": [
+   {
+    "date": "2026-10-22",
+    "text": "Execution speed: health score 46 → 90 in ~30 hours across three deploys (21 Oct 23:00 – 22 Oct 14:50 IST); all P1s closed, incl. India-correct emergency handling, honest privacy copy, data export and doctor referral entry.",
+    "label": "tester evidence"
+   }
   ]
  },
  "readiness_checks": [
@@ -1211,6 +1228,13 @@
    "type": "funding"
   },
   {
+   "date": "2026-11-03",
+   "title": "YC W27 on-time deadline (08:30 IST = 2 Nov 8pm PT)",
+   "why": "Verified 22 Oct on ycombinator.com/apply. Optional; fit is low without traction.",
+   "funding_id": "yc",
+   "type": "funding"
+  },
+  {
    "date": "2026-11-15",
    "title": "Target: company incorporated; apply for DPIIT",
    "why": "Unlocks scenario 2.",
@@ -1228,6 +1252,18 @@
    "title": "Nagpur doctor PMF month begins (cohort must start by 1 Dec for a Dec-31 D30 read)",
    "why": "Measure D30 retention of doctor-referred users; log n.",
    "type": "pmf"
+  },
+  {
+   "date": "2026-12-01",
+   "title": "Clinic-first pilot starts (Practo-listed tier-1 clinic), founder plan",
+   "why": "First doctor-referred cohort; measure D30. Founder plan, unverified.",
+   "type": "product"
+  },
+  {
+   "date": "2026-12-15",
+   "title": "Free HealthKit sync in the installed app, founder plan",
+   "why": "Passive data for retention. Founder plan, unverified.",
+   "type": "product"
   },
   {
    "date": "2026-12-31",
@@ -1269,5 +1305,31 @@
  "recheck_rules": [
   "Daily evening run: set reviewed_on, update manual_inputs, add a 'changes' entry if anything moved, re-verify any funding deadline <30 days out.",
   "Sundays: re-check every comp and benchmark source (set checked_on / comps_last_checked / comps_next_due); log new rounds in comps."
- ]
+ ],
+ "founder_plans": {
+  "label": "founder plans (stated 22 Oct 2026, unverified by tester)",
+  "intro": "Context from Harsh. Not verified; treat as intent, not evidence.",
+  "items": [
+   {
+    "plan": "Clinic-first pilot with a Practo-listed tier-1 clinic after November 2026",
+    "tester_view": "Matches the B2B2C thesis. Referral code entry now exists in Care (ISS-035 fixed); attribution, clinic landing and a clinician view are not verified (GAP-019). The pilot should report n and D30 of referred users.",
+    "label": "founder plan, unverified"
+   },
+   {
+    "plan": "Free Apple HealthKit sync",
+    "tester_view": "Devices feature is missing today. Free passive sync is a sensible D30 lever and fills the empty \"Wearable & body\" sharing category (GAP-018). Needs the installed app; the web build cannot read HealthKit.",
+    "label": "founder plan, unverified"
+   },
+   {
+    "plan": "Later: device on subscription",
+    "tester_view": "Hardware raises CDSCO/claims and working-capital exposure; sequence after software retention is proven. Keep the hardware attach input in the business calculator as an ESTIMATE.",
+    "label": "founder plan, unverified"
+   },
+   {
+    "plan": "Male dashboard must deliver value now",
+    "tester_view": "Tester agrees: Arjun's Home is calmer and more honest now, but personalised insights wait for 3 Performance check-ins (GAP-017).",
+    "label": "founder plan, unverified"
+   }
+  ]
+ }
 }

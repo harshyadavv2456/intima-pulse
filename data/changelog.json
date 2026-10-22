@@ -171,7 +171,20 @@
    "fixed": [],
    "broke": [],
    "notes": "No open P0/P1 to re-test. Spot-checked in the daily sessions: ISS-047, ISS-056 and ISS-013 still reproduce. Legal/landing text change not reviewed in detail (lean run). New ISS-057 (P2, next-period mismatch). 0 companion messages (daily cap already used at 01:05)."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "Deploy ~14:50 IST (home HTML 9bed472f39eafb08, 23 JS chunks changed vs the morning snapshot; sw.js unchanged; label v5.2.1)",
+   "detected_by": "baseline.js 14:52 IST; cache-clean E2E",
+   "fixed": [
+    "ISS-048",
+    "ISS-051",
+    "ISS-056",
+    "ISS-057"
+   ],
+   "broke": [],
+   "notes": "New ISS-058 (P3). ISS-052 small-text count back up. Full site refresh: features, gaps re-ranked, companion scores, performance, journal narrative, outlook."
   }
  ],
- "updated": "2026-10-22T04:50:00+05:30"
+ "updated": "2026-10-22T15:45:00+05:30"
 }

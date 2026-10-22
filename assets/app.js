@@ -74,8 +74,8 @@ function sortable(tbl){ // click header to sort
 function head(t,sub,meta){return '<h1>'+t+'</h1><div class="sub">'+(sub||'')+(meta&&meta.updated?' · Updated '+ago(meta.updated):'')+'</div>'}
 function impOrd(i){return {H:0,M:1,L:2}[i]==null?3:{H:0,M:1,L:2}[i]}
 function effOrd(e){return {Easy:0,Medium:1,Hard:2}[e]==null?3:{Easy:0,Medium:1,Hard:2}[e]}
-function quickWins(gaps){return arr(gaps).filter(function(g){return g.quick_win||(g.impact==='H'&&g.effort==='Easy')})}
-function gapCard(g){return '<div class="card"><h3>'+esc(g.title||g.change)+' '+chip('Impact '+g.impact,g.impact==='H'?'good':g.impact==='M'?'OK':'P3')+' '+chip(g.effort,g.effort==='Easy'?'good':g.effort==='Medium'?'OK':'bad')+'</h3><div class="sub">'+esc(g.feature||'')+'</div>'+
+function quickWins(gaps){return arr(gaps).filter(function(g){return g.status!=='done'&&(g.quick_win||(g.impact==='H'&&g.effort==='Easy'&&g.quick_win!==false))}).sort(function(a,b){return (a.rank||99)-(b.rank||99)})}
+function gapCard(g){return '<div class="card"><h3>'+(g.rank?'#'+g.rank+' ':'')+esc(g.title||g.change)+' '+(g.status?chip(g.status,g.status==='done'?'good':'OK')+' ':'')+chip('Impact '+g.impact,g.impact==='H'?'good':g.impact==='M'?'OK':'P3')+' '+chip(g.effort,g.effort==='Easy'?'good':g.effort==='Medium'?'OK':'bad')+'</h3><div class="sub">'+esc(g.feature||'')+'</div>'+
  (g.change?'<div><b>Change:</b> '+esc(g.change)+'</div>':'')+(g.why?'<div><b>Why (evidence):</b> '+esc(g.why)+'</div>':'')+(g.retention_effect?'<div><b>Day-30 retention (doctor-referred):</b> '+esc(g.retention_effect)+'</div>':'')+(arr(g.evidence_issue_ids).length?'<div class="sub">Issues: '+arr(g.evidence_issue_ids).map(esc).join(', ')+'</div>':'')+'</div>'}
 // ---------- pages
 var R={};
@@ -89,7 +89,7 @@ R.index=function(){
     var p0=iss.filter(function(i){return i.severity==='P0'&&i.status!=='fixed'}).length;
     var last=[meta.updated,d[1].updated,ft.updated].filter(Boolean).sort().pop();
     var sum=arr(meta.summary_today);
-    var qw=quickWins(ft.gaps).sort(function(a,b){return sevOrd(0)-0||effOrd(a.effort)-effOrd(b.effort)}).slice(0,5);
+    var qw=quickWins(ft.gaps).slice(0,5);
     var items=arr(fu.items).filter(function(i){return /^\d{4}-\d{2}-\d{2}$/.test(i.deadline||'')&&i.deadline>=TODAY}).sort(function(a,b){return a.deadline<b.deadline?-1:1}).slice(0,3);
     var h=head('Intima Pulse','Daily quality &amp; opportunity monitor for Intima Health · synthetic test data only')+
     '<div class="sub">Last updated: <b>'+ago(last||meta.last_test_run)+'</b>'+(meta.app_version?' · app '+esc(meta.app_version):'')+'</div>'+
@@ -253,7 +253,7 @@ R.outlook=function(){
     out+='<div class="card warn"><b>Last reviewed: '+esc(O.reviewed_on||'never')+'</b> '+(stale?'<span class="chip bad">stale — daily run missed</span>':'<span class="chip good">fresh</span>')+' · comps last checked '+esc(O.comps_last_checked||'never')+' · next weekly re-check due <b>'+esc(O.comps_next_due||'?')+'</b> '+(compsDue?'<span class="chip bad">overdue</span>':'')+'<div class="sub" style="margin:4px 0 0">'+esc(O.disclaimer||'')+'</div></div>';
     out+=secs([['live','Live numbers'],['val','Valuation'],['fund','Funding'],['biz','Business'],['calc','Calculator'],['risk','Compliance'],['pvt','Pvt Ltd'],['inv','Investor view'],['ms','Milestones'],['log','What changed']]);
     // headline
-    out+='<h2 id="verdict">Bottom line</h2><div class="grid">'+arr(O.headline&&O.headline.valuation_lines).map(function(x){return '<div class="card"><h3>'+esc(x.scenario)+'</h3><p style="margin:4px 0">'+esc(x.text)+'</p>'+lbl(x.label)+'</div>'}).join('')+'</div><div class="card"><b>Verdict.</b> '+esc(O.headline&&O.headline.verdict)+'</div>';
+    out+='<h2 id="verdict">Bottom line</h2><div class="grid">'+arr(O.headline&&O.headline.valuation_lines).map(function(x){return '<div class="card"><h3>'+esc(x.scenario)+'</h3><p style="margin:4px 0">'+esc(x.text)+'</p>'+lbl(x.label)+'</div>'}).join('')+'</div><div class="card"><b>Verdict.</b> '+esc(O.headline&&O.headline.verdict)+'</div>'+(O.founder_plans?'<h2>Founder plans <span class="sub">('+esc(O.founder_plans.label)+')</span></h2><div class="grid">'+arr(O.founder_plans.items).map(function(x){return '<div class="card"><h3>'+esc(x.plan)+'</h3><p>'+esc(x.tester_view)+'</p><div>'+chip(x.label,'P3')+'</div></div>'}).join('')+'</div>':'')+(O.valuation&&O.valuation.product_quality_note?'<div class="card"><b>Product quality ('+esc(O.valuation.product_quality_note.date)+'):</b> '+esc(O.valuation.product_quality_note.text)+'</div>':'');
     // live
     out+='<h2 id="live">📡 Live numbers (computed from other data files)</h2><div class="grid">'+
      '<div class="card"><h3>Product health score</h3>'+(score!=null?'<div class="big">'+esc(score)+'<span style="font-size:18px;color:var(--mut)">/100</span></div>':'<div class="empty">pending — no test run yet</div>')+'<div class="sub">from meta.json</div></div>'+

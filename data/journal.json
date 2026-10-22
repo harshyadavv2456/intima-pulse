@@ -1847,6 +1847,30 @@
    "screenshot": "",
    "issue_id": "",
    "notes": "On-time deadline 2 Nov 8pm PT (= 3 Nov 08:30 IST); decisions by 11 Dec. Nothing submitted."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "meera",
+   "feature": "e2e",
+   "steps": "14:50 build, cache-clean E2E: Home cycle cards, calendar, logging sheets, Wellness/Kegel, Care (stopped before Request Appointment), Connect, Settings (theme, PIN private), Chat UI only, offline, slow 3G.",
+   "result": "works",
+   "severity": "P3",
+   "repro": "ISS-058",
+   "screenshot": "shots/2026-10-22pm_meera_home.jpg",
+   "issue_id": "ISS-057",
+   "notes": "Next period now ~7 days (Oct 29), ovulation est. Oct 15. Calendar shows a fertile band consistent with the cards. Map chip visible but covers the pin."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "arjun",
+   "feature": "e2e",
+   "steps": "14:50 build: Home (new name prompt, morning check, Decline Phase advice), Insights, Connect partner view, Care, Settings, Chat UI only.",
+   "result": "works",
+   "severity": null,
+   "repro": "",
+   "screenshot": "shots/2026-10-22pm_arjun_insights.jpg",
+   "issue_id": "ISS-048",
+   "notes": "Insights unlock copy now clear. Partner view grammar fixed. Day-count still 1/14 (ISS-047)."
   }
  ],
  "narratives": [
@@ -1854,7 +1878,13 @@
    "week_start": "2026-09-28",
    "meera": "Meera (27, Nagpur, irregular cycles, TTC in ~6 months) gets a dashboard in 35 seconds, which feels great. But it tells her \"day 4 of 28\" and a textbook ovulation date, contradicting what she told it. The AI is kind and knows her cycle, yet answers her Hinglish in Hindi script, and the settings page says everything stays on her phone, which is not true. She links with Arjun and enjoys controlling what he sees. Twice her app seemed to forget the link. [Added 7 Oct, late, from the real 3 Oct session:] After the 2 Oct gap her identity and partner link held; the app moved her to cycle day 6 but the irregular-cycle problem and conflicting fertile-window copy remain, the Connect page shows a link-code screen even though the link is live, and the AI remembers her context while still inventing sleep stats.",
    "arjun": "Arjun (30, Pune, long hours, stress, low energy) answers four questions and sees a testosterone card within seconds. After one 5-hour-sleep day it announces \"Readiness LOW\" and \"Testosterone 3, declining\", which worries him more than it helps. The companion speaks his Hinglish and uses his sleep data, then quotes the US emergency number when he describes chest pain. There are no Pune doctors in Care. [Added 7 Oct, late, from the real 3 Oct session:] His identity held and Home showed Meera's live day-6 card; with two days logged Insights still say Readiness LOW with medical-sounding claims, Care still has no Pune doctors, and the companion remembered Pune but invented percentages (no red-flag test that day)."
+  },
+  {
+   "week_start": "2026-10-19",
+   "meera": "(Partial week, written 22 Oct.) After three founder deploys in 24 hours, Meera's app is honest and calmer: the privacy copy matches reality, she can export her data, the companion sends her to 112 and warns about ectopic pregnancy instead of suggesting home remedies, and her Home finally says her next period is about a week away rather than \"~0 days\". Her labs live on Home with range flags. Remaining friction: the partner card thinks she logged once this fortnight, and the companion still forgets what she said last week.",
+   "arjun": "Arjun now gets Roman Hinglish, 112 for chest pain, and answers grounded in his own labs and snoring logs. His Home is less alarming, with clear unlock copy, but still gives him little to do on day one besides logging; the Performance insights wait for three check-ins.",
+   "note": "Narrative for 19–25 Oct based on 21–22 Oct sessions only."
   }
  ],
- "updated": "2026-10-22T13:30:00+05:30"
+ "updated": "2026-10-22T15:45:00+05:30"
 }

@@ -244,7 +244,7 @@
    "expected": "Counter matches product limit.",
    "actual": "Shows \"x/30 today\". || 2026-10-07: counter still \"0/30 today\" → \"4/30 today\" for both personas. [14 Oct] Counter still \"4/30 today\".",
    "screenshot": "shots/2026-10-01_meera_chat.png",
-   "retest_note": "04:15 cache-clean: counter \"5/30 today\".",
+   "retest_note": "14:50 cache-clean: \"5/30 today\".",
    "cache_clean_recheck": "Cache-clean 02:30 IST: counter still \"5/30 today\" (both personas).",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
@@ -266,7 +266,8 @@
    "expected": "Wider prediction range / \"irregular\" messaging, advice to log 3 cycles.",
    "actual": "Cycle Day 6 of 28 still; irregular (31-38d) chosen at onboarding never reflected on home. Next period/ovulation estimates use textbook 28d. || 2026-10-07: \"CYCLE DAY 10 of 28\"; next period \"~11 days Oct 18 (estimate — cycle varies)\"; irregular 31-38 d still not reflected in predictions. [14 Oct] Still a textbook 28-day cycle (Day 17 of 28, next period Oct 18) despite Irregular. [15 Oct] Still textbook 28-day (Day 18 of 28, next period Oct 18) despite Irregular. | 21 Oct: Day 24 of 28 Luteal while \"Next period Oct 18\" is already 3 days past; only a \"Period today?\" prompt, no late/irregular messaging.",
    "screenshot": "shots/2026-10-01_meera_dash_full.jpg",
-   "fix_evidence": "Cycle card: ovulation \"Not predictable from the calendar on an irregular cycle\", \"estimate - cycle varies\"."
+   "fix_evidence": "Cycle card: ovulation \"Not predictable from the calendar on an irregular cycle\", \"estimate - cycle varies\".",
+   "watch_note": "22 Oct 14:50: Home now estimates ovulation (~Oct 15) and paints a fertile band on the calendar from a textbook cycle, labelled \"estimate — cycle varies\". Consistent with the cards; watch that irregular users are not given false precision."
   },
   {
    "id": "ISS-015",
@@ -303,7 +304,7 @@
    "expected": "Selection persists and is visible.",
    "actual": "After Midday Negative retap + reload: Negative button stays muted (bg-muted), copy still 'no ovulation signal has been logged yet'. || 2026-10-07: selection DOES persist after reload (button class bg-muted vs bg-muted/50 for unselected) but the highlight is almost invisible, and the card still says \"no ovulation signal has been logged yet\" with Negative selected. Partial: persistence OK, visibility/copy not.",
    "screenshot": "shots/2026-10-01_meera_ttc_filled.jpg",
-   "retest_note": "Not re-tested 04:15."
+   "retest_note": "14:50: automation could not locate the Negative ovulation-test button in the Fertility card (layout changed). Not verified."
   },
   {
    "id": "ISS-017",
@@ -468,7 +469,7 @@
    ],
    "expected": "< 5 s to first content on 3G (target audience on mid-range Android).",
    "actual": "Home 9.7 s load (LCP 10.5 s); chat 10.7 s; care 9.7 s. Fast 3G ~2.7 s; normal network 0.5-1.0 s (LCP 0.7-1.8 s). || 2026-10-07: slow-3G landing load 10.4 s, LCP 11.2 s (normal: load 1.5 s, LCP 2.3 s).",
-   "retest_note": "04:15: slow 3G home 9.2 s, LCP 10.1 s.",
+   "retest_note": "14:50: slow 3G home 9.2 s, LCP 10.0 s.",
    "cache_clean_recheck": "Cache-clean (fresh context, SW+cache cleared): slow 3G home 9.3 s, LCP 10.1 s.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
@@ -874,7 +875,7 @@
    "expected": "Count matching her logs.",
    "actual": "\"Early days — 1 logged day so far… She has 1 day in the last month\"; Meera's Home shows 9/30 days logged.",
    "screenshot": "",
-   "retest_note": "04:15 cache-clean: Connect still \"1/14 days logged… Only 1 day logged in the last fortnight\" (Meera 9/30).",
+   "retest_note": "14:50 cache-clean: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" (Meera 9/30).",
    "cache_clean_recheck": "Cache-clean, both personas: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30 logged.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
@@ -887,13 +888,14 @@
    "severity": "P3",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Arjun Home → Insights; ask companion about energy.",
    "expected": "Consistent readiness, insights unlocked after 9 days.",
    "actual": "Insights: \"Performance Readiness LOW\", \"Track at least 3 days to unlock personalized insights\", \"9 Days Tracked\". Companion: \"Performance readiness aaj MODERATE\".",
    "screenshot": "",
-   "retest_note": "Not re-tested 04:15."
+   "retest_note": "Not re-tested 04:15.",
+   "fix_evidence": "Arjun Insights now explain \"Do the Performance check-in on 3 more days (0 of 3 so far)… everyday mood, energy and sleep logs are tracked separately\". The \"Track at least 3 days\" vs 9-days contradiction is gone. Readiness-vs-companion comparison not re-run (0 companion messages)."
   },
   {
    "id": "ISS-049",
@@ -941,8 +943,8 @@
    "severity": "P3",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Open Care at 393 px width.",
    "expected": "Label fully visible.",
    "actual": "Label cut off as \"5 doctors l…\" against the right edge of the map. Arjun Home also has an element extending to x=441 on a 390 px viewport.",
@@ -950,7 +952,8 @@
    "cache_clean_recheck": "Cache-clean screenshots, both personas: \"5 doctors l…\" still cut off under the zoom control at the map edge.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
-   "retest_note": "04:15 screenshots: \"5 doctors lis…\" still clipped under the zoom control (both)."
+   "retest_note": "04:15 screenshots: \"5 doctors lis…\" still clipped under the zoom control (both).",
+   "fix_evidence": "14:50 build, cache-clean: \"5 doctors listed\" chip now top-left of the map, fully visible on both personas."
   },
   {
    "id": "ISS-052",
@@ -969,7 +972,7 @@
    "cache_clean_recheck": "Cache-clean Home: 111 (Meera) / 119 (Arjun) text elements under 11 px; 11–12 buttons under 32 px.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
-   "retest_note": "Improved: text under 11 px on Home down from 111/119 to 18 (Meera) / 27 (Arjun). Still 11–12 buttons under 32 px."
+   "retest_note": "14:50: text under 11 px back up to 120 (Meera) / 128 (Arjun) Home elements (was 18/27 at 04:15). 11–12 buttons under 32 px."
   },
   {
    "id": "ISS-053",
@@ -1036,13 +1039,14 @@
    "severity": "P3",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "platform": "web",
    "steps": "Arjun opens Connect to view Meera's cycle.",
    "expected": "\"…to their next period\".",
    "actual": "\"Roughly 7 days to them next period, though their cycle varies\".",
-   "screenshot": "shots/2026-10-22r4_arjun_connect.jpg"
+   "screenshot": "shots/2026-10-22r4_arjun_connect.jpg",
+   "fix_evidence": "Arjun Connect: \"Roughly 7 days to their next period\"."
   },
   {
    "id": "ISS-057",
@@ -1052,13 +1056,30 @@
    "severity": "P2",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "platform": "web",
    "steps": "Meera (irregular 31–38 d) opens Home on 22 Oct; Arjun opens Connect the same day.",
    "expected": "One consistent next-period estimate. For day 22 of an irregular 31–38 day cycle, a window about 9–16 days away (or 'late' wording if the estimate has passed).",
    "actual": "Meera: 'Next period in ~0 days · Oct 21 (estimate — cycle varies)' (a date already past) next to 'Cycle day 22 of ~28'. Arjun: 'Next period: Oct 21 – Nov 6' and 'Roughly 7 days'. Web build finding (live site in Chrome).",
-   "screenshot": "shots/2026-10-22d_meera_ivf.jpg"
+   "screenshot": "shots/2026-10-22d_meera_ivf.jpg",
+   "fix_evidence": "Meera Home: \"Next period in ~7 days, Oct 29 (estimate — cycle varies)\"; ovulation \"Est. around Oct 15, passed\"."
+  },
+  {
+   "id": "ISS-058",
+   "title": "Care map: \"5 doctors listed\" chip now covers the location pin",
+   "feature": "care-doctors",
+   "persona": "both",
+   "severity": "P3",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null,
+   "status": "open",
+   "platform": "web",
+   "steps": "Open Care (393/390 px).",
+   "expected": "Chip and the pin both visible.",
+   "actual": "Chip moved top-left (fixing ISS-051) and now sits over the purple location pin.",
+   "screenshot": "shots/2026-10-22pm_care_map.jpg"
   }
  ],
  "updated": "2026-10-21T20:30:00+05:30"
