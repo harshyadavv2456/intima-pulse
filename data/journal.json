@@ -2097,6 +2097,30 @@
       "steps": "Cancelled orphan DE11 appointment (Tue 27 Oct 10:30) with the new Cancel button. Dragged 368E 12pm down: Move dialog opened at 12:30, cancelled.",
       "result": "works",
       "notes": "Orphan DE11 now has no appointment."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "shots/2026-10-23r5b_t_after_req.jpg",
+      "persona": "temp-patient",
+      "feature": "care-booking",
+      "steps": "New build: Care > Test Clinic, new day-chip picker (Today 9 slots, then 12/day to Thu 5 Nov), Mon 26 10:00 AM, Request Appointment.",
+      "result": "partial",
+      "notes": "Now asks for email verification (one-time code) before booking. Not done: no approved test email. Privacy page explains the email use."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "",
+      "persona": "temp-patient",
+      "feature": "settings",
+      "steps": "Settings > Clear All Data > Clear data on temp patient 1DC0.",
+      "result": "works",
+      "notes": "Temp patient 1DC0 cleared; app back on the welcome screen."
     }
   ],
   "narratives": [

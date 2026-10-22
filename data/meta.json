@@ -1,15 +1,15 @@
 {
   "app_url": "https://www.intimacare.in",
-  "app_version": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
-  "last_test_run": "2026-10-23T04:00:00+05:30",
-  "health_score": 81,
+  "app_version": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)",
+  "last_test_run": "2026-10-23",
+  "health_score": 80,
   "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
   "summary_today": [
-    "23 Oct ~01:30-04:00 IST: full round 4 on production 4500a22 (QA3 code, test clinic only, temp patients cleared).",
-    "Fixed 13: ISS-016, 046, 063, 064, 065, 067, 068, 069, 070, 071 and more; 8 of 11 announced changes pass.",
-    "Still P1: ISS-061 tab hang (~7 times) and ISS-066 (Meera and Arjun moved to new accounts, partner data gone).",
-    "New: ISS-072..080 (no cancel for appointments, summary \"[object Object]\", companion counter errors, live-update gaps).",
-    "Health 81: 17 open (0 P0 / 2 P1 / 10 P2 / 5 P3). Slow 3G still 13-14.5 s."
+    "23 Oct ~04:00-04:30 IST: round 5 on two live builds (04:00, then CSS-only redeploy ~04:18). Test clinic only; temp patient cleared.",
+    "Fixed: ISS-078 (clinic can cancel), 073, 074, 079. Drag-to-move and dark mode work.",
+    "Still P1: ISS-061 tab hang (seen again at 04:23) and ISS-082 (booking 503 on the 04:00 build).",
+    "New: booking now needs a one-time email check first; ISS-081 Symptoms Done button under the nav.",
+    "Health 80: 15 open (0 P0 / 3 P1 / 9 P2 / 3 P3). Slow 3G still 13-14.6 s."
   ],
   "health_score_history": [
     {
@@ -103,6 +103,11 @@
       "date": "2026-10-23",
       "score": 81,
       "note": "Round 4 full e2e (build 4500a22)"
+    },
+    {
+      "date": "2026-10-23",
+      "score": 80,
+      "note": "Round 5 e2e (builds 04:00 and 04:18 IST)"
     }
   ],
   "weekly": [
@@ -187,7 +192,7 @@
       ]
     }
   ],
-  "updated": "2026-10-22T21:56:18.735Z",
+  "updated": "2026-10-22T22:58:36.187Z",
   "run_gaps": [
     {
       "from": "2026-10-08",

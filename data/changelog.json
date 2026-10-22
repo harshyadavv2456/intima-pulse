@@ -266,6 +266,14 @@
         "ISS-080"
       ],
       "notes": "ISS-047 regressed (partner data missing after account swaps). ISS-060 status corrected to fixed. ISS-061/066 still open."
+    },
+    {
+      "date": "2026-10-23",
+      "change": "deploy ~04:18 IST",
+      "detected_by": "dashboard HTML etag cdffc9a5 -> d8855300, chunk list ba5723a5 -> 242148a0",
+      "fixed": [],
+      "broke": [],
+      "notes": "Only CSS chunk changed (e11ea84b -> b9e3091d); JS same. New: email verification before first booking, day-chip slot picker."
     }
   ],
   "updated": "2026-10-22T21:30:00+05:30"

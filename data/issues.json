@@ -1251,8 +1251,8 @@
       "first_seen": "2026-10-22",
       "last_verified": "2026-10-23",
       "fixed_on": null,
-      "retest_note": "Build 4500a22: Still fails, often: Meera, Arjun and a brand-new temp patient all hit it within minutes. Tab holds lock:intima-auth, no requests go out, Request Appointment does nothing (no \"Sending\", no 15 s timeout), Messages shows \"No conversations yet\". The new \"Could not load your messages · Retry\" state did appear once for Arjun and Retry worked. Closing the tab clears it. Count this round: about 7 hangs in about 75 minutes across three patients, including twice on the temp patient within 10 minutes of each other; once it survived 3 new tabs and cleared only after all tabs were closed for 30 s.",
-      "build": "4500a22"
+      "retest_note": "Build live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a): Still happens. Hang monitor on Arjun 04:03-04:24 IST: 7 checks fine on the 04:00 build, then 1 lock (intima-auth held, chats empty) at 04:23 just after the 04:18 deploy. Meera tab left open 23 min had no lock and reloaded fine.",
+      "build": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)"
     },
     {
       "id": "ISS-062",
@@ -1359,8 +1359,8 @@
       "expected": "The patient stays on their account, or is clearly told the session ended and how to restore it.",
       "actual": "Both personas were given brand-new anonymous accounts without any notice (doctor sees \"Patient 0AC3\"/\"Patient 368E\" instead of 45DB/B92F). Partner view: \"Partner Connected\" but \"Your partner hasn't logged health data yet\". Restore with the backup code kept the new id. Earlier doctor history was gone. The trigger may be an expired refresh token in the test browser, but the silent switch is the bug.",
       "screenshot": "shots/2026-10-22qa2_a_connect.jpg",
-      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): At start (04:02 IST) Meera 31A6 (prev 0AC3), Arjun DF0B (prev 368E). The reset card showed again on Arjun after earlier \"Got it\".",
-      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)"
+      "retest_note": "Build live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a): At 04:26 IST Meera still 31A6, Arjun DF0B, same as start of round. No further swaps.",
+      "build": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)"
     },
     {
       "persona": "doctor",
@@ -1662,7 +1662,7 @@
       "fixed_on": null,
       "status": "open",
       "platform": "web",
-      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
+      "build": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)",
       "id": "ISS-082",
       "title": "Booking request fails with 503 and the patient sees nothing",
       "feature": "care-booking",
@@ -1673,7 +1673,8 @@
       ],
       "expected": "Request sent, or a visible error.",
       "actual": "POST /api/care/bookings returns 503 {\"error\":\"We couldn't confirm this doctor's calendar just now. Please try again in a minute.\"}. Nothing is shown; the button just stays. The clinic still shows Google Calendar as Connected. Blocks every new booking at this clinic.",
-      "screenshot": "shots/2026-10-23r5_t_req.jpg"
+      "screenshot": "shots/2026-10-23r5b_t_after_req.jpg",
+      "retest_note": "Build live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a): Not reached on the new build: a one-time email verification step (\"Booking is free, so we confirm you are a real person first\") now comes before the request, so no booking POST was sent. Last seen 503 on the 04:00 build."
     },
     {
       "persona": "patient",
