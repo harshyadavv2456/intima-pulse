@@ -1,217 +1,229 @@
 {
- "entries": [
-  {
-   "date": "2026-10-01",
-   "change": "baseline",
-   "detected_by": "tester baseline.js snapshot",
-   "fixed": [],
-   "broke": [],
-   "notes": "App version 5.2.1 (Settings). Home HTML hash 1fa371086269f9f2, 23 JS chunks, sw.js d9738e04fd7c5e61, landing text 5f13f52657266417, legal text 02178203a3d0d9d3. Full hashes in tester/baseline/baseline.json (private)."
-  },
-  {
-   "date": "2026-10-03",
-   "change": "No app change detected vs baseline 5.2.1 (evening rebuild)",
-   "detected_by": "evening rebuild cross-check (midday sessions + morning scan)",
-   "fixed": [],
-   "broke": [],
-   "notes": "ISS-036 logged midday (Connect UI). Identities stable. Observation week."
-  },
-  {
-   "date": "2026-10-07",
-   "change": "No app change detected vs baseline (v5.2.1)",
-   "detected_by": "baseline.js (watchdog catch-up 21:3x IST) + Settings version",
-   "fixed": [],
-   "broke": [],
-   "notes": "Behaviour differences seen without a code change: ISS-016 selection now persists (faint), Arjun Connect showed Partner Connected; companion behaviour varies run to run. New issues ISS-037..040 found by deeper probing, not by an app change."
-  },
-  {
-   "date": "2026-10-14",
-   "change": "No app change detected vs baseline (v5.2.1)",
-   "detected_by": "baseline.js (catch-up ~18:47 IST) + Settings version",
-   "fixed": [],
-   "broke": [],
-   "notes": "Behaviour differences without a code change: companion now escalates heavy bleeding to urgent care (ISS-037 improved); partner phase now consistent (ISS-038 partly); no Connect link-code view (ISS-036) or Reconnecting banner (ISS-019) seen. 8–13 Oct not observed (gap)."
-  },
-  {
-   "date": "2026-10-15",
-   "change": "No app change detected vs baseline (v5.2.1)",
-   "detected_by": "baseline.js (~13:04 IST)",
-   "fixed": [],
-   "broke": [],
-   "notes": "Lean Thursday run. Behaviour: ISS-036 link-code UI back on Arjun Connect; ISS-039 companion memory improved for office hours. Pregnancy-mode form re-verified (cancel path)."
-  },
-  {
-   "date": "2026-10-16",
-   "change": "No app change detected vs baseline (v5.2.1)",
-   "detected_by": "baseline.js (~13:05 IST)",
-   "fixed": [],
-   "broke": [],
-   "notes": "Lean Friday run. Deep-dive kegel OK. ISS-036 still on Arjun Connect (link-code while Home Connected). Social skipped (Fri)."
-  },
-  {
-   "date": "2026-10-17",
-   "change": "No app change detected vs baseline (v5.2.1)",
-   "detected_by": "baseline.js (~13:04 IST)",
-   "fixed": [],
-   "broke": [],
-   "notes": "Lean Saturday run. Deep-dive devices: no device/wearable UI (status missing); new ISS-042 (companion claims device sync). ISS-036 and ISS-041 reproduced. Social skipped (Sat)."
-  },
-  {
-   "date": "2026-10-21",
-   "change": "No app change detected vs baseline (v5.2.1)",
-   "detected_by": "baseline.js (~19:53 IST)",
-   "fixed": [],
-   "broke": [],
-   "notes": "Lean evening catch-up after the 18–20 Oct gap. No change, so open P0/P1 were not fully re-tested. New ISS-043 (P2)."
-  },
-  {
-   "date": "2026-10-21",
-   "change": "App deploy detected (Settings still shows v5.2.1, but home HTML, sw.js, 10 JS chunks, landing and legal text changed)",
-   "detected_by": "baseline.js re-run ~23:30 IST after the founder said changes had shipped",
-   "fixed": [
-    "ISS-002",
-    "ISS-003",
-    "ISS-004",
-    "ISS-005",
-    "ISS-006",
-    "ISS-007",
-    "ISS-008",
-    "ISS-014",
-    "ISS-015",
-    "ISS-022",
-    "ISS-027",
-    "ISS-033",
-    "ISS-037",
-    "ISS-042"
-   ],
-   "broke": [
-    "ISS-044"
-   ],
-   "notes": "Privacy copy (GAP-001) rewritten truthfully, export added, India emergency numbers in companion, irregular-cycle copy, lab range flags. ISS-041/043 could not be verified (ISS-044)."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "Deep re-test of every issue after the founder's second \"fixed everything\" message (same build as the 21 Oct deploy; label v5.2.1)",
-   "detected_by": "full sweep 21 Oct 23:40 IST – 22 Oct 00:00 IST",
-   "fixed": [
-    "ISS-009",
-    "ISS-011",
-    "ISS-017",
-    "ISS-019",
-    "ISS-021",
-    "ISS-023",
-    "ISS-024",
-    "ISS-028",
-    "ISS-029",
-    "ISS-030",
-    "ISS-031",
-    "ISS-032",
-    "ISS-036",
-    "ISS-038",
-    "ISS-040",
-    "ISS-043",
-    "ISS-044"
-   ],
-   "broke": [],
-   "notes": "New ISS-045 (labs only on the male Home). ISS-041 improved, still open. ISS-020/026/025/034/039/010 still reproduce."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "New deploy ~01:00 IST (home HTML 762b3397a4e7681b, 11 JS chunks changed, sw.js unchanged since 21 Oct; label still v5.2.1)",
-   "detected_by": "baseline.js 01:05 IST",
-   "fixed": [
-    "ISS-001",
-    "ISS-010",
-    "ISS-012",
-    "ISS-020",
-    "ISS-026",
-    "ISS-034",
-    "ISS-041",
-    "ISS-045"
-   ],
-   "broke": [],
-   "notes": "Full E2E both personas. New ISS-046/047/048. No regressions in the 31 previously fixed."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "UI redesign deploy ~02:00 IST (home HTML 0c79f264cad25d98, 11 JS chunks, sw.js unchanged; label v5.2.1)",
-   "detected_by": "baseline.js 01:58 IST",
-   "fixed": [
-    "ISS-035"
-   ],
-   "broke": [],
-   "notes": "New look (INTIMA wordmark, week strip, card layout). UI review logged ISS-049–052 (UI) and ISS-053–055. No regressions in the 39 fixed. 0 companion messages sent."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "Cache-clean re-check (~02:30 IST) of ISS-013, 025, 047, 049–055 after founder reported them working",
-   "detected_by": "Playwright with SW unregistered, Cache Storage + HTTP cache cleared, cache disabled; localStorage kept",
-   "fixed": [],
-   "broke": [],
-   "notes": "All loaded JS chunks matched the live build (7/7 Meera, 12/12 Arjun). All 10 still reproduce. ISS-049 narrowed: header theme button works, Settings switch does not. Earlier runs also used fresh contexts, so stale caches were unlikely."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "Deploy ~04:00 IST (home HTML 76f67bb6cc94a5c5, 11 JS chunks; sw.js unchanged; label v5.2.1)",
-   "detected_by": "baseline.js 04:14 IST; cache-clean E2E (SW unregistered, caches cleared, all chunks matched live)",
-   "fixed": [
-    "ISS-049",
-    "ISS-050",
-    "ISS-053",
-    "ISS-054",
-    "ISS-055"
-   ],
-   "broke": [],
-   "notes": "New ISS-056 (P3 grammar). ISS-052 improved. No regressions in the 40 fixed. 0 companion messages."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "New deploy after the 04:14 IST check (home HTML 5569569b1aafdb31, sw.js changed, 11 JS chunks swapped, landing + legal text changed; label still v5.2.1)",
-   "detected_by": "baseline.js 13:07 IST (lean daily); baseline re-written",
-   "fixed": [],
-   "broke": [],
-   "notes": "No open P0/P1 to re-test. Spot-checked in the daily sessions: ISS-047, ISS-056 and ISS-013 still reproduce. Legal/landing text change not reviewed in detail (lean run). New ISS-057 (P2, next-period mismatch). 0 companion messages (daily cap already used at 01:05)."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "Deploy ~14:50 IST (home HTML 9bed472f39eafb08, 23 JS chunks changed vs the morning snapshot; sw.js unchanged; label v5.2.1)",
-   "detected_by": "baseline.js 14:52 IST; cache-clean E2E",
-   "fixed": [
-    "ISS-048",
-    "ISS-051",
-    "ISS-056",
-    "ISS-057"
-   ],
-   "broke": [],
-   "notes": "New ISS-058 (P3). ISS-052 small-text count back up. Full site refresh: features, gaps re-ranked, companion scores, performance, journal narrative, outlook."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "Deploy 7f801b9 (~15:20 IST; home HTML 07691aa6c9b2a84d, 24 chunks)",
-   "detected_by": "baseline.js 15:22 IST; cache-clean verification",
-   "fixed": [
-    "ISS-047",
-    "ISS-058"
-   ],
-   "broke": [],
-   "notes": "Settings lock and backup code hardening (verified). New ISS-059. ISS-013 and ISS-052 marked accepted (founder decision 22 Oct 2026) and excluded from the score."
-  },
-  {
-   "date": "2026-10-22",
-   "change": "Deploy 6854e59: new doctor dashboard (/doctor: invite, recovery code, appointments, messages, patients, broadcasts, automations, insights, clinic) plus patient Care Messages, Share and broadcast mute",
-   "detected_by": "Founder note; cache-clean verification 20:37-21:30 IST",
-   "fixed": [],
-   "broke": [
-    "ISS-047",
-    "ISS-060",
-    "ISS-061",
-    "ISS-062",
-    "ISS-063",
-    "ISS-064",
-    "ISS-065"
-   ],
-   "notes": "Test clinic only. Live sync in both directions works. ISS-047 regressed."
-  }
- ],
- "updated": "2026-10-22T21:30:00+05:30"
+  "entries": [
+    {
+      "date": "2026-10-01",
+      "change": "baseline",
+      "detected_by": "tester baseline.js snapshot",
+      "fixed": [],
+      "broke": [],
+      "notes": "App version 5.2.1 (Settings). Home HTML hash 1fa371086269f9f2, 23 JS chunks, sw.js d9738e04fd7c5e61, landing text 5f13f52657266417, legal text 02178203a3d0d9d3. Full hashes in tester/baseline/baseline.json (private)."
+    },
+    {
+      "date": "2026-10-03",
+      "change": "No app change detected vs baseline 5.2.1 (evening rebuild)",
+      "detected_by": "evening rebuild cross-check (midday sessions + morning scan)",
+      "fixed": [],
+      "broke": [],
+      "notes": "ISS-036 logged midday (Connect UI). Identities stable. Observation week."
+    },
+    {
+      "date": "2026-10-07",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (watchdog catch-up 21:3x IST) + Settings version",
+      "fixed": [],
+      "broke": [],
+      "notes": "Behaviour differences seen without a code change: ISS-016 selection now persists (faint), Arjun Connect showed Partner Connected; companion behaviour varies run to run. New issues ISS-037..040 found by deeper probing, not by an app change."
+    },
+    {
+      "date": "2026-10-14",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (catch-up ~18:47 IST) + Settings version",
+      "fixed": [],
+      "broke": [],
+      "notes": "Behaviour differences without a code change: companion now escalates heavy bleeding to urgent care (ISS-037 improved); partner phase now consistent (ISS-038 partly); no Connect link-code view (ISS-036) or Reconnecting banner (ISS-019) seen. 8–13 Oct not observed (gap)."
+    },
+    {
+      "date": "2026-10-15",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (~13:04 IST)",
+      "fixed": [],
+      "broke": [],
+      "notes": "Lean Thursday run. Behaviour: ISS-036 link-code UI back on Arjun Connect; ISS-039 companion memory improved for office hours. Pregnancy-mode form re-verified (cancel path)."
+    },
+    {
+      "date": "2026-10-16",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (~13:05 IST)",
+      "fixed": [],
+      "broke": [],
+      "notes": "Lean Friday run. Deep-dive kegel OK. ISS-036 still on Arjun Connect (link-code while Home Connected). Social skipped (Fri)."
+    },
+    {
+      "date": "2026-10-17",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (~13:04 IST)",
+      "fixed": [],
+      "broke": [],
+      "notes": "Lean Saturday run. Deep-dive devices: no device/wearable UI (status missing); new ISS-042 (companion claims device sync). ISS-036 and ISS-041 reproduced. Social skipped (Sat)."
+    },
+    {
+      "date": "2026-10-21",
+      "change": "No app change detected vs baseline (v5.2.1)",
+      "detected_by": "baseline.js (~19:53 IST)",
+      "fixed": [],
+      "broke": [],
+      "notes": "Lean evening catch-up after the 18–20 Oct gap. No change, so open P0/P1 were not fully re-tested. New ISS-043 (P2)."
+    },
+    {
+      "date": "2026-10-21",
+      "change": "App deploy detected (Settings still shows v5.2.1, but home HTML, sw.js, 10 JS chunks, landing and legal text changed)",
+      "detected_by": "baseline.js re-run ~23:30 IST after the founder said changes had shipped",
+      "fixed": [
+        "ISS-002",
+        "ISS-003",
+        "ISS-004",
+        "ISS-005",
+        "ISS-006",
+        "ISS-007",
+        "ISS-008",
+        "ISS-014",
+        "ISS-015",
+        "ISS-022",
+        "ISS-027",
+        "ISS-033",
+        "ISS-037",
+        "ISS-042"
+      ],
+      "broke": [
+        "ISS-044"
+      ],
+      "notes": "Privacy copy (GAP-001) rewritten truthfully, export added, India emergency numbers in companion, irregular-cycle copy, lab range flags. ISS-041/043 could not be verified (ISS-044)."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Deep re-test of every issue after the founder's second \"fixed everything\" message (same build as the 21 Oct deploy; label v5.2.1)",
+      "detected_by": "full sweep 21 Oct 23:40 IST – 22 Oct 00:00 IST",
+      "fixed": [
+        "ISS-009",
+        "ISS-011",
+        "ISS-017",
+        "ISS-019",
+        "ISS-021",
+        "ISS-023",
+        "ISS-024",
+        "ISS-028",
+        "ISS-029",
+        "ISS-030",
+        "ISS-031",
+        "ISS-032",
+        "ISS-036",
+        "ISS-038",
+        "ISS-040",
+        "ISS-043",
+        "ISS-044"
+      ],
+      "broke": [],
+      "notes": "New ISS-045 (labs only on the male Home). ISS-041 improved, still open. ISS-020/026/025/034/039/010 still reproduce."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "New deploy ~01:00 IST (home HTML 762b3397a4e7681b, 11 JS chunks changed, sw.js unchanged since 21 Oct; label still v5.2.1)",
+      "detected_by": "baseline.js 01:05 IST",
+      "fixed": [
+        "ISS-001",
+        "ISS-010",
+        "ISS-012",
+        "ISS-020",
+        "ISS-026",
+        "ISS-034",
+        "ISS-041",
+        "ISS-045"
+      ],
+      "broke": [],
+      "notes": "Full E2E both personas. New ISS-046/047/048. No regressions in the 31 previously fixed."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "UI redesign deploy ~02:00 IST (home HTML 0c79f264cad25d98, 11 JS chunks, sw.js unchanged; label v5.2.1)",
+      "detected_by": "baseline.js 01:58 IST",
+      "fixed": [
+        "ISS-035"
+      ],
+      "broke": [],
+      "notes": "New look (INTIMA wordmark, week strip, card layout). UI review logged ISS-049–052 (UI) and ISS-053–055. No regressions in the 39 fixed. 0 companion messages sent."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Cache-clean re-check (~02:30 IST) of ISS-013, 025, 047, 049–055 after founder reported them working",
+      "detected_by": "Playwright with SW unregistered, Cache Storage + HTTP cache cleared, cache disabled; localStorage kept",
+      "fixed": [],
+      "broke": [],
+      "notes": "All loaded JS chunks matched the live build (7/7 Meera, 12/12 Arjun). All 10 still reproduce. ISS-049 narrowed: header theme button works, Settings switch does not. Earlier runs also used fresh contexts, so stale caches were unlikely."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Deploy ~04:00 IST (home HTML 76f67bb6cc94a5c5, 11 JS chunks; sw.js unchanged; label v5.2.1)",
+      "detected_by": "baseline.js 04:14 IST; cache-clean E2E (SW unregistered, caches cleared, all chunks matched live)",
+      "fixed": [
+        "ISS-049",
+        "ISS-050",
+        "ISS-053",
+        "ISS-054",
+        "ISS-055"
+      ],
+      "broke": [],
+      "notes": "New ISS-056 (P3 grammar). ISS-052 improved. No regressions in the 40 fixed. 0 companion messages."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "New deploy after the 04:14 IST check (home HTML 5569569b1aafdb31, sw.js changed, 11 JS chunks swapped, landing + legal text changed; label still v5.2.1)",
+      "detected_by": "baseline.js 13:07 IST (lean daily); baseline re-written",
+      "fixed": [],
+      "broke": [],
+      "notes": "No open P0/P1 to re-test. Spot-checked in the daily sessions: ISS-047, ISS-056 and ISS-013 still reproduce. Legal/landing text change not reviewed in detail (lean run). New ISS-057 (P2, next-period mismatch). 0 companion messages (daily cap already used at 01:05)."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Deploy ~14:50 IST (home HTML 9bed472f39eafb08, 23 JS chunks changed vs the morning snapshot; sw.js unchanged; label v5.2.1)",
+      "detected_by": "baseline.js 14:52 IST; cache-clean E2E",
+      "fixed": [
+        "ISS-048",
+        "ISS-051",
+        "ISS-056",
+        "ISS-057"
+      ],
+      "broke": [],
+      "notes": "New ISS-058 (P3). ISS-052 small-text count back up. Full site refresh: features, gaps re-ranked, companion scores, performance, journal narrative, outlook."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Deploy 7f801b9 (~15:20 IST; home HTML 07691aa6c9b2a84d, 24 chunks)",
+      "detected_by": "baseline.js 15:22 IST; cache-clean verification",
+      "fixed": [
+        "ISS-047",
+        "ISS-058"
+      ],
+      "broke": [],
+      "notes": "Settings lock and backup code hardening (verified). New ISS-059. ISS-013 and ISS-052 marked accepted (founder decision 22 Oct 2026) and excluded from the score."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Deploy 6854e59: new doctor dashboard (/doctor: invite, recovery code, appointments, messages, patients, broadcasts, automations, insights, clinic) plus patient Care Messages, Share and broadcast mute",
+      "detected_by": "Founder note; cache-clean verification 20:37-21:30 IST",
+      "fixed": [],
+      "broke": [
+        "ISS-047",
+        "ISS-060",
+        "ISS-061",
+        "ISS-062",
+        "ISS-063",
+        "ISS-064",
+        "ISS-065"
+      ],
+      "notes": "Test clinic only. Live sync in both directions works. ISS-047 regressed."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Build 2d5c174 (doctor dashboard round 2)",
+      "detected_by": "doctor dashboard retest, QA2 invite",
+      "fixed": [],
+      "broke": [
+        "ISS-066",
+        "ISS-067",
+        "ISS-068"
+      ],
+      "notes": "Fixed for the original trigger: the browser that makes a new recovery code stays signed in (ISS-060 still reproduces via sign-out on another device). Test clinic data appears reset since round 1 (old bookings and threads gone)."
+    }
+  ],
+  "updated": "2026-10-22T21:30:00+05:30"
 }
