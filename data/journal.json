@@ -1979,6 +1979,64 @@
       "result": "broken",
       "screenshot": "shots/2026-10-22qa3_m_booking_stuck.jpg",
       "notes": "Stuck on \"Sending request…\" and empty Messages; lock:intima-auth held. 5 repeats."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "persona": "temp-patient",
+      "feature": "care-booking",
+      "steps": "Round 4 (build 4500a22): temp patient 3F1D (fresh browser, synthetic, female, last period 5 Oct) onboarded, booked Test Clinic Tue 27 Oct (moved to 12:00, confirmed), one declined request, chat test messages, muted broadcasts, check-in, TTC ovulation test, export, Clear dialog opened and cancelled.",
+      "result": "works",
+      "screenshot": "shots/2026-10-23r4_t_ttc_reload.jpg",
+      "notes": "Temporary patient created for this round; will be cleared at the end."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "persona": "temp-patient",
+      "feature": "care-booking",
+      "steps": "Earlier temp patient DE11 (synthetic) booked Tue 27 Oct 10:30 with auto-confirm on, plus a declined Wed 28 request. Its browser profile was reset by a test restart.",
+      "result": "partial",
+      "notes": "Orphaned: cannot be cleared from the patient side any more. Its appointment is cancelled from the clinic side."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "persona": "meera",
+      "feature": "ai-chat",
+      "steps": "2 companion messages: asked to remember a fruit and a date, then asked for them back.",
+      "result": "works",
+      "screenshot": "shots/2026-10-23r4_m_companion.jpg",
+      "notes": "Recalled both. Console errors ISS-074."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "persona": "meera",
+      "feature": "partner-mode",
+      "steps": "Connect > Sharing Settings > Unlink Partner, then Cancel.",
+      "result": "works",
+      "screenshot": "shots/2026-10-23r4_m_unlink_dialog.jpg",
+      "notes": "Still linked after Cancel."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": "P1",
+      "repro": "",
+      "issue_id": "ISS-066",
+      "persona": "meera",
+      "feature": "partner-mode",
+      "steps": "Noticed account change during the round.",
+      "result": "broken",
+      "notes": "Meera and Arjun on new anonymous accounts; partner data gone both ways."
     }
   ],
   "narratives": [
