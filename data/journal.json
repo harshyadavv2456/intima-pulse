@@ -2049,6 +2049,30 @@
       "issue_id": null,
       "screenshot": "shots/2026-10-23r4_doc_week.jpg",
       "notes": "All views work. Cancel not possible (ISS-078). Hours restored to Mon-Sat 10-13 and 17-20. Visited/No-show not possible yet (before visit times)."
+    },
+    {
+      "date": "2026-10-23",
+      "persona": "temp-patient",
+      "feature": "settings-clear-data",
+      "steps": "Settings > Clear All Data > \"Clear all data?\" > Clear data on temp patient 3F1D.",
+      "result": "works",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "shots/2026-10-23r4_t_clear_dialog.jpg",
+      "notes": "Temporary patient 3F1D cleared; its two appointments disappeared from the clinic agenda. Orphan DE11 (Tue 27 Oct 10:30) remains: no cancel exists (ISS-078)."
+    },
+    {
+      "date": "2026-10-23",
+      "persona": "meera",
+      "feature": "speed",
+      "steps": "Speed: normal, Fast 3G, Slow 3G with throttle verified.",
+      "result": "partial",
+      "severity": "P2",
+      "repro": "",
+      "issue_id": "ISS-025",
+      "screenshot": "",
+      "notes": "Slow 3G 13-14.5 s."
     }
   ],
   "narratives": [

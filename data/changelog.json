@@ -237,6 +237,35 @@
         "ISS-071"
       ],
       "notes": "New: chat photos, doctor profile photo, 30-day summary, multi-use invite. ISS-061 raised to P1. ISS-064 partly better."
+    },
+    {
+      "date": "2026-10-23",
+      "change": "Build 4500a22 (round 4 full e2e)",
+      "detected_by": "round 4 test, QA3 code",
+      "fixed": [
+        "ISS-016",
+        "ISS-046",
+        "ISS-063",
+        "ISS-064",
+        "ISS-065",
+        "ISS-067",
+        "ISS-068",
+        "ISS-069",
+        "ISS-070",
+        "ISS-071"
+      ],
+      "broke": [
+        "ISS-072",
+        "ISS-073",
+        "ISS-074",
+        "ISS-075",
+        "ISS-076",
+        "ISS-077",
+        "ISS-078",
+        "ISS-079",
+        "ISS-080"
+      ],
+      "notes": "ISS-047 regressed (partner data missing after account swaps). ISS-060 status corrected to fixed. ISS-061/066 still open."
     }
   ],
   "updated": "2026-10-22T21:30:00+05:30"

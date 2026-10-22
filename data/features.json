@@ -247,108 +247,93 @@
       "name": "Doctor dashboard and patient-doctor sync",
       "group": "Care",
       "status": "OK",
-      "note": "Build 8218f50, 22-23 Oct (QA3 invite): items 1-6 mostly pass (speed under 1 s for messages); patient regression mostly blocked by ISS-061 (P1).",
+      "note": "Build 4500a22, 23 Oct ~01:30-04:00 IST (QA3 recovery code, test clinic only): 8 of 11 announced changes verified fixed; ISS-061 and ISS-066 (both P1) still open and worse.",
       "last_verified": "2026-10-23",
       "checks": [
         {
-          "check": "1 Speed: messages and doctor pages",
-          "result": "pass",
-          "note": "Normal: patient to doctor median 0.74 s (worst 0.84); doctor to patient 0.67 s (0.90); sender sees own message in about 15 ms (optimistic). Today 1.4 s (3.1), Patients 1.4 s (1.8), Messages 1.2 s (1.9). Fast 3G page numbers inconclusive (throttle did not apply to clean loads)."
-        },
-        {
-          "check": "2 30-day summary from chat",
-          "result": "pass",
-          "note": "Doctor sees a collapsible \"Health summary shared by the patient · last 30 days\" card. Day count looks low (ISS-071)."
-        },
-        {
-          "check": "2 30-day summary from the Care sheet",
-          "result": "pass",
-          "note": "Booked: \"Sent to your doctor in Messages ✓\". Unbooked temp patient: \"Summary copied — paste it into a message to the clinic.\""
-        },
-        {
-          "check": "3 Photos both ways, tap to enlarge",
-          "result": "pass",
-          "note": "Both arrive in about 1 s and enlarge on tap. Access checks reported privately."
-        },
-        {
-          "check": "4 Doctor profile photo",
-          "result": "pass",
-          "note": "Shows on Clinic, in the patient Messages list and the chat header. Replacement by a patient refused."
-        },
-        {
-          "check": "5 Codes: invite on 2nd device, multi-use, new code, QA2 reuse",
-          "result": "pass",
-          "note": "Second-device sign-in kept the code. Invite used 2 times (not up to 5). New code kills the old one. QA2 reuse: \"expired or already used\"."
-        },
-        {
-          "check": "6 Alerts card",
-          "result": "pass",
-          "note": "Playwright Chromium: \"Alerts are blocked for this site. Allow notifications in your browser's site settings, then reload.\" Real phone push not testable."
-        },
-        {
-          "check": "Sign-in/out, lowercase code, wrong code, rate limit",
-          "result": "pass",
-          "note": "Wrong code: \"That recovery code is not right.\"; \"Too many attempts\" from the 10th try; lowercase code works."
-        },
-        {
-          "check": "Signing out on one device keeps the other",
-          "result": "pass",
-          "note": "ISS-060 closed."
-        },
-        {
-          "check": "Decline",
-          "result": "pass",
-          "note": "Request in Needs reply, Decline with note removes it."
-        },
-        {
-          "check": "Confirm, Visited/No-show",
-          "result": "partial",
-          "note": "Not re-run: the 2nd booking stuck on \"Sending request…\" (ISS-061); Fri visits not passed yet."
-        },
-        {
-          "check": "Broadcast cap",
-          "result": "pass",
-          "note": "4th in 24 h refused (button disabled, no reason given, ISS-070). Muted-patient delivery not re-tested (cap used)."
-        },
-        {
-          "check": "Automation, auto-confirm, working hours, days off",
-          "result": "partial",
-          "note": "Settings present; toggles not re-run this round. Auto-confirm off, no day off."
-        },
-        {
-          "check": "Insights funnel",
+          "check": "ISS-061 15 s timeout / Retry",
           "result": "fail",
-          "note": "Funnel still 0 started/confirmed (ISS-063)."
+          "note": "\"Could not load your messages · Retry\" seen once and Retry works, but most hangs still show \"No conversations yet\" and booking does nothing."
         },
         {
-          "check": "Patient: booking, request-sent line",
-          "result": "partial",
-          "note": "\"Request sent — this isn't booked yet\" shown when it works; often stuck (ISS-061)."
+          "check": "ISS-066 session-reset card",
+          "result": "fail",
+          "note": "Card shows, but Meera and Arjun were both moved to new accounts this round and the card came back in a new tab after \"Got it\"."
         },
         {
-          "check": "Patient: Share defaults, cycle only, mood within 30 s, mute",
-          "result": "partial",
-          "note": "Not re-run (blocked by ISS-061 and time)."
-        },
-        {
-          "check": "Clear all data (temp patient)",
+          "check": "Auto-confirm, full doctor name, broadcast limit, tap targets",
           "result": "pass",
-          "note": "Temp patient cleared; nothing about it on the doctor side."
+          "note": "\"Appointment confirmed\" in 0.9 s; \"Dr. Test Clinic\"; limit explains itself (says \"after 2:51 am\", no day, ISS-076); mute 32x32. Sheet copy still says not instant (ISS-062)."
         },
         {
-          "check": "Must not work (access control)",
+          "check": "Funnel matches cards",
           "result": "pass",
-          "note": "Reported privately; nothing public."
+          "note": "5 started / 3 confirmed."
         },
         {
-          "check": "Honesty",
-          "result": "partial",
-          "note": "No \"E2E\"; /legal says doctor chat is not end-to-end encrypted. Notifications say they never show the message text. /legal name claim (ISS-065); chat photos missing (ISS-069)."
+          "check": "Slots over several days, one Gynaecologist chip",
+          "result": "pass",
+          "note": "Fri-Wed listed; list stops after ~48 slots mid-Wed (ISS-079)."
         },
         {
-          "check": "375 px chats",
+          "check": "/legal wording, decline copy, Clear dialog title",
+          "result": "pass",
+          "note": "All three fixed."
+        },
+        {
+          "check": "Summary day count",
+          "result": "pass",
+          "note": "9 = 9/30; but symptoms print as [object Object] (ISS-075)."
+        },
+        {
+          "check": "375 px Patients list",
+          "result": "pass",
+          "note": "Fits with times visible."
+        },
+        {
+          "check": "No React #418/#423 on doctor pages",
+          "result": "pass",
+          "note": "None on the five pages; the 404 page has them (ISS-073)."
+        },
+        {
+          "check": "Google Calendar",
+          "result": "not tested",
+          "note": "Already connected to the founder account; checking the OAuth redirect would need Disconnect. Needs a Google account in a browser."
+        },
+        {
+          "check": "Removed URLs",
+          "result": "pass",
+          "note": "All 404, no crash."
+        },
+        {
+          "check": "Calendar views, tabs, new appointment, block time, hours",
+          "result": "pass",
+          "note": "Day/Week/Month/Agenda, Needs reply/Upcoming/Past work; New appointment reaches the patient; block hides slots and removes cleanly; hours save. Drag not tested (Move dialog used, 1.2 s to patient)."
+        },
+        {
+          "check": "Cancel an appointment",
+          "result": "fail",
+          "note": "No cancel option on either side (ISS-078)."
+        },
+        {
+          "check": "Visited / No-show",
+          "result": "not tested",
+          "note": "Run ended before the first visit time (Fri 10:30 am)."
+        },
+        {
+          "check": "Cross-sync",
           "result": "partial",
-          "note": "Both chats fit; photo and 30-day buttons reachable above the input. Doctor Messages list still clipped (ISS-067); small tap targets (ISS-070)."
+          "note": "Message 0.84/0.87 s, confirm 0.65 s, reschedule 1.2 s, decline live, new appointment live; new booking not live on Today (ISS-072); hours change not live (ISS-080)."
+        },
+        {
+          "check": "Ops unauthenticated surface",
+          "result": "pass",
+          "note": "Sign-in gate shown; no data."
+        },
+        {
+          "check": "Access control",
+          "result": "partial",
+          "note": "Reported privately."
         }
       ]
     }

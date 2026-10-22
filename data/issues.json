@@ -512,7 +512,7 @@
       "persona": "both",
       "severity": "P2",
       "first_seen": "2026-10-01",
-      "last_verified": "2026-10-22",
+      "last_verified": "2026-10-23",
       "fixed_on": null,
       "status": "open",
       "steps": [
@@ -520,7 +520,7 @@
       ],
       "expected": "< 5 s to first content on 3G (target audience on mid-range Android).",
       "actual": "Home 9.7 s load (LCP 10.5 s); chat 10.7 s; care 9.7 s. Fast 3G ~2.7 s; normal network 0.5-1.0 s (LCP 0.7-1.8 s). || 2026-10-07: slow-3G landing load 10.4 s, LCP 11.2 s (normal: load 1.5 s, LCP 2.3 s).",
-      "retest_note": "Slow 3G not re-measured on 6854e59.",
+      "retest_note": "Slow 3G not re-measured on 6854e59. Still fails. Throttle verified via CDP on the page session before navigation with the service worker bypassed: Slow 3G / 13.0 s, /dashboard 14.5 s (Fast 3G 3.7/4.1 s, normal 1.4/1.5 s). Repeat visits served by the service worker load in about 0.3 s.",
       "cache_clean_recheck": "Cache-clean (fresh context, SW+cache cleared): slow 3G home 9.3 s, LCP 10.1 s.",
       "platform": "web",
       "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
@@ -1251,7 +1251,7 @@
       "first_seen": "2026-10-22",
       "last_verified": "2026-10-23",
       "fixed_on": null,
-      "retest_note": "Build 4500a22: Still fails, often: Meera, Arjun and a brand-new temp patient all hit it within minutes. Tab holds lock:intima-auth, no requests go out, Request Appointment does nothing (no \"Sending\", no 15 s timeout), Messages shows \"No conversations yet\". The new \"Could not load your messages · Retry\" state did appear once for Arjun and Retry worked. Closing the tab clears it.",
+      "retest_note": "Build 4500a22: Still fails, often: Meera, Arjun and a brand-new temp patient all hit it within minutes. Tab holds lock:intima-auth, no requests go out, Request Appointment does nothing (no \"Sending\", no 15 s timeout), Messages shows \"No conversations yet\". The new \"Could not load your messages · Retry\" state did appear once for Arjun and Retry worked. Closing the tab clears it. Count this round: about 7 hangs in about 75 minutes across three patients, including twice on the temp patient within 10 minutes of each other; once it survived 3 new tabs and cleared only after all tabs were closed for 30 s.",
       "build": "4500a22"
     },
     {
