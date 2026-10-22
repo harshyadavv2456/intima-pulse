@@ -184,7 +184,18 @@
    ],
    "broke": [],
    "notes": "New ISS-058 (P3). ISS-052 small-text count back up. Full site refresh: features, gaps re-ranked, companion scores, performance, journal narrative, outlook."
+  },
+  {
+   "date": "2026-10-22",
+   "change": "Deploy 7f801b9 (~15:20 IST; home HTML 07691aa6c9b2a84d, 24 chunks)",
+   "detected_by": "baseline.js 15:22 IST; cache-clean verification",
+   "fixed": [
+    "ISS-047",
+    "ISS-058"
+   ],
+   "broke": [],
+   "notes": "Settings lock and backup code hardening (verified). New ISS-059. ISS-013 and ISS-052 marked accepted (founder decision 22 Oct 2026) and excluded from the score."
   }
  ],
- "updated": "2026-10-22T15:45:00+05:30"
+ "updated": "2026-10-22T16:10:00+05:30"
 }

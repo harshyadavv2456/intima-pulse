@@ -21,16 +21,16 @@
    "name": "Cloud backup (8-char code)",
    "group": "Platform",
    "status": "OK",
-   "note": "Code in ~5 s; restore in a fresh context not yet tested (day 2).",
-   "last_verified": "2026-10-03"
+   "note": "Code in ~5 s; restore in a fresh context not yet tested (day 2). | 22 Oct: Settings lock and backup code hardening shipped and verified.",
+   "last_verified": "2026-10-22"
   },
   {
    "id": "pin-lock",
    "name": "PIN lock",
    "group": "Platform",
    "status": "OK",
-   "note": "4-digit PIN, lock screen and wrong PIN work. (Security notes are in the private report.)",
-   "last_verified": "2026-10-03"
+   "note": "4-digit PIN, lock screen and wrong PIN work. (Security notes are in the private report.) | 22 Oct: Settings lock and backup code hardening shipped and verified.",
+   "last_verified": "2026-10-22"
   },
   {
    "id": "settings",

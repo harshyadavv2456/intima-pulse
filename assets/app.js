@@ -85,8 +85,8 @@ R.index=function(){
     var hist=arr(meta.health_score_history).slice().sort(function(a,b){return a.date<b.date?-1:1});
     var score=meta.health_score!=null?meta.health_score:(hist.length?hist[hist.length-1].score:null);
     var prev=hist.length>1?hist[hist.length-2].score:null,delta=(score!=null&&prev!=null)?score-prev:null;
-    var p01=iss.filter(function(i){return (i.severity==='P0'||i.severity==='P1')&&i.status!=='fixed'}).length;
-    var p0=iss.filter(function(i){return i.severity==='P0'&&i.status!=='fixed'}).length;
+    var p01=iss.filter(function(i){return (i.severity==='P0'||i.severity==='P1')&&(i.status==='open'||i.status==='regressed')}).length;
+    var p0=iss.filter(function(i){return i.severity==='P0'&&(i.status==='open'||i.status==='regressed')}).length;
     var last=[meta.updated,d[1].updated,ft.updated].filter(Boolean).sort().pop();
     var sum=arr(meta.summary_today);
     var qw=quickWins(ft.gaps).slice(0,5);
@@ -118,7 +118,7 @@ R.index=function(){
 R.issues=function(){
   return load('issues').then(function(d){var all=arr(d.issues);
     app.innerHTML=head('Issues tracker','P0 broken-core · P1 major · P2 friction · P3 polish',d)+
-    dateBar('<label>Persona<select id="fp">'+opts(uniq(all.map(function(i){return i.persona})))+'</select></label><label>Feature<select id="ff">'+opts(uniq(all.map(function(i){return i.feature})))+'</select></label><label>Severity<select id="fs">'+opts(['P0','P1','P2','P3'])+'</select></label><label>Status<select id="fst">'+opts(['open','fixed','regressed'])+'</select></label>')+'<div id="out"></div>';
+    dateBar('<label>Persona<select id="fp">'+opts(uniq(all.map(function(i){return i.persona})))+'</select></label><label>Feature<select id="ff">'+opts(uniq(all.map(function(i){return i.feature})))+'</select></label><label>Severity<select id="fs">'+opts(['P0','P1','P2','P3'])+'</select></label><label>Status<select id="fst">'+opts(['open','fixed','regressed','accepted'])+'</select></label>')+'<div id="out"></div>';
     function draw(){var r=rng(),p=val('fp'),f=val('ff'),s=val('fs'),st=val('fst');
       var l=all.filter(function(i){return (inRange(i.first_seen,r.f,r.t)||inRange(i.last_verified,r.f,r.t))&&(!p||i.persona===p)&&(!f||i.feature===f)&&(!s||i.severity===s)&&(!st||i.status===st)}).sort(function(a,b){return sevOrd(a.severity)-sevOrd(b.severity)||(a.first_seen<b.first_seen?1:-1)});
       document.getElementById('out').innerHTML=!all.length?empty():!l.length?empty('No issues match these filters.'):'<div class="sub">'+l.length+' of '+all.length+' issues</div><div class="tw"><table><thead><tr><th>ID</th><th>Title</th><th>Feature</th><th>Persona</th><th>Sev</th><th>Status</th><th>First seen</th><th>Verified</th></tr></thead><tbody>'+l.map(function(i){
@@ -234,7 +234,7 @@ R.outlook=function(){
     var mi=O.manual_inputs||{},V=O.valuation,F=O.funding_routes,B=O.business,I=O.investor_summary;
     var hist=arr(meta.health_score_history).slice().sort(function(a,b){return a.date<b.date?-1:1});
     var score=meta.health_score!=null?meta.health_score:(hist.length?hist[hist.length-1].score:null);
-    var open=iss.filter(function(i){return i.status!=='fixed'}),p0=open.filter(function(i){return i.severity==='P0'}).length,p1=open.filter(function(i){return i.severity==='P1'}).length;
+    var open=iss.filter(function(i){return (i.status==='open'||i.status==='regressed')}),p0=open.filter(function(i){return i.severity==='P0'}).length,p1=open.filter(function(i){return i.severity==='P1'}).length;
     var gaps=arr(ft.gaps),d30=gaps.filter(function(g){return g.retention_effect&&String(g.retention_effect).trim()}),d30H=d30.filter(function(g){return g.impact==='H'});
     var fitems=arr(fu.items),upc=fitems.filter(function(i){return /^\d{4}-\d{2}-\d{2}$/.test(i.deadline||'')&&i.deadline>=TODAY}).sort(function(a,b){return a.deadline<b.deadline?-1:1}),
         near=upc.slice(0,3);

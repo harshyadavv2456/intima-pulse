@@ -237,7 +237,7 @@
    "first_seen": "2026-10-01",
    "last_verified": "2026-10-22",
    "fixed_on": null,
-   "status": "open",
+   "status": "accepted",
    "steps": [
     "Open Chat and read the message counter."
    ],
@@ -247,7 +247,9 @@
    "retest_note": "14:50 cache-clean: \"5/30 today\".",
    "cache_clean_recheck": "Cache-clean 02:30 IST: counter still \"5/30 today\" (both personas).",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "accepted_on": "2026-10-22",
+   "accepted_note": "accepted / founder decision 22 Oct 2026"
   },
   {
    "id": "ISS-014",
@@ -869,16 +871,17 @@
    "severity": "P2",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "steps": "Arjun opens Connect (Meera shares mood/cycle).",
    "expected": "Count matching her logs.",
    "actual": "\"Early days — 1 logged day so far… She has 1 day in the last month\"; Meera's Home shows 9/30 days logged.",
-   "screenshot": "",
+   "screenshot": "shots/2026-10-22sec_arjun_connect.jpg",
    "retest_note": "14:50 cache-clean: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" (Meera 9/30).",
    "cache_clean_recheck": "Cache-clean, both personas: Connect \"1/14 days logged… Only 1 day logged in the last fortnight\" while Meera has 9/30 logged.",
    "platform": "web",
-   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only."
+   "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
+   "fix_evidence": "Build 07691aa6 (~15:20 IST), cache-clean: after Meera re-saved today's mood and opened Connect, Arjun's partner view shows \"6/14 days logged… 9 logged days\", matching Meera's 9/30 total and 6 days in the last 14. Reverse direction tracked in ISS-059."
   },
   {
    "id": "ISS-048",
@@ -964,7 +967,7 @@
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
    "fixed_on": null,
-   "status": "open",
+   "status": "accepted",
    "steps": "Audit every screen at 393/390 px.",
    "expected": "Body text ≥11–12 px; tap targets ≥44 px (or at least 32).",
    "actual": "100+ text elements at 9–10 px on Home (weekday labels, captions, nav labels). Sleep/energy emoji buttons 28×32 px, toggles 44×24, filter chips 29 px tall, \"Back to Settings\" 21 px tall.",
@@ -972,7 +975,9 @@
    "cache_clean_recheck": "Cache-clean Home: 111 (Meera) / 119 (Arjun) text elements under 11 px; 11–12 buttons under 32 px.",
    "platform": "web",
    "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
-   "retest_note": "14:50: text under 11 px back up to 120 (Meera) / 128 (Arjun) Home elements (was 18/27 at 04:15). 11–12 buttons under 32 px."
+   "retest_note": "14:50: text under 11 px back up to 120 (Meera) / 128 (Arjun) Home elements (was 18/27 at 04:15). 11–12 buttons under 32 px.",
+   "accepted_on": "2026-10-22",
+   "accepted_note": "accepted / founder decision 22 Oct 2026"
   },
   {
    "id": "ISS-053",
@@ -1073,13 +1078,30 @@
    "severity": "P3",
    "first_seen": "2026-10-22",
    "last_verified": "2026-10-22",
-   "fixed_on": null,
-   "status": "open",
+   "fixed_on": "2026-10-22",
+   "status": "fixed",
    "platform": "web",
    "steps": "Open Care (393/390 px).",
    "expected": "Chip and the pin both visible.",
    "actual": "Chip moved top-left (fixing ISS-051) and now sits over the purple location pin.",
-   "screenshot": "shots/2026-10-22pm_care_map.jpg"
+   "screenshot": "shots/2026-10-22sec_care_map.jpg",
+   "fix_evidence": "\"5 doctors listed\" now renders below the map (label top = map bottom) on both personas, no longer over the pin."
+  },
+  {
+   "id": "ISS-059",
+   "title": "Meera's partner view still shows Arjun with \"1/14 days logged\" after he opened Connect",
+   "feature": "partner-mode",
+   "persona": "meera",
+   "severity": "P2",
+   "first_seen": "2026-10-22",
+   "last_verified": "2026-10-22",
+   "fixed_on": null,
+   "status": "open",
+   "platform": "web",
+   "steps": "Arjun (9/30 days logged, 6 in the last 14) opens Connect while linked; then Meera opens Connect.",
+   "expected": "Meera sees about 6/14 days for Arjun (the push-on-Connect-open fix).",
+   "actual": "Meera still sees \"1/14 days logged… Only 1 day logged in the last fortnight\" ~1 min after Arjun opened Connect. The Meera → Arjun direction works (ISS-047 fixed).",
+   "screenshot": ""
   }
  ],
  "updated": "2026-10-21T20:30:00+05:30"

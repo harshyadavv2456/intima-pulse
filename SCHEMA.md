@@ -114,3 +114,5 @@ Keys: `updated`, `reviewed_on`, `reviewed_by`, `comps_last_checked`, `comps_next
 Live numbers (health score, open P0/P1, D30 gaps, deadlines, social coverage, tester evidence) are NOT stored here; outlook.html reads them from the other files.
 
 - `platform` (optional, issues): where the issue reproduces, e.g. "web". `platform_note` (optional): free-text context.
+
+- Issue `status` values: `open`, `regressed`, `fixed`, `accepted`. `accepted` = founder decision not to change (with `accepted_on`, `accepted_note`); not counted as an open bug and excluded from the health score (only `open`/`regressed` carry weights).

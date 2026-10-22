@@ -1871,6 +1871,18 @@
    "screenshot": "shots/2026-10-22pm_arjun_insights.jpg",
    "issue_id": "ISS-048",
    "notes": "Insights unlock copy now clear. Partner view grammar fixed. Day-count still 1/14 (ISS-047)."
+  },
+  {
+   "date": "2026-10-22",
+   "persona": "both",
+   "feature": "partner-mode",
+   "steps": "Meera re-saved today's mood (Good → Okay) and opened Connect; Arjun opened Connect; Meera re-opened Connect. Care map checked on both.",
+   "result": "works",
+   "severity": "P2",
+   "repro": "ISS-059",
+   "screenshot": "shots/2026-10-22sec_arjun_connect.jpg",
+   "issue_id": "ISS-047",
+   "notes": "Arjun now sees Meera's 6/14 days (fixed). Meera still sees 1/14 for Arjun (ISS-059). Map label below the map. Settings lock and backup code hardening verified."
   }
  ],
  "narratives": [
@@ -1886,5 +1898,5 @@
    "note": "Narrative for 19–25 Oct based on 21–22 Oct sessions only."
   }
  ],
- "updated": "2026-10-22T15:45:00+05:30"
+ "updated": "2026-10-22T16:10:00+05:30"
 }
