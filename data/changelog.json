@@ -274,6 +274,14 @@
       "fixed": [],
       "broke": [],
       "notes": "Only CSS chunk changed (e11ea84b -> b9e3091d); JS same. New: email verification before first booking, day-chip slot picker."
+    },
+    {
+      "date": "2026-10-23",
+      "change": "founder triage 04:33 IST",
+      "detected_by": "Harsh decisions relayed in chat",
+      "fixed": [],
+      "broke": [],
+      "notes": "Accepted ISS-025, ISS-081. ISS-061, ISS-082 P1 -> P2. No app change."
     }
   ],
   "updated": "2026-10-22T21:30:00+05:30"

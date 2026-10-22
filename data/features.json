@@ -37,8 +37,8 @@
       "name": "Settings",
       "group": "Platform",
       "status": "OK",
-      "note": "Honest privacy copy, Export My Data, Dark mode switch works (ISS-002/005/049 fixed). Backup code UI present.",
-      "last_verified": "2026-10-22"
+      "note": "Dark mode manual toggle works and persists (round 5). Clear all data works.",
+      "last_verified": "2026-10-23"
     },
     {
       "id": "notifications",
@@ -69,16 +69,16 @@
       "name": "Offline / PWA",
       "group": "Platform",
       "status": "OK",
-      "note": "Offline fallback + cached pages (ISS-024 fixed).",
-      "last_verified": "2026-10-22"
+      "note": "Pages load offline from cache; no offline indicator, which the founder accepts (realtime app).",
+      "last_verified": "2026-10-23"
     },
     {
       "id": "performance",
       "name": "Page performance",
       "group": "Platform",
       "status": "weak",
-      "note": "Normal network fast; slow 3G home still ~9.2 s / LCP 10 s (ISS-025). Offline fallback works.",
-      "last_verified": "2026-10-22"
+      "note": "Slow 3G 13-14.6 s accepted by founder (ISS-025); target is 4G/5G. Fast 3G 3.7-4.1 s, normal 0.3-0.6 s.",
+      "last_verified": "2026-10-23"
     },
     {
       "id": "privacy-copy",
@@ -230,9 +230,16 @@
       "id": "care-booking",
       "name": "Anonymous booking (tested up to final button)",
       "group": "Care",
-      "status": "OK",
-      "note": "Clear request-not-booked copy; stopped before \"Request Appointment\".",
-      "last_verified": "2026-10-07"
+      "status": "weak",
+      "note": "Round 5: 503 on the 04:00 build (ISS-082, P2 per founder); the 04:18 build adds a one-time email check and a day-chip slot picker. End-to-end booking not completed (no approved test email).",
+      "last_verified": "2026-10-23",
+      "checks": [
+        {
+          "check": "Email verification before first booking",
+          "result": "blocked",
+          "note": "Needs a test email."
+        }
+      ]
     },
     {
       "id": "doctor-referral",
@@ -247,7 +254,7 @@
       "name": "Doctor dashboard and patient-doctor sync",
       "group": "Care",
       "status": "OK",
-      "note": "Build 4500a22, 23 Oct ~01:30-04:00 IST (QA3 recovery code, test clinic only): 8 of 11 announced changes verified fixed; ISS-061 and ISS-066 (both P1) still open and worse.",
+      "note": "Round 5 (live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)): cancel (ISS-078), drag to move, 375 px and dark-safe pages pass. ISS-061 hang seen once (now P2); ISS-066 no new swaps.",
       "last_verified": "2026-10-23",
       "checks": [
         {
@@ -334,6 +341,16 @@
           "check": "Access control",
           "result": "partial",
           "note": "Reported privately."
+        },
+        {
+          "check": "Cancel appointment",
+          "result": "pass",
+          "note": "Cancel > confirm > Yes, cancel it."
+        },
+        {
+          "check": "Drag to move",
+          "result": "pass",
+          "note": "Opens Move dialog prefilled."
         }
       ]
     }
@@ -753,6 +770,6 @@
       "priority_score": 3
     }
   ],
-  "updated": "2026-10-22T17:47:54.351Z",
+  "updated": "2026-10-23",
   "ranking_note": "22 Oct 15:45 IST: re-ranked open gaps by impact (H3/M2/L1) × effort (Easy3/Medium2/Hard1); top 5 flagged quick_win. Done gaps kept for history."
 }

@@ -521,6 +521,6 @@
       "examples": []
     }
   ],
-  "updated": "2026-10-22T21:56:18.735Z",
-  "summary_note": "22 Oct: big safety/accuracy jump since 21 Oct deploys. Safety 1–3 (7–14 Oct) → 4–5. Open: cross-day memory (ISS-039), gendered address/date format (ISS-046). No messages sent after 01:20 IST 22 Oct (cap)."
+  "updated": "2026-10-23",
+  "summary_note": "22 Oct: big safety/accuracy jump since 21 Oct deploys. Safety 1–3 (7–14 Oct) → 4–5. Open: cross-day memory (ISS-039), gendered address/date format (ISS-046). No messages sent after 01:20 IST 22 Oct (cap). 23 Oct round 5: Arjun 1 message, no console errors, counter \"1/30 today (+1 bonus)\" (ISS-074 fixed). Not scored."
 }

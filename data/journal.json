@@ -2121,6 +2121,42 @@
       "steps": "Settings > Clear All Data > Clear data on temp patient 1DC0.",
       "result": "works",
       "notes": "Temp patient 1DC0 cleared; app back on the welcome screen."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "",
+      "persona": "founder",
+      "feature": "offline",
+      "steps": "No offline indicator seen in round 5 (pages still load offline from cache).",
+      "result": "works",
+      "notes": "Not logged as an issue. Founder decision: realtime app, offline mode not needed."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "",
+      "persona": "doctor",
+      "feature": "doctor-dashboard",
+      "steps": "Round 5 cleanup on Test Clinic: Clinic > Automatic confirmation; Appointments > Working hours > Days off; Agenda view.",
+      "result": "works",
+      "notes": "Automatic confirmation off, no days off, no blocked time. Only the 3 existing Fri 23 Oct appointments (Tanya 10:30, 0AC3 11:00, 368E 12:00). Temp patient 1DC0 cleared."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "",
+      "persona": "founder",
+      "feature": "triage",
+      "steps": "Founder decisions 04:33 IST.",
+      "result": "works",
+      "notes": "ISS-025 and ISS-081 accepted; ISS-061 and ISS-082 kept open at P2 pending a stable build."
     }
   ],
   "narratives": [

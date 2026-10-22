@@ -447,6 +447,54 @@
       "load_ms": 668,
       "lcp_ms": null,
       "notes": "Build 4500a22: new-tab loads: /dashboard 668, /chat 622, /wellness 623, /connect 343, /care 299, /settings 736, /legal 1059 ms."
+    },
+    {
+      "date": "2026-10-23",
+      "page": "/ (home)",
+      "device": "desktop-chromium normal",
+      "load_ms": 600,
+      "lcp_ms": null,
+      "notes": "Round 5, build 04:00 IST, cache and service worker bypassed, throttle verified by load ratios."
+    },
+    {
+      "date": "2026-10-23",
+      "page": "/ (home)",
+      "device": "desktop-chromium Fast 3G",
+      "load_ms": 3700,
+      "lcp_ms": null,
+      "notes": "Round 5, build 04:00 IST, cache and service worker bypassed, throttle verified by load ratios."
+    },
+    {
+      "date": "2026-10-23",
+      "page": "/ (home)",
+      "device": "desktop-chromium Slow 3G",
+      "load_ms": 13000,
+      "lcp_ms": null,
+      "notes": "Round 5, build 04:00 IST, cache and service worker bypassed, throttle verified by load ratios."
+    },
+    {
+      "date": "2026-10-23",
+      "page": "/dashboard",
+      "device": "desktop-chromium normal",
+      "load_ms": 270,
+      "lcp_ms": null,
+      "notes": "Round 5, build 04:00 IST, cache and service worker bypassed, throttle verified by load ratios."
+    },
+    {
+      "date": "2026-10-23",
+      "page": "/dashboard",
+      "device": "desktop-chromium Fast 3G",
+      "load_ms": 4100,
+      "lcp_ms": null,
+      "notes": "Round 5, build 04:00 IST, cache and service worker bypassed, throttle verified by load ratios."
+    },
+    {
+      "date": "2026-10-23",
+      "page": "/dashboard",
+      "device": "desktop-chromium Slow 3G",
+      "load_ms": 14600,
+      "lcp_ms": null,
+      "notes": "Round 5, build 04:00 IST, cache and service worker bypassed, throttle verified by load ratios."
     }
   ],
   "detail_full": [
@@ -1892,5 +1940,5 @@
     }
   ],
   "method": "Playwright/Chrome, navigation timing + PerformanceObserver FCP/LCP, Slow 3G (400 kbps, 400 ms) and Fast 3G (1.6 Mbps, 150 ms) CDP throttling; throttled rows use wall time. iOS = iPhone UA on Chrome (WebKit unavailable). /dashboard excluded: redirected to /questionnaire under synthetic state.",
-  "updated": "2026-10-22T21:56:18.735Z"
+  "updated": "2026-10-23"
 }

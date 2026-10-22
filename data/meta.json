@@ -2,14 +2,14 @@
   "app_url": "https://www.intimacare.in",
   "app_version": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)",
   "last_test_run": "2026-10-23",
-  "health_score": 80,
+  "health_score": 85,
   "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
   "summary_today": [
     "23 Oct ~04:00-04:30 IST: round 5 on two live builds (04:00, then CSS-only redeploy ~04:18). Test clinic only; temp patient cleared.",
     "Fixed: ISS-078 (clinic can cancel), 073, 074, 079. Drag-to-move and dark mode work.",
-    "Still P1: ISS-061 tab hang (seen again at 04:23) and ISS-082 (booking 503 on the 04:00 build).",
+    "ISS-061 hang and ISS-082 booking 503 lowered to P2 (seen during mid-test deploys); recheck on a stable build.",
     "New: booking now needs a one-time email check first; ISS-081 Symptoms Done button under the nav.",
-    "Health 80: 15 open (0 P0 / 3 P1 / 9 P2 / 3 P3). Slow 3G still 13-14.6 s."
+    "Health 85: 13 open (0 P0 / 1 P1 / 9 P2 / 3 P3). Slow 3G (ISS-025) and Done button (ISS-081) accepted by founder."
   ],
   "health_score_history": [
     {
@@ -108,6 +108,11 @@
       "date": "2026-10-23",
       "score": 80,
       "note": "Round 5 e2e (builds 04:00 and 04:18 IST)"
+    },
+    {
+      "date": "2026-10-23",
+      "score": 85,
+      "note": "Founder triage 04:33 IST"
     }
   ],
   "weekly": [
@@ -162,24 +167,24 @@
     {
       "week_start": "2026-10-19",
       "week_end": "2026-10-25",
-      "health_trend": "90 (22 Oct) → 81 → 81 → 81 (23 Oct, round 4)",
-      "narrative": "Week of 19-25 Oct (mid-week entry, 23 Oct). Harsh shipped the doctor dashboard and four builds in two days (6854e59, 2d5c174, 8218f50, 4500a22). Round 4 closed most polish and copy issues: the funnel, slots, /legal, decline and clear-data wording, summary day count and the 375 px list are fixed. Two P1s remain and got worse: patient tabs still freeze on the auth lock (about 7 times in 75 minutes), and patients are silently moved to new anonymous accounts, which broke partner sync for both test personas. Doctors still cannot cancel an appointment. Health 81.",
+      "health_trend": "90 (22 Oct) → 81 → 81 → 81 (23 Oct, round 4) → 80 → 85 (23 Oct, round 5 + triage)",
+      "narrative": "Week of 19-25 Oct (mid-week entry, 23 Oct). Harsh shipped the doctor dashboard and four builds in two days (6854e59, 2d5c174, 8218f50, 4500a22). Round 4 closed most polish and copy issues: the funnel, slots, /legal, decline and clear-data wording, summary day count and the 375 px list are fixed. Two P1s remain and got worse: patient tabs still freeze on the auth lock (about 7 times in 75 minutes), and patients are silently moved to new anonymous accounts, which broke partner sync for both test personas. Doctors still cannot cancel an appointment. Health 81. Round 5 (23 Oct, builds 04:00 and 04:18 IST): clinics can now cancel appointments, drag to move works, and the photo issue stays fixed. Booking now asks for a one-time email check. The tab hang and a booking 503 were seen during deploys; Harsh lowered both to P2 and accepted Slow 3G speed and the Symptoms button. Health 85.",
       "top_build_next": [
         {
-          "title": "Fix the auth-lock hang (ISS-061)",
-          "why": "Blocks booking and chat for real patients; the new 15 s timeout does not trigger in the stuck state."
+          "title": "Account swaps (ISS-066)",
+          "why": "Partner Mode and doctor history break silently; only P1 left."
         },
         {
-          "title": "Stop silent account swaps (ISS-066)",
-          "why": "Partner Mode and doctor history break without warning; both personas lost their link data this round."
+          "title": "Confirm the hang is gone on a stable build (ISS-061)",
+          "why": "Still seen once in round 5."
         },
         {
-          "title": "Add cancel for appointments (ISS-078)",
-          "why": "Clinics and patients cannot undo a booking."
+          "title": "Show booking errors to the patient (ISS-082)",
+          "why": "A failed request currently shows nothing."
         },
         {
           "title": "Fix summary symptoms text (ISS-075)",
-          "why": "Doctors receive \"[object Object]\"."
+          "why": "Doctors may receive \"[object Object]\"."
         },
         {
           "title": "Live updates for new bookings and hours (ISS-072/080)",
@@ -192,7 +197,7 @@
       ]
     }
   ],
-  "updated": "2026-10-22T22:58:36.187Z",
+  "updated": "2026-10-22T23:06:05.184Z",
   "run_gaps": [
     {
       "from": "2026-10-08",

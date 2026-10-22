@@ -514,7 +514,7 @@
       "first_seen": "2026-10-01",
       "last_verified": "2026-10-23",
       "fixed_on": null,
-      "status": "open",
+      "status": "accepted",
       "steps": [
         "Throttle to Slow 3G, open home / wellness / chat."
       ],
@@ -524,7 +524,9 @@
       "cache_clean_recheck": "Cache-clean (fresh context, SW+cache cleared): slow 3G home 9.3 s, LCP 10.1 s.",
       "platform": "web",
       "platform_note": "Not reproduced in the installed app per founder, 22 Oct 2026; web build only.",
-      "build": "4500a22"
+      "build": "4500a22",
+      "accepted_on": "2026-10-23",
+      "accepted_note": "Founder decision: target users are tier-1/2 India on 4G/5G; Fast 3G and normal timings are acceptable."
     },
     {
       "id": "ISS-026",
@@ -1238,7 +1240,7 @@
       "title": "Patient tab can silently stop reaching the server: Messages empty, booking stuck on \"Sending request…\", logs stop syncing",
       "feature": "doctor-dashboard",
       "persona": "meera",
-      "severity": "P1",
+      "severity": "P2",
       "status": "open",
       "platform": "web",
       "steps": [
@@ -1251,8 +1253,9 @@
       "first_seen": "2026-10-22",
       "last_verified": "2026-10-23",
       "fixed_on": null,
-      "retest_note": "Build live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a): Still happens. Hang monitor on Arjun 04:03-04:24 IST: 7 checks fine on the 04:00 build, then 1 lock (intima-auth held, chats empty) at 04:23 just after the 04:18 deploy. Meera tab left open 23 min had no lock and reloaded fine.",
-      "build": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)"
+      "retest_note": "Build live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a): Still happens. Hang monitor on Arjun 04:03-04:24 IST: 7 checks fine on the 04:00 build, then 1 lock (intima-auth held, chats empty) at 04:23 just after the 04:18 deploy. Meera tab left open 23 min had no lock and reloaded fine. Dropped P1 -> P2 on 23 Oct 04:33 IST (founder decision).",
+      "build": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)",
+      "founder_note": "Founder says the hang and the 503 coincided with his mid-test deploys; recheck on a stable build in the next daily run."
     },
     {
       "id": "ISS-062",
@@ -1666,7 +1669,7 @@
       "id": "ISS-082",
       "title": "Booking request fails with 503 and the patient sees nothing",
       "feature": "care-booking",
-      "severity": "P1",
+      "severity": "P2",
       "steps": [
         "As a new temp patient, Care > Dr. Test Clinic, pick Mon 26 Oct 10:00 AM.",
         "Tap Request Appointment (twice, 1 min apart)."
@@ -1674,14 +1677,15 @@
       "expected": "Request sent, or a visible error.",
       "actual": "POST /api/care/bookings returns 503 {\"error\":\"We couldn't confirm this doctor's calendar just now. Please try again in a minute.\"}. Nothing is shown; the button just stays. The clinic still shows Google Calendar as Connected. Blocks every new booking at this clinic.",
       "screenshot": "shots/2026-10-23r5b_t_after_req.jpg",
-      "retest_note": "Build live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a): Not reached on the new build: a one-time email verification step (\"Booking is free, so we confirm you are a real person first\") now comes before the request, so no booking POST was sent. Last seen 503 on the 04:00 build."
+      "retest_note": "Build live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a): Not reached on the new build: a one-time email verification step (\"Booking is free, so we confirm you are a real person first\") now comes before the request, so no booking POST was sent. Last seen 503 on the 04:00 build. Dropped P1 -> P2 on 23 Oct 04:33 IST (founder decision).",
+      "founder_note": "Founder says the hang and the 503 coincided with his mid-test deploys; recheck on a stable build in the next daily run."
     },
     {
       "persona": "patient",
       "first_seen": "2026-10-23",
       "last_verified": "2026-10-23",
       "fixed_on": null,
-      "status": "open",
+      "status": "accepted",
       "platform": "web",
       "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
       "id": "ISS-081",
@@ -1694,7 +1698,9 @@
       ],
       "expected": "Done is visible and tappable.",
       "actual": "The Done button sits under the bottom navigation bar and cannot be tapped (taps hit the nav). Selections still save.",
-      "screenshot": "shots/2026-10-23r5_t_symptoms_done.jpg"
+      "screenshot": "shots/2026-10-23r5_t_symptoms_done.jpg",
+      "accepted_on": "2026-10-23",
+      "accepted_note": "Founder reviewed, looks fine to him; recheck in the native app."
     }
   ],
   "updated": "2026-10-22T21:30:00+05:30"
