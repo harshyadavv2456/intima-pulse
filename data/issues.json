@@ -1272,8 +1272,8 @@
       "first_seen": "2026-10-22",
       "last_verified": "2026-10-23",
       "fixed_on": null,
-      "retest_note": "Build 4500a22: Partly: with auto-confirm on, the result now says \"Appointment confirmed · Your appointment with Dr. Test Clinic is booked\" (0.9 s), but the booking sheet before sending still says it is not booked instantly.",
-      "build": "4500a22"
+      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Still: the booking sheet says \"not booked instantly\" (auto-confirm off now, so correct; on-state not rechecked).",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)"
     },
     {
       "id": "ISS-063",
@@ -1359,8 +1359,8 @@
       "expected": "The patient stays on their account, or is clearly told the session ended and how to restore it.",
       "actual": "Both personas were given brand-new anonymous accounts without any notice (doctor sees \"Patient 0AC3\"/\"Patient 368E\" instead of 45DB/B92F). Partner view: \"Partner Connected\" but \"Your partner hasn't logged health data yet\". Restore with the backup code kept the new id. Earlier doctor history was gone. The trigger may be an expired refresh token in the test browser, but the silent switch is the bug.",
       "screenshot": "shots/2026-10-22qa2_a_connect.jpg",
-      "retest_note": "Build 4500a22: Worse: during this round Arjun moved to a new account (DF0B) and Meera to a new account (31A6, previous 0AC3) without any sign-in action. The new \"Your session was reset on this device\" card appears, but on Meera it came back in a new tab after \"Got it\".",
-      "build": "4500a22"
+      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): At start (04:02 IST) Meera 31A6 (prev 0AC3), Arjun DF0B (prev 368E). The reset card showed again on Arjun after earlier \"Got it\".",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)"
     },
     {
       "persona": "doctor",
@@ -1480,7 +1480,7 @@
       "fixed_on": null,
       "status": "open",
       "platform": "web",
-      "build": "4500a22",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
       "id": "ISS-072",
       "title": "New booking does not appear live on the clinic Today page",
       "feature": "doctor-dashboard",
@@ -1491,16 +1491,17 @@
         "Watch Today for 60 s without reloading."
       ],
       "expected": "The request shows within a few seconds, like messages do.",
-      "actual": "Not shown after 45-60 s; appears only after a reload. (Messages, confirm and reschedule are live in about 1 s.)"
+      "actual": "Not shown after 45-60 s; appears only after a reload. (Messages, confirm and reschedule are live in about 1 s.)",
+      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Not verifiable: new bookings fail (ISS-082). Clinic Today showed nothing in 60 s, but no booking was created."
     },
     {
       "persona": "doctor",
       "first_seen": "2026-10-23",
       "last_verified": "2026-10-23",
-      "fixed_on": null,
-      "status": "open",
+      "fixed_on": "2026-10-23",
+      "status": "fixed",
       "platform": "web",
-      "build": "4500a22",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
       "id": "ISS-073",
       "title": "404 page throws React errors #418/#423",
       "feature": "doctor-dashboard",
@@ -1509,16 +1510,18 @@
         "Open a removed URL such as /doctor/insights."
       ],
       "expected": "A clean 404 page with no console errors.",
-      "actual": "404 shows, but the console logs minified React errors #418 and #423 (hydration mismatch)."
+      "actual": "404 shows, but the console logs minified React errors #418 and #423 (hydration mismatch).",
+      "fix_evidence": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Unknown URL shows \"404 This page could not be found\" with no React #418/#423. /doctor/insights now redirects to Today.",
+      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Fixed, see fix evidence."
     },
     {
       "persona": "patient",
       "first_seen": "2026-10-23",
       "last_verified": "2026-10-23",
-      "fixed_on": null,
-      "status": "open",
+      "fixed_on": "2026-10-23",
+      "status": "fixed",
       "platform": "web",
-      "build": "4500a22",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
       "id": "ISS-074",
       "title": "Companion usage counter calls fail: \"Cannot read properties of undefined (reading 'rest')\"",
       "feature": "ai-chat",
@@ -1528,7 +1531,9 @@
         "Watch the console."
       ],
       "expected": "No errors; the daily counter is recorded on the server.",
-      "actual": "Console: \"Error in getChatUsageAsync\" on load and \"Error in incrementMessageCountAsync: TypeError: Cannot read properties of undefined (reading 'rest')\" after each message. The daily cap may not be enforced server-side."
+      "actual": "Console: \"Error in getChatUsageAsync\" on load and \"Error in incrementMessageCountAsync: TypeError: Cannot read properties of undefined (reading 'rest')\" after each message. The daily cap may not be enforced server-side.",
+      "fix_evidence": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Arjun companion message: no console errors; counter \"1/30 today (+1 bonus)\".",
+      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Fixed, see fix evidence."
     },
     {
       "persona": "patient",
@@ -1591,10 +1596,10 @@
       "persona": "doctor",
       "first_seen": "2026-10-23",
       "last_verified": "2026-10-23",
-      "fixed_on": null,
-      "status": "open",
+      "fixed_on": "2026-10-23",
+      "status": "fixed",
       "platform": "web",
-      "build": "4500a22",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
       "feature": "doctor-dashboard",
       "id": "ISS-078",
       "title": "No way to cancel a confirmed appointment (clinic or patient)",
@@ -1605,16 +1610,18 @@
       ],
       "expected": "A Cancel option on either side, with a message to the other side.",
       "actual": "Clinic detail offers only Message, Move… and Open patient file; the patient chat has no cancel. Test appointments cannot be removed.",
-      "screenshot": "shots/2026-10-23r4_doc_week.jpg"
+      "screenshot": "shots/2026-10-23r5_doc_cancel.jpg",
+      "fix_evidence": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Clinic appointment detail now has Cancel > \"Cancel this appointment? The patient is told in chat.\" > Yes, cancel it / Keep it. Cancelled DE11 Tue 27 Oct 10:30; it left the agenda. Patient-side cancel not checked (booking blocked by ISS-082).",
+      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Fixed, see fix evidence."
     },
     {
       "persona": "patient",
       "first_seen": "2026-10-23",
       "last_verified": "2026-10-23",
-      "fixed_on": null,
-      "status": "open",
+      "fixed_on": "2026-10-23",
+      "status": "fixed",
       "platform": "web",
-      "build": "4500a22",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
       "feature": "care-booking",
       "id": "ISS-079",
       "title": "Patient slot list stops after about 48 slots, mid-day",
@@ -1623,7 +1630,10 @@
         "Care > Dr. Test Clinic, read Available times."
       ],
       "expected": "Each listed day shows all free slots, or the list says there are more.",
-      "actual": "Fri-Tue are complete, then Wed 28 Oct ends at 12:00 PM (12:30 and 5-7:30 PM missing) and Thu onward is not shown, with no \"more\" control."
+      "actual": "Fri-Tue are complete, then Wed 28 Oct ends at 12:00 PM (12:30 and 5-7:30 PM missing) and Thu onward is not shown, with no \"more\" control.",
+      "fix_evidence": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Slot list now runs Fri 23 Oct to Thu 5 Nov with full days.",
+      "retest_note": "Build live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a): Fixed, see fix evidence.",
+      "screenshot": "shots/2026-10-23r5_t_req.jpg"
     },
     {
       "persona": "doctor",
@@ -1644,6 +1654,46 @@
       ],
       "expected": "Patient slots update, or the stale slot is refused with a clear message.",
       "actual": "7:00/7:30 PM still offered after 40 s; correct only after reopening the doctor page."
+    },
+    {
+      "persona": "patient",
+      "first_seen": "2026-10-23",
+      "last_verified": "2026-10-23",
+      "fixed_on": null,
+      "status": "open",
+      "platform": "web",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
+      "id": "ISS-082",
+      "title": "Booking request fails with 503 and the patient sees nothing",
+      "feature": "care-booking",
+      "severity": "P1",
+      "steps": [
+        "As a new temp patient, Care > Dr. Test Clinic, pick Mon 26 Oct 10:00 AM.",
+        "Tap Request Appointment (twice, 1 min apart)."
+      ],
+      "expected": "Request sent, or a visible error.",
+      "actual": "POST /api/care/bookings returns 503 {\"error\":\"We couldn't confirm this doctor's calendar just now. Please try again in a minute.\"}. Nothing is shown; the button just stays. The clinic still shows Google Calendar as Connected. Blocks every new booking at this clinic.",
+      "screenshot": "shots/2026-10-23r5_t_req.jpg"
+    },
+    {
+      "persona": "patient",
+      "first_seen": "2026-10-23",
+      "last_verified": "2026-10-23",
+      "fixed_on": null,
+      "status": "open",
+      "platform": "web",
+      "build": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
+      "id": "ISS-081",
+      "title": "Symptoms sheet \"Done\" button hidden behind the bottom nav",
+      "feature": "symptoms",
+      "severity": "P2",
+      "steps": [
+        "On a 393x727 phone viewport, Home > Symptoms.",
+        "Pick symptoms, look for Done."
+      ],
+      "expected": "Done is visible and tappable.",
+      "actual": "The Done button sits under the bottom navigation bar and cannot be tapped (taps hit the nav). Selections still save.",
+      "screenshot": "shots/2026-10-23r5_t_symptoms_done.jpg"
     }
   ],
   "updated": "2026-10-22T21:30:00+05:30"

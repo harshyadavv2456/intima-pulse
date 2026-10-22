@@ -2073,6 +2073,30 @@
       "issue_id": "ISS-025",
       "screenshot": "",
       "notes": "Slow 3G 13-14.5 s."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": "P1",
+      "repro": "",
+      "issue_id": "ISS-082",
+      "screenshot": "shots/2026-10-23r5_t_req.jpg",
+      "persona": "temp-patient",
+      "feature": "care-booking",
+      "steps": "Round 5: temp patient 1DC0 created in a fresh browser profile (synthetic, female, last period 5 Oct), check-in, 2 symptoms, tried to book Test Clinic Mon 26 Oct 10:00.",
+      "result": "broken",
+      "notes": "Temporary patient for this round; to be cleared at the end. Booking 503."
+    },
+    {
+      "date": "2026-10-23",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "shots/2026-10-23r5_doc_cancel.jpg",
+      "persona": "doctor",
+      "feature": "doctor-dashboard",
+      "steps": "Cancelled orphan DE11 appointment (Tue 27 Oct 10:30) with the new Cancel button. Dragged 368E 12pm down: Move dialog opened at 12:30, cancelled.",
+      "result": "works",
+      "notes": "Orphan DE11 now has no appointment."
     }
   ],
   "narratives": [

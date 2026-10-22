@@ -1,6 +1,6 @@
 {
   "app_url": "https://www.intimacare.in",
-  "app_version": "4500a22",
+  "app_version": "live 23 Oct 04:00 IST (dashboard page-faa36df1, main-app-be3d940a)",
   "last_test_run": "2026-10-23T04:00:00+05:30",
   "health_score": 81,
   "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
