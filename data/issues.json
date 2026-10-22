@@ -1366,8 +1366,8 @@
       "persona": "doctor",
       "first_seen": "2026-10-22",
       "last_verified": "2026-10-23",
-      "fixed_on": null,
-      "status": "open",
+      "fixed_on": "2026-10-23",
+      "status": "fixed",
       "platform": "web",
       "id": "ISS-067",
       "title": "Doctor Messages list is clipped on the right at 375 px",
@@ -1379,9 +1379,10 @@
       ],
       "expected": "Each conversation row fits the screen with its time visible.",
       "actual": "The list card runs past the right edge: previews are cut mid-word and the \"x min ago\" time is off screen. The page itself does not scroll sideways.",
-      "screenshot": "shots/2026-10-22qa3_d375_list.jpg",
-      "retest_note": "Build 8218f50: Still fails: Messages list rows still run past the right edge at 375 px. The chat screen itself fits at 375 px.",
-      "build": "4500a22"
+      "screenshot": "shots/2026-10-23r4_d375_patients.jpg",
+      "retest_note": "Build 4500a22: Fixed, see fix evidence.",
+      "build": "4500a22",
+      "fix_evidence": "Build 4500a22: at 375 px the Patients list fits (page scroll width 378 from the filter-chip strip only); names, \"Next visit\" and \"x min ago\" all visible."
     },
     {
       "persona": "both",
@@ -1585,6 +1586,64 @@
       ],
       "expected": "role=\"dialog\"/\"alertdialog\" and an accessible name on each switch.",
       "actual": "No dialog role found; 7 of 8 sharing switches have no aria-label."
+    },
+    {
+      "persona": "doctor",
+      "first_seen": "2026-10-23",
+      "last_verified": "2026-10-23",
+      "fixed_on": null,
+      "status": "open",
+      "platform": "web",
+      "build": "4500a22",
+      "feature": "doctor-dashboard",
+      "id": "ISS-078",
+      "title": "No way to cancel a confirmed appointment (clinic or patient)",
+      "severity": "P2",
+      "steps": [
+        "Clinic > Appointments > Agenda, tap a confirmed appointment.",
+        "As the patient, open the chat with the clinic."
+      ],
+      "expected": "A Cancel option on either side, with a message to the other side.",
+      "actual": "Clinic detail offers only Message, Move… and Open patient file; the patient chat has no cancel. Test appointments cannot be removed.",
+      "screenshot": "shots/2026-10-23r4_doc_week.jpg"
+    },
+    {
+      "persona": "patient",
+      "first_seen": "2026-10-23",
+      "last_verified": "2026-10-23",
+      "fixed_on": null,
+      "status": "open",
+      "platform": "web",
+      "build": "4500a22",
+      "feature": "care-booking",
+      "id": "ISS-079",
+      "title": "Patient slot list stops after about 48 slots, mid-day",
+      "severity": "P3",
+      "steps": [
+        "Care > Dr. Test Clinic, read Available times."
+      ],
+      "expected": "Each listed day shows all free slots, or the list says there are more.",
+      "actual": "Fri-Tue are complete, then Wed 28 Oct ends at 12:00 PM (12:30 and 5-7:30 PM missing) and Thu onward is not shown, with no \"more\" control."
+    },
+    {
+      "persona": "doctor",
+      "first_seen": "2026-10-23",
+      "last_verified": "2026-10-23",
+      "fixed_on": null,
+      "status": "open",
+      "platform": "web",
+      "build": "4500a22",
+      "feature": "doctor-dashboard",
+      "id": "ISS-080",
+      "title": "Working-hours change does not reach an open patient booking screen",
+      "severity": "P3",
+      "steps": [
+        "Patient has Dr. Test Clinic open.",
+        "Clinic changes Tue evening end from 20:00 to 19:00, Save hours.",
+        "Watch the patient screen 40 s."
+      ],
+      "expected": "Patient slots update, or the stale slot is refused with a clear message.",
+      "actual": "7:00/7:30 PM still offered after 40 s; correct only after reopening the doctor page."
     }
   ],
   "updated": "2026-10-22T21:30:00+05:30"

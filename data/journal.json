@@ -2037,6 +2037,18 @@
       "steps": "Noticed account change during the round.",
       "result": "broken",
       "notes": "Meera and Arjun on new anonymous accounts; partner data gone both ways."
+    },
+    {
+      "date": "2026-10-23",
+      "persona": "doctor",
+      "feature": "doctor-dashboard",
+      "steps": "Round 4 clinic: Calendar Day/Week/Month/Agenda, Needs reply/Upcoming/Past, New appointment for temp patient 3F1D (Wed 28 Oct 3 pm, \"the patient has been told\", patient saw \"Dr. Test Clinic booked you for Wed, 28 Oct, 03:00 pm\"), Block time Wed 4-5 pm (slots hidden; then removed: \"Time unblocked\"), hours change Tue end 20:00 to 19:00 and back, 375 px Patients list.",
+      "result": "partial",
+      "severity": null,
+      "repro": "",
+      "issue_id": null,
+      "screenshot": "shots/2026-10-23r4_doc_week.jpg",
+      "notes": "All views work. Cancel not possible (ISS-078). Hours restored to Mon-Sat 10-13 and 17-20. Visited/No-show not possible yet (before visit times)."
     }
   ],
   "narratives": [
