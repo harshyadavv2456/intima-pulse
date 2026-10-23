@@ -323,14 +323,16 @@ R.problems=function(){
   return load('opportunities').then(function(d){var all=arr(d.opportunities);
     var areas=arr(d.areas).length?arr(d.areas):uniq([].concat.apply([],all.map(function(o){return arr(o.areas)})));
     app.innerHTML=head('Problems &amp; solutions','Real problems people post about publicly, and what to build in Intima. Scores are estimates.',d)+
-      '<div class="filters" id="flt"><label>Area<select id="fa">'+opts(areas,'All areas')+'</select></label><label>Show<select id="fpr"><option value="">All</option><option value="1">Priority only</option></select></label><label>Status<select id="fs">'+opts(uniq(all.map(function(o){return o.status})))+'</select></label></div>'+
-      (d.source_note?'<div class="sub">'+esc(d.source_note)+'</div>':'')+'<div id="out"></div>';
+      '<div class="filters" id="flt"><label>Audience<select id="fau"><option value="">All</option><option value="doctor">Doctor</option><option value="patient">Patient</option></select></label><label>Area<select id="fa">'+opts(areas,'All areas')+'</select></label><label>Show<select id="fpr"><option value="">All</option><option value="1">Priority only</option></select></label><label>Status<select id="fs">'+opts(uniq(all.map(function(o){return o.status})))+'</select></label></div>'+
+      (d.source_note?'<div class="sub">'+esc(d.source_note)+'</div>':'')+practo(d.practo_clusters)+'<div id="out"></div>';
+    function practo(pc){if(!pc)return '';function side(t,x){if(!x)return '';return '<div class="card"><h3>'+t+' ('+esc(x.negative)+' of '+esc(x.reviews_seen)+' reviews were 1-2 stars)</h3><div class="tw"><table><thead><tr><th>Pain point</th><th>Reviews</th></tr></thead><tbody>'+arr(x.clusters).map(function(c){return '<tr><td>'+esc(c[0])+'</td><td>'+esc(c[1])+'</td></tr>'}).join('')+'</tbody></table></div><div class="sub">Source: '+link(x.source,'Google Play')+'</div></div>'}
+      return '<details class="card"><summary><b>Where Practo goes wrong</b> (doctor + patient review clusters)</summary><div class="sub">'+esc(pc.note)+'</div>'+side('Doctors · Practo Pro',pc.doctor)+side('Patients · Practo app',pc.patient)+'<div class="sub">Opportunities OPP-011..019 pair each cluster with an Intima change.</div></details>'}
     function list(a){return '<ul style="margin:4px 0;padding-left:18px">'+arr(a).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'}
-    function draw(){var a=val('fa'),pr=val('fpr'),st=val('fs');
-      var l=all.filter(function(o){return (!a||arr(o.areas).indexOf(a)>=0)&&(!pr||o.priority)&&(!st||o.status===st)}).sort(function(x,y){return (x.priority?0:1)-(y.priority?0:1)||(x.priority_rank||99)-(y.priority_rank||99)||((y.score||{}).total||0)-((x.score||{}).total||0)});
+    function draw(){var a=val('fa'),pr=val('fpr'),st=val('fs'),au=val('fau');
+      var l=all.filter(function(o){return (!au||o.audience===au)&&(!a||arr(o.areas).indexOf(a)>=0)&&(!pr||o.priority)&&(!st||o.status===st)}).sort(function(x,y){return (x.priority?0:1)-(y.priority?0:1)||(x.priority_rank||99)-(y.priority_rank||99)||((y.score||{}).total||0)-((x.score||{}).total||0)});
       document.getElementById('out').innerHTML=!all.length?empty('No opportunities yet.'):!l.length?empty('Nothing matches this filter.'):l.map(function(o){var sc=o.score||{};
         return '<div class="card" id="'+esc(o.id)+'"><h3>'+esc(o.id)+' · '+esc(o.title||'')+' '+(o.priority?chip('Priority #'+o.priority_rank,'good')+' ':'')+chip(o.status,'OK')+' '+chip('Score '+sc.total+(sc.estimate?' (est.)':''),'P3')+'</h3>'+
-        '<div class="sub">Areas: '+arr(o.areas).map(esc).join(', ')+' · F'+esc(sc.frequency)+' × I'+esc(sc.intensity)+' × Fit '+esc(sc.fit)+' · updated '+esc(o.last_updated)+'</div>'+
+        '<div class="sub">Audience: '+esc(o.audience||'?')+' · Areas: '+arr(o.areas).map(esc).join(', ')+' · F'+esc(sc.frequency)+' × I'+esc(sc.intensity)+' × Fit '+esc(sc.fit)+' · updated '+esc(o.last_updated)+'</div>'+
         '<div><b>Problem:</b> '+esc(o.problem)+'</div><div class="sub">Who: '+esc(o.who)+'</div>'+
         '<div><b>Solution in the app:</b>'+list(o.solution_in_app)+'</div>'+
         '<div><b>MVP (under 2 weeks):</b> '+esc(o.mvp_scope)+'</div>'+

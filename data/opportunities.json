@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-23T04:50:00+05:30",
- "source_note": "Public-post research on 23 Oct 2026. Scores are estimates (1-5 each; total = frequency x intensity x fit). No usernames or personal details. 'verified: true' = source page/post was read; false = could not confirm figure or date.",
+ "updated": "2026-10-23T06:30:00+05:30",
+ "source_note": "Public-post research on 23 Oct 2026. Scores are estimates (1-5 each; total = frequency x intensity x fit). No usernames or personal details. 'verified: true' = source page/post was read; false = could not confirm figure or date. OPP-011..019: Practo review research 23 Oct 2026 (Play Store review scrape: 671 Practo Pro + 682 patient app reviews, App Store, Reddit, news); cluster counts are keyword matches on 1-2 star reviews, approximate. Full notes: research/practo-reviews-2026-10-23.md (box only).",
  "areas": [
   "Home",
   "Care",
@@ -71,7 +71,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "doctor"
   },
   {
    "id": "OPP-002",
@@ -132,7 +133,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "doctor"
   },
   {
    "id": "OPP-003",
@@ -194,7 +196,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
   },
   {
    "id": "OPP-004",
@@ -255,7 +258,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
   },
   {
    "id": "OPP-005",
@@ -315,7 +319,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
   },
   {
    "id": "OPP-006",
@@ -372,7 +377,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
   },
   {
    "id": "OPP-007",
@@ -430,7 +436,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
   },
   {
    "id": "OPP-008",
@@ -479,7 +486,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
   },
   {
    "id": "OPP-009",
@@ -537,7 +545,8 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
   },
   {
    "id": "OPP-010",
@@ -594,7 +603,581 @@
    "status": "idea",
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23",
-   "research_doc": "Research 2026-10-23 (internal)"
+   "research_doc": "Research 2026-10-23 (internal)",
+   "audience": "patient"
+  },
+  {
+   "id": "OPP-011",
+   "audience": "doctor",
+   "title": "Flat clinic fee, no per-patient or per-call charges",
+   "problem": "Doctors on Practo say they pay a wallet/Prime fee per patient connection, are charged when patients merely call, see commission rise, and that ranking goes to whoever pays most.",
+   "who": "Independent gynaecologists, urologists, sexologists and small clinics listed on Practo.",
+   "evidence": [
+    {
+     "source": "Practo Pro Play review: \"pay more money to get patients ... only money matters to get on top\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-10-02",
+     "verified": true,
+     "note": "Paid visibility cluster: ~193 of 519 negative reviews mention money/plan/fees (keyword count)"
+    },
+    {
+     "source": "Medical Dialogues: urologist says Practo charged ~Rs 350-450 connection fee for a patient enquiry call",
+     "url": "https://medicaldialogues.in/news/health/doctors/urologist-slams-practo-for-unethical-charges-on-patient-inquiries-138562",
+     "date": "2024-11-23",
+     "verified": true
+    },
+    {
+     "source": "Practo Prime provider FAQ: one-time fee charged to clinic when a patient first connects, valid 6 months",
+     "url": "https://help.practo.com/practo-prime/faqs-for-practo-prime-providers/",
+     "date": "undated",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 5,
+    "intensity": 4,
+    "fit": 4,
+    "total": 80,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Clinic > Profile: show a flat monthly plan, with no per-lead, per-call or commission charges, and say so on the pricing card",
+    "Grow > Insights: show which patients came via the clinic QR or link, so the doctor sees that patients they bring stay theirs at no extra cost",
+    "Patient app Care listing: same sort order for every clinic (distance, specialty, verified-visit rating), with no paid boost"
+   ],
+   "mvp_scope": "Pricing copy and a \"no per-patient fee\" promise on the clinic onboarding page and dashboard. QR-sourced vs app-sourced patient counts in Insights.",
+   "metric": "Clinic pilot sign-ups from doctors who were on Practo; paying clinics; clinic churn at 90 days.",
+   "competitor_gap": "Practo charges clinics per new-patient connection (Prime), takes a share of online consults (help pages: higher of 20% or Rs 50) and sells Reach ad campaigns. Doctors read this as paid ranking. Intima can win on simple flat pricing.",
+   "risks": [
+    "Flat pricing caps revenue per clinic",
+    "A no-boost promise must hold once Intima itself needs revenue"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-012",
+   "audience": "doctor",
+   "title": "Named clinic success contact with a response-time promise",
+   "problem": "The most common doctor complaint: Practo responds fast until payment, then support disappears (no phone line, endless escalations, tickets unanswered), even for paid plans and stuck activations.",
+   "who": "Clinics that have paid Practo for Prime, Ray or Reach.",
+   "evidence": [
+    {
+     "source": "Practo Pro Play review: \"very responsive until you onboard, but after that, getting support is almost impossible\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-08-14",
+     "verified": true,
+     "note": "Support cluster: ~195 of 519 negative reviews"
+    },
+    {
+     "source": "Practo Pro Play review: \"25 plus days since my payment for account activation ... don't even respond to emails\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-10-11",
+     "verified": true
+    },
+    {
+     "source": "Practo Pro Play review: paid premium plan, ID not activated, no refund response",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-09-18",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 5,
+    "intensity": 4,
+    "fit": 4,
+    "total": 80,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Clinic > Help: in-dashboard ticket with visible status and a promise of a first reply within 4 working hours, plus a WhatsApp/phone fallback",
+    "A named onboarding contact for each pilot clinic, shown on Today, who stays the same after payment",
+    "Ticket timer in an admin view so missed promises are visible"
+   ],
+   "mvp_scope": "Help screen with ticket form, status list and response-time badge, backed by email or a shared inbox. One named contact field per clinic.",
+   "metric": "Clinic NPS/retention at 90 days; first-reply time; share of tickets answered within the promise.",
+   "competitor_gap": "Practo routes doctors to prac.to/contactus forms. Reviews say sales is the only team that responds. Small clinics care more about a human who replies than about features.",
+   "risks": [
+    "Hard to keep up as clinic numbers grow",
+    "A promise that gets broken does more harm than no promise"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-013",
+   "audience": "doctor",
+   "title": "Reviews only from verified visits, with a doctor reply",
+   "problem": "Doctors say anonymous, unverifiable reviews hurt their reputation while paid profiles look better. Patients say all 5-star ratings are fake. Neither side trusts the ratings.",
+   "who": "Doctors in sensitive specialties (sexual health, fertility) where one hostile review hurts; patients picking a doctor.",
+   "evidence": [
+    {
+     "source": "Practo Pro Play review: \"allows anonymous reviews ... doctors are given no way to verify who posted\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2025-12-17",
+     "verified": true
+    },
+    {
+     "source": "Practo patient app Play review: \"all 5 star ratings are fake\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-15",
+     "verified": true
+    },
+    {
+     "source": "HuffPost India: doctors allege paid profiles get prominence and reviews are skewed; Practo denies",
+     "url": "https://www.huffpost.com/archive/in/entry/medical-data-practo-privacy-spying_in_5cd2e1aee4b0a7dffccfa40d",
+     "date": "2019",
+     "verified": false,
+     "note": "Allegations, denied by Practo"
+    }
+   ],
+   "score": {
+    "frequency": 3,
+    "intensity": 4,
+    "fit": 4,
+    "total": 48,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard",
+    "Care"
+   ],
+   "solution_in_app": [
+    "Patient app Care: a rating can only be left after a visit the clinic has checked in (QR or appointment completed), and is labelled \"Verified visit\"",
+    "Doctor dashboard > Patients/Grow: one public reply per review, plus a flag-for-review button with a stated SLA",
+    "Rating shown with the number of visits behind it, and no paid placement mixed in"
+   ],
+   "mvp_scope": "Tie review prompts to completed appointments. Verified-visit badge, doctor reply field and a moderation queue.",
+   "metric": "Share of reviews that are verified; doctor reply rate; patient booking conversion from profile.",
+   "competitor_gap": "Practo feedback can come from patients with no checked-in visit, and doctors cannot verify the author. Intima already has the appointment and QR data needed to verify visits.",
+   "risks": [
+    "Moderation work",
+    "Must not let doctors suppress real negative feedback"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-014",
+   "audience": "doctor",
+   "title": "No charge for unverified leads or no-shows; check-in proof both sides",
+   "problem": "Doctors report fake appointments, charges for patients who never came, being blamed for marking no-shows, and QR check-in failures that turn paid visits into no-shows.",
+   "who": "Clinics on per-patient or wallet billing.",
+   "evidence": [
+    {
+     "source": "Practo Pro Play review: \"scheduling fake appointments ... no patient turns up ... if I cancel from my side 500 is debited\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-05-23",
+     "verified": true,
+     "note": "Lead quality ~28, no-show ~10 negative reviews"
+    },
+    {
+     "source": "Practo Pro Play review: accused of marking no-show on confirmed patients after commission increase",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-08-26",
+     "verified": true
+    },
+    {
+     "source": "Practo Pro Play review: cashless QR scans failed, so a seen patient showed as a no-show",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2025-02-07",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 3,
+    "intensity": 5,
+    "fit": 4,
+    "total": 60,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Today: one-tap check-in with patient-side QR confirmation, so both sides see the same visit log",
+    "Appointments: auto-reminder plus confirm/cancel buttons for patients, with no-show history visible to the clinic",
+    "No billing tied to leads. If a paid add-on ever exists, unverified bookings are never charged"
+   ],
+   "mvp_scope": "Patient confirm/cancel buttons on reminders, a no-show tag, and a visit log exportable from Today.",
+   "metric": "No-show rate vs clinic baseline; disputes raised; clinic retention.",
+   "competitor_gap": "On Practo, the clinic pays and Practo decides disputes. Reviews say Practo \"will believe the patient but not the provider\". Intima can be neutral and charge no per-lead fee.",
+   "risks": [
+    "Patients may skip confirmation",
+    "Proof logs must respect privacy"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-015",
+   "audience": "doctor",
+   "title": "Your patient data, exportable any time",
+   "problem": "Doctors complain Practo charges for storing patient data, monetises formerly free features, and makes it hard to delete data or leave.",
+   "who": "Long-time Practo Ray users and clinics thinking about switching.",
+   "evidence": [
+    {
+     "source": "Practo Pro Play review: \"charging me for storing patient data\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-08-13",
+     "verified": true,
+     "note": "Data/lock-in ~23 negative reviews"
+    },
+    {
+     "source": "Practo Pro Play review: \"can't even delete my data from this app\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-03-06",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 2,
+    "intensity": 4,
+    "fit": 4,
+    "total": 32,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard",
+    "Settings"
+   ],
+   "solution_in_app": [
+    "Clinic > Settings: one-click CSV/PDF export of the patient list, appointments and notes",
+    "Import from a CSV or Practo Ray export during onboarding",
+    "Clear delete-my-clinic flow with a confirmation email"
+   ],
+   "mvp_scope": "CSV export of patients and appointments, a CSV import template, and a delete-clinic flow.",
+   "metric": "Switching clinics onboarded with imported data; time-to-first-appointment for migrated clinics.",
+   "competitor_gap": "Practo bundles storage into paid Ray/cloud plans. A free import/export makes switching from Practo low-risk.",
+   "risks": [
+    "Export of health data must follow DPDP consent and access logging"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-016",
+   "audience": "patient",
+   "title": "Live doctor availability with auto-refund if the clinic cancels",
+   "problem": "Patients book on Practo and find the doctor absent, the clinic closed, or a clinic that \"no longer accepts Practo\", and then struggle to get refunds.",
+   "who": "Patients booking gynae, urology or fertility visits, often for sensitive problems where a wasted trip is costly.",
+   "evidence": [
+    {
+     "source": "Practo patient Play review: \"third time ... booked the appointment and doctor was not present ... closed door\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-20",
+     "verified": true,
+     "note": "Cancellation/unavailable ~91 of 451 negative reviews"
+    },
+    {
+     "source": "Practo App Store review: clinic said it no longer accepts Practo bookings despite app showing slot; paid Rs 950",
+     "url": "https://apps.apple.com/in/app/practo-healthcare-app/id953772015?see-all=reviews",
+     "date": "2025-12-21",
+     "verified": true
+    },
+    {
+     "source": "Practo patient Play review: doctor cancelled video consult, refund still not credited",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-06",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 5,
+    "intensity": 4,
+    "fit": 4,
+    "total": 80,
+    "estimate": true
+   },
+   "areas": [
+    "Care",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Patient app Care: slots come only from the clinic's own Intima calendar / Google Calendar sync. A badge shows \"Clinic confirmed today\"",
+    "Doctor dashboard > Clinic > alerts: 'Mark unavailable' cancels affected bookings, notifies patients and refunds them automatically",
+    "Patient app: reschedule-first option with one tap"
+   ],
+   "mvp_scope": "Use the existing Google Calendar sync as the source of truth. Bulk cancel + notify from Today. Auto-refund on clinic-side cancellation.",
+   "metric": "Booking-to-visit completion rate; clinic-cancel rate; day-30 retention of patients whose first booking succeeded.",
+   "competitor_gap": "Practo lists clinics that may have stopped honouring bookings, and refunds go through support. In Intima the clinic owns the calendar, so the slots shown are real.",
+   "risks": [
+    "Needs clinics to keep the calendar updated",
+    "Refund logic depends on the payment provider"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-017",
+   "audience": "patient",
+   "title": "Refund tracker with a stated timeline",
+   "problem": "Refunds for cancelled consults, lab tests and orders are slow or never arrive, and support chats loop for hours.",
+   "who": "Any paying patient, especially women paying without a partner knowing who cannot chase calls.",
+   "evidence": [
+    {
+     "source": "Practo patient Play review: \"Even if the doctor cancels consultation there is no refund issued\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-20",
+     "verified": true,
+     "note": "Refund ~61, support ~129 negative reviews"
+    },
+    {
+     "source": "Practo App Store review: waiting for refund since 6 March, chat says \"checking internally\" for hours",
+     "url": "https://apps.apple.com/in/app/practo-healthcare-app/id953772015?see-all=reviews",
+     "date": "2022-03-17",
+     "verified": true
+    },
+    {
+     "source": "Practo patient Play review: asked for neurologist, got neurosurgeon, cancelled, refund not done",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-09-20",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 4,
+    "fit": 3,
+    "total": 48,
+    "estimate": true
+   },
+   "areas": [
+    "Care",
+    "Settings"
+   ],
+   "solution_in_app": [
+    "Patient app Settings > Payments: refund status card (initiated, processing, credited) with the expected date",
+    "Automatic refund on any clinic- or doctor-side cancellation, with no ticket needed",
+    "In-app help thread, no phone call needed (discreet)"
+   ],
+   "mvp_scope": "Refund status model plus the card UI. Auto-refund webhook on cancellation.",
+   "metric": "Refund complaints per 100 paid bookings; repeat-booking rate after a refund.",
+   "competitor_gap": "Practo refunds go through chat support. Intima can make refunds automatic and visible, which matters more in a discreet sexual-health app.",
+   "risks": [
+    "Payment gateway timelines are outside Intima's control"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-018",
+   "audience": "patient",
+   "title": "Choose your doctor for online consults: fee and credentials shown, no random assignment",
+   "problem": "Practo instant consults auto-assign a doctor. Patients report rushed 1-2 minute calls, doctors who never join, and paying much more than the assigned doctor's own listed fee.",
+   "who": "Patients seeking online sexual/reproductive health consults.",
+   "evidence": [
+    {
+     "source": "Reddit r/india \"Practo is a scam\": paid Rs 629 instant consult, auto-connected to a doctor whose own fee is Rs 199, report \"read\" in 1m20s",
+     "url": "https://www.reddit.com/r/india/comments/1q10czm/practo_is_a_scam/",
+     "date": "2026-01-01",
+     "verified": true,
+     "note": "Single user account, unverified"
+    },
+    {
+     "source": "Practo patient Play review: \"dr dont reply and their support is the biggest fraud\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-20",
+     "verified": true,
+     "note": "Consult quality ~196 negative reviews (keyword count, broad)"
+    },
+    {
+     "source": "Practo patient Play review: doctors \"more focused on wrapping up the call quickly\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-17",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 4,
+    "fit": 5,
+    "total": 80,
+    "estimate": true
+   },
+   "areas": [
+    "Care",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Patient app Care: pick a specific doctor for a teleconsult. Show the doctor's own fee, qualification and slot, with no hidden markup",
+    "Doctor dashboard: minimum consult length guidance plus a structured note, so the patient gets a written summary",
+    "Free follow-up message thread with the same doctor for 7 days"
+   ],
+   "mvp_scope": "Doctor-picked teleconsult booking with transparent fee, a summary note template and a follow-up thread.",
+   "metric": "Teleconsult repeat rate with the same doctor; complaint rate; day-30 retention.",
+   "competitor_gap": "Practo instant consult allocates any available doctor (its own FAQ says it allocates from a panel). Continuity with one doctor is the gap, and Intima already pairs patients with their clinic.",
+   "risks": [
+    "Supply of doctors for instant need",
+    "Telemedicine Practice Guidelines 2020 compliance"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-019",
+   "audience": "patient",
+   "title": "No-spam promise: searches never shared, no unsolicited calls",
+   "problem": "Patients say that searching on Practo leads to calls from multiple physicians and repeated AI-bot follow-up calls. For sexual-health searches that is a serious privacy breach.",
+   "who": "Patients searching for sexual, fertility or STI care, often on shared phones.",
+   "evidence": [
+    {
+     "source": "Practo patient Play review: \"a simple search ... resulted in multiple unsolicited calls from various physicians ... stop selling my data\"",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-20",
+     "verified": true,
+     "note": "Spam calls/messages ~27 negative reviews"
+    },
+    {
+     "source": "Practo patient Play review: AI bot keeps calling to ask what the doctor said",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-09-06",
+     "verified": true
+    }
+   ],
+   "score": {
+    "frequency": 2,
+    "intensity": 5,
+    "fit": 5,
+    "total": 50,
+    "estimate": true
+   },
+   "areas": [
+    "Settings",
+    "Care",
+    "Connect"
+   ],
+   "solution_in_app": [
+    "Patient app Settings > Privacy: \"No calls\" default, in-app messages only, and a log of who saw my booking",
+    "Search history stays on device and is never shared with clinics. Clinics see a patient only after booking",
+    "Discreet notification text (no condition names)"
+   ],
+   "mvp_scope": "Contact-preference setting, booking-only clinic visibility, neutral notification templates.",
+   "metric": "Opt-in to stay contactable; privacy complaints; installs from privacy-led messaging.",
+   "competitor_gap": "Practo uses masked virtual numbers and call recording (Prime FAQ) and patients report unsolicited calls after searching. Intima can promise: no calls unless you ask.",
+   "risks": [
+    "Must actually enforce it with clinics",
+    "Fewer reminders could raise no-shows"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
   }
- ]
+ ],
+ "practo_clusters": {
+  "note": "Keyword counts on 1-2 star Google Play reviews fetched 2026-10-23 (newest + most relevant, up to 800 each). A review can fall in several clusters. Approximate.",
+  "doctor": {
+   "reviews_seen": 671,
+   "negative": 519,
+   "clusters": [
+    [
+     "Support disappears after payment",
+     195
+    ],
+    [
+     "Paid plans/fees/Prime cost, \"pay to get on top\"",
+     193
+    ],
+    [
+     "App bugs, login/OTP, profile edits",
+     121
+    ],
+    [
+     "Refund/billing of plans",
+     52
+    ],
+    [
+     "Poor lead quality, fake appointments",
+     28
+    ],
+    [
+     "Data lock-in/storage charges",
+     23
+    ],
+    [
+     "Payouts/settlement",
+     14
+    ],
+    [
+     "Ranking/visibility",
+     13
+    ],
+    [
+     "No-show disputes",
+     10
+    ],
+    [
+     "Review fairness",
+     2
+    ]
+   ],
+   "source": "https://play.google.com/store/apps/details?id=com.practo.droid"
+  },
+  "patient": {
+   "reviews_seen": 682,
+   "negative": 451,
+   "clusters": [
+    [
+     "Online consult quality/doctor no-show",
+     196
+    ],
+    [
+     "Medicine & lab orders",
+     132
+    ],
+    [
+     "Support unresponsive",
+     129
+    ],
+    [
+     "Cancellations/doctor unavailable/wrong slot",
+     91
+    ],
+    [
+     "Fraud/fake-review/trust",
+     76
+    ],
+    [
+     "Refunds",
+     61
+    ],
+    [
+     "Plans/membership misleading",
+     41
+    ],
+    [
+     "App bugs",
+     40
+    ],
+    [
+     "Spam calls/messages",
+     27
+    ]
+   ],
+   "source": "https://play.google.com/store/apps/details?id=com.practo.fabric"
+  }
+ }
 }

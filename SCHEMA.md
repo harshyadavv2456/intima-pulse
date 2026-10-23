@@ -118,11 +118,12 @@ Live numbers (health score, open P0/P1, D30 gaps, deadlines, social coverage, te
 - Issue `status` values: `open`, `regressed`, `fixed`, `accepted`. `accepted` = founder decision not to change (with `accepted_on`, `accepted_note`); not counted as an open bug and excluded from the health score (only `open`/`regressed` carry weights).
 
 ## data/opportunities.json  (site owner)
-Rendered on `problems.html` ("Problems & solutions"), filterable by area, priority and status.
+Rendered on `problems.html` ("Problems & solutions"), filterable by audience, area, priority and status.
 ```json
 { "updated":"...", "source_note":"..", "areas":["Home","Care","Connect","doctor dashboard","companion","male dashboard","Settings"],
   "opportunities":[ {
-    "id":"OPP-001","title":"short","problem":"plain words","who":"who has it",
+    "id":"OPP-001","audience":"doctor",       // doctor | patient (who the change serves; required)
+    "title":"short","problem":"plain words","who":"who has it",
     "evidence":[ {"source":"..","url":"https://..","date":"YYYY-MM-DD | YYYY | undated | not checked","verified":true,"note":"optional"} ],  // 2-3 items, no usernames
     "score":{"frequency":1-5,"intensity":1-5,"fit":1-5,"total":0,"estimate":true},   // total = f*i*fit; always an estimate
     "areas":["Care"],                       // existing app areas it extends (values from "areas")
@@ -133,4 +134,6 @@ Rendered on `problems.html` ("Problems & solutions"), filterable by area, priori
     "priority":true,"priority_rank":1,      // top 5 only
     "first_seen":"YYYY-MM-DD","last_updated":"YYYY-MM-DD" } ] }
 ```
+`audience`: `doctor` = clinic/doctor dashboard buyer; `patient` = patient app user. OPP-001/002 are doctor, OPP-003..010 patient (inferred 2026-10-23).
+Optional top-level `practo_clusters` {note, doctor{reviews_seen,negative,clusters[[label,count]],source}, patient{...}} renders the 'Where Practo goes wrong' section.
 `meta.json` weekly `top_build_next` items may carry `opportunity_id` (e.g. `OPP-001`).
