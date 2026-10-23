@@ -1,228 +1,235 @@
 {
-  "app_url": "https://www.intimacare.in",
-  "app_version": "live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)",
-  "last_test_run": "2026-10-23",
-  "health_score": 85,
-  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
-  "summary_today": [
-    "23 Oct ~04:00-04:30 IST: round 5 on two live builds (04:00, then CSS-only redeploy ~04:18). Test clinic only; temp patient cleared.",
-    "Fixed: ISS-078 (clinic can cancel), 073, 074, 079. Drag-to-move and dark mode work.",
-    "ISS-061 hang and ISS-082 booking 503 lowered to P2 (seen during mid-test deploys); recheck on a stable build.",
-    "New: booking now needs a one-time email check first; ISS-081 Symptoms Done button under the nav.",
-    "Health 85: 13 open (0 P0 / 1 P1 / 9 P2 / 3 P3). Slow 3G (ISS-025) and Done button (ISS-081) accepted by founder."
-  ],
-  "health_score_history": [
+ "app_url": "https://www.intimacare.in",
+ "app_version": "live 23 Oct ~13:05 IST: new build since 22 Oct baseline (home HTML 3ba4a8b8, 24 JS chunks, legal text changed)",
+ "last_test_run": "2026-10-23",
+ "health_score": 85,
+ "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
+ "summary_today": [
+  "Top idea today (doctor): fair no-show rules. Practo doctors say they can't mark late patients as no-show but get penalised for running late (X, 12 Oct). Intima already shipped an email check and a 'missed visits pause booking' rule; next is a 'Didn't come' button with a grace window and Confirm/Cancel on reminders (OPP-014).",
+  "Practo today: clinics say Practo put booking buttons on their Google profile without approval (App Store, 4 Jun 2026), so add a booking-source tag on every appointment (new OPP-020). Patients: Care Plan doctors shown available then refused (X, 14 and 17 Oct).",
+  "23 Oct 13:05-13:30 IST, new build: ISS-061 (Messages hang) no longer happens, closed. ISS-066 fixed: users are now told their session was reset.",
+  "New P1 ISS-083: after a reset, Cloud Backup fails with 'code belongs to another account', while the app tells users to restore from it.",
+  "ISS-082 not retestable: booking now needs an email code and Pulse has no test inbox. Doctor dashboard skipped: saved QA3 code no longer accepted.",
+  "Deep-dive: Performance log works and saves (30 min exercise persisted). Companion: 4 messages, safe and in-language.",
+  "Health 85; 12 open (0 P0, 1 P1). YC W27 closes 3 Nov 09:30 IST."
+ ],
+ "health_score_history": [
+  {
+   "date": "2026-10-01",
+   "score": 54
+  },
+  {
+   "date": "2026-10-03",
+   "score": 53
+  },
+  {
+   "date": "2026-10-07",
+   "score": 49
+  },
+  {
+   "date": "2026-10-14",
+   "score": 48,
+   "note": "8–13 Oct: no runs (gap) — no scores exist for those days"
+  },
+  {
+   "date": "2026-10-15",
+   "score": 48,
+   "note": "Lean daily: Meera+Arjun 2 msgs each; pregnancy-mode deep-dive; Thursday social; YC re-verify"
+  },
+  {
+   "date": "2026-10-16",
+   "score": 48,
+   "note": "Lean daily: Meera+Arjun 2 msgs each; kegel deep-dive; Fri social skip; YC re-verify"
+  },
+  {
+   "date": "2026-10-17",
+   "score": 47,
+   "note": "Lean daily: Meera+Arjun 2 msgs each; devices deep-dive (missing) + new ISS-042; Sat social skip; YC re-check"
+  },
+  {
+   "date": "2026-10-21",
+   "score": 46,
+   "note": "Lean evening catch-up after 18–20 Oct gap: Meera+Arjun 2 msgs each; labs deep-dive; new ISS-043; comps+social light; YC re-verify"
+  },
+  {
+   "date": "2026-10-21",
+   "score": 69,
+   "note": "Re-test after founder deploy"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 79,
+   "note": "Deep re-test of all issues"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 85,
+   "note": "Full E2E after 01:00 deploy"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 84,
+   "note": "Redesign E2E + UI review"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 87,
+   "note": "04:00 deploy E2E"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 86,
+   "note": "Lean daily: IVF deep-dive; new ISS-057 P2; Thursday social; YC re-verify"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 90,
+   "note": "14:50 deploy E2E + full refresh"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 90,
+   "note": "7f801b9 deploy verification; ISS-013/052 accepted"
+  },
+  {
+   "date": "2026-10-22",
+   "score": 81,
+   "note": "Round 2 doctor dashboard retest (build 2d5c174)"
+  },
+  {
+   "date": "2026-10-23",
+   "score": 81,
+   "note": "Round 3 doctor dashboard (build 8218f50)"
+  },
+  {
+   "date": "2026-10-23",
+   "score": 81,
+   "note": "Round 4 full e2e (build 4500a22)"
+  },
+  {
+   "date": "2026-10-23",
+   "score": 80,
+   "note": "Round 5 e2e (builds 04:00 and 04:18 IST)"
+  },
+  {
+   "date": "2026-10-23",
+   "score": 85,
+   "note": "Founder triage 04:33 IST"
+  },
+  {
+   "date": "2026-10-23",
+   "score": 85,
+   "note": "Lean daily 13:05-13:30 IST (new build)"
+  }
+ ],
+ "weekly": [
+  {
+   "week_start": "2026-09-28",
+   "week_end": "2026-10-04",
+   "added_late": "Added late on 2026-10-07 (evening) — the Sunday 2026-10-04 run was missed. Based only on real sessions of 1 and 3 Oct; 2 and 4 Oct had no runs.",
+   "health_trend": "54 (1 Oct) → 53 (3 Oct); no run on 2 or 4 Oct.",
+   "issues_opened": 36,
+   "issues_fixed": 0,
+   "narrative": "[Added late on 7 Oct; Sunday 4 Oct run was missed.] Week of 28 Sep–4 Oct (testing on 1 and 3 Oct only; 2 and 4 Oct runs failed). Health Score 54 → 53. Issues: 36 opened (35 on 1 Oct baseline + ISS-036 on 3 Oct), 0 fixed; 9 P1 / 0 P0 open at week end. App stayed on v5.2.1 with no fixes detected. How it feels to be a user: Meera (irregular cycles, TTC) gets a dashboard in seconds and warm, memory-aware AI help, but the app still treats her like a textbook 28-day cycle (day 6 by 3 Oct) with three different fertile-window messages, and Settings still tells her her data stays on the phone. Her partner link with Arjun held all week once identities stopped forking, though the Connect page shows a link-code screen while the link is live (ISS-036). Arjun gets an instant testosterone card, but after two logged days Insights still say 'Readiness LOW' and draw medical-sounding conclusions (ISS-008), Care has no Pune doctors, and the companion — kind, Hinglish-friendly and remembering his context — still invents statistics; on 1 Oct it quoted the US emergency number for chest pain (ISS-006). Net: delivers value in 5 minutes, but trust (privacy copy), safety (India red flags) and a reason to come back by day 30 for doctor-referred users are still missing.",
+   "top_build_next": [
     {
-      "date": "2026-10-01",
-      "score": 54
+     "title": "Truthful privacy copy everywhere",
+     "why": "GAP-001 (H/Easy) – ISS-002/003 still open on 3 Oct; protects trust and store compliance."
     },
     {
-      "date": "2026-10-03",
-      "score": 53
+     "title": "Fix identity fork + India-correct red-flag handling",
+     "why": "GAP-003, GAP-002 – ISS-001 data loss risk and ISS-006/007 safety."
     },
     {
-      "date": "2026-10-07",
-      "score": 49
-    },
-    {
-      "date": "2026-10-14",
-      "score": 48,
-      "note": "8–13 Oct: no runs (gap) — no scores exist for those days"
-    },
-    {
-      "date": "2026-10-15",
-      "score": 48,
-      "note": "Lean daily: Meera+Arjun 2 msgs each; pregnancy-mode deep-dive; Thursday social; YC re-verify"
-    },
-    {
-      "date": "2026-10-16",
-      "score": 48,
-      "note": "Lean daily: Meera+Arjun 2 msgs each; kegel deep-dive; Fri social skip; YC re-verify"
-    },
-    {
-      "date": "2026-10-17",
-      "score": 47,
-      "note": "Lean daily: Meera+Arjun 2 msgs each; devices deep-dive (missing) + new ISS-042; Sat social skip; YC re-check"
-    },
-    {
-      "date": "2026-10-21",
-      "score": 46,
-      "note": "Lean evening catch-up after 18–20 Oct gap: Meera+Arjun 2 msgs each; labs deep-dive; new ISS-043; comps+social light; YC re-verify"
-    },
-    {
-      "date": "2026-10-21",
-      "score": 69,
-      "note": "Re-test after founder deploy"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 79,
-      "note": "Deep re-test of all issues"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 85,
-      "note": "Full E2E after 01:00 deploy"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 84,
-      "note": "Redesign E2E + UI review"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 87,
-      "note": "04:00 deploy E2E"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 86,
-      "note": "Lean daily: IVF deep-dive; new ISS-057 P2; Thursday social; YC re-verify"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 90,
-      "note": "14:50 deploy E2E + full refresh"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 90,
-      "note": "7f801b9 deploy verification; ISS-013/052 accepted"
-    },
-    {
-      "date": "2026-10-22",
-      "score": 81,
-      "note": "Round 2 doctor dashboard retest (build 2d5c174)"
-    },
-    {
-      "date": "2026-10-23",
-      "score": 81,
-      "note": "Round 3 doctor dashboard (build 8218f50)"
-    },
-    {
-      "date": "2026-10-23",
-      "score": 81,
-      "note": "Round 4 full e2e (build 4500a22)"
-    },
-    {
-      "date": "2026-10-23",
-      "score": 80,
-      "note": "Round 5 e2e (builds 04:00 and 04:18 IST)"
-    },
-    {
-      "date": "2026-10-23",
-      "score": 85,
-      "note": "Founder triage 04:33 IST"
+     "title": "Doctor summary export + QR landing",
+     "why": "GAP-004/005 – ISS-005/035; the missing doctor-referral loop that drives day-30 retention."
     }
-  ],
-  "weekly": [
+   ],
+   "funding_moves": [
+    "STPI MedTech CoE OCP 7.0 (NIRMAAN) deadline 8 Oct verified on the official page (1 and 3 Oct); decide-milestone was 5 Oct — no decision recorded.",
+    "YC Winter 2027 on-time deadline 2 Nov verified (3 Oct); long shot.",
+    "Passed/closed this cycle: T-Hub Healthcare C6, MeitY GENESIS EIR 3.0, PIEDS Womenpreneur 4.0, SwasthyaTech Synapse 2026.",
+    "No applications submitted; DPIIT recognition (rolling) still the top-ranked enabler."
+   ],
+   "day1_baseline": "Day-1 baseline. Intima Health v5.2.1 is a fast, no-login, warm product with unusually deep content (IVF mode, labs, partner sharing). The main risks are trust (privacy copy that is not true), reliability (identity forks lose data), and an AI that can be unsafe in India-specific red-flag moments. For doctor-referred users the app delivers value in 5 minutes but gives no reason to return by day 30 unless export/summary and reminders are added."
+  },
+  {
+   "week_start": "2026-10-05",
+   "week_end": "2026-10-11",
+   "added_late": "Added late on 2026-10-14 — the Sunday 2026-10-11 run was missed. Based only on the real 7 Oct session; 5, 6 and 8–11 Oct had no runs.",
+   "health_trend": "53 (3 Oct) → 49 (7 Oct); no run on other days.",
+   "issues_opened": 4,
+   "issues_fixed": 0,
+   "narrative": "[Added late on 14 Oct; Sunday 11 Oct run was missed.] Only one test day (7 Oct) this week. 4 issues opened (ISS-037 P1 heavy-bleeding escalation, ISS-038/039 P2, ISS-040 P3), 0 fixed; app stayed on v5.2.1. No observations exist for 8–11 Oct."
+  },
+  {
+   "week_start": "2026-10-12",
+   "week_end": "2026-10-18",
+   "added_late": "Added late on 2026-10-21 (evening) — the Sunday 18 Oct run was missed. Based only on real sessions of 14 (evening catch-up), 15, 16 and 17 Oct; 12, 13 and 18 Oct had no runs.",
+   "health_trend": "48 (14 Oct) → 48 (15) → 48 (16) → 47 (17); no run 12, 13 or 18 Oct.",
+   "issues_opened": 2,
+   "issues_fixed": 0,
+   "narrative": "[Added late on 21 Oct; Sunday 18 Oct run was missed.] Week of 12–18 Oct (testing on 14–17 Oct only). Health 48 → 47. Issues opened: ISS-041 (companion fertility timing for a TTC user, 14 Oct) and ISS-042 (companion claims wearable sync that does not exist, 17 Oct); 0 fixed; app stayed on v5.2.1 with no baseline change all week. How it feels: Meera logs in seconds and gets warm Hinglish help, but the cycle view stays on a textbook 28-day cycle with contradictory ovulation/fertile cards, and the companion mixed sound advice with invented numbers and wrong LH/HPT timing. Pregnancy-mode entry and Kegel sessions looked fine on inspection; devices/wearables turned out to be missing. Arjun's partner link held all week (Connected • Luteal), though Connect still shows a link-code screen while linked; his companion remembered his office hours but kept quoting made-up testosterone/stamina stats. Net: stable and pleasant, no regressions, but no fixes either — the AI accuracy and cycle-prediction issues are now the main drag."
+  },
+  {
+   "week_start": "2026-10-19",
+   "week_end": "2026-10-25",
+   "health_trend": "90 (22 Oct) → 81 → 81 → 81 (23 Oct, round 4) → 80 → 85 (23 Oct, round 5 + triage)",
+   "narrative": "Week of 19-25 Oct (mid-week entry, 23 Oct). Harsh shipped the doctor dashboard and four builds in two days (6854e59, 2d5c174, 8218f50, 4500a22). Round 4 closed most polish and copy issues: the funnel, slots, /legal, decline and clear-data wording, summary day count and the 375 px list are fixed. Two P1s remain and got worse: patient tabs still freeze on the auth lock (about 7 times in 75 minutes), and patients are silently moved to new anonymous accounts, which broke partner sync for both test personas. Doctors still cannot cancel an appointment. Health 81. Round 5 (23 Oct, builds 04:00 and 04:18 IST): clinics can now cancel appointments, drag to move works, and the photo issue stays fixed. Booking now asks for a one-time email check. The tab hang and a booking 503 were seen during deploys; Harsh lowered both to P2 and accepted Slow 3G speed and the Symptoms button. Health 85. Research (23 Oct): public posts show 10 recurring problems, now on the Problems & solutions page. Build next from it: voice follow-up on day 4/6/10 (OPP-001), a doctor-set PCOS 30-day plan (OPP-002) and a 'test both of us' fertility checklist in Connect (OPP-003).",
+   "top_build_next": [
     {
-      "week_start": "2026-09-28",
-      "week_end": "2026-10-04",
-      "added_late": "Added late on 2026-10-07 (evening) — the Sunday 2026-10-04 run was missed. Based only on real sessions of 1 and 3 Oct; 2 and 4 Oct had no runs.",
-      "health_trend": "54 (1 Oct) → 53 (3 Oct); no run on 2 or 4 Oct.",
-      "issues_opened": 36,
-      "issues_fixed": 0,
-      "narrative": "[Added late on 7 Oct; Sunday 4 Oct run was missed.] Week of 28 Sep–4 Oct (testing on 1 and 3 Oct only; 2 and 4 Oct runs failed). Health Score 54 → 53. Issues: 36 opened (35 on 1 Oct baseline + ISS-036 on 3 Oct), 0 fixed; 9 P1 / 0 P0 open at week end. App stayed on v5.2.1 with no fixes detected. How it feels to be a user: Meera (irregular cycles, TTC) gets a dashboard in seconds and warm, memory-aware AI help, but the app still treats her like a textbook 28-day cycle (day 6 by 3 Oct) with three different fertile-window messages, and Settings still tells her her data stays on the phone. Her partner link with Arjun held all week once identities stopped forking, though the Connect page shows a link-code screen while the link is live (ISS-036). Arjun gets an instant testosterone card, but after two logged days Insights still say 'Readiness LOW' and draw medical-sounding conclusions (ISS-008), Care has no Pune doctors, and the companion — kind, Hinglish-friendly and remembering his context — still invents statistics; on 1 Oct it quoted the US emergency number for chest pain (ISS-006). Net: delivers value in 5 minutes, but trust (privacy copy), safety (India red flags) and a reason to come back by day 30 for doctor-referred users are still missing.",
-      "top_build_next": [
-        {
-          "title": "Truthful privacy copy everywhere",
-          "why": "GAP-001 (H/Easy) – ISS-002/003 still open on 3 Oct; protects trust and store compliance."
-        },
-        {
-          "title": "Fix identity fork + India-correct red-flag handling",
-          "why": "GAP-003, GAP-002 – ISS-001 data loss risk and ISS-006/007 safety."
-        },
-        {
-          "title": "Doctor summary export + QR landing",
-          "why": "GAP-004/005 – ISS-005/035; the missing doctor-referral loop that drives day-30 retention."
-        }
-      ],
-      "funding_moves": [
-        "STPI MedTech CoE OCP 7.0 (NIRMAAN) deadline 8 Oct verified on the official page (1 and 3 Oct); decide-milestone was 5 Oct — no decision recorded.",
-        "YC Winter 2027 on-time deadline 2 Nov verified (3 Oct); long shot.",
-        "Passed/closed this cycle: T-Hub Healthcare C6, MeitY GENESIS EIR 3.0, PIEDS Womenpreneur 4.0, SwasthyaTech Synapse 2026.",
-        "No applications submitted; DPIIT recognition (rolling) still the top-ranked enabler."
-      ],
-      "day1_baseline": "Day-1 baseline. Intima Health v5.2.1 is a fast, no-login, warm product with unusually deep content (IVF mode, labs, partner sharing). The main risks are trust (privacy copy that is not true), reliability (identity forks lose data), and an AI that can be unsafe in India-specific red-flag moments. For doctor-referred users the app delivers value in 5 minutes but gives no reason to return by day 30 unless export/summary and reminders are added."
+     "title": "Voice follow-up day 4/6/10 (OPP-001)",
+     "why": "Patients drop off between day 4 and 7; this is the clinic-pilot KPI.",
+     "opportunity_id": "OPP-001"
     },
     {
-      "week_start": "2026-10-05",
-      "week_end": "2026-10-11",
-      "added_late": "Added late on 2026-10-14 — the Sunday 2026-10-11 run was missed. Based only on the real 7 Oct session; 5, 6 and 8–11 Oct had no runs.",
-      "health_trend": "53 (3 Oct) → 49 (7 Oct); no run on other days.",
-      "issues_opened": 4,
-      "issues_fixed": 0,
-      "narrative": "[Added late on 14 Oct; Sunday 11 Oct run was missed.] Only one test day (7 Oct) this week. 4 issues opened (ISS-037 P1 heavy-bleeding escalation, ISS-038/039 P2, ISS-040 P3), 0 fixed; app stayed on v5.2.1. No observations exist for 8–11 Oct."
+     "title": "Doctor-set PCOS 30-day plan (OPP-002)",
+     "why": "Largest condition; ends in a day-30 summary for the doctor.",
+     "opportunity_id": "OPP-002"
     },
     {
-      "week_start": "2026-10-12",
-      "week_end": "2026-10-18",
-      "added_late": "Added late on 2026-10-21 (evening) — the Sunday 18 Oct run was missed. Based only on real sessions of 14 (evening catch-up), 15, 16 and 17 Oct; 12, 13 and 18 Oct had no runs.",
-      "health_trend": "48 (14 Oct) → 48 (15) → 48 (16) → 47 (17); no run 12, 13 or 18 Oct.",
-      "issues_opened": 2,
-      "issues_fixed": 0,
-      "narrative": "[Added late on 21 Oct; Sunday 18 Oct run was missed.] Week of 12–18 Oct (testing on 14–17 Oct only). Health 48 → 47. Issues opened: ISS-041 (companion fertility timing for a TTC user, 14 Oct) and ISS-042 (companion claims wearable sync that does not exist, 17 Oct); 0 fixed; app stayed on v5.2.1 with no baseline change all week. How it feels: Meera logs in seconds and gets warm Hinglish help, but the cycle view stays on a textbook 28-day cycle with contradictory ovulation/fertile cards, and the companion mixed sound advice with invented numbers and wrong LH/HPT timing. Pregnancy-mode entry and Kegel sessions looked fine on inspection; devices/wearables turned out to be missing. Arjun's partner link held all week (Connected • Luteal), though Connect still shows a link-code screen while linked; his companion remembered his office hours but kept quoting made-up testosterone/stamina stats. Net: stable and pleasant, no regressions, but no fixes either — the AI accuracy and cycle-prediction issues are now the main drag."
+     "title": "'Test both of us' fertility checklist (OPP-003)",
+     "why": "Couples wedge; brings men in through medicine.",
+     "opportunity_id": "OPP-003"
     },
     {
-      "week_start": "2026-10-19",
-      "week_end": "2026-10-25",
-      "health_trend": "90 (22 Oct) → 81 → 81 → 81 (23 Oct, round 4) → 80 → 85 (23 Oct, round 5 + triage)",
-      "narrative": "Week of 19-25 Oct (mid-week entry, 23 Oct). Harsh shipped the doctor dashboard and four builds in two days (6854e59, 2d5c174, 8218f50, 4500a22). Round 4 closed most polish and copy issues: the funnel, slots, /legal, decline and clear-data wording, summary day count and the 375 px list are fixed. Two P1s remain and got worse: patient tabs still freeze on the auth lock (about 7 times in 75 minutes), and patients are silently moved to new anonymous accounts, which broke partner sync for both test personas. Doctors still cannot cancel an appointment. Health 81. Round 5 (23 Oct, builds 04:00 and 04:18 IST): clinics can now cancel appointments, drag to move works, and the photo issue stays fixed. Booking now asks for a one-time email check. The tab hang and a booking 503 were seen during deploys; Harsh lowered both to P2 and accepted Slow 3G speed and the Symptoms button. Health 85. Research (23 Oct): public posts show 10 recurring problems, now on the Problems & solutions page. Build next from it: voice follow-up on day 4/6/10 (OPP-001), a doctor-set PCOS 30-day plan (OPP-002) and a 'test both of us' fertility checklist in Connect (OPP-003).",
-      "top_build_next": [
-        {
-          "title": "Voice follow-up day 4/6/10 (OPP-001)",
-          "why": "Patients drop off between day 4 and 7; this is the clinic-pilot KPI.",
-          "opportunity_id": "OPP-001"
-        },
-        {
-          "title": "Doctor-set PCOS 30-day plan (OPP-002)",
-          "why": "Largest condition; ends in a day-30 summary for the doctor.",
-          "opportunity_id": "OPP-002"
-        },
-        {
-          "title": "'Test both of us' fertility checklist (OPP-003)",
-          "why": "Couples wedge; brings men in through medicine.",
-          "opportunity_id": "OPP-003"
-        },
-        {
-          "title": "Account swaps (ISS-066)",
-          "why": "Partner Mode and doctor history break silently; only P1 left."
-        },
-        {
-          "title": "Confirm the hang is gone on a stable build (ISS-061)",
-          "why": "Still seen once in round 5."
-        },
-        {
-          "title": "Show booking errors to the patient (ISS-082)",
-          "why": "A failed request currently shows nothing."
-        },
-        {
-          "title": "Fix summary symptoms text (ISS-075)",
-          "why": "Doctors may receive \"[object Object]\"."
-        },
-        {
-          "title": "Live updates for new bookings and hours (ISS-072/080)",
-          "why": "Clinic Today misses new requests until reload."
-        }
-      ],
-      "funding_moves": [
-        "YC W27: on-time deadline Mon 2 Nov, 8pm PT (Tue 3 Nov 09:30 IST), re-verified 23 Oct. Decide this week whether to apply; nothing submitted.",
-        "Keep DPIIT recognition moving: most Indian grants (SISFS, NIDHI) need it."
-      ]
+     "title": "Account swaps (ISS-066)",
+     "why": "Partner Mode and doctor history break silently; only P1 left."
+    },
+    {
+     "title": "Confirm the hang is gone on a stable build (ISS-061)",
+     "why": "Still seen once in round 5."
+    },
+    {
+     "title": "Show booking errors to the patient (ISS-082)",
+     "why": "A failed request currently shows nothing."
+    },
+    {
+     "title": "Fix summary symptoms text (ISS-075)",
+     "why": "Doctors may receive \"[object Object]\"."
+    },
+    {
+     "title": "Live updates for new bookings and hours (ISS-072/080)",
+     "why": "Clinic Today misses new requests until reload."
     }
-  ],
-  "updated": "2026-10-23T04:50:00+05:30",
-  "run_gaps": [
-    {
-      "from": "2026-10-08",
-      "to": "2026-10-13",
-      "reason": "Daily runs failed (account usage ran out); 14 Oct morning/midday also missed, done in an evening catch-up. Nothing back-filled."
-    },
-    {
-      "from": "2026-10-18",
-      "to": "2026-10-20",
-      "reason": "Daily runs failed (account usage ran out); 21 Oct midday run also failed, done as a lean evening catch-up. Nothing back-filled; no data exists for 18–20 Oct."
-    }
-  ]
+   ],
+   "funding_moves": [
+    "YC W27: on-time deadline Mon 2 Nov, 8pm PT (Tue 3 Nov 09:30 IST), re-verified 23 Oct. Decide this week whether to apply; nothing submitted.",
+    "Keep DPIIT recognition moving: most Indian grants (SISFS, NIDHI) need it."
+   ]
+  }
+ ],
+ "updated": "2026-10-23T13:45:00+05:30",
+ "run_gaps": [
+  {
+   "from": "2026-10-08",
+   "to": "2026-10-13",
+   "reason": "Daily runs failed (account usage ran out); 14 Oct morning/midday also missed, done in an evening catch-up. Nothing back-filled."
+  },
+  {
+   "from": "2026-10-18",
+   "to": "2026-10-20",
+   "reason": "Daily runs failed (account usage ran out); 21 Oct midday run also failed, done as a lean evening catch-up. Nothing back-filled; no data exists for 18–20 Oct."
+  }
+ ]
 }

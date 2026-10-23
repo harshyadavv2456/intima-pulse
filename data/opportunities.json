@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-23T06:30:00+05:30",
- "source_note": "Public-post research on 23 Oct 2026. Scores are estimates (1-5 each; total = frequency x intensity x fit). No usernames or personal details. 'verified: true' = source page/post was read; false = could not confirm figure or date. OPP-011..019: Practo review research 23 Oct 2026 (Play Store review scrape: 671 Practo Pro + 682 patient app reviews, App Store, Reddit, news); cluster counts are keyword matches on 1-2 star reviews, approximate. Full notes: research/practo-reviews-2026-10-23.md (box only).",
+ "updated": "2026-10-23T13:40:00+05:30",
+ "source_note": "Public-post research on 23 Oct 2026. Scores are estimates (1-5 each; total = frequency x intensity x fit). No usernames or personal details. 'verified: true' = source page/post was read; false = could not confirm figure or date. OPP-011..019: Practo review research 23 Oct 2026 (Play Store review scrape: 671 Practo Pro + 682 patient app reviews, App Store, Reddit, news); cluster counts are keyword matches on 1-2 star reviews, approximate. Full notes: research/practo-reviews-2026-10-23.md (box only). 23 Oct 13:30 IST daily Practo check: OPP-014 and OPP-016 refined, OPP-020 added (research/practo-reviews-2026-10-23.md, daily section).",
  "areas": [
   "Home",
   "Care",
@@ -777,6 +777,13 @@
    "who": "Clinics on per-patient or wallet billing.",
    "evidence": [
     {
+     "source": "X post by a doctor to @Practo: no-show refund promised, but doctors 'aren't allowed to mark no show' if the patient is late, while a doctor running late risks a disabled profile or bad reviews",
+     "url": "https://x.com/rajeshrathi2107/status/2109597026715611539",
+     "date": "2026-10-12",
+     "verified": true,
+     "note": "Read via X API 23 Oct; one doctor's account"
+    },
+    {
      "source": "Practo Pro Play review: \"scheduling fake appointments ... no patient turns up ... if I cancel from my side 500 is debited\"",
      "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
      "date": "2026-05-23",
@@ -797,28 +804,30 @@
     }
    ],
    "score": {
-    "frequency": 3,
+    "frequency": 4,
     "intensity": 5,
     "fit": 4,
-    "total": 60,
+    "total": 80,
     "estimate": true
    },
    "areas": [
     "doctor dashboard"
    ],
    "solution_in_app": [
-    "Today: one-tap check-in with patient-side QR confirmation, so both sides see the same visit log",
-    "Appointments: auto-reminder plus confirm/cancel buttons for patients, with no-show history visible to the clinic",
-    "No billing tied to leads. If a paid add-on ever exists, unverified bookings are never charged"
+    "Shipped 23 Oct (seen in Care): one-time email check before booking ('we confirm you are a real person first') and 'Repeated missed visits pause booking' rule shown to patients. This already filters fake bookings at no cost to the clinic.",
+    "Next: Appointments > each past booking gets a one-tap 'Didn't come' button for the clinic, with a 15-min grace window shown to both sides (no dispute desk, no fee).",
+    "Next: reminder push to the patient 3 h before with Confirm / Cancel; a confirmed-then-missed visit counts toward the pause rule, a cancelled one does not.",
+    "No billing tied to leads. If a paid add-on ever exists, unverified or missed bookings are never charged."
    ],
-   "mvp_scope": "Patient confirm/cancel buttons on reminders, a no-show tag, and a visit log exportable from Today.",
-   "metric": "No-show rate vs clinic baseline; disputes raised; clinic retention.",
-   "competitor_gap": "On Practo, the clinic pays and Practo decides disputes. Reviews say Practo \"will believe the patient but not the provider\". Intima can be neutral and charge no per-lead fee.",
+   "mvp_scope": "Already live: email check + pause rule. Remaining MVP (<1 week): 'Didn't come' button + grace window + confirm/cancel on the existing reminder; missed-visit counter feeds the existing pause rule.",
+   "metric": "No-show rate per clinic vs its own baseline; share of reminders answered Confirm/Cancel; clinic-reported disputes (target 0).",
+   "competitor_gap": "On Practo, the clinic pays and Practo decides disputes. Reviews say Practo \"will believe the patient but not the provider\". Intima can be neutral and charge no per-lead fee. Practo's own doctors say the no-show rules are one-sided (X, 12 Oct 2026); Intima's rule is symmetric and free.",
    "risks": [
     "Patients may skip confirmation",
-    "Proof logs must respect privacy"
+    "Proof logs must respect privacy",
+    "Email gate adds friction to first booking: watch the booking conversion drop"
    ],
-   "status": "idea",
+   "status": "partly shipped",
    "priority": false,
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23"
@@ -879,6 +888,24 @@
    "who": "Patients booking gynae, urology or fertility visits, often for sensitive problems where a wasted trip is costly.",
    "evidence": [
     {
+     "source": "X thread to @Practo: Care Plan (Rs 2,349) showed doctors as available, hospitals said otherwise; refund refused, Rs 200 wallet credit offered and complaint closed",
+     "url": "https://x.com/AnuragInsight/status/2111343330391200162",
+     "date": "2026-10-17",
+     "verified": true
+    },
+    {
+     "source": "X post to @Practo: Care Plan bought because the website listed a neurosurgeon as in-network; app says 'Not covered by Care Plan'",
+     "url": "https://x.com/nishantsoni_/status/2110305555307020472",
+     "date": "2026-10-14",
+     "verified": true
+    },
+    {
+     "source": "Practo patient App Store review: hospital said it no longer accepts Practo bookings although the slot showed in the app; paid Rs 950 on top of a Rs 2,400 plan",
+     "url": "https://apps.apple.com/in/app/practo-doctor-appointment-app/id953772015?see-all=reviews",
+     "date": "2025-12-21",
+     "verified": true
+    },
+    {
      "source": "Practo patient Play review: \"third time ... booked the appointment and doctor was not present ... closed door\"",
      "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
      "date": "2026-10-20",
@@ -924,7 +951,8 @@
    "status": "idea",
    "priority": false,
    "first_seen": "2026-10-23",
-   "last_updated": "2026-10-23"
+   "last_updated": "2026-10-23",
+   "update_note": "23 Oct: growing on X (2 separate Care Plan complaints 14 and 17 Oct). Intima already reads clinic hours and Google Calendar for slots and charges nothing, so there is no plan to refund."
   },
   {
    "id": "OPP-017",
@@ -1085,10 +1113,67 @@
    "priority": false,
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-020",
+   "audience": "doctor",
+   "title": "'Where this patient came from' on every booking; nothing added to the clinic's Google profile",
+   "problem": "Clinics say Practo booking and lead-generation integrations appeared on their Google Business Profile without explicit approval, so they cannot tell which enquiries came from Practo and whether the billing is fair.",
+   "who": "Clinics already paying an aggregator per lead or per plan, and any clinic deciding whether Intima brings patients.",
+   "evidence": [
+    {
+     "source": "Practo Pro App Store review (India): 'booking and lead-generation integrations appearing on our Google Business Profile without our explicit approval ... concerns about lead attribution and billing transparency'",
+     "url": "https://apps.apple.com/in/app/practo-pro-for-doctors/id592116111?see-all=reviews",
+     "date": "2026-06-04",
+     "verified": true,
+     "note": "App Store shows '4 Jun' with no year, which means the current year. Read 23 Oct 2026."
+    },
+    {
+     "source": "Practo Pro App Store review: 'previous patients booking will not be charged' promise, yet old patients booking online were charged",
+     "url": "https://apps.apple.com/in/app/practo-pro-for-doctors/id592116111?see-all=reviews",
+     "date": "2019-11-04",
+     "verified": true,
+     "note": "Old, shows the problem is long-running"
+    },
+    {
+     "source": "Practo Pro Play cluster 'paid visibility / cost' (193 of 519 negative reviews mention fees)",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
+     "date": "2026-10-23",
+     "verified": true,
+     "note": "Keyword count, approximate"
+    }
+   ],
+   "score": {
+    "frequency": 3,
+    "intensity": 4,
+    "fit": 5,
+    "total": 60,
+    "estimate": true
+   },
+   "areas": [
+    "doctor dashboard",
+    "Care"
+   ],
+   "solution_in_app": [
+    "Appointments and Today: a small source tag on every booking: 'Your QR', 'Your clinic link', 'Found you in Intima Care', 'Referred by Dr X'.",
+    "Grow > Insights: a monthly 'Where your patients came from' card with counts per source and a CSV export, so the clinic can check it against its own register.",
+    "Clinic > Profile: a plain line, 'Intima never edits your Google profile or adds booking buttons anywhere without your tap', plus a list of every place the clinic's Intima link is published (only the ones the clinic added)."
+   ],
+   "mvp_scope": "Store booking source at request time (QR / link / Care search / referral code already exist as entry points), show the tag, and add one Insights card. About 1 week.",
+   "metric": "Share of clinics that open the source card monthly; doctor-reported trust in a pilot interview; clinic 60-day retention.",
+   "competitor_gap": "Practo bills per patient connection but doctors say they cannot see where leads came from and found integrations they did not approve. Intima can show the source of every booking and charge nothing per lead.",
+   "risks": [
+    "Source must not reveal patient identity (keep anonymous labels)",
+    "Referral tags must not imply fee-sharing between doctors (medical-ethics review)"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-23",
+   "last_updated": "2026-10-23"
   }
  ],
  "practo_clusters": {
-  "note": "Keyword counts on 1-2 star Google Play reviews fetched 2026-10-23 (newest + most relevant, up to 800 each). A review can fall in several clusters. Approximate.",
+  "note": "Keyword counts on 1-2 star Google Play reviews fetched 2026-10-23 (newest + most relevant, up to 800 each). A review can fall in several clusters. Approximate. Daily check list below (newest first).",
   "doctor": {
    "reviews_seen": 671,
    "negative": 519,
@@ -1178,6 +1263,38 @@
     ]
    ],
    "source": "https://play.google.com/store/apps/details?id=com.practo.fabric"
-  }
+  },
+  "daily": [
+   {
+    "date": "2026-10-23",
+    "checked": "Google Play newest 150 per app (no new reviews since the morning scrape: Practo Pro newest 15 Oct, patient app newest 22 Oct); App Store India review pages for Practo Pro (4.4, 5.3k ratings) and the patient app (4.7, 106k); X posts 9-23 Oct; Reddit/news search.",
+    "findings": [
+     {
+      "side": "doctor",
+      "finding": "No-show rules feel one-sided: doctors say they cannot mark a late patient as no-show, but a doctor running late risks a disabled profile or bad reviews.",
+      "source": "https://x.com/rajeshrathi2107/status/2109597026715611539",
+      "source_date": "2026-10-12",
+      "trend": "growing (Play cluster 10 + new X post)",
+      "intima_fix": "OPP-014: email check + missed-visit pause are live; add a 'Didn't come' button with a grace window and Confirm/Cancel on the reminder. Free and symmetric."
+     },
+     {
+      "side": "doctor",
+      "finding": "Booking/lead integrations appeared on a clinic's Google Business Profile without approval; lead attribution and billing unclear.",
+      "source": "https://apps.apple.com/in/app/practo-pro-for-doctors/id592116111?see-all=reviews",
+      "source_date": "2026-06-04",
+      "trend": "new to Pulse (App Store, not in the morning scrape)",
+      "intima_fix": "OPP-020: source tag on every booking and a monthly 'where patients came from' card; Intima never touches the clinic's Google profile."
+     },
+     {
+      "side": "patient",
+      "finding": "Care Plan buyers find doctors shown as available or in-network who then refuse the booking; refunds turned into small wallet credits.",
+      "source": "https://x.com/AnuragInsight/status/2111343330391200162",
+      "source_date": "2026-10-17",
+      "trend": "growing (2 X complaints 14 and 17 Oct; Play cluster 41)",
+      "intima_fix": "OPP-016: slots come from the clinic's own hours and calendar, booking is free, so there is nothing to refund."
+     }
+    ]
+   }
+  ]
  }
 }
