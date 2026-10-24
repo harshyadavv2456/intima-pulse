@@ -295,7 +295,15 @@
     "ISS-083"
    ],
    "notes": "Home HTML 3ba4a8b8, 24 chunks, legal text changed. Session-reset notice and name prompt added; booking now needs a one-time email check; 'repeated missed visits pause booking' rule shown."
+  },
+  {
+   "date": "2026-10-24",
+   "change": "new build detected 13:06 IST",
+   "detected_by": "baseline fingerprint",
+   "fixed": [],
+   "broke": [],
+   "notes": "JS chunks +4 -4; home HTML, sw.js, manifest and page text unchanged. ISS-083 still broken."
   }
  ],
- "updated": "2026-10-22T21:30:00+05:30"
+ "updated": "2026-10-24T14:10:00+05:30"
 }

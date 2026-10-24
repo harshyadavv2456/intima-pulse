@@ -2277,6 +2277,138 @@
    "steps": "Re-checked ycombinator.com/apply 13:2x IST.",
    "result": "works",
    "notes": "YC W27: 2 Nov 8pm PT (3 Nov 09:30 IST). No other deadline within 30 days."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": null,
+   "screenshot": "",
+   "persona": "system",
+   "feature": "baseline",
+   "steps": "node baseline.js 13:06 IST",
+   "result": "changed",
+   "notes": "JS chunks changed (+4 -4); home HTML, sw.js, manifest and page text unchanged. P1 ISS-083 re-tested because of the change. Baseline rewritten."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": null,
+   "screenshot": "",
+   "persona": "meera",
+   "feature": "daily-log",
+   "steps": "Home; logged Good / Mid energy / Good sleep.",
+   "result": "works",
+   "notes": "Account 31A6 unchanged (no reset notice). Cycle day 24, luteal, next period ~5 days (Oct 29), \"day 24 of ~28\" although her cycles are 31-38 days (GAP-007). Streak 4 days, 11/30 days logged. No E2E claim on Home or Chat."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": null,
+   "screenshot": "shots/2026-10-24_m_hormonal.jpg",
+   "persona": "meera",
+   "feature": "hormonal-dashboard",
+   "steps": "Rotating deep-dive (least recently checked, last 1 Oct): Home > Hormonal quick check-in, More questions, set sleep 7 h, Save my day, reload.",
+   "result": "works",
+   "notes": "Saved (daily_logs 200) and persisted after reload. No visible saved message; Exercise reads \"Not set\" while its slider sits at 30 min; sliders unlabeled (ISS-077). Nothing else changed."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": "P2",
+   "repro": "",
+   "issue_id": "ISS-084",
+   "screenshot": "",
+   "persona": "meera",
+   "feature": "ai-companion",
+   "steps": "2 messages (brown spotting on day 24 with 31-38 day cycles; chamomile/ashwagandha for stress sleep while TTC).",
+   "result": "partial",
+   "notes": "Spotting answer careful and used her Oct 29 estimate, but test timing advice is muddled (\"14 din ke baad bhi period nahi aata\"). Ashwagandha called safe \"especially TTC\" with a 300-500 mg dose: new ISS-084 (P2). Counter 0 -> 2/30."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": "P1",
+   "repro": "",
+   "issue_id": "ISS-083",
+   "screenshot": "",
+   "persona": "arjun",
+   "feature": "backup-code",
+   "steps": "Home, logged Good / Mid / Fair; Settings > Update Backup.",
+   "result": "broken",
+   "notes": "ISS-083 still: backup_save 400 \"code belongs to another account\" on load and on Update Backup, which now sits on \"Saving...\" with no error. Account DF0B unchanged."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": "P2",
+   "repro": "",
+   "issue_id": "ISS-085",
+   "screenshot": "",
+   "persona": "arjun",
+   "feature": "ai-companion",
+   "steps": "2 messages (weekend beer while TTC; semen analysis numbers and prep).",
+   "result": "partial",
+   "notes": "Says alcohol affects sperm for 2-3 days and to stop 2-3 days before; leaves out the abstinence window for the semen test: new ISS-085 (P2). Reference values roughly WHO. Counter 0 -> 2/30."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": "ISS-082",
+   "screenshot": "",
+   "persona": "system",
+   "feature": "care-booking",
+   "steps": "ISS-082 recheck.",
+   "result": "blocked",
+   "notes": "Booking still needs a one-time email code and Pulse has no test inbox, so no request was sent."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": null,
+   "screenshot": "",
+   "persona": "system",
+   "feature": "ops-admin",
+   "steps": "Ops admin (/ops-x7k2): overview, Doctors, Bookings, Nominations. Read-only apart from one test-clinic dashboard invite.",
+   "result": "works",
+   "notes": "All four sections load with no errors. Overview counts match the lists (clinics live, clinics with a dashboard, 0 bookings waiting, 0 today). Test clinic: 4 patients and 7 bookings in 30 days in both the admin and the clinic dashboard. Overview shows a high email-failure count this month (reported to Harsh privately, no details here)."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": null,
+   "screenshot": "",
+   "persona": "doctor",
+   "feature": "doctor-dashboard",
+   "steps": "Saved recovery code was rejected on 23 Oct, so a fresh dashboard invite for the test clinic was made in ops admin and used once. Today, Appointments, Patients, Clinic.",
+   "result": "works",
+   "notes": "All load. Today: 0 visits, 0 requests, 0 unread, 4 patients. Appointments week: the 3 confirmed 23 Oct visits. Patients shown as anonymous labels except one test patient who shared a name. No E2E claim. Banner says \"You signed in with an email code\" although an invite link was used (copy nit, noted in ISS-076)."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": null,
+   "screenshot": "",
+   "persona": "system",
+   "feature": "practo",
+   "steps": "Daily Practo check (Play newest 150 each, App Store India RSS most recent, X since 23 Oct).",
+   "result": "works",
+   "notes": "Play: Practo Pro 1 new (5 star), patient app 4 new (no patient support; outdated help and no invoice download; 21 Oct video consult failed and the doctor asked the patient to cancel and come in person). App Store patient app: 19 Oct, walk-ins seen before Practo-booked patients plus long wait; 18 Oct, low-star reviews blocked unless the patient uploads a prescription or invoice. X: no new posts. New OPP-021; OPP-013 refined."
+  },
+  {
+   "date": "2026-10-24",
+   "severity": null,
+   "repro": "",
+   "issue_id": null,
+   "screenshot": "",
+   "persona": "system",
+   "feature": "funding",
+   "steps": "Re-checked ycombinator.com/apply 13:58 IST.",
+   "result": "works",
+   "notes": "YC W27: 2 Nov 8pm PT (3 Nov 09:30 IST). No other deadline within 30 days."
   }
  ],
  "narratives": [
@@ -2292,5 +2424,5 @@
    "note": "Narrative for 19–25 Oct based on 21–22 Oct sessions only."
   }
  ],
- "updated": "2026-10-23T13:45:00+05:30"
+ "updated": "2026-10-24T14:10:00+05:30"
 }

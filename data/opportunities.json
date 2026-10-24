@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-23T13:40:00+05:30",
- "source_note": "Public-post research on 23 Oct 2026. Scores are estimates (1-5 each; total = frequency x intensity x fit). No usernames or personal details. 'verified: true' = source page/post was read; false = could not confirm figure or date. OPP-011..019: Practo review research 23 Oct 2026 (Play Store review scrape: 671 Practo Pro + 682 patient app reviews, App Store, Reddit, news); cluster counts are keyword matches on 1-2 star reviews, approximate. Full notes: research/practo-reviews-2026-10-23.md (box only). 23 Oct 13:30 IST daily Practo check: OPP-014 and OPP-016 refined, OPP-020 added (research/practo-reviews-2026-10-23.md, daily section).",
+ "updated": "2026-10-24T14:15:00+05:30",
+ "source_note": "Public-post research on 23 Oct 2026. Scores are estimates (1-5 each; total = frequency x intensity x fit). No usernames or personal details. 'verified: true' = source page/post was read; false = could not confirm figure or date. OPP-011..019: Practo review research 23 Oct 2026 (Play Store review scrape: 671 Practo Pro + 682 patient app reviews, App Store, Reddit, news); cluster counts are keyword matches on 1-2 star reviews, approximate. Full notes: research/practo-reviews-2026-10-23.md (box only). 23 Oct 13:30 IST daily Practo check: OPP-014 and OPP-016 refined, OPP-020 added (research/practo-reviews-2026-10-23.md, daily section). 24 Oct 14:15 IST daily Practo check: OPP-021 added, OPP-013 refined (research/practo-reviews-2026-10-24.md, box only).",
  "areas": [
   "Home",
   "Care",
@@ -722,6 +722,13 @@
    "who": "Doctors in sensitive specialties (sexual health, fertility) where one hostile review hurts; patients picking a doctor.",
    "evidence": [
     {
+     "source": "Practo patient app, App Store India review (1 star): Practo does not let low-star ratings be submitted and keeps asking for prescriptions and invoices, but a 5-star review needs nothing",
+     "url": "https://apps.apple.com/in/app/practo/id953772015?see-all=reviews",
+     "date": "2026-10-18",
+     "verified": true,
+     "note": "The patient's claim, read 24 Oct 2026. Shows 'verified visit' rules must apply the same way to every rating."
+    },
+    {
      "source": "Practo Pro Play review: \"allows anonymous reviews ... doctors are given no way to verify who posted\"",
      "url": "https://play.google.com/store/apps/details?id=com.practo.droid",
      "date": "2025-12-17",
@@ -755,7 +762,8 @@
    "solution_in_app": [
     "Patient app Care: a rating can only be left after a visit the clinic has checked in (QR or appointment completed), and is labelled \"Verified visit\"",
     "Doctor dashboard > Patients/Grow: one public reply per review, plus a flag-for-review button with a stated SLA",
-    "Rating shown with the number of visits behind it, and no paid placement mixed in"
+    "Rating shown with the number of visits behind it, and no paid placement mixed in",
+    "The same check applies to every rating: a confirmed Intima visit is the proof, so a patient never uploads a prescription or invoice to leave a low rating, and low ratings are never held back."
    ],
    "mvp_scope": "Tie review prompts to completed appointments. Verified-visit badge, doctor reply field and a moderation queue.",
    "metric": "Share of reviews that are verified; doctor reply rate; patient booking conversion from profile.",
@@ -767,7 +775,7 @@
    "status": "idea",
    "priority": false,
    "first_seen": "2026-10-23",
-   "last_updated": "2026-10-23"
+   "last_updated": "2026-10-24"
   },
   {
    "id": "OPP-014",
@@ -1170,6 +1178,73 @@
    "priority": false,
    "first_seen": "2026-10-23",
    "last_updated": "2026-10-23"
+  },
+  {
+   "id": "OPP-021",
+   "audience": "patient",
+   "title": "Booked patients are not left waiting behind walk-ins: 'Running late' notice and live 'You're next' status",
+   "problem": "Patients who book through an app arrive on time and then wait while walk-ins are seen first, with no word on how late the doctor is. When the doctor is delayed or a consult cannot connect, they find out at the clinic or not at all.",
+   "who": "Patients booking a gynaecologist or urologist at a busy clinic, often after taking time off work; and clinics that do not want a one-star review for running late.",
+   "evidence": [
+    {
+     "source": "Practo patient app, App Store India review (1 star): 'Wrong location, long wait time, incorrect consultation fees. People who are doing on the spot appointment are being sent early than Practo booked appointments'",
+     "url": "https://apps.apple.com/in/app/practo/id953772015?see-all=reviews",
+     "date": "2026-10-19",
+     "verified": true,
+     "note": "Read 24 Oct 2026 via the App Store India review feed (most recent)."
+    },
+    {
+     "source": "Practo patient app, Google Play review (1 star): booked a video consult for 21 Oct, the doctor was offline, said she could not connect through the app and asked the patient to cancel and come to the clinic",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-22",
+     "verified": true,
+     "note": "Fetched 24 Oct 2026 (newest reviews)."
+    },
+    {
+     "source": "Practo patient app, Google Play review (1 star): 'third time ... we booked the appointment and doctor was not present and absolutely no support'",
+     "url": "https://play.google.com/store/apps/details?id=com.practo.fabric",
+     "date": "2026-10-20",
+     "verified": true,
+     "note": "From the 23 Oct scrape."
+    },
+    {
+     "source": "Doctor on X: a doctor running late risks a disabled profile or bad reviews, while late patients cannot be marked no-show",
+     "url": "https://x.com/rajeshrathi2107/status/2109597026715611539",
+     "date": "2026-10-12",
+     "verified": true,
+     "note": "The doctor side of the same delay problem (see OPP-014)."
+    }
+   ],
+   "score": {
+    "frequency": 4,
+    "intensity": 4,
+    "fit": 4,
+    "total": 64,
+    "estimate": true
+   },
+   "areas": [
+    "Care",
+    "doctor dashboard"
+   ],
+   "solution_in_app": [
+    "Clinic > Today: a 'Running late' button with 10 / 20 / 30 / 45 min choices. It updates every confirmed booking for today and sends a push that says only 'Your clinic is running about 20 min late' (no names, no health details).",
+    "Patient booking card (Care > your appointment): a live status line, 'On time', 'Running about 20 min late' or 'You're next', plus 'Need to change? Reschedule' that opens the clinic's free slots.",
+    "Clinic > Today: an 'Arrived' tap per booked patient, so the queue order shows booked patients first; walk-ins can be added as 'Walk-in' without an app account.",
+    "If the clinic marks the slot cancelled or cannot see the patient, the card offers the next free slots straight away (booking is free in Intima, so there is nothing to refund)."
+   ],
+   "mvp_scope": "Add a delay_minutes field on the clinic-day, one Today button, one status line on the patient card, and reuse the existing booking push with content-free text. About 1 week. 'Arrived' and walk-ins are week 2.",
+   "metric": "Share of clinic-days with a late notice when the first visit starts more than 15 min late; booked-patient no-show and rebook rate; patient rating of the visit; doctor reviews that mention waiting.",
+   "competitor_gap": "Practo patients report long waits, walk-ins seen first and consults that silently fail, and doctors fear bad reviews for running late. Neither side gets a simple shared delay signal. Intima already has the clinic's hours, confirmations and push, so this is a small step.",
+   "risks": [
+    "Notifications must stay content-free (no doctor name, no specialty, no health details)",
+    "Doctors may not tap it during a busy clinic: make it one tap from Today and remind once at the first late slot",
+    "Do not promise exact times; say 'about'",
+    "Walk-in handling is clinic policy; Intima only shows the order, it should not force it"
+   ],
+   "status": "idea",
+   "priority": false,
+   "first_seen": "2026-10-24",
+   "last_updated": "2026-10-24"
   }
  ],
  "practo_clusters": {
@@ -1265,6 +1340,36 @@
    "source": "https://play.google.com/store/apps/details?id=com.practo.fabric"
   },
   "daily": [
+   {
+    "date": "2026-10-24",
+    "checked": "Google Play newest 150 per app (Practo Pro: 1 new since 23 Oct, a 5-star 'great experience'; patient app: 4 new); App Store India review feed (most recent 50) for Practo Pro (id592116111) and the patient app (id953772015); X posts since 23 Oct (none new). No broader social listening (Saturday).",
+    "findings": [
+     {
+      "side": "patient",
+      "finding": "Booked patients wait behind walk-ins: 'people doing on the spot appointment are being sent early than Practo booked appointments', with a long wait and a wrong fee.",
+      "source": "https://apps.apple.com/in/app/practo/id953772015?see-all=reviews",
+      "source_date": "2026-10-19",
+      "trend": "new to Pulse; joins the 'doctor unavailable / wrong slot' cluster (91 on Play) and a 22 Oct Play review where a video consult failed and the doctor said to come in",
+      "intima_fix": "OPP-021: one-tap 'Running late' on Today, a live 'On time / about 20 min late / You're next' line on the patient's booking card, booked patients first in the queue."
+     },
+     {
+      "side": "patient",
+      "finding": "Low-star reviews are blocked unless the patient uploads a prescription or invoice, while 5-star reviews go straight through.",
+      "source": "https://apps.apple.com/in/app/practo/id953772015?see-all=reviews",
+      "source_date": "2026-10-18",
+      "trend": "growing (Play 'fraud/fake-review/trust' cluster 76)",
+      "intima_fix": "OPP-013 refined: the confirmed Intima visit is the proof for every rating; no uploads, low ratings never held back."
+     },
+     {
+      "side": "doctor",
+      "finding": "Account suspended for consultations after a 'technical glitch', no reply from Practo; another doctor's profile not live after 3 months.",
+      "source": "https://apps.apple.com/in/app/practo-pro-for-doctors/id592116111?see-all=reviews",
+      "source_date": "2026-10-15",
+      "trend": "steady (support 195 and bugs 121 clusters on Play)",
+      "intima_fix": "OPP-012: a named clinic contact with a response-time promise; ops admin already shows each clinic's dashboard status."
+     }
+    ]
+   },
    {
     "date": "2026-10-23",
     "checked": "Google Play newest 150 per app (no new reviews since the morning scrape: Practo Pro newest 15 Oct, patient app newest 22 Oct); App Store India review pages for Practo Pro (4.4, 5.3k ratings) and the patient app (4.7, 106k); X posts 9-23 Oct; Reddit/news search.",

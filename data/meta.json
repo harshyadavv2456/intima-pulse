@@ -1,17 +1,17 @@
 {
  "app_url": "https://www.intimacare.in",
- "app_version": "live 23 Oct ~13:05 IST: new build since 22 Oct baseline (home HTML 3ba4a8b8, 24 JS chunks, legal text changed)",
- "last_test_run": "2026-10-23",
- "health_score": 85,
+ "app_version": "live 24 Oct ~13:06 IST: JS chunks changed since 23 Oct baseline (+4 -4; home HTML, sw.js, manifest, page text unchanged)",
+ "last_test_run": "2026-10-24",
+ "health_score": 83,
  "health_score_formula": "round(clamp(100 - sum(open weights: P0 20, P1 3, P2 1, P3 0.25), 0, 100) * 0.8 + 20 * coverage); coverage = (great*1 + OK*0.75 + weak*0.4) / features. Only status open/regressed counts; fixed and accepted (founder decision) issues are excluded.",
  "summary_today": [
-  "Top idea today (doctor): fair no-show rules. Practo doctors say they can't mark late patients as no-show but get penalised for running late (X, 12 Oct). Intima already shipped an email check and a 'missed visits pause booking' rule; next is a 'Didn't come' button with a grace window and Confirm/Cancel on reminders (OPP-014).",
-  "Practo today: clinics say Practo put booking buttons on their Google profile without approval (App Store, 4 Jun 2026), so add a booking-source tag on every appointment (new OPP-020). Patients: Care Plan doctors shown available then refused (X, 14 and 17 Oct).",
-  "23 Oct 13:05-13:30 IST, new build: ISS-061 (Messages hang) no longer happens, closed. ISS-066 fixed: users are now told their session was reset.",
-  "New P1 ISS-083: after a reset, Cloud Backup fails with 'code belongs to another account', while the app tells users to restore from it.",
-  "ISS-082 not retestable: booking now needs an email code and Pulse has no test inbox. Doctor dashboard skipped: saved QA3 code no longer accepted.",
-  "Deep-dive: Performance log works and saves (30 min exercise persisted). Companion: 4 messages, safe and in-language.",
-  "Health 85; 12 open (0 P0, 1 P1). YC W27 closes 3 Nov 09:30 IST."
+  "Top idea today (patient): booked patients should not wait behind walk-ins. A Practo patient says walk-ins were seen before Practo-booked patients, with a long wait and wrong fee (App Store India, 19 Oct). Intima fix: a one-tap 'Running late' notice from the clinic Today page and a 'You're next / about 20 min' status on the patient's booking card (new OPP-021).",
+  "Practo today: patients also say low-star reviews are blocked unless they upload a prescription or invoice (App Store, 18 Oct), so verified-visit reviews must accept low ratings too (OPP-013 refined). A video consult failed in-app on 21 Oct and the doctor told the patient to come in (Play, 22 Oct).",
+  "24 Oct 13:05 IST, small new build (JS only). ISS-083 still broken: Arjun's Cloud Backup is rejected with 'code belongs to another account'; Update Backup now sits on 'Saving...' with no error.",
+  "Deep-dive: Hormonal quick check-in works and saves (sleep 7 h kept after reload). No saved message, and Exercise reads 'Not set' while its slider shows 30 min.",
+  "Companion: 4 messages. Two new P2 accuracy issues: ashwagandha called safe in TTC with a dose (ISS-084); alcohol said to affect sperm for only 2-3 days (ISS-085).",
+  "Ops admin and clinic dashboard load; numbers match (test clinic: 4 patients, 7 bookings in 30 days, 0 waiting). Fresh test-clinic invite made in ops admin. ISS-082 still untestable (booking email code, no test inbox).",
+  "Health 83; 14 open (0 P0, 1 P1). Top quick win GAP-007 (use her own cycle length). YC W27 closes 3 Nov 09:30 IST."
  ],
  "health_score_history": [
   {
@@ -120,6 +120,11 @@
    "date": "2026-10-23",
    "score": 85,
    "note": "Lean daily 13:05-13:30 IST (new build)"
+  },
+  {
+   "date": "2026-10-24",
+   "score": 83,
+   "note": "Lean daily 13:05-14:10 IST: hormonal check-in deep-dive; ISS-084/085 (companion, P2); ops admin + doctor dashboard via fresh test-clinic invite; YC re-verify"
   }
  ],
  "weekly": [
@@ -219,7 +224,7 @@
    ]
   }
  ],
- "updated": "2026-10-23T13:45:00+05:30",
+ "updated": "2026-10-24T14:10:00+05:30",
  "run_gaps": [
   {
    "from": "2026-10-08",

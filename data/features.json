@@ -22,7 +22,7 @@
    "group": "Platform",
    "status": "weak",
    "note": "Code in ~5 s; restore in a fresh context not yet tested (day 2). | 22 Oct: Settings lock and backup code hardening shipped and verified. | 23 Oct: after a session reset, backup save fails (\"code belongs to another account\", ISS-083).",
-   "last_verified": "2026-10-23"
+   "last_verified": "2026-10-24"
   },
   {
    "id": "pin-lock",
@@ -125,8 +125,8 @@
    "name": "Hormonal dashboard check-in",
    "group": "Women",
    "status": "OK",
-   "note": "Check-in cut to 4 sliders (ISS-034 fixed).",
-   "last_verified": "2026-10-22"
+   "note": "24 Oct deep-dive: Home > Hormonal opens a 'Quick check-in' sheet (sleep hours, water, exercise, stress 1-5) plus 'More questions (optional)': flow, cervical mucus, last sex, cravings, 6 yes/no items, contraception type, and two more sliders. Set sleep 7 h and tapped Save my day: daily_logs write 200 and the 7 h value was still there after reload. No visible 'saved' message. Exercise shows 'Not set' while its slider sits at 30 min. Sliders have no accessible names (ISS-077).",
+   "last_verified": "2026-10-24"
   },
   {
    "id": "symptom-logging",
@@ -192,7 +192,7 @@
    "group": "Shared",
    "status": "OK",
    "note": "India 112/108, ectopic triage, refuses Rx, Hinglish, answers after red flags (ISS-006/007/037/041/043/044 fixed). Cross-day memory still weak (ISS-039).",
-   "last_verified": "2026-10-22"
+   "last_verified": "2026-10-24"
   },
   {
    "id": "partner-mode",
@@ -254,8 +254,8 @@
    "name": "Doctor dashboard and patient-doctor sync",
    "group": "Care",
    "status": "OK",
-   "note": "Round 5 (live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)): cancel (ISS-078), drag to move, 375 px and dark-safe pages pass. ISS-061 hang seen once (now P2); ISS-066 no new swaps.",
-   "last_verified": "2026-10-23",
+   "note": "Round 5 (live 23 Oct ~04:18 IST (css b9e3091d, dashboard page-faa36df1, main-app-be3d940a)): cancel (ISS-078), drag to move, 375 px and dark-safe pages pass. ISS-061 hang seen once (now P2); ISS-066 no new swaps. 24 Oct: signed in with a fresh test-clinic invite made in ops admin; Today, Appointments, Patients and Clinic load; counts match ops admin (4 patients, 0 requests waiting, 3 confirmed on 23 Oct). Banner says 'You signed in with an email code' although an invite link was used.",
+   "last_verified": "2026-10-24",
    "checks": [
     {
      "check": "ISS-061 15 s timeout / Retry",
@@ -408,7 +408,7 @@
    ],
    "quick_win": true,
    "status": "partial",
-   "progress_note": "23 Oct: Meera (31-38 d cycles) still shown \"Cycle day 23 of ~28\" and next period Oct 29.",
+   "progress_note": "23 Oct: Meera (31-38 d cycles) still shown \"Cycle day 23 of ~28\" and next period Oct 29. 24 Oct: still 'Cycle day 24 of ~28', next period Oct 29, 'Predicted day 24, based on a textbook cycle' for Meera, whose cycles run 31-38 days.",
    "priority_score": 9,
    "rank": 1
   },
@@ -772,6 +772,6 @@
    "priority_score": 3
   }
  ],
- "updated": "2026-10-23",
+ "updated": "2026-10-24T14:10:00+05:30",
  "ranking_note": "22 Oct 15:45 IST: re-ranked open gaps by impact (H3/M2/L1) × effort (Easy3/Medium2/Hard1); top 5 flagged quick_win. Done gaps kept for history."
 }
